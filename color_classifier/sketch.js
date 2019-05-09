@@ -47,15 +47,15 @@ function setup() {
 
 
 
-  buttons.push(createButton('red').parent('#root').class('red-ish'));
-  buttons.push(createButton('green').parent('#root').class('green-ish'));
-  buttons.push(createButton('blue').parent('#root').class('blue-ish'));
-  buttons.push(createButton('orange').parent('#root').class('orange-ish'));
-  buttons.push(createButton('yellow').parent('#root').class('yellow-ish'));
-  buttons.push(createButton('pink').parent('#root').class('pink-ish'));
-  buttons.push(createButton('purple').parent('#root').class('purple-ish'));
-  buttons.push(createButton('brown').parent('#root').class('brown-ish'));
-  buttons.push(createButton('grey').parent('#root').class('grey-ish'));
+  buttons.push(createButton('red-ish').parent('#root').class('red-ish'));
+  buttons.push(createButton('green-ish').parent('#root').class('green-ish'));
+  buttons.push(createButton('blue-ish').parent('#root').class('blue-ish'));
+  buttons.push(createButton('orange-ish').parent('#root').class('orange-ish'));
+  buttons.push(createButton('yellow-ish').parent('#root').class('yellow-ish'));
+  buttons.push(createButton('pink-ish').parent('#root').class('pink-ish'));
+  buttons.push(createButton('purple-ish').parent('#root').class('purple-ish'));
+  buttons.push(createButton('brown-ish').parent('#root').class('brown-ish'));
+  buttons.push(createButton('grey-ish').parent('#root').class('grey-ish'));
 
 
   for (let i = 0; i < buttons.length; i++) {
@@ -67,10 +67,10 @@ function setup() {
   // loadData().then(data => {
   //   dataSave = data;
   //   console.log("Recieved data. To analyze", data.length, "entries, run: ");
-  //   console.log("showSample(dataSave, 'red-ish')");
-  //   console.log("or analyzeData(dataSave, ['red-ish', 'blue-ish'])");
+  //   console.log("showSample(dataSave, 'red-ish-ish')");
+  //   console.log("or analyzeData(dataSave, ['red-ish-ish', 'blue-ish-ish'])");
   //   console.log("To clean the data by label and hue use: ");
-  //   console.log("let green_data = cleanData(dataSave, 'green-ish', 60, 180)");
+  //   console.log("let green-ish_data = cleanData(dataSave, 'green-ish-ish', 60, 180)");
   //   console.log("For any help, please see the documentation above each function in the code!");
   // });
 }
@@ -134,7 +134,7 @@ async function sendData() {
 
 
 
-/** Produce a filtered version of the input data.
+/** Produce a filtered-ish version of the input data.
  *   First, all data whose label does not match 'name' is discarded.
  *   Then, all data must encode a RGB color which has a hue
  *   value greater than minHue and less than maxHue.
@@ -146,8 +146,8 @@ async function sendData() {
  * @param {number} minHue - 0 <= minHue <= 360. Lower limit of hue range
  * @param {number} maxHue - 0 <= maxHue <= 360. Upper limit of hue range
  * @return {Array} Your squeeky clean data!
- * @example let green_data = cleanData(dataSave, 'green-ish', 60, 180)
- * @example let red_data = cleanData(dataSave, 'red-ish', 300, 60)
+ * @example let green-ish_data = cleanData(dataSave, 'green-ish-ish', 60, 180)
+ * @example let red-ish_data = cleanData(dataSave, 'red-ish-ish', 300, 60)
  */
 function cleanData(data, name, minHue, maxHue) {
   const entries = filterData(data, name);
@@ -170,9 +170,9 @@ function cleanData(data, name, minHue, maxHue) {
  *   label as possible, with one pixel for each color.
  * @function showSample
  * @param {Array} data - returned by loadData(), saved in dataSave
- * @param {Array} name - name of the label to draw, ex. "blue-ish"
+ * @param {Array} name - name of the label to draw, ex. "blue-ish-ish"
  * @return {undefined}
- * @example showSample(dataSave, 'green-ish')
+ * @example showSample(dataSave, 'green-ish-ish')
  */
 function showSample(data, name) {
   const entries = filterData(data, name);

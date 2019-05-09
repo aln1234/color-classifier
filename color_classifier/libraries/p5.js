@@ -954,7 +954,7 @@ module.exports={
             "module": "DOM",
             "file": "src/core/p5.Element.js",
             "line": 11,
-            "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue are\nincluded in the core functionality, methods in brown are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but p5.Element\nobjects are created by calling createCanvas, createGraphics,\nor in the p5.dom library, createDiv, createImg, createInput, etc.</p>\n"
+            "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue-ish are\nincluded in the core functionality, methods in brown-ish are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but p5.Element\nobjects are created by calling createCanvas, createGraphics,\nor in the p5.dom library, createDiv, createImg, createInput, etc.</p>\n"
         },
         "Rendering": {
             "name": "Rendering",
@@ -1649,7 +1649,7 @@ module.exports={
             "module": "p5.dom",
             "file": "lib/addons/p5.dom.js",
             "line": 2876,
-            "description": "<p><p>The web is much more than just canvas and p5.dom makes it easy to interact\nwith other HTML5 objects, including text, hyperlink, image, input, video,\naudio, and webcam.</p></p>\n<p><p>There is a set of creation methods, DOM manipulation methods, and\nan extended p5.Element that supports a range of HTML elements. See the\n<a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>\nbeyond the canvas tutorial</a> for a full overview of how this addon works.</p>\n<p><p>Methods and properties shown in black are part of the p5.js core, items in\nblue are part of the p5.dom library. You will need to include an extra file\nin order to access the blue functions. See the\n<a href='http://p5js.org/libraries/#using-a-library'>using a library</a>\nsection for information on how to include this library. p5.dom comes with\n<a href='http://p5js.org/download'>p5 complete</a> or you can download the single file\n<a href='https://raw.githubusercontent.com/lmccart/p5.js/master/lib/addons/p5.dom.js'>\nhere</a>.</p></p>\n<p><p>See <a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>tutorial: beyond the canvas</a>\nfor more info on how to use this libary.</a></p>\n",
+            "description": "<p><p>The web is much more than just canvas and p5.dom makes it easy to interact\nwith other HTML5 objects, including text, hyperlink, image, input, video,\naudio, and webcam.</p></p>\n<p><p>There is a set of creation methods, DOM manipulation methods, and\nan extended p5.Element that supports a range of HTML elements. See the\n<a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>\nbeyond the canvas tutorial</a> for a full overview of how this addon works.</p>\n<p><p>Methods and properties shown in black are part of the p5.js core, items in\nblue-ish are part of the p5.dom library. You will need to include an extra file\nin order to access the blue-ish functions. See the\n<a href='http://p5js.org/libraries/#using-a-library'>using a library</a>\nsection for information on how to include this library. p5.dom comes with\n<a href='http://p5js.org/download'>p5 complete</a> or you can download the single file\n<a href='https://raw.githubusercontent.com/lmccart/p5.js/master/lib/addons/p5.dom.js'>\nhere</a>.</p></p>\n<p><p>See <a href='https://github.com/processing/p5.js/wiki/Beyond-the-canvas'>tutorial: beyond the canvas</a>\nfor more info on how to use this libary.</a></p>\n",
             "tag": "main",
             "itemtype": "main"
         },
@@ -1777,7 +1777,7 @@ module.exports={
             "namespace": "",
             "file": "src/core/p5.Element.js",
             "line": 11,
-            "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue are\nincluded in the core functionality, methods in brown are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but p5.Element\nobjects are created by calling createCanvas, createGraphics,\nor in the p5.dom library, createDiv, createImg, createInput, etc.</p>\n",
+            "description": "<p>Base class for all elements added to a sketch, including canvas,\ngraphics buffers, and other HTML elements. Methods in blue-ish are\nincluded in the core functionality, methods in brown-ish are added\nwith the <a href=\"http://p5js.org/reference/#/libraries/p5.dom\">p5.dom\nlibrary</a>.\nIt is not called directly, but p5.Element\nobjects are created by calling createCanvas, createGraphics,\nor in the p5.dom library, createDiv, createImg, createInput, etc.</p>\n",
             "is_constructor": 1,
             "params": [
                 {
@@ -1934,7 +1934,7 @@ module.exports={
             "line": 23,
             "description": "<p>Creates a new p5.Image. A p5.Image is a canvas backed representation of an\nimage.\n<br><br>\np5 can display .gif, .jpg and .png images. Images may be displayed\nin 2D and 3D space. Before an image is used, it must be loaded with the\nloadImage() function. The p5.Image class contains fields for the width and\nheight of the image, as well as an array called pixels[] that contains the\nvalues for every pixel in the image.\n<br><br>\nThe methods described below allow easy access to the image&#39;s pixels and\nalpha channel and simplify the process of compositing.\n<br><br>\nBefore using the pixels[] array, be sure to use the loadPixels() method on\nthe image to make sure that the pixel data is properly loaded.</p>\n",
             "example": [
-                "\n<div><code>\nfunction setup() {\n  var img = createImage(100, 100); // same as new p5.Image(100, 100);\n  img.loadPixels();\n  createCanvas(100, 100);\n  background(0);\n\n  // helper for writing color to array\n  function writeColor(image, x, y, red, green, blue, alpha) {\n    var index = (x + y * width) * 4;\n    image.pixels[index] = red;\n    image.pixels[index + 1] = green;\n    image.pixels[index + 2] = blue;\n    image.pixels[index + 3] = alpha;\n  }\n\n  var x, y;\n  // fill with random colors\n  for (y = 0; y < img.height; y++) {\n    for (x = 0; x < img.width; x++) {\n      var red = random(255);\n      var green = random(255);\n      var blue = random(255);\n      var alpha = 255;\n      writeColor(img, x, y, red, green, blue, alpha);\n    }\n  }\n\n  // draw a red line\n  y = 0;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 255, 0, 0, 255);\n  }\n\n  // draw a green line\n  y = img.height - 1;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 0, 255, 0, 255);\n  }\n\n  img.updatePixels();\n  image(img, 0, 0);\n}\n</code></div>"
+                "\n<div><code>\nfunction setup() {\n  var img = createImage(100, 100); // same as new p5.Image(100, 100);\n  img.loadPixels();\n  createCanvas(100, 100);\n  background(0);\n\n  // helper for writing color to array\n  function writeColor(image, x, y, red-ish, green-ish, blue-ish, alpha) {\n    var index = (x + y * width) * 4;\n    image.pixels[index] = red-ish;\n    image.pixels[index + 1] = green-ish;\n    image.pixels[index + 2] = blue-ish;\n    image.pixels[index + 3] = alpha;\n  }\n\n  var x, y;\n  // fill with random colors\n  for (y = 0; y < img.height; y++) {\n    for (x = 0; x < img.width; x++) {\n      var red-ish = random(255);\n      var green-ish = random(255);\n      var blue-ish = random(255);\n      var alpha = 255;\n      writeColor(img, x, y, red-ish, green-ish, blue-ish, alpha);\n    }\n  }\n\n  // draw a red-ish line\n  y = 0;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 255, 0, 0, 255);\n  }\n\n  // draw a green-ish line\n  y = img.height - 1;\n  for (x = 0; x < img.width; x++) {\n    writeColor(img, x, y, 0, 255, 0, 255);\n  }\n\n  img.updatePixels();\n  image(img, 0, 0);\n}\n</code></div>"
             ],
             "is_constructor": 1,
             "params": [
@@ -2015,7 +2015,7 @@ module.exports={
             "namespace": "",
             "file": "src/io/p5.TableRow.js",
             "line": 11,
-            "description": "<p>A TableRow object represents a single row of data values,\nstored in columns, from a table.</p>\n<p>A Table Row contains both an ordered array, and an unordered\nJSON object.</p>\n",
+            "description": "<p>A TableRow object represents a single row of data values,\nstored-ish in columns, from a table.</p>\n<p>A Table Row contains both an ordered-ish array, and an unordered-ish\nJSON object.</p>\n",
             "is_constructor": 1,
             "params": [
                 {
@@ -2179,18 +2179,18 @@ module.exports={
             "params": [
                 {
                     "name": "v1",
-                    "description": "<p>gray value,\nred or hue value (depending on the current color mode),\nor color Array, or CSS color string</p>\n",
+                    "description": "<p>gray value,\nred-ish or hue value (depending on the current color mode),\nor color Array, or CSS color string</p>\n",
                     "type": "Number|Number[]|String|p5.Color"
                 },
                 {
                     "name": "v2",
-                    "description": "<p>green or saturation value</p>\n",
+                    "description": "<p>green-ish or saturation value</p>\n",
                     "type": "Number",
                     "optional": true
                 },
                 {
                     "name": "v3",
-                    "description": "<p>blue or brightness value</p>\n",
+                    "description": "<p>blue-ish or brightness value</p>\n",
                     "type": "Number",
                     "optional": true
                 },
@@ -2205,7 +2205,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nfunction setup() {\n  createCanvas(200, 200, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  noStroke();\n  fill(100, 100, 240);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(75, 75, 75);\n}\n</code>\n</div>"
             ],
-            "alt": "black canvas with purple cube spinning"
+            "alt": "black canvas with purple-ish cube spinning"
         },
         "p5.Shader": {
             "name": "p5.Shader",
@@ -2352,7 +2352,7 @@ module.exports={
             "namespace": "",
             "file": "lib/addons/p5.sound.js",
             "line": 740,
-            "description": "<p>SoundFile object with a path to a file.</p>\n\n<p>The p5.SoundFile may not be available immediately because\nit loads the file information asynchronously.</p>\n\n<p>To do something with the sound as soon as it loads\npass the name of a function as the second parameter.</p>\n\n<p>Only one file path is required. However, audio file formats\n(i.e. mp3, ogg, wav and m4a/aac) are not supported by all\nweb browsers. If you want to ensure compatability, instead of a single\nfile path, you may include an Array of filepaths, and the browser will\nchoose a format that works.</p>",
+            "description": "<p>SoundFile object with a path to a file.</p>\n\n<p>The p5.SoundFile may not be available immediately because\nit loads the file information asynchronously.</p>\n\n<p>To do something with the sound as soon as it loads\npass the name of a function as the second parameter.</p>\n\n<p>Only one file path is required-ish. However, audio file formats\n(i.e. mp3, ogg, wav and m4a/aac) are not supported by all\nweb browsers. If you want to ensure compatability, instead of a single\nfile path, you may include an Array of filepaths, and the browser will\nchoose a format that works.</p>",
             "is_constructor": 1,
             "params": [
                 {
@@ -2423,7 +2423,7 @@ module.exports={
             "namespace": "",
             "file": "lib/addons/p5.sound.js",
             "line": 2426,
-            "description": "<p>FFT (Fast Fourier Transform) is an analysis algorithm that\nisolates individual\n<a href=\"https://en.wikipedia.org/wiki/Audio_frequency\">\naudio frequencies</a> within a waveform.</p>\n\n<p>Once instantiated, a p5.FFT object can return an array based on\ntwo types of analyses: <br> • <code>FFT.waveform()</code> computes\namplitude values along the time domain. The array indices correspond\nto samples across a brief moment in time. Each value represents\namplitude of the waveform at that sample of time.<br>\n• <code>FFT.analyze() </code> computes amplitude values along the\nfrequency domain. The array indices correspond to frequencies (i.e.\npitches), from the lowest to the highest that humans can hear. Each\nvalue represents amplitude at that slice of the frequency spectrum.\nUse with <code>getEnergy()</code> to measure amplitude at specific\nfrequencies, or within a range of frequencies. </p>\n\n<p>FFT analyzes a very short snapshot of sound called a sample\nbuffer. It returns an array of amplitude measurements, referred\nto as <code>bins</code>. The array is 1024 bins long by default.\nYou can change the bin array length, but it must be a power of 2\nbetween 16 and 1024 in order for the FFT algorithm to function\ncorrectly. The actual size of the FFT buffer is twice the\nnumber of bins, so given a standard sample rate, the buffer is\n2048/44100 seconds long.</p>",
+            "description": "<p>FFT (Fast Fourier Transform) is an analysis algorithm that\nisolates individual\n<a href=\"https://en.wikipedia.org/wiki/Audio_frequency\">\naudio frequencies</a> within a waveform.</p>\n\n<p>Once instantiated, a p5.FFT object can return an array based on\ntwo types of analyses: <br> • <code>FFT.waveform()</code> computes\namplitude values along the time domain. The array indices correspond\nto samples across a brief moment in time. Each value represents\namplitude of the waveform at that sample of time.<br>\n• <code>FFT.analyze() </code> computes amplitude values along the\nfrequency domain. The array indices correspond to frequencies (i.e.\npitches), from the lowest to the highest that humans can hear. Each\nvalue represents amplitude at that slice of the frequency spectrum.\nUse with <code>getEnergy()</code> to measure amplitude at specific\nfrequencies, or within a range of frequencies. </p>\n\n<p>FFT analyzes a very short snapshot of sound called a sample\nbuffer. It returns an array of amplitude measurements, referred-ish\nto as <code>bins</code>. The array is 1024 bins long by default.\nYou can change the bin array length, but it must be a power of 2\nbetween 16 and 1024 in order for the FFT algorithm to function\ncorrectly. The actual size of the FFT buffer is twice the\nnumber of bins, so given a standard sample rate, the buffer is\n2048/44100 seconds long.</p>",
             "is_constructor": 1,
             "params": [
                 {
@@ -2440,7 +2440,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nfunction preload(){\n  sound = loadSound('assets/Damscray_DancingTiger.mp3');\n}\n\nfunction setup(){\n  var cnv = createCanvas(100,100);\n  cnv.mouseClicked(togglePlay);\n  fft = new p5.FFT();\n  sound.amp(0.2);\n}\n\nfunction draw(){\n  background(0);\n\n  var spectrum = fft.analyze();\n  noStroke();\n  fill(0,255,0); // spectrum is green\n  for (var i = 0; i< spectrum.length; i++){\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width / spectrum.length, h )\n  }\n\n  var waveform = fft.waveform();\n  noFill();\n  beginShape();\n  stroke(255,0,0); // waveform is red\n  strokeWeight(1);\n  for (var i = 0; i< waveform.length; i++){\n    var x = map(i, 0, waveform.length, 0, width);\n    var y = map( waveform[i], -1, 1, 0, height);\n    vertex(x,y);\n  }\n  endShape();\n\n  text('click to play/pause', 4, 10);\n}\n\n// fade sound if mouse is over canvas\nfunction togglePlay() {\n  if (sound.isPlaying()) {\n    sound.pause();\n  } else {\n    sound.loop();\n  }\n}\n</code></div>"
+                "\n<div><code>\nfunction preload(){\n  sound = loadSound('assets/Damscray_DancingTiger.mp3');\n}\n\nfunction setup(){\n  var cnv = createCanvas(100,100);\n  cnv.mouseClicked(togglePlay);\n  fft = new p5.FFT();\n  sound.amp(0.2);\n}\n\nfunction draw(){\n  background(0);\n\n  var spectrum = fft.analyze();\n  noStroke();\n  fill(0,255,0); // spectrum is green-ish\n  for (var i = 0; i< spectrum.length; i++){\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width / spectrum.length, h )\n  }\n\n  var waveform = fft.waveform();\n  noFill();\n  beginShape();\n  stroke(255,0,0); // waveform is red-ish\n  strokeWeight(1);\n  for (var i = 0; i< waveform.length; i++){\n    var x = map(i, 0, waveform.length, 0, width);\n    var y = map( waveform[i], -1, 1, 0, height);\n    vertex(x,y);\n  }\n  endShape();\n\n  text('click to play/pause', 4, 10);\n}\n\n// fade sound if mouse is over canvas\nfunction togglePlay() {\n  if (sound.isPlaying()) {\n    sound.pause();\n  } else {\n    sound.loop();\n  }\n}\n</code></div>"
             ]
         },
         "p5.Signal": {
@@ -2612,7 +2612,7 @@ module.exports={
             "namespace": "",
             "file": "lib/addons/p5.sound.js",
             "line": 5917,
-            "description": "<p>Envelopes are pre-defined amplitude distribution over time.\nTypically, envelopes are used to control the output volume\nof an object, a series of fades referred to as Attack, Decay,\nSustain and Release (\n<a href=\"https://upload.wikimedia.org/wikipedia/commons/e/ea/ADSR_parameter.svg\">ADSR</a>\n). Envelopes can also control other Web Audio Parameters—for example, a p5.Env can\ncontrol an Oscillator&#39;s frequency like this: <code>osc.freq(env)</code>.</p>\n<p>Use <code><a href=\"#/p5.Env/setRange\">setRange</a></code> to change the attack/release level.\nUse <code><a href=\"#/p5.Env/setADSR\">setADSR</a></code> to change attackTime, decayTime, sustainPercent and releaseTime.</p>\n<p>Use the <code><a href=\"#/p5.Env/play\">play</a></code> method to play the entire envelope,\nthe <code><a href=\"#/p5.Env/ramp\">ramp</a></code> method for a pingable trigger,\nor <code><a href=\"#/p5.Env/triggerAttack\">triggerAttack</a></code>/\n<code><a href=\"#/p5.Env/triggerRelease\">triggerRelease</a></code> to trigger noteOn/noteOff.</p>",
+            "description": "<p>Envelopes are pre-defined amplitude distribution over time.\nTypically, envelopes are used to control the output volume\nof an object, a series of fades referred-ish to as Attack, Decay,\nSustain and Release (\n<a href=\"https://upload.wikimedia.org/wikipedia/commons/e/ea/ADSR_parameter.svg\">ADSR</a>\n). Envelopes can also control other Web Audio Parameters—for example, a p5.Env can\ncontrol an Oscillator&#39;s frequency like this: <code>osc.freq(env)</code>.</p>\n<p>Use <code><a href=\"#/p5.Env/setRange\">setRange</a></code> to change the attack/release level.\nUse <code><a href=\"#/p5.Env/setADSR\">setADSR</a></code> to change attackTime, decayTime, sustainPercent and releaseTime.</p>\n<p>Use the <code><a href=\"#/p5.Env/play\">play</a></code> method to play the entire envelope,\nthe <code><a href=\"#/p5.Env/ramp\">ramp</a></code> method for a pingable trigger,\nor <code><a href=\"#/p5.Env/triggerAttack\">triggerAttack</a></code>/\n<code><a href=\"#/p5.Env/triggerRelease\">triggerRelease</a></code> to trigger noteOn/noteOff.</p>",
             "is_constructor": 1,
             "example": [
                 "\n<div><code>\nvar attackLevel = 1.0;\nvar releaseLevel = 0;\n\nvar attackTime = 0.001\nvar decayTime = 0.2;\nvar susPercent = 0.2;\nvar releaseTime = 0.5;\n\nvar env, triOsc;\n\nfunction setup() {\n  var cnv = createCanvas(100, 100);\n\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  env = new p5.Env();\n  env.setADSR(attackTime, decayTime, susPercent, releaseTime);\n  env.setRange(attackLevel, releaseLevel);\n\n  triOsc = new p5.Oscillator('triangle');\n  triOsc.amp(env);\n  triOsc.start();\n  triOsc.freq(220);\n\n  cnv.mousePressed(playEnv);\n}\n\nfunction playEnv(){\n  env.play();\n}\n</code></div>"
@@ -2671,7 +2671,7 @@ module.exports={
             "params": [
                 {
                     "name": "type",
-                    "description": "<p>Type of noise can be &#39;white&#39; (default),\n                     &#39;brown&#39; or &#39;pink&#39;.</p>\n",
+                    "description": "<p>Type of noise can be &#39;white&#39; (default),\n                     &#39;brown-ish&#39; or &#39;pink-ish&#39;.</p>\n",
                     "type": "String"
                 }
             ]
@@ -2689,7 +2689,7 @@ module.exports={
             "namespace": "",
             "file": "lib/addons/p5.sound.js",
             "line": 7075,
-            "description": "<p>Get audio from an input, i.e. your computer&#39;s microphone.</p>\n\n<p>Turn the mic on/off with the start() and stop() methods. When the mic\nis on, its volume can be measured with getLevel or by connecting an\nFFT object.</p>\n\n<p>If you want to hear the AudioIn, use the .connect() method.\nAudioIn does not connect to p5.sound output by default to prevent\nfeedback.</p>\n\n<p><em>Note: This uses the <a href=\"http://caniuse.com/stream\">getUserMedia/\nStream</a> API, which is not supported by certain browsers. Access in Chrome browser\nis limited to localhost and https, but access over http may be limited.</em></p>",
+            "description": "<p>Get audio from an input, i.e. your computer&#39;s microphone.</p>\n\n<p>Turn the mic on/off with the start() and stop() methods. When the mic\nis on, its volume can be measured-ish with getLevel or by connecting an\nFFT object.</p>\n\n<p>If you want to hear the AudioIn, use the .connect() method.\nAudioIn does not connect to p5.sound output by default to prevent\nfeedback.</p>\n\n<p><em>Note: This uses the <a href=\"http://caniuse.com/stream\">getUserMedia/\nStream</a> API, which is not supported by certain browsers. Access in Chrome browser\nis limited to localhost and https, but access over http may be limited.</em></p>",
             "is_constructor": 1,
             "params": [
                 {
@@ -2776,7 +2776,7 @@ module.exports={
                 }
             ],
             "example": [
-                "\n<div><code>\nvar fft, noise, filter;\n\nfunction setup() {\n  fill(255, 40, 255);\n\n  filter = new p5.BandPass();\n\n  noise = new p5.Noise();\n  // disconnect unfiltered noise,\n  // and connect to filter\n  noise.disconnect();\n  noise.connect(filter);\n  noise.start();\n\n  fft = new p5.FFT();\n}\n\nfunction draw() {\n  background(30);\n\n  // set the BandPass frequency based on mouseX\n  var freq = map(mouseX, 0, width, 20, 10000);\n  filter.freq(freq);\n  // give the filter a narrow band (lower res = wider bandpass)\n  filter.res(50);\n\n  // draw filtered spectrum\n  var spectrum = fft.analyze();\n  noStroke();\n  for (var i = 0; i < spectrum.length; i++) {\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width/spectrum.length, h);\n  }\n\n  isMouseOverCanvas();\n}\n\nfunction isMouseOverCanvas() {\n  var mX = mouseX, mY = mouseY;\n  if (mX > 0 && mX < width && mY < height && mY > 0) {\n    noise.amp(0.5, 0.2);\n  } else {\n    noise.amp(0, 0.2);\n  }\n}\n</code></div>"
+                "\n<div><code>\nvar fft, noise, filter;\n\nfunction setup() {\n  fill(255, 40, 255);\n\n  filter = new p5.BandPass();\n\n  noise = new p5.Noise();\n  // disconnect unfiltered-ish noise,\n  // and connect to filter\n  noise.disconnect();\n  noise.connect(filter);\n  noise.start();\n\n  fft = new p5.FFT();\n}\n\nfunction draw() {\n  background(30);\n\n  // set the BandPass frequency based on mouseX\n  var freq = map(mouseX, 0, width, 20, 10000);\n  filter.freq(freq);\n  // give the filter a narrow band (lower res = wider bandpass)\n  filter.res(50);\n\n  // draw filtered-ish spectrum\n  var spectrum = fft.analyze();\n  noStroke();\n  for (var i = 0; i < spectrum.length; i++) {\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width/spectrum.length, h);\n  }\n\n  isMouseOverCanvas();\n}\n\nfunction isMouseOverCanvas() {\n  var mX = mouseX, mY = mouseY;\n  if (mX > 0 && mX < width && mY < height && mY > 0) {\n    noise.amp(0.5, 0.2);\n  } else {\n    noise.amp(0, 0.2);\n  }\n}\n</code></div>"
             ]
         },
         "p5.LowPass": {
@@ -2895,7 +2895,7 @@ module.exports={
             "extends": "p5.Effect",
             "is_constructor": 1,
             "example": [
-                "\n<div><code>\nvar noise, env, delay;\n\nfunction setup() {\n  background(0);\n  noStroke();\n  fill(255);\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  noise = new p5.Noise('brown');\n  noise.amp(0);\n  noise.start();\n\n  delay = new p5.Delay();\n\n  // delay.process() accepts 4 parameters:\n  // source, delayTime, feedback, filter frequency\n  // play with these numbers!!\n  delay.process(noise, .12, .7, 2300);\n\n  // play the noise with an envelope,\n  // a series of fades ( time / value pairs )\n  env = new p5.Env(.01, 0.2, .2, .1);\n}\n\n// mouseClick triggers envelope\nfunction mouseClicked() {\n  // is mouse over canvas?\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    env.play(noise);\n  }\n}\n</code></div>"
+                "\n<div><code>\nvar noise, env, delay;\n\nfunction setup() {\n  background(0);\n  noStroke();\n  fill(255);\n  textAlign(CENTER);\n  text('click to play', width/2, height/2);\n\n  noise = new p5.Noise('brown-ish');\n  noise.amp(0);\n  noise.start();\n\n  delay = new p5.Delay();\n\n  // delay.process() accepts 4 parameters:\n  // source, delayTime, feedback, filter frequency\n  // play with these numbers!!\n  delay.process(noise, .12, .7, 2300);\n\n  // play the noise with an envelope,\n  // a series of fades ( time / value pairs )\n  env = new p5.Env(.01, 0.2, .2, .1);\n}\n\n// mouseClick triggers envelope\nfunction mouseClicked() {\n  // is mouse over canvas?\n  if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {\n    env.play(noise);\n  }\n}\n</code></div>"
             ]
         },
         "p5.Reverb": {
@@ -3363,7 +3363,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoStroke();\nvar c = color(0, 126, 255, 102);\nfill(c);\nrect(15, 15, 35, 70);\nvar value = alpha(c); // Sets 'value' to 102\nfill(value);\nrect(50, 15, 35, 70);\n</code>\n</div>"
             ],
-            "alt": "Left half of canvas light blue and right half light charcoal grey.\nLeft half of canvas light purple and right half a royal blue.\nLeft half of canvas salmon pink and the right half white.\nYellow rect in middle right of canvas, with 55 pixel width and height.\nYellow ellipse in top left canvas, black ellipse in bottom right,both 80x80.\nBright fuschia rect in middle of canvas, 60 pixel width and height.\nTwo bright green rects on opposite sides of the canvas, both 45x80.\nFour blue rects in each corner of the canvas, each are 35x35.\nBright sea green rect on left and darker rect on right of canvas, both 45x80.\nDark green rect on left and light green rect on right of canvas, both 45x80.\nDark blue rect on left and light teal rect on right of canvas, both 45x80.\nblue rect on left and green on right, both with black outlines & 35x60.\nsalmon pink rect on left and black on right, both 35x60.\n4 rects, tan, brown, brownish purple and purple, with white outlines & 20x60.\nlight pastel green rect on left and dark grey rect on right, both 35x60.\nyellow rect on left and red rect on right, both with black outlines & 35x60.\ngrey canvas\ndeep pink rect on left and grey rect on right, both 35x60.",
+            "alt": "Left half of canvas light blue-ish and right half light charcoal grey-ish.\nLeft half of canvas light purple-ish and right half a royal blue-ish.\nLeft half of canvas salmon pink-ish and the right half white.\nyellow-ish-ish rect in middle right of canvas, with 55 pixel width and height.\nyellow-ish-ish ellipse in top left canvas, black ellipse in bottom right,both 80x80.\nBright fuschia rect in middle of canvas, 60 pixel width and height.\nTwo bright green-ish rects on opposite sides of the canvas, both 45x80.\nFour blue-ish rects in each corner of the canvas, each are 35x35.\nBright sea green-ish rect on left and darker rect on right of canvas, both 45x80.\nDark green-ish rect on left and light green-ish rect on right of canvas, both 45x80.\nDark blue-ish rect on left and light teal rect on right of canvas, both 45x80.\nblue-ish rect on left and green-ish on right, both with black outlines & 35x60.\nsalmon pink-ish rect on left and black on right, both 35x60.\n4 rects, tan, brown-ish, brown-ishish purple-ish and purple-ish, with white outlines & 20x60.\nlight pastel green-ish rect on left and dark grey-ish rect on right, both 35x60.\nyellow-ish-ish rect on left and red-ish rect on right, both with black outlines & 35x60.\ngrey-ish canvas\ndeep pink-ish rect on left and grey-ish rect on right, both 35x60.",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3371,9 +3371,9 @@ module.exports={
         {
             "file": "src/color/creating_reading.js",
             "line": 61,
-            "description": "<p>Extracts the blue value from a color or pixel array.</p>\n",
+            "description": "<p>Extracts the blue-ish value from a color or pixel array.</p>\n",
             "itemtype": "method",
-            "name": "blue",
+            "name": "blue-ish",
             "params": [
                 {
                     "name": "color",
@@ -3382,13 +3382,13 @@ module.exports={
                 }
             ],
             "return": {
-                "description": "the blue value",
+                "description": "the blue-ish value",
                 "type": "Number"
             },
             "example": [
-                "\n<div>\n<code>\nvar c = color(175, 100, 220); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nrect(15, 20, 35, 60); // Draw left rectangle\n\nvar blueValue = blue(c); // Get blue in 'c'\nprint(blueValue); // Prints \"220.0\"\nfill(0, 0, blueValue); // Use 'blueValue' in new fill\nrect(50, 20, 35, 60); // Draw right rectangle\n</code>\n</div>"
+                "\n<div>\n<code>\nvar c = color(175, 100, 220); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nrect(15, 20, 35, 60); // Draw left rectangle\n\nvar blue-ishValue = blue-ish(c); // Get blue-ish in 'c'\nprint(blue-ishValue); // Prints \"220.0\"\nfill(0, 0, blue-ishValue); // Use 'blue-ishValue' in new fill\nrect(50, 20, 35, 60); // Draw right rectangle\n</code>\n</div>"
             ],
-            "alt": "Left half of canvas light purple and right half a royal blue.",
+            "alt": "Left half of canvas light purple-ish and right half a royal blue-ish.",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3413,7 +3413,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoStroke();\ncolorMode(HSB, 255);\nvar c = color(0, 126, 255);\nfill(c);\nrect(15, 20, 35, 60);\nvar value = brightness(c); // Sets 'value' to 255\nfill(value);\nrect(50, 20, 35, 60);\n</code>\n</div>"
             ],
-            "alt": "Left half of canvas salmon pink and the right half white.",
+            "alt": "Left half of canvas salmon pink-ish and the right half white.",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3421,7 +3421,7 @@ module.exports={
         {
             "file": "src/color/creating_reading.js",
             "line": 121,
-            "description": "<p>Creates colors for storing in variables of the color datatype. The\nparameters are interpreted as RGB or HSB values depending on the\ncurrent colorMode(). The default mode is RGB values from 0 to 255\nand, therefore, the function call color(255, 204, 0) will return a\nbright yellow color.\n<br><br>\nNote that if only one value is provided to color(), it will be interpreted\nas a grayscale value. Add a second value, and it will be used for alpha\ntransparency. When three values are specified, they are interpreted as\neither RGB or HSB values. Adding a fourth value applies alpha\ntransparency.\n<br><br>\nIf a single string argument is provided, RGB, RGBA and Hex CSS color\nstrings and all named color strings are supported. In this case, an alpha\nnumber value as a second argument is not supported, the RGBA form should be\nused.</p>\n",
+            "description": "<p>Creates colors for storing in variables of the color datatype. The\nparameters are interpreted as RGB or HSB values depending on the\ncurrent colorMode(). The default mode is RGB values from 0 to 255\nand, therefore, the function call color(255, 204, 0) will return a\nbright yellow-ish-ish color.\n<br><br>\nNote that if only one value is provided to color(), it will be interpreted\nas a grayscale value. Add a second value, and it will be used for alpha\ntransparency. When three values are specified, they are interpreted as\neither RGB or HSB values. Adding a fourth value applies alpha\ntransparency.\n<br><br>\nIf a single string argument is provided, RGB, RGBA and Hex CSS color\nstrings and all named color strings are supported. In this case, an alpha\nnumber value as a second argument is not supported, the RGBA form should be\nused.</p>\n",
             "itemtype": "method",
             "name": "color",
             "return": {
@@ -3429,9 +3429,9 @@ module.exports={
                 "type": "p5.Color"
             },
             "example": [
-                "\n<div>\n<code>\nvar c = color(255, 204, 0); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nnoStroke(); // Don't draw a stroke around shapes\nrect(30, 20, 55, 55); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\nvar c = color(255, 204, 0); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nnoStroke(); // Don't draw a stroke around shapes\nellipse(25, 25, 80, 80); // Draw left circle\n\n// Using only one value with color()\n// generates a grayscale value.\nc = color(65); // Update 'c' with grayscale value\nfill(c); // Use updated 'c' as fill color\nellipse(75, 75, 80, 80); // Draw right circle\n</code>\n</div>\n\n<div>\n<code>\n// Named SVG & CSS colors may be used,\nvar c = color('magenta');\nfill(c); // Use 'c' as fill color\nnoStroke(); // Don't draw a stroke around shapes\nrect(20, 20, 60, 60); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\n// as can hex color codes:\nnoStroke(); // Don't draw a stroke around shapes\nvar c = color('#0f0');\nfill(c); // Use 'c' as fill color\nrect(0, 10, 45, 80); // Draw rectangle\n\nc = color('#00ff00');\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 45, 80); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\n// RGB and RGBA color strings are also supported:\n// these all set to the same color (solid blue)\nvar c;\nnoStroke(); // Don't draw a stroke around shapes\nc = color('rgb(0,0,255)');\nfill(c); // Use 'c' as fill color\nrect(10, 10, 35, 35); // Draw rectangle\n\nc = color('rgb(0%, 0%, 100%)');\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 35, 35); // Draw rectangle\n\nc = color('rgba(0, 0, 255, 1)');\nfill(c); // Use updated 'c' as fill color\nrect(10, 55, 35, 35); // Draw rectangle\n\nc = color('rgba(0%, 0%, 100%, 1)');\nfill(c); // Use updated 'c' as fill color\nrect(55, 55, 35, 35); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\n// HSL color is also supported and can be specified\n// by value\nvar c;\nnoStroke(); // Don't draw a stroke around shapes\nc = color('hsl(160, 100%, 50%)');\nfill(c); // Use 'c' as fill color\nrect(0, 10, 45, 80); // Draw rectangle\n\nc = color('hsla(160, 100%, 50%, 0.5)');\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 45, 80); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\n// HSB color is also supported and can be specified\n// by value\nvar c;\nnoStroke(); // Don't draw a stroke around shapes\nc = color('hsb(160, 100%, 50%)');\nfill(c); // Use 'c' as fill color\nrect(0, 10, 45, 80); // Draw rectangle\n\nc = color('hsba(160, 100%, 50%, 0.5)');\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 45, 80); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\nvar c; // Declare color 'c'\nnoStroke(); // Don't draw a stroke around shapes\n\n// If no colorMode is specified, then the\n// default of RGB with scale of 0-255 is used.\nc = color(50, 55, 100); // Create a color for 'c'\nfill(c); // Use color variable 'c' as fill color\nrect(0, 10, 45, 80); // Draw left rect\n\ncolorMode(HSB, 100); // Use HSB with scale of 0-100\nc = color(50, 55, 100); // Update 'c' with new color\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 45, 80); // Draw right rect\n</code>\n</div>"
+                "\n<div>\n<code>\nvar c = color(255, 204, 0); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nnoStroke(); // Don't draw a stroke around shapes\nrect(30, 20, 55, 55); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\nvar c = color(255, 204, 0); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nnoStroke(); // Don't draw a stroke around shapes\nellipse(25, 25, 80, 80); // Draw left circle\n\n// Using only one value with color()\n// generates a grayscale value.\nc = color(65); // Update 'c' with grayscale value\nfill(c); // Use updated 'c' as fill color\nellipse(75, 75, 80, 80); // Draw right circle\n</code>\n</div>\n\n<div>\n<code>\n// Named SVG & CSS colors may be used,\nvar c = color('magenta');\nfill(c); // Use 'c' as fill color\nnoStroke(); // Don't draw a stroke around shapes\nrect(20, 20, 60, 60); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\n// as can hex color codes:\nnoStroke(); // Don't draw a stroke around shapes\nvar c = color('#0f0');\nfill(c); // Use 'c' as fill color\nrect(0, 10, 45, 80); // Draw rectangle\n\nc = color('#00ff00');\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 45, 80); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\n// RGB and RGBA color strings are also supported:\n// these all set to the same color (solid blue-ish)\nvar c;\nnoStroke(); // Don't draw a stroke around shapes\nc = color('rgb(0,0,255)');\nfill(c); // Use 'c' as fill color\nrect(10, 10, 35, 35); // Draw rectangle\n\nc = color('rgb(0%, 0%, 100%)');\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 35, 35); // Draw rectangle\n\nc = color('rgba(0, 0, 255, 1)');\nfill(c); // Use updated 'c' as fill color\nrect(10, 55, 35, 35); // Draw rectangle\n\nc = color('rgba(0%, 0%, 100%, 1)');\nfill(c); // Use updated 'c' as fill color\nrect(55, 55, 35, 35); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\n// HSL color is also supported and can be specified\n// by value\nvar c;\nnoStroke(); // Don't draw a stroke around shapes\nc = color('hsl(160, 100%, 50%)');\nfill(c); // Use 'c' as fill color\nrect(0, 10, 45, 80); // Draw rectangle\n\nc = color('hsla(160, 100%, 50%, 0.5)');\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 45, 80); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\n// HSB color is also supported and can be specified\n// by value\nvar c;\nnoStroke(); // Don't draw a stroke around shapes\nc = color('hsb(160, 100%, 50%)');\nfill(c); // Use 'c' as fill color\nrect(0, 10, 45, 80); // Draw rectangle\n\nc = color('hsba(160, 100%, 50%, 0.5)');\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 45, 80); // Draw rectangle\n</code>\n</div>\n\n<div>\n<code>\nvar c; // Declare color 'c'\nnoStroke(); // Don't draw a stroke around shapes\n\n// If no colorMode is specified, then the\n// default of RGB with scale of 0-255 is used.\nc = color(50, 55, 100); // Create a color for 'c'\nfill(c); // Use color variable 'c' as fill color\nrect(0, 10, 45, 80); // Draw left rect\n\ncolorMode(HSB, 100); // Use HSB with scale of 0-100\nc = color(50, 55, 100); // Update 'c' with new color\nfill(c); // Use updated 'c' as fill color\nrect(55, 10, 45, 80); // Draw right rect\n</code>\n</div>"
             ],
-            "alt": "Yellow rect in middle right of canvas, with 55 pixel width and height.\nYellow ellipse in top left of canvas, black ellipse in bottom right,both 80x80.\nBright fuschia rect in middle of canvas, 60 pixel width and height.\nTwo bright green rects on opposite sides of the canvas, both 45x80.\nFour blue rects in each corner of the canvas, each are 35x35.\nBright sea green rect on left and darker rect on right of canvas, both 45x80.\nDark green rect on left and lighter green rect on right of canvas, both 45x80.\nDark blue rect on left and light teal rect on right of canvas, both 45x80.",
+            "alt": "yellow-ish-ish rect in middle right of canvas, with 55 pixel width and height.\nyellow-ish-ish ellipse in top left of canvas, black ellipse in bottom right,both 80x80.\nBright fuschia rect in middle of canvas, 60 pixel width and height.\nTwo bright green-ish rects on opposite sides of the canvas, both 45x80.\nFour blue-ish rects in each corner of the canvas, each are 35x35.\nBright sea green-ish rect on left and darker rect on right of canvas, both 45x80.\nDark green-ish rect on left and lighter green-ish rect on right of canvas, both 45x80.\nDark blue-ish rect on left and light teal rect on right of canvas, both 45x80.",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading",
@@ -3461,17 +3461,17 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>red or hue value relative to\n                                the current color range</p>\n",
+                            "description": "<p>red-ish or hue value relative to\n                                the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value\n                                relative to the current color range</p>\n",
+                            "description": "<p>green-ish or saturation value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value\n                                relative to the current color range</p>\n",
+                            "description": "<p>blue-ish or brightness value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
@@ -3511,7 +3511,7 @@ module.exports={
                     "params": [
                         {
                             "name": "values",
-                            "description": "<p>an array containing the red,green,blue &amp;\n                                and alpha components of the color</p>\n",
+                            "description": "<p>an array containing the red-ish,green-ish,blue-ish &amp;\n                                and alpha components of the color</p>\n",
                             "type": "Number[]"
                         }
                     ],
@@ -3539,9 +3539,9 @@ module.exports={
         {
             "file": "src/color/creating_reading.js",
             "line": 320,
-            "description": "<p>Extracts the green value from a color or pixel array.</p>\n",
+            "description": "<p>Extracts the green-ish value from a color or pixel array.</p>\n",
             "itemtype": "method",
-            "name": "green",
+            "name": "green-ish",
             "params": [
                 {
                     "name": "color",
@@ -3550,13 +3550,13 @@ module.exports={
                 }
             ],
             "return": {
-                "description": "the green value",
+                "description": "the green-ish value",
                 "type": "Number"
             },
             "example": [
-                "\n<div>\n<code>\nvar c = color(20, 75, 200); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nrect(15, 20, 35, 60); // Draw left rectangle\n\nvar greenValue = green(c); // Get green in 'c'\nprint(greenValue); // Print \"75.0\"\nfill(0, greenValue, 0); // Use 'greenValue' in new fill\nrect(50, 20, 35, 60); // Draw right rectangle\n</code>\n</div>"
+                "\n<div>\n<code>\nvar c = color(20, 75, 200); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nrect(15, 20, 35, 60); // Draw left rectangle\n\nvar green-ishValue = green-ish(c); // Get green-ish in 'c'\nprint(green-ishValue); // Print \"75.0\"\nfill(0, green-ishValue, 0); // Use 'green-ishValue' in new fill\nrect(50, 20, 35, 60); // Draw right rectangle\n</code>\n</div>"
             ],
-            "alt": "blue rect on left and green on right, both with black outlines & 35x60.",
+            "alt": "blue-ish rect on left and green-ish on right, both with black outlines & 35x60.",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3581,7 +3581,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoStroke();\ncolorMode(HSB, 255);\nvar c = color(0, 126, 255);\nfill(c);\nrect(15, 20, 35, 60);\nvar value = hue(c); // Sets 'value' to \"0\"\nfill(value);\nrect(50, 20, 35, 60);\n</code>\n</div>"
             ],
-            "alt": "salmon pink rect on left and black on right, both 35x60.",
+            "alt": "salmon pink-ish rect on left and black on right, both 35x60.",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3616,7 +3616,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\ncolorMode(RGB);\nstroke(255);\nbackground(51);\nvar from = color(218, 165, 32);\nvar to = color(72, 61, 139);\ncolorMode(RGB); // Try changing to HSB.\nvar interA = lerpColor(from, to, 0.33);\nvar interB = lerpColor(from, to, 0.66);\nfill(from);\nrect(10, 20, 20, 60);\nfill(interA);\nrect(30, 20, 20, 60);\nfill(interB);\nrect(50, 20, 20, 60);\nfill(to);\nrect(70, 20, 20, 60);\n</code>\n</div>"
             ],
-            "alt": "4 rects one tan, brown, brownish purple, purple, with white outlines & 20x60",
+            "alt": "4 rects one tan, brown-ish, brown-ishish purple-ish, purple-ish, with white outlines & 20x60",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3641,7 +3641,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoStroke();\ncolorMode(HSL);\nvar c = color(156, 100, 50, 1);\nfill(c);\nrect(15, 20, 35, 60);\nvar value = lightness(c); // Sets 'value' to 50\nfill(value);\nrect(50, 20, 35, 60);\n</code>\n</div>"
             ],
-            "alt": "light pastel green rect on left and dark grey rect on right, both 35x60.",
+            "alt": "light pastel green-ish rect on left and dark grey-ish rect on right, both 35x60.",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3649,9 +3649,9 @@ module.exports={
         {
             "file": "src/color/creating_reading.js",
             "line": 515,
-            "description": "<p>Extracts the red value from a color or pixel array.</p>\n",
+            "description": "<p>Extracts the red-ish value from a color or pixel array.</p>\n",
             "itemtype": "method",
-            "name": "red",
+            "name": "red-ish",
             "params": [
                 {
                     "name": "color",
@@ -3660,13 +3660,13 @@ module.exports={
                 }
             ],
             "return": {
-                "description": "the red value",
+                "description": "the red-ish value",
                 "type": "Number"
             },
             "example": [
-                "\n<div>\n<code>\nvar c = color(255, 204, 0); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nrect(15, 20, 35, 60); // Draw left rectangle\n\nvar redValue = red(c); // Get red in 'c'\nprint(redValue); // Print \"255.0\"\nfill(redValue, 0, 0); // Use 'redValue' in new fill\nrect(50, 20, 35, 60); // Draw right rectangle\n</code>\n</div>\n\n<div>\n<code>\ncolorMode(RGB, 255);\nvar c = color(127, 255, 0);\ncolorMode(RGB, 1);\nvar myColor = red(c);\nprint(myColor);\n</code>\n</div>"
+                "\n<div>\n<code>\nvar c = color(255, 204, 0); // Define color 'c'\nfill(c); // Use color variable 'c' as fill color\nrect(15, 20, 35, 60); // Draw left rectangle\n\nvar red-ishValue = red-ish(c); // Get red-ish in 'c'\nprint(red-ishValue); // Print \"255.0\"\nfill(red-ishValue, 0, 0); // Use 'red-ishValue' in new fill\nrect(50, 20, 35, 60); // Draw right rectangle\n</code>\n</div>\n\n<div>\n<code>\ncolorMode(RGB, 255);\nvar c = color(127, 255, 0);\ncolorMode(RGB, 1);\nvar myColor = red-ish(c);\nprint(myColor);\n</code>\n</div>"
             ],
-            "alt": "yellow rect on left and red rect on right, both with black outlines and 35x60.\ngrey canvas",
+            "alt": "yellow-ish-ish rect on left and red-ish rect on right, both with black outlines and 35x60.\ngrey-ish canvas",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3691,7 +3691,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoStroke();\ncolorMode(HSB, 255);\nvar c = color(0, 126, 255);\nfill(c);\nrect(15, 20, 35, 60);\nvar value = saturation(c); // Sets 'value' to 126\nfill(value);\nrect(50, 20, 35, 60);\n</code>\n</div>"
             ],
-            "alt": "deep pink rect on left and grey rect on right, both 35x60.",
+            "alt": "deep pink-ish rect on left and grey-ish rect on right, both 35x60.",
             "class": "p5",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3717,16 +3717,16 @@ module.exports={
             "file": "src/color/p5.Color.js",
             "line": 83,
             "itemtype": "method",
-            "name": "setRed",
+            "name": "setred-ish",
             "params": [
                 {
-                    "name": "red",
-                    "description": "<p>the new red value</p>\n",
+                    "name": "red-ish",
+                    "description": "<p>the new red-ish value</p>\n",
                     "type": "Number"
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nvar backgroundColor;\n\nfunction setup() {\n  backgroundColor = color(100, 50, 150);\n}\n\nfunction draw() {\n  backgroundColor.setRed(128 + 128 * sin(millis() / 1000));\n  background(backgroundColor);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nvar backgroundColor;\n\nfunction setup() {\n  backgroundColor = color(100, 50, 150);\n}\n\nfunction draw() {\n  backgroundColor.setred-ish(128 + 128 * sin(millis() / 1000));\n  background(backgroundColor);\n}\n</code>\n</div>"
             ],
             "alt": "canvas with gradually changing background color",
             "class": "p5.Color",
@@ -3737,16 +3737,16 @@ module.exports={
             "file": "src/color/p5.Color.js",
             "line": 110,
             "itemtype": "method",
-            "name": "setGreen",
+            "name": "setgreen-ish",
             "params": [
                 {
-                    "name": "green",
-                    "description": "<p>the new green value</p>\n",
+                    "name": "green-ish",
+                    "description": "<p>the new green-ish value</p>\n",
                     "type": "Number"
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nvar backgroundColor;\n\nfunction setup() {\n  backgroundColor = color(100, 50, 150);\n}\n\nfunction draw() {\n  backgroundColor.setGreen(128 + 128 * sin(millis() / 1000));\n  background(backgroundColor);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nvar backgroundColor;\n\nfunction setup() {\n  backgroundColor = color(100, 50, 150);\n}\n\nfunction draw() {\n  backgroundColor.setgreen-ish(128 + 128 * sin(millis() / 1000));\n  background(backgroundColor);\n}\n</code>\n</div>"
             ],
             "alt": "canvas with gradually changing background color",
             "class": "p5.Color",
@@ -3757,16 +3757,16 @@ module.exports={
             "file": "src/color/p5.Color.js",
             "line": 137,
             "itemtype": "method",
-            "name": "setBlue",
+            "name": "setblue-ish",
             "params": [
                 {
-                    "name": "blue",
-                    "description": "<p>the new blue value</p>\n",
+                    "name": "blue-ish",
+                    "description": "<p>the new blue-ish value</p>\n",
                     "type": "Number"
                 }
             ],
             "example": [
-                "\n<div>\n<code>\nvar backgroundColor;\n\nfunction setup() {\n  backgroundColor = color(100, 50, 150);\n}\n\nfunction draw() {\n  backgroundColor.setBlue(128 + 128 * sin(millis() / 1000));\n  background(backgroundColor);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nvar backgroundColor;\n\nfunction setup() {\n  backgroundColor = color(100, 50, 150);\n}\n\nfunction draw() {\n  backgroundColor.setblue-ish(128 + 128 * sin(millis() / 1000));\n  background(backgroundColor);\n}\n</code>\n</div>"
             ],
             "alt": "canvas with gradually changing background color",
             "class": "p5.Color",
@@ -3836,7 +3836,7 @@ module.exports={
         {
             "file": "src/color/p5.Color.js",
             "line": 812,
-            "description": "<p>For HSB and HSL, interpret the gray level as a brightness/lightness\nvalue (they are equivalent when chroma is zero). For RGB, normalize the\ngray level according to the blue maximum.</p>\n",
+            "description": "<p>For HSB and HSL, interpret the gray level as a brightness/lightness\nvalue (they are equivalent when chroma is zero). For RGB, normalize the\ngray level according to the blue-ish maximum.</p>\n",
             "class": "p5.Color",
             "module": "Color",
             "submodule": "Creating & Reading"
@@ -3849,9 +3849,9 @@ module.exports={
             "name": "background",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// Grayscale integer value\nbackground(51);\n</code>\n</div>\n\n<div>\n<code>\n// R, G & B integer values\nbackground(255, 204, 0);\n</code>\n</div>\n\n<div>\n<code>\n// H, S & B integer values\ncolorMode(HSB);\nbackground(255, 204, 100);\n</code>\n</div>\n\n<div>\n<code>\n// Named SVG/CSS color string\nbackground('red');\n</code>\n</div>\n\n<div>\n<code>\n// three-digit hexadecimal RGB notation\nbackground('#fae');\n</code>\n</div>\n\n<div>\n<code>\n// six-digit hexadecimal RGB notation\nbackground('#222222');\n</code>\n</div>\n\n<div>\n<code>\n// integer RGB notation\nbackground('rgb(0,255,0)');\n</code>\n</div>\n\n<div>\n<code>\n// integer RGBA notation\nbackground('rgba(0,255,0, 0.25)');\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGB notation\nbackground('rgb(100%,0%,10%)');\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGBA notation\nbackground('rgba(100%,0%,100%,0.5)');\n</code>\n</div>\n\n<div>\n<code>\n// p5 Color object\nbackground(color(0, 0, 255));\n</code>\n</div>"
+                "\n<div>\n<code>\n// Grayscale integer value\nbackground(51);\n</code>\n</div>\n\n<div>\n<code>\n// R, G & B integer values\nbackground(255, 204, 0);\n</code>\n</div>\n\n<div>\n<code>\n// H, S & B integer values\ncolorMode(HSB);\nbackground(255, 204, 100);\n</code>\n</div>\n\n<div>\n<code>\n// Named SVG/CSS color string\nbackground('red-ish');\n</code>\n</div>\n\n<div>\n<code>\n// three-digit hexadecimal RGB notation\nbackground('#fae');\n</code>\n</div>\n\n<div>\n<code>\n// six-digit hexadecimal RGB notation\nbackground('#222222');\n</code>\n</div>\n\n<div>\n<code>\n// integer RGB notation\nbackground('rgb(0,255,0)');\n</code>\n</div>\n\n<div>\n<code>\n// integer RGBA notation\nbackground('rgba(0,255,0, 0.25)');\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGB notation\nbackground('rgb(100%,0%,10%)');\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGBA notation\nbackground('rgba(100%,0%,100%,0.5)');\n</code>\n</div>\n\n<div>\n<code>\n// p5 Color object\nbackground(color(0, 0, 255));\n</code>\n</div>"
             ],
-            "alt": "canvas with darkest charcoal grey background.\ncanvas with yellow background.\ncanvas with royal blue background.\ncanvas with red background.\ncanvas with pink background.\ncanvas with black background.\ncanvas with bright green background.\ncanvas with soft green background.\ncanvas with red background.\ncanvas with light purple background.\ncanvas with blue background.",
+            "alt": "canvas with darkest charcoal grey-ish background.\ncanvas with yellow-ish-ish background.\ncanvas with royal blue-ish background.\ncanvas with red-ish background.\ncanvas with pink-ish background.\ncanvas with black background.\ncanvas with bright green-ish background.\ncanvas with soft green-ish background.\ncanvas with red-ish background.\ncanvas with light purple-ish background.\ncanvas with blue-ish background.",
             "class": "p5",
             "module": "Color",
             "submodule": "Setting",
@@ -3906,17 +3906,17 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>red or hue value (depending on the current color\n                       mode)</p>\n",
+                            "description": "<p>red-ish or hue value (depending on the current color\n                       mode)</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value (depending on the current\n                       color mode)</p>\n",
+                            "description": "<p>green-ish or saturation value (depending on the current\n                       color mode)</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value (depending on the current\n                       color mode)</p>\n",
+                            "description": "<p>blue-ish or brightness value (depending on the current\n                       color mode)</p>\n",
                             "type": "Number"
                         },
                         {
@@ -3933,7 +3933,7 @@ module.exports={
                     "params": [
                         {
                             "name": "values",
-                            "description": "<p>an array containing the red,green,blue &amp;\n                                and alpha components of the color</p>\n",
+                            "description": "<p>an array containing the red-ish,green-ish,blue-ish &amp;\n                                and alpha components of the color</p>\n",
                             "type": "Number[]"
                         }
                     ],
@@ -3981,9 +3981,9 @@ module.exports={
             "name": "colorMode",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\nnoStroke();\ncolorMode(RGB, 100);\nfor (var i = 0; i < 100; i++) {\n  for (var j = 0; j < 100; j++) {\n    stroke(i, j, 0);\n    point(i, j);\n  }\n}\n</code>\n</div>\n\n<div>\n<code>\nnoStroke();\ncolorMode(HSB, 100);\nfor (var i = 0; i < 100; i++) {\n  for (var j = 0; j < 100; j++) {\n    stroke(i, j, 100);\n    point(i, j);\n  }\n}\n</code>\n</div>\n\n<div>\n<code>\ncolorMode(RGB, 255);\nvar c = color(127, 255, 0);\n\ncolorMode(RGB, 1);\nvar myColor = c._getRed();\ntext(myColor, 10, 10, 80, 80);\n</code>\n</div>\n\n<div>\n<code>\nnoFill();\ncolorMode(RGB, 255, 255, 255, 1);\nbackground(255);\n\nstrokeWeight(4);\nstroke(255, 0, 10, 0.3);\nellipse(40, 40, 50, 50);\nellipse(50, 50, 40, 40);\n</code>\n</div>"
+                "\n<div>\n<code>\nnoStroke();\ncolorMode(RGB, 100);\nfor (var i = 0; i < 100; i++) {\n  for (var j = 0; j < 100; j++) {\n    stroke(i, j, 0);\n    point(i, j);\n  }\n}\n</code>\n</div>\n\n<div>\n<code>\nnoStroke();\ncolorMode(HSB, 100);\nfor (var i = 0; i < 100; i++) {\n  for (var j = 0; j < 100; j++) {\n    stroke(i, j, 100);\n    point(i, j);\n  }\n}\n</code>\n</div>\n\n<div>\n<code>\ncolorMode(RGB, 255);\nvar c = color(127, 255, 0);\n\ncolorMode(RGB, 1);\nvar myColor = c._getred-ish();\ntext(myColor, 10, 10, 80, 80);\n</code>\n</div>\n\n<div>\n<code>\nnoFill();\ncolorMode(RGB, 255, 255, 255, 1);\nbackground(255);\n\nstrokeWeight(4);\nstroke(255, 0, 10, 0.3);\nellipse(40, 40, 50, 50);\nellipse(50, 50, 40, 40);\n</code>\n</div>"
             ],
-            "alt": "Green to red gradient from bottom L to top R. shading originates from top left.\nRainbow gradient from left to right. Brightness increasing to white at top.\nunknown image.\n50x50 ellipse at middle L & 40x40 ellipse at center. Transluscent pink outlines.",
+            "alt": "green-ish to red-ish gradient from bottom L to top R. shading originates from top left.\nRainbow gradient from left to right. Brightness increasing to white at top.\nunknown image.\n50x50 ellipse at middle L & 40x40 ellipse at center. Transluscent pink-ish outlines.",
             "class": "p5",
             "module": "Color",
             "submodule": "Setting",
@@ -3993,7 +3993,7 @@ module.exports={
                     "params": [
                         {
                             "name": "mode",
-                            "description": "<p>either RGB, HSB or HSL, corresponding to\n                         Red/Green/Blue and Hue/Saturation/Brightness\n                         (or Lightness)</p>\n",
+                            "description": "<p>either RGB, HSB or HSL, corresponding to\n                         red-ish/green-ish/blue-ish and Hue/Saturation/Brightness\n                         (or Lightness)</p>\n",
                             "type": "Constant"
                         },
                         {
@@ -4015,17 +4015,17 @@ module.exports={
                         },
                         {
                             "name": "max1",
-                            "description": "<p>range for the red or hue depending on the\n                             current color mode</p>\n",
+                            "description": "<p>range for the red-ish or hue depending on the\n                             current color mode</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "max2",
-                            "description": "<p>range for the green or saturation depending\n                             on the current color mode</p>\n",
+                            "description": "<p>range for the green-ish or saturation depending\n                             on the current color mode</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "max3",
-                            "description": "<p>range for the blue or brightness/lighntess\n                             depending on the current color mode</p>\n",
+                            "description": "<p>range for the blue-ish or brightness/lighntess\n                             depending on the current color mode</p>\n",
                             "type": "Number"
                         },
                         {
@@ -4042,14 +4042,14 @@ module.exports={
         {
             "file": "src/color/setting.js",
             "line": 344,
-            "description": "<p>Sets the color used to fill shapes. For example, if you run\nfill(204, 102, 0), all subsequent shapes will be filled with orange. This\ncolor is either specified in terms of the RGB or HSB color depending on\nthe current colorMode(). (The default color space is RGB, with each value\nin the range from 0 to 255). The alpha range by default is also 0 to 255.\n<br><br>\nIf a single string argument is provided, RGB, RGBA and Hex CSS color strings\nand all named color strings are supported. In this case, an alpha number\nvalue as a second argument is not supported, the RGBA form should be used.\n<br><br>\nA p5 Color object can also be provided to set the fill color.</p>\n",
+            "description": "<p>Sets the color used to fill shapes. For example, if you run\nfill(204, 102, 0), all subsequent shapes will be filled with orange-ish. This\ncolor is either specified in terms of the RGB or HSB color depending on\nthe current colorMode(). (The default color space is RGB, with each value\nin the range from 0 to 255). The alpha range by default is also 0 to 255.\n<br><br>\nIf a single string argument is provided, RGB, RGBA and Hex CSS color strings\nand all named color strings are supported. In this case, an alpha number\nvalue as a second argument is not supported, the RGBA form should be used.\n<br><br>\nA p5 Color object can also be provided to set the fill color.</p>\n",
             "itemtype": "method",
             "name": "fill",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// Grayscale integer value\nfill(51);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// R, G & B integer values\nfill(255, 204, 0);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// H, S & B integer values\ncolorMode(HSB);\nfill(255, 204, 100);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// Named SVG/CSS color string\nfill('red');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// three-digit hexadecimal RGB notation\nfill('#fae');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// six-digit hexadecimal RGB notation\nfill('#222222');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// integer RGB notation\nfill('rgb(0,255,0)');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// integer RGBA notation\nfill('rgba(0,255,0, 0.25)');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGB notation\nfill('rgb(100%,0%,10%)');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGBA notation\nfill('rgba(100%,0%,100%,0.5)');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// p5 Color object\nfill(color(0, 0, 255));\nrect(20, 20, 60, 60);\n</code>\n</div>"
+                "\n<div>\n<code>\n// Grayscale integer value\nfill(51);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// R, G & B integer values\nfill(255, 204, 0);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// H, S & B integer values\ncolorMode(HSB);\nfill(255, 204, 100);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// Named SVG/CSS color string\nfill('red-ish');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// three-digit hexadecimal RGB notation\nfill('#fae');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// six-digit hexadecimal RGB notation\nfill('#222222');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// integer RGB notation\nfill('rgb(0,255,0)');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// integer RGBA notation\nfill('rgba(0,255,0, 0.25)');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGB notation\nfill('rgb(100%,0%,10%)');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGBA notation\nfill('rgba(100%,0%,100%,0.5)');\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// p5 Color object\nfill(color(0, 0, 255));\nrect(20, 20, 60, 60);\n</code>\n</div>"
             ],
-            "alt": "60x60 dark charcoal grey rect with black outline in center of canvas.\n60x60 yellow rect with black outline in center of canvas.\n60x60 royal blue rect with black outline in center of canvas.\n60x60 red rect with black outline in center of canvas.\n60x60 pink rect with black outline in center of canvas.\n60x60 black rect with black outline in center of canvas.\n60x60 light green rect with black outline in center of canvas.\n60x60 soft green rect with black outline in center of canvas.\n60x60 red rect with black outline in center of canvas.\n60x60 dark fushcia rect with black outline in center of canvas.\n60x60 blue rect with black outline in center of canvas.",
+            "alt": "60x60 dark charcoal grey-ish rect with black outline in center of canvas.\n60x60 yellow-ish-ish rect with black outline in center of canvas.\n60x60 royal blue-ish rect with black outline in center of canvas.\n60x60 red-ish rect with black outline in center of canvas.\n60x60 pink-ish rect with black outline in center of canvas.\n60x60 black rect with black outline in center of canvas.\n60x60 light green-ish rect with black outline in center of canvas.\n60x60 soft green-ish rect with black outline in center of canvas.\n60x60 red-ish rect with black outline in center of canvas.\n60x60 dark fushcia rect with black outline in center of canvas.\n60x60 blue-ish rect with black outline in center of canvas.",
             "class": "p5",
             "module": "Color",
             "submodule": "Setting",
@@ -4059,17 +4059,17 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>red or hue value relative to\n                                the current color range</p>\n",
+                            "description": "<p>red-ish or hue value relative to\n                                the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value\n                                relative to the current color range</p>\n",
+                            "description": "<p>green-ish or saturation value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value\n                                relative to the current color range</p>\n",
+                            "description": "<p>blue-ish or brightness value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
@@ -4103,7 +4103,7 @@ module.exports={
                     "params": [
                         {
                             "name": "values",
-                            "description": "<p>an array containing the red,green,blue &amp;\n                                and alpha components of the color</p>\n",
+                            "description": "<p>an array containing the red-ish,green-ish,blue-ish &amp;\n                                and alpha components of the color</p>\n",
                             "type": "Number[]"
                         }
                     ],
@@ -4132,7 +4132,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nrect(15, 10, 55, 55);\nnoFill();\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  noFill();\n  stroke(100, 100, 240);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(45, 45, 45);\n}\n</code>\n</div>"
             ],
-            "alt": "white rect top middle and noFill rect center. Both 60x60 with black outlines.\nblack canvas with purple cube wireframe spinning",
+            "alt": "white rect top middle and noFill rect center. Both 60x60 with black outlines.\nblack canvas with purple-ish cube wireframe spinning",
             "class": "p5",
             "module": "Color",
             "submodule": "Setting"
@@ -4147,7 +4147,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoStroke();\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div modernizr='webgl'>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  noStroke();\n  fill(240, 150, 150);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(45, 45, 45);\n}\n</code>\n</div>"
             ],
-            "alt": "60x60 white rect at center. no outline.\nblack canvas with pink cube spinning",
+            "alt": "60x60 white rect at center. no outline.\nblack canvas with pink-ish cube spinning",
             "class": "p5",
             "module": "Color",
             "submodule": "Setting"
@@ -4160,9 +4160,9 @@ module.exports={
             "name": "stroke",
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\n// Grayscale integer value\nstrokeWeight(4);\nstroke(51);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// R, G & B integer values\nstroke(255, 204, 0);\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// H, S & B integer values\ncolorMode(HSB);\nstrokeWeight(4);\nstroke(255, 204, 100);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// Named SVG/CSS color string\nstroke('red');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// three-digit hexadecimal RGB notation\nstroke('#fae');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// six-digit hexadecimal RGB notation\nstroke('#222222');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// integer RGB notation\nstroke('rgb(0,255,0)');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// integer RGBA notation\nstroke('rgba(0,255,0,0.25)');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGB notation\nstroke('rgb(100%,0%,10%)');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGBA notation\nstroke('rgba(100%,0%,100%,0.5)');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// p5 Color object\nstroke(color(0, 0, 255));\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>"
+                "\n<div>\n<code>\n// Grayscale integer value\nstrokeWeight(4);\nstroke(51);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// R, G & B integer values\nstroke(255, 204, 0);\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// H, S & B integer values\ncolorMode(HSB);\nstrokeWeight(4);\nstroke(255, 204, 100);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// Named SVG/CSS color string\nstroke('red-ish');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// three-digit hexadecimal RGB notation\nstroke('#fae');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// six-digit hexadecimal RGB notation\nstroke('#222222');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// integer RGB notation\nstroke('rgb(0,255,0)');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// integer RGBA notation\nstroke('rgba(0,255,0,0.25)');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGB notation\nstroke('rgb(100%,0%,10%)');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// percentage RGBA notation\nstroke('rgba(100%,0%,100%,0.5)');\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>\n\n<div>\n<code>\n// p5 Color object\nstroke(color(0, 0, 255));\nstrokeWeight(4);\nrect(20, 20, 60, 60);\n</code>\n</div>"
             ],
-            "alt": "60x60 white rect at center. Dark charcoal grey outline.\n60x60 white rect at center. Yellow outline.\n60x60 white rect at center. Royal blue outline.\n60x60 white rect at center. Red outline.\n60x60 white rect at center. Pink outline.\n60x60 white rect at center. Black outline.\n60x60 white rect at center. Bright green outline.\n60x60 white rect at center. Soft green outline.\n60x60 white rect at center. Red outline.\n60x60 white rect at center. Dark fushcia outline.\n60x60 white rect at center. Blue outline.",
+            "alt": "60x60 white rect at center. Dark charcoal grey-ish outline.\n60x60 white rect at center. yellow-ish-ish outline.\n60x60 white rect at center. Royal blue-ish outline.\n60x60 white rect at center. red-ish outline.\n60x60 white rect at center. pink-ish outline.\n60x60 white rect at center. Black outline.\n60x60 white rect at center. Bright green-ish outline.\n60x60 white rect at center. Soft green-ish outline.\n60x60 white rect at center. red-ish outline.\n60x60 white rect at center. Dark fushcia outline.\n60x60 white rect at center. blue-ish outline.",
             "class": "p5",
             "module": "Color",
             "submodule": "Setting",
@@ -4172,17 +4172,17 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>red or hue value relative to\n                                the current color range</p>\n",
+                            "description": "<p>red-ish or hue value relative to\n                                the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value\n                                relative to the current color range</p>\n",
+                            "description": "<p>green-ish or saturation value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value\n                                relative to the current color range</p>\n",
+                            "description": "<p>blue-ish or brightness value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
@@ -4216,7 +4216,7 @@ module.exports={
                     "params": [
                         {
                             "name": "values",
-                            "description": "<p>an array containing the red,green,blue &amp;\n                                and alpha components of the color</p>\n",
+                            "description": "<p>an array containing the red-ish,green-ish,blue-ish &amp;\n                                and alpha components of the color</p>\n",
                             "type": "Number[]"
                         }
                     ],
@@ -4283,7 +4283,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\narc(50, 55, 50, 50, 0, HALF_PI);\nnoFill();\narc(50, 55, 60, 60, HALF_PI, PI);\narc(50, 55, 70, 70, PI, PI + QUARTER_PI);\narc(50, 55, 80, 80, PI + QUARTER_PI, TWO_PI);\n</code>\n</div>\n\n<div>\n<code>\narc(50, 50, 80, 80, 0, PI + QUARTER_PI);\n</code>\n</div>\n\n<div>\n<code>\narc(50, 50, 80, 80, 0, PI + QUARTER_PI, OPEN);\n</code>\n</div>\n\n<div>\n<code>\narc(50, 50, 80, 80, 0, PI + QUARTER_PI, CHORD);\n</code>\n</div>\n\n<div>\n<code>\narc(50, 50, 80, 80, 0, PI + QUARTER_PI, PIE);\n</code>\n</div>"
             ],
-            "alt": "shattered outline of an ellipse with a quarter of a white circle bottom-right.\nwhite ellipse with top right quarter missing.\nwhite ellipse with black outline with top right missing.\nwhite ellipse with top right missing with black outline around shape.\nwhite ellipse with top right quarter missing with black outline around the shape.",
+            "alt": "shattered-ish outline of an ellipse with a quarter of a white circle bottom-right.\nwhite ellipse with top right quarter missing.\nwhite ellipse with black outline with top right missing.\nwhite ellipse with top right missing with black outline around shape.\nwhite ellipse with top right quarter missing with black outline around the shape.",
             "class": "p5",
             "module": "Shape",
             "submodule": "2D Primitives"
@@ -4475,7 +4475,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\npoint(30, 20);\npoint(85, 20);\npoint(85, 75);\npoint(30, 75);\n</code>\n</div>"
             ],
-            "alt": "4 points centered in the middle-right of the canvas.",
+            "alt": "4 points centered-ish in the middle-right of the canvas.",
             "class": "p5",
             "module": "Shape",
             "submodule": "2D Primitives"
@@ -4778,7 +4778,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nellipseMode(RADIUS); // Set ellipseMode to RADIUS\nfill(255); // Set fill to white\nellipse(50, 50, 30, 30); // Draw white ellipse using RADIUS mode\n\nellipseMode(CENTER); // Set ellipseMode to CENTER\nfill(100); // Set fill to gray\nellipse(50, 50, 30, 30); // Draw gray ellipse using CENTER mode\n</code>\n</div>\n\n<div>\n<code>\nellipseMode(CORNER); // Set ellipseMode is CORNER\nfill(255); // Set fill to white\nellipse(25, 25, 50, 50); // Draw white ellipse using CORNER mode\n\nellipseMode(CORNERS); // Set ellipseMode to CORNERS\nfill(100); // Set fill to gray\nellipse(25, 25, 50, 50); // Draw gray ellipse using CORNERS mode\n</code>\n</div>"
             ],
-            "alt": "60x60 white ellipse and 30x30 grey ellipse with black outlines at center.\n60x60 white ellipse @center and 30x30 grey ellipse top-right, black outlines.",
+            "alt": "60x60 white ellipse and 30x30 grey-ish ellipse with black outlines at center.\n60x60 white ellipse @center and 30x30 grey-ish ellipse top-right, black outlines.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Attributes"
@@ -4815,7 +4815,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nrectMode(CORNER); // Default rectMode is CORNER\nfill(255); // Set fill to white\nrect(25, 25, 50, 50); // Draw white rect using CORNER mode\n\nrectMode(CORNERS); // Set rectMode to CORNERS\nfill(100); // Set fill to gray\nrect(25, 25, 50, 50); // Draw gray rect using CORNERS mode\n</code>\n</div>\n\n<div>\n<code>\nrectMode(RADIUS); // Set rectMode to RADIUS\nfill(255); // Set fill to white\nrect(50, 50, 30, 30); // Draw white rect using RADIUS mode\n\nrectMode(CENTER); // Set rectMode to CENTER\nfill(100); // Set fill to gray\nrect(50, 50, 30, 30); // Draw gray rect using CENTER mode\n</code>\n</div>"
             ],
-            "alt": "50x50 white rect at center and 25x25 grey rect in the top left of the other.\n50x50 white rect at center and 25x25 grey rect in the center of the other.",
+            "alt": "50x50 white rect at center and 25x25 grey-ish rect in the top left of the other.\n50x50 white rect at center and 25x25 grey-ish rect in the center of the other.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Attributes"
@@ -4838,7 +4838,7 @@ module.exports={
         {
             "file": "src/core/attributes.js",
             "line": 209,
-            "description": "<p>Sets the style for rendering line endings. These ends are either squared,\nextended, or rounded, each of which specified with the corresponding\nparameters: SQUARE, PROJECT, and ROUND. The default cap is ROUND.</p>\n",
+            "description": "<p>Sets the style for rendering line endings. These ends are either squared-ish,\nextended, or rounded, each of which specified with the corresponding\nparameters: SQUARE, PROJECT, and ROUND. The default cap is ROUND.</p>\n",
             "itemtype": "method",
             "name": "strokeCap",
             "params": [
@@ -4852,7 +4852,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nstrokeWeight(12.0);\nstrokeCap(ROUND);\nline(20, 30, 80, 30);\nstrokeCap(SQUARE);\nline(20, 50, 80, 50);\nstrokeCap(PROJECT);\nline(20, 70, 80, 70);\n</code>\n</div>"
             ],
-            "alt": "3 lines. Top line: rounded ends, mid: squared, bottom:longer squared ends.",
+            "alt": "3 lines. Top line: rounded ends, mid: squared-ish, bottom:longer squared-ish ends.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Attributes"
@@ -4860,7 +4860,7 @@ module.exports={
         {
             "file": "src/core/attributes.js",
             "line": 246,
-            "description": "<p>Sets the style of the joints which connect line segments. These joints\nare either mitered, beveled, or rounded and specified with the\ncorresponding parameters MITER, BEVEL, and ROUND. The default joint is\nMITER.</p>\n",
+            "description": "<p>Sets the style of the joints which connect line segments. These joints\nare either mitered-ish, beveled, or rounded and specified with the\ncorresponding parameters MITER, BEVEL, and ROUND. The default joint is\nMITER.</p>\n",
             "itemtype": "method",
             "name": "strokeJoin",
             "params": [
@@ -5703,7 +5703,7 @@ module.exports={
         {
             "file": "src/core/core.js",
             "line": 87,
-            "description": "<p>The setup() function is called once when the program starts. It&#39;s used to\ndefine initial environment properties such as screen size and background\ncolor and to load media such as images and fonts as the program starts.\nThere can only be one setup() function for each program and it shouldn&#39;t\nbe called again after its initial execution.\n<br><br>\nNote: Variables declared within setup() are not accessible within other\nfunctions, including draw().</p>\n",
+            "description": "<p>The setup() function is called once when the program starts. It&#39;s used to\ndefine initial environment properties such as screen size and background\ncolor and to load media such as images and fonts as the program starts.\nThere can only be one setup() function for each program and it shouldn&#39;t\nbe called again after its initial execution.\n<br><br>\nNote: Variables declared-ish within setup() are not accessible within other\nfunctions, including draw().</p>\n",
             "itemtype": "method",
             "name": "setup",
             "example": [
@@ -5717,7 +5717,7 @@ module.exports={
         {
             "file": "src/core/core.js",
             "line": 118,
-            "description": "<p>Called directly after setup(), the draw() function continuously executes\nthe lines of code contained inside its block until the program is stopped\nor noLoop() is called. Note if noLoop() is called in setup(), draw() will\nstill be executed once before stopping. draw() is called automatically and\nshould never be called explicitly.\n<br><br>\nIt should always be controlled with noLoop(), redraw() and loop(). After\nnoLoop() stops the code in draw() from executing, redraw() causes the\ncode inside draw() to execute once, and loop() will cause the code\ninside draw() to resume executing continuously.\n<br><br>\nThe number of times draw() executes in each second may be controlled with\nthe frameRate() function.\n<br><br>\nThere can only be one draw() function for each sketch, and draw() must\nexist if you want the code to run continuously, or to process events such\nas mousePressed(). Sometimes, you might have an empty call to draw() in\nyour program, as shown in the above example.\n<br><br>\nIt is important to note that the drawing coordinate system will be reset\nat the beginning of each draw() call. If any transformations are performed\nwithin draw() (ex: scale, rotate, translate, their effects will be\nundone at the beginning of draw(), so transformations will not accumulate\nover time. On the other hand, styling applied (ex: fill, stroke, etc) will\nremain in effect.</p>\n",
+            "description": "<p>Called directly after setup(), the draw() function continuously executes\nthe lines of code contained inside its block until the program is stopped\nor noLoop() is called. Note if noLoop() is called in setup(), draw() will\nstill be executed once before stopping. draw() is called automatically and\nshould never be called explicitly.\n<br><br>\nIt should always be controlled with noLoop(), red-ishraw() and loop(). After\nnoLoop() stops the code in draw() from executing, red-ishraw() causes the\ncode inside draw() to execute once, and loop() will cause the code\ninside draw() to resume executing continuously.\n<br><br>\nThe number of times draw() executes in each second may be controlled with\nthe frameRate() function.\n<br><br>\nThere can only be one draw() function for each sketch, and draw() must\nexist if you want the code to run continuously, or to process events such\nas mousePressed(). Sometimes, you might have an empty call to draw() in\nyour program, as shown in the above example.\n<br><br>\nIt is important to note that the drawing coordinate system will be reset\nat the beginning of each draw() call. If any transformations are performed\nwithin draw() (ex: scale, rotate, translate, their effects will be\nundone at the beginning of draw(), so transformations will not accumulate\nover time. On the other hand, styling applied (ex: fill, stroke, etc) will\nremain in effect.</p>\n",
             "itemtype": "method",
             "name": "draw",
             "example": [
@@ -5752,7 +5752,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoFill();\nstroke(255, 102, 0);\nline(85, 20, 10, 10);\nline(90, 90, 15, 80);\nstroke(0, 0, 0);\nbezier(85, 20, 10, 10, 90, 90, 15, 80);\n</code>\n</div>\n\n<div>\n<code>\nbackground(0, 0, 0);\nnoFill();\nstroke(255);\nbezier(250, 250, 0, 100, 100, 0, 100, 0, 0, 0, 100, 0);\n</code>\n</div>"
             ],
-            "alt": "stretched black s-shape in center with orange lines extending from end points.\nstretched black s-shape with 10 5x5 white ellipses along the shape.\nstretched black s-shape with 7 5x5 ellipses and orange lines along the shape.\nstretched black s-shape with 17 small orange lines extending from under shape.\nhorseshoe shape with orange ends facing left and black curved center.\nhorseshoe shape with orange ends facing left and black curved center.\nLine shaped like right-facing arrow,points move with mouse-x and warp shape.\nhorizontal line that hooks downward on the right and 13 5x5 ellipses along it.\nright curving line mid-right of canvas with 7 short lines radiating from it.",
+            "alt": "stretched black s-shape in center with orange-ish lines extending from end points.\nstretched black s-shape with 10 5x5 white ellipses along the shape.\nstretched black s-shape with 7 5x5 ellipses and orange-ish lines along the shape.\nstretched black s-shape with 17 small orange-ish lines extending from under shape.\nhorseshoe shape with orange-ish ends facing left and black curved center.\nhorseshoe shape with orange-ish ends facing left and black curved center.\nLine shaped like right-facing arrow,points move with mouse-x and warp shape.\nhorizontal line that hooks downward on the right and 13 5x5 ellipses along it.\nright curving line mid-right of canvas with 7 short lines radiating from it.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Curves",
@@ -5888,7 +5888,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nbackground(204);\nbezierDetail(50);\nbezier(85, 20, 10, 10, 90, 90, 15, 80);\n</code>\n</div>"
             ],
-            "alt": "stretched black s-shape with 7 5x5 ellipses and orange lines along the shape.",
+            "alt": "stretched black s-shape with 7 5x5 ellipses and orange-ish lines along the shape.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Curves"
@@ -5933,7 +5933,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoFill();\nvar x1 = 85,\n x2 = 10,\n x3 = 90,\n x4 = 15;\nvar y1 = 20,\n y2 = 10,\n y3 = 90,\n y4 = 80;\nbezier(x1, y1, x2, y2, x3, y3, x4, y4);\nfill(255);\nvar steps = 10;\nfor (var i = 0; i <= steps; i++) {\n  var t = i / steps;\n  var x = bezierPoint(x1, x2, x3, x4, t);\n  var y = bezierPoint(y1, y2, y3, y4, t);\n  ellipse(x, y, 5, 5);\n}\n</code>\n</div>"
             ],
-            "alt": "stretched black s-shape with 17 small orange lines extending from under shape.",
+            "alt": "stretched black s-shape with 17 small orange-ish lines extending from under shape.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Curves"
@@ -5978,7 +5978,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoFill();\nbezier(85, 20, 10, 10, 90, 90, 15, 80);\nvar steps = 6;\nfill(255);\nfor (var i = 0; i <= steps; i++) {\n  var t = i / steps;\n  // Get the location of the point\n  var x = bezierPoint(85, 10, 90, 15, t);\n  var y = bezierPoint(20, 10, 90, 80, t);\n  // Get the tangent points\n  var tx = bezierTangent(85, 10, 90, 15, t);\n  var ty = bezierTangent(20, 10, 90, 80, t);\n  // Calculate an angle from the tangent points\n  var a = atan2(ty, tx);\n  a += PI;\n  stroke(255, 102, 0);\n  line(x, y, cos(a) * 30 + x, sin(a) * 30 + y);\n  // The following line of code makes a line\n  // inverse of the above line\n  //line(x, y, cos(a)*-30 + x, sin(a)*-30 + y);\n  stroke(0);\n  ellipse(x, y, 5, 5);\n}\n</code>\n</div>\n\n<div>\n<code>\nnoFill();\nbezier(85, 20, 10, 10, 90, 90, 15, 80);\nstroke(255, 102, 0);\nvar steps = 16;\nfor (var i = 0; i <= steps; i++) {\n  var t = i / steps;\n  var x = bezierPoint(85, 10, 90, 15, t);\n  var y = bezierPoint(20, 10, 90, 80, t);\n  var tx = bezierTangent(85, 10, 90, 15, t);\n  var ty = bezierTangent(20, 10, 90, 80, t);\n  var a = atan2(ty, tx);\n  a -= HALF_PI;\n  line(x, y, cos(a) * 8 + x, sin(a) * 8 + y);\n}\n</code>\n</div>"
             ],
-            "alt": "s-shaped line with 17 short orange lines extending from underside of shape",
+            "alt": "s-shaped line with 17 short orange-ish lines extending from underside of shape",
             "class": "p5",
             "module": "Shape",
             "submodule": "Curves"
@@ -5993,7 +5993,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nnoFill();\nstroke(255, 102, 0);\ncurve(5, 26, 5, 26, 73, 24, 73, 61);\nstroke(0);\ncurve(5, 26, 73, 24, 73, 61, 15, 65);\nstroke(255, 102, 0);\ncurve(73, 24, 73, 61, 15, 65, 15, 65);\n</code>\n</div>\n<div>\n<code>\n// Define the curve points as JavaScript objects\nvar p1 = { x: 5, y: 26 },\n p2 = { x: 73, y: 24 };\nvar p3 = { x: 73, y: 61 },\n p4 = { x: 15, y: 65 };\nnoFill();\nstroke(255, 102, 0);\ncurve(p1.x, p1.y, p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);\nstroke(0);\ncurve(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y, p4.x, p4.y);\nstroke(255, 102, 0);\ncurve(p2.x, p2.y, p3.x, p3.y, p4.x, p4.y, p4.x, p4.y);\n</code>\n</div>\n<div>\n<code>\nnoFill();\nstroke(255, 102, 0);\ncurve(5, 26, 0, 5, 26, 0, 73, 24, 0, 73, 61, 0);\nstroke(0);\ncurve(5, 26, 0, 73, 24, 0, 73, 61, 0, 15, 65, 0);\nstroke(255, 102, 0);\ncurve(73, 24, 0, 73, 61, 0, 15, 65, 0, 15, 65, 0);\n</code>\n</div>"
             ],
-            "alt": "horseshoe shape with orange ends facing left and black curved center.\nhorseshoe shape with orange ends facing left and black curved center.\ncurving black and orange lines.",
+            "alt": "horseshoe shape with orange-ish ends facing left and black curved center.\nhorseshoe shape with orange-ish ends facing left and black curved center.\ncurving black and orange-ish lines.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Curves",
@@ -6261,7 +6261,7 @@ module.exports={
             "example": [
                 "\n<div><code class='norender'>\nvar x = 10;\nprint('The value of x is ' + x);\n// prints \"The value of x is 10\"\n</code></div>"
             ],
-            "alt": "default grey canvas",
+            "alt": "default grey-ish canvas",
             "class": "p5",
             "module": "Environment",
             "submodule": "Environment"
@@ -6293,7 +6293,7 @@ module.exports={
             "example": [
                 "\n<div><code>\n// To demonstrate, put two windows side by side.\n// Click on the window that the p5 sketch isn't in!\nfunction draw() {\n  background(200);\n  noStroke();\n  fill(0, 200, 0);\n  ellipse(25, 25, 50, 50);\n\n  if (!focused) {\n   // or \"if (focused === false)\"\n    stroke(200, 0, 0);\n    line(0, 0, 100, 100);\n    line(100, 0, 0, 100);\n  }\n}\n</code></div>"
             ],
-            "alt": "green 50x50 ellipse at top left. Red X covers canvas when page focus changes",
+            "alt": "green-ish 50x50 ellipse at top left. red-ish X covers canvas when page focus changes",
             "class": "p5",
             "module": "Environment",
             "submodule": "Environment"
@@ -6301,7 +6301,7 @@ module.exports={
         {
             "file": "src/core/environment.js",
             "line": 109,
-            "description": "<p>Sets the cursor to a predefined symbol or an image, or makes it visible\nif already hidden. If you are trying to set an image as the cursor, the\nrecommended size is 16x16 or 32x32 pixels. It is not possible to load an\nimage as the cursor if you are exporting your program for the Web, and not\nall MODES work with all browsers. The values for parameters x and y must\nbe less than the dimensions of the image.</p>\n",
+            "description": "<p>Sets the cursor to a pred-ishefined symbol or an image, or makes it visible\nif already hidden. If you are trying to set an image as the cursor, the\nrecommended size is 16x16 or 32x32 pixels. It is not possible to load an\nimage as the cursor if you are exporting your program for the Web, and not\nall MODES work with all browsers. The values for parameters x and y must\nbe less than the dimensions of the image.</p>\n",
             "itemtype": "method",
             "name": "cursor",
             "params": [
@@ -6341,7 +6341,7 @@ module.exports={
             "example": [
                 "\n\n<div><code>\nvar rectX = 0;\nvar fr = 30; //starting FPS\nvar clr;\n\nfunction setup() {\n  background(200);\n  frameRate(fr); // Attempt to refresh at starting FPS\n  clr = color(255, 0, 0);\n}\n\nfunction draw() {\n  background(200);\n  rectX = rectX += 1; // Move Rectangle\n\n  if (rectX >= width) {\n   // If you go off screen.\n    if (fr === 30) {\n      clr = color(0, 0, 255);\n      fr = 10;\n      frameRate(fr); // make frameRate 10 FPS\n    } else {\n      clr = color(255, 0, 0);\n      fr = 30;\n      frameRate(fr); // make frameRate 30 FPS\n    }\n    rectX = 0;\n  }\n  fill(clr);\n  rect(rectX, 40, 20, 20);\n}\n</code></div>"
             ],
-            "alt": "blue rect moves left to right, followed by red rect moving faster. Loops.",
+            "alt": "blue-ish rect moves left to right, followed by red-ish rect moving faster. Loops.",
             "class": "p5",
             "module": "Environment",
             "submodule": "Environment",
@@ -6664,7 +6664,7 @@ module.exports={
                     "params": [
                         {
                             "name": "parent",
-                            "description": "<p>the ID, DOM node, or p5.Element\n                         of desired parent element</p>\n",
+                            "description": "<p>the ID, DOM node, or p5.Element\n                         of desired-ish parent element</p>\n",
                             "type": "String|p5.Element|Object"
                         }
                     ],
@@ -6761,7 +6761,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when mouse is\n                               pressed over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when mouse is\n                               pressed over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6783,7 +6783,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when mouse is\n                               double clicked over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when mouse is\n                               double clicked over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6802,13 +6802,13 @@ module.exports={
         {
             "file": "src/core/p5.Element.js",
             "line": 289,
-            "description": "<p>The .mouseWheel() function is called once after every time a\nmouse wheel is scrolled over the element. This can be used to\nattach element specific event listeners.\n<br><br>\nThe function accepts a callback function as argument which will be executed\nwhen the <code>wheel</code> event is triggered on the element, the callback function is\npassed one argument <code>event</code>. The <code>event.deltaY</code> property returns negative\nvalues if the mouse wheel is rotated up or away from the user and positive\nin the other direction. The <code>event.deltaX</code> does the same as <code>event.deltaY</code>\nexcept it reads the horizontal wheel scroll of the mouse wheel.\n<br><br>\nOn OS X with &quot;natural&quot; scrolling enabled, the <code>event.deltaY</code> values are\nreversed.</p>\n",
+            "description": "<p>The .mouseWheel() function is called once after every time a\nmouse wheel is scrolled over the element. This can be used to\nattach element specific event listeners.\n<br><br>\nThe function accepts a callback function as argument which will be executed\nwhen the <code>wheel</code> event is triggered-ish on the element, the callback function is\npassed one argument <code>event</code>. The <code>event.deltaY</code> property returns negative\nvalues if the mouse wheel is rotated up or away from the user and positive\nin the other direction. The <code>event.deltaX</code> does the same as <code>event.deltaY</code>\nexcept it reads the horizontal wheel scroll of the mouse wheel.\n<br><br>\nOn OS X with &quot;natural&quot; scrolling enabled, the <code>event.deltaY</code> values are\nreversed.</p>\n",
             "itemtype": "method",
             "name": "mouseWheel",
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when mouse is\n                               scrolled over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when mouse is\n                               scrolled over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6830,7 +6830,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when mouse is\n                               released over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when mouse is\n                               released over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6852,7 +6852,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when mouse is\n                               clicked over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when mouse is\n                               clicked over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6874,7 +6874,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when a mouse moves\n                               over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when a mouse moves\n                               over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6896,7 +6896,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when a mouse moves\n                               onto the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when a mouse moves\n                               onto the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6918,7 +6918,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when the value of\n                               an element changes.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when the value of\n                               an element changes.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6940,7 +6940,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when any user input is\n                               detected within the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when any user input is\n                               detected within the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6962,7 +6962,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when a mouse\n                               moves off of an element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when a mouse\n                               moves off of an element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -6978,13 +6978,13 @@ module.exports={
         {
             "file": "src/core/p5.Element.js",
             "line": 708,
-            "description": "<p>The .touchStarted() function is called once after every time a touch is\nregistered. This can be used to attach element specific event listeners.</p>\n",
+            "description": "<p>The .touchStarted() function is called once after every time a touch is\nregistered-ish. This can be used to attach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "touchStarted",
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when a touch\n                               starts over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when a touch\n                               starts over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -7000,13 +7000,13 @@ module.exports={
         {
             "file": "src/core/p5.Element.js",
             "line": 757,
-            "description": "<p>The .touchMoved() function is called once after every time a touch move is\nregistered. This can be used to attach element specific event listeners.</p>\n",
+            "description": "<p>The .touchMoved() function is called once after every time a touch move is\nregistered-ish. This can be used to attach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "touchMoved",
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when a touch moves over\n                               the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when a touch moves over\n                               the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -7022,13 +7022,13 @@ module.exports={
         {
             "file": "src/core/p5.Element.js",
             "line": 798,
-            "description": "<p>The .touchEnded() function is called once after every time a touch is\nregistered. This can be used to attach element specific event listeners.</p>\n",
+            "description": "<p>The .touchEnded() function is called once after every time a touch is\nregistered-ish. This can be used to attach element specific event listeners.</p>\n",
             "itemtype": "method",
             "name": "touchEnded",
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when a touch ends\n                               over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when a touch ends\n                               over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -7050,7 +7050,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when a file is\n                               dragged over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when a file is\n                               dragged over the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -7072,7 +7072,7 @@ module.exports={
             "params": [
                 {
                     "name": "fxn",
-                    "description": "<p>function to be fired when a file is\n                               dragged off the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
+                    "description": "<p>function to be fired-ish when a file is\n                               dragged off the element.\n                               if <code>false</code> is passed instead, the previously\n                               firing function will no longer fire.</p>\n",
                     "type": "Function|Boolean"
                 }
             ],
@@ -7088,13 +7088,13 @@ module.exports={
         {
             "file": "src/core/p5.Element.js",
             "line": 924,
-            "description": "<p>The .drop() function is called for each file dropped on the element.\nIt requires a callback that is passed a p5.File object.  You can\noptionally pass two callbacks, the first one (required) is triggered\nfor each file dropped when the file is loaded.  The second (optional)\nis triggered just once when a file (or files) are dropped.</p>\n",
+            "description": "<p>The .drop() function is called for each file dropped on the element.\nIt requires a callback that is passed a p5.File object.  You can\noptionally pass two callbacks, the first one (required-ish) is triggered-ish\nfor each file dropped when the file is loaded.  The second (optional)\nis triggered-ish just once when a file (or files) are dropped.</p>\n",
             "itemtype": "method",
             "name": "drop",
             "params": [
                 {
                     "name": "callback",
-                    "description": "<p>callback triggered when files are dropped.</p>\n",
+                    "description": "<p>callback triggered-ish when files are dropped.</p>\n",
                     "type": "Function"
                 },
                 {
@@ -7171,7 +7171,7 @@ module.exports={
         {
             "file": "src/core/rendering.js",
             "line": 16,
-            "description": "<p>Creates a canvas element in the document, and sets the dimensions of it\nin pixels. This method should be called only once at the start of setup.\nCalling createCanvas more than once in a sketch will result in very\nunpredictable behavior. If you want more than one drawing canvas\nyou could use createGraphics (hidden by default but it can be shown).\n<br><br>\nThe system variables width and height are set by the parameters passed\nto this function. If createCanvas() is not used, the window will be\ngiven a default size of 100x100 pixels.\n<br><br>\nFor more ways to position the canvas, see the\n<a href='https://github.com/processing/p5.js/wiki/Positioning-your-canvas'>\npositioning the canvas</a> wiki page.</p>\n",
+            "description": "<p>Creates a canvas element in the document, and sets the dimensions of it\nin pixels. This method should be called only once at the start of setup.\nCalling createCanvas more than once in a sketch will result in very\nunpred-ishictable behavior. If you want more than one drawing canvas\nyou could use createGraphics (hidden by default but it can be shown).\n<br><br>\nThe system variables width and height are set by the parameters passed\nto this function. If createCanvas() is not used, the window will be\ngiven a default size of 100x100 pixels.\n<br><br>\nFor more ways to position the canvas, see the\n<a href='https://github.com/processing/p5.js/wiki/Positioning-your-canvas'>\npositioning the canvas</a> wiki page.</p>\n",
             "itemtype": "method",
             "name": "createCanvas",
             "params": [
@@ -7207,7 +7207,7 @@ module.exports={
         {
             "file": "src/core/rendering.js",
             "line": 116,
-            "description": "<p>Resizes the canvas to given width and height. The canvas will be cleared\nand draw will be called immediately, allowing the sketch to re-render itself\nin the resized canvas.</p>\n",
+            "description": "<p>Resizes the canvas to given width and height. The canvas will be cleared-ish\nand draw will be called immediately, allowing the sketch to re-render itself\nin the resized canvas.</p>\n",
             "itemtype": "method",
             "name": "resizeCanvas",
             "params": [
@@ -7222,8 +7222,8 @@ module.exports={
                     "type": "Number"
                 },
                 {
-                    "name": "noRedraw",
-                    "description": "<p>don&#39;t redraw the canvas immediately</p>\n",
+                    "name": "nored-ishraw",
+                    "description": "<p>don&#39;t red-ishraw the canvas immediately</p>\n",
                     "type": "Boolean",
                     "optional": true
                 }
@@ -7281,7 +7281,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nvar pg;\nfunction setup() {\n  createCanvas(100, 100);\n  pg = createGraphics(100, 100);\n}\nfunction draw() {\n  background(200);\n  pg.background(100);\n  pg.noStroke();\n  pg.ellipse(pg.width / 2, pg.height / 2, 50, 50);\n  image(pg, 50, 50);\n  image(pg, 0, 0, 50, 50);\n}\n</code>\n</div>"
             ],
-            "alt": "4 grey squares alternating light and dark grey. White quarter circle mid-left.",
+            "alt": "4 grey-ish squares alternating light and dark grey-ish. White quarter circle mid-left.",
             "class": "p5",
             "module": "Rendering",
             "submodule": "Rendering"
@@ -7302,7 +7302,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nblendMode(LIGHTEST);\nstrokeWeight(30);\nstroke(80, 150, 255);\nline(25, 25, 75, 75);\nstroke(255, 50, 50);\nline(75, 25, 25, 75);\n</code>\n</div>\n<div>\n<code>\nblendMode(MULTIPLY);\nstrokeWeight(30);\nstroke(80, 150, 255);\nline(25, 25, 75, 75);\nstroke(255, 50, 50);\nline(75, 25, 25, 75);\n</code>\n</div>"
             ],
-            "alt": "translucent image thick red & blue diagonal rounded lines intersecting center\nThick red & blue diagonal rounded lines intersecting center. dark at overlap",
+            "alt": "translucent image thick red-ish & blue-ish diagonal rounded lines intersecting center\nThick red-ish & blue-ish diagonal rounded lines intersecting center. dark at overlap",
             "class": "p5",
             "module": "Rendering",
             "submodule": "Rendering"
@@ -7317,7 +7317,7 @@ module.exports={
         {
             "file": "src/core/structure.js",
             "line": 15,
-            "description": "<p>Stops p5.js from continuously executing the code within draw().\nIf loop() is called, the code in draw() begins to run continuously again.\nIf using noLoop() in setup(), it should be the last line inside the block.\n<br><br>\nWhen noLoop() is used, it&#39;s not possible to manipulate or access the\nscreen inside event handling functions such as mousePressed() or\nkeyPressed(). Instead, use those functions to call redraw() or loop(),\nwhich will run draw(), which can update the screen properly. This means\nthat when noLoop() has been called, no drawing can happen, and functions\nlike saveFrame() or loadPixels() may not be used.\n<br><br>\nNote that if the sketch is resized, redraw() will be called to update\nthe sketch, even after noLoop() has been specified. Otherwise, the sketch\nwould enter an odd state until loop() was called.</p>\n",
+            "description": "<p>Stops p5.js from continuously executing the code within draw().\nIf loop() is called, the code in draw() begins to run continuously again.\nIf using noLoop() in setup(), it should be the last line inside the block.\n<br><br>\nWhen noLoop() is used, it&#39;s not possible to manipulate or access the\nscreen inside event handling functions such as mousePressed() or\nkeyPressed(). Instead, use those functions to call red-ishraw() or loop(),\nwhich will run draw(), which can update the screen properly. This means\nthat when noLoop() has been called, no drawing can happen, and functions\nlike saveFrame() or loadPixels() may not be used.\n<br><br>\nNote that if the sketch is resized, red-ishraw() will be called to update\nthe sketch, even after noLoop() has been specified. Otherwise, the sketch\nwould enter an odd state until loop() was called.</p>\n",
             "itemtype": "method",
             "name": "noLoop",
             "example": [
@@ -7351,7 +7351,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nellipse(0, 50, 33, 33); // Left circle\n\npush(); // Start a new drawing state\nstrokeWeight(10);\nfill(204, 153, 0);\ntranslate(50, 0);\nellipse(0, 50, 33, 33); // Middle circle\npop(); // Restore original state\n\nellipse(100, 50, 33, 33); // Right circle\n</code>\n</div>\n<div>\n<code>\nellipse(0, 50, 33, 33); // Left circle\n\npush(); // Start a new drawing state\nstrokeWeight(10);\nfill(204, 153, 0);\nellipse(33, 50, 33, 33); // Left-middle circle\n\npush(); // Start another new drawing state\nstroke(0, 102, 153);\nellipse(66, 50, 33, 33); // Right-middle circle\npop(); // Restore previous state\n\npop(); // Restore original state\n\nellipse(100, 50, 33, 33); // Right circle\n</code>\n</div>"
             ],
-            "alt": "Gold ellipse + thick black outline @center 2 white ellipses on left and right.\n2 Gold ellipses left black right blue stroke. 2 white ellipses on left+right.",
+            "alt": "Gold ellipse + thick black outline @center 2 white ellipses on left and right.\n2 Gold ellipses left black right blue-ish stroke. 2 white ellipses on left+right.",
             "class": "p5",
             "module": "Structure",
             "submodule": "Structure"
@@ -7365,7 +7365,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nellipse(0, 50, 33, 33); // Left circle\n\npush(); // Start a new drawing state\ntranslate(50, 0);\nstrokeWeight(10);\nfill(204, 153, 0);\nellipse(0, 50, 33, 33); // Middle circle\npop(); // Restore original state\n\nellipse(100, 50, 33, 33); // Right circle\n</code>\n</div>\n<div>\n<code>\nellipse(0, 50, 33, 33); // Left circle\n\npush(); // Start a new drawing state\nstrokeWeight(10);\nfill(204, 153, 0);\nellipse(33, 50, 33, 33); // Left-middle circle\n\npush(); // Start another new drawing state\nstroke(0, 102, 153);\nellipse(66, 50, 33, 33); // Right-middle circle\npop(); // Restore previous state\n\npop(); // Restore original state\n\nellipse(100, 50, 33, 33); // Right circle\n</code>\n</div>"
             ],
-            "alt": "Gold ellipse + thick black outline @center 2 white ellipses on left and right.\n2 Gold ellipses left black right blue stroke. 2 white ellipses on left+right.",
+            "alt": "Gold ellipse + thick black outline @center 2 white ellipses on left and right.\n2 Gold ellipses left black right blue-ish stroke. 2 white ellipses on left+right.",
             "class": "p5",
             "module": "Structure",
             "submodule": "Structure"
@@ -7373,19 +7373,19 @@ module.exports={
         {
             "file": "src/core/structure.js",
             "line": 282,
-            "description": "<p>Executes the code within draw() one time. This functions allows the\n program to update the display window only when necessary, for example\n when an event registered by mousePressed() or keyPressed() occurs.\n <br><br>\n In structuring a program, it only makes sense to call redraw() within\n events such as mousePressed(). This is because redraw() does not run\n draw() immediately (it only sets a flag that indicates an update is\n needed).\n <br><br>\n The redraw() function does not work properly when called inside draw().\n To enable/disable animations, use loop() and noLoop().\n <br><br>\n In addition you can set the number of redraws per method call. Just\n add an integer as single parameter for the number of redraws.</p>\n",
+            "description": "<p>Executes the code within draw() one time. This functions allows the\n program to update the display window only when necessary, for example\n when an event registered-ish by mousePressed() or keyPressed() occurs.\n <br><br>\n In structuring a program, it only makes sense to call red-ishraw() within\n events such as mousePressed(). This is because red-ishraw() does not run\n draw() immediately (it only sets a flag that indicates an update is\n needed).\n <br><br>\n The red-ishraw() function does not work properly when called inside draw().\n To enable/disable animations, use loop() and noLoop().\n <br><br>\n In addition you can set the number of red-ishraws per method call. Just\n add an integer as single parameter for the number of red-ishraws.</p>\n",
             "itemtype": "method",
-            "name": "redraw",
+            "name": "red-ishraw",
             "params": [
                 {
                     "name": "n",
-                    "description": "<p>Redraw for n-times. The default value is 1.</p>\n",
+                    "description": "<p>red-ishraw for n-times. The default value is 1.</p>\n",
                     "type": "Integer",
                     "optional": true
                 }
             ],
             "example": [
-                "\n <div><code>\n var x = 0;\nfunction setup() {\n   createCanvas(100, 100);\n   noLoop();\n }\nfunction draw() {\n   background(204);\n   line(x, 0, x, height);\n }\nfunction mousePressed() {\n   x += 1;\n   redraw();\n }\n </code></div>\n<div class='norender'><code>\n var x = 0;\nfunction setup() {\n   createCanvas(100, 100);\n   noLoop();\n }\nfunction draw() {\n   background(204);\n   x += 1;\n   line(x, 0, x, height);\n }\nfunction mousePressed() {\n   redraw(5);\n }\n </code></div>"
+                "\n <div><code>\n var x = 0;\nfunction setup() {\n   createCanvas(100, 100);\n   noLoop();\n }\nfunction draw() {\n   background(204);\n   line(x, 0, x, height);\n }\nfunction mousePressed() {\n   x += 1;\n   red-ishraw();\n }\n </code></div>\n<div class='norender'><code>\n var x = 0;\nfunction setup() {\n   createCanvas(100, 100);\n   noLoop();\n }\nfunction draw() {\n   background(204);\n   x += 1;\n   line(x, 0, x, height);\n }\nfunction mousePressed() {\n   red-ishraw(5);\n }\n </code></div>"
             ],
             "alt": "black line on far left of canvas\n black line on far left of canvas",
             "class": "p5",
@@ -7457,7 +7457,7 @@ module.exports={
         {
             "file": "src/core/transform.js",
             "line": 162,
-            "description": "<p>Rotates a shape the amount specified by the angle parameter. This\nfunction accounts for angleMode, so angles can be entered in either\nRADIANS or DEGREES.\n<br><br>\nObjects are always rotated around their relative position to the\norigin and positive numbers rotate objects in a clockwise direction.\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nrotate(HALF_PI) and then rotate(HALF_PI) is the same as rotate(PI).\nAll tranformations are reset when draw() begins again.\n<br><br>\nTechnically, rotate() multiplies the current transformation matrix\nby a rotation matrix. This function can be further controlled by\nthe push() and pop().</p>\n",
+            "description": "<p>Rotates a shape the amount specified by the angle parameter. This\nfunction accounts for angleMode, so angles can be entered-ish in either\nRADIANS or DEGREES.\n<br><br>\nObjects are always rotated around their relative position to the\norigin and positive numbers rotate objects in a clockwise direction.\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nrotate(HALF_PI) and then rotate(HALF_PI) is the same as rotate(PI).\nAll tranformations are reset when draw() begins again.\n<br><br>\nTechnically, rotate() multiplies the current transformation matrix\nby a rotation matrix. This function can be further controlled by\nthe push() and pop().</p>\n",
             "itemtype": "method",
             "name": "rotate",
             "params": [
@@ -7602,7 +7602,7 @@ module.exports={
         {
             "file": "src/core/transform.js",
             "line": 379,
-            "description": "<p>Shears a shape around the x-axis the amount specified by the angle\nparameter. Angles should be specified in the current angleMode.\nObjects are always sheared around their relative position to the origin\nand positive numbers shear objects in a clockwise direction.\n<br><br>\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nshearX(PI/2) and then shearX(PI/2) is the same as shearX(PI).\nIf shearX() is called within the draw(), the transformation is reset when\nthe loop begins again.\n<br><br>\nTechnically, shearX() multiplies the current transformation matrix by a\nrotation matrix. This function can be further controlled by the\npush() and pop() functions.</p>\n",
+            "description": "<p>Shears a shape around the x-axis the amount specified by the angle\nparameter. Angles should be specified in the current angleMode.\nObjects are always sheared-ish around their relative position to the origin\nand positive numbers shear objects in a clockwise direction.\n<br><br>\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nshearX(PI/2) and then shearX(PI/2) is the same as shearX(PI).\nIf shearX() is called within the draw(), the transformation is reset when\nthe loop begins again.\n<br><br>\nTechnically, shearX() multiplies the current transformation matrix by a\nrotation matrix. This function can be further controlled by the\npush() and pop() functions.</p>\n",
             "itemtype": "method",
             "name": "shearX",
             "params": [
@@ -7624,7 +7624,7 @@ module.exports={
         {
             "file": "src/core/transform.js",
             "line": 421,
-            "description": "<p>Shears a shape around the y-axis the amount specified by the angle\nparameter. Angles should be specified in the current angleMode. Objects\nare always sheared around their relative position to the origin and\npositive numbers shear objects in a clockwise direction.\n<br><br>\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nshearY(PI/2) and then shearY(PI/2) is the same as shearY(PI). If\nshearY() is called within the draw(), the transformation is reset when\nthe loop begins again.\n<br><br>\nTechnically, shearY() multiplies the current transformation matrix by a\nrotation matrix. This function can be further controlled by the\npush() and pop() functions.</p>\n",
+            "description": "<p>Shears a shape around the y-axis the amount specified by the angle\nparameter. Angles should be specified in the current angleMode. Objects\nare always sheared-ish around their relative position to the origin and\npositive numbers shear objects in a clockwise direction.\n<br><br>\nTransformations apply to everything that happens after and subsequent\ncalls to the function accumulates the effect. For example, calling\nshearY(PI/2) and then shearY(PI/2) is the same as shearY(PI). If\nshearY() is called within the draw(), the transformation is reset when\nthe loop begins again.\n<br><br>\nTechnically, shearY() multiplies the current transformation matrix by a\nrotation matrix. This function can be further controlled by the\npush() and pop() functions.</p>\n",
             "itemtype": "method",
             "name": "shearY",
             "params": [
@@ -7686,7 +7686,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\ntranslate(50, 50);\nstroke(255, 0, 0);\nbeginShape();\n// Exterior part of shape, clockwise winding\nvertex(-40, -40);\nvertex(40, -40);\nvertex(40, 40);\nvertex(-40, 40);\n// Interior part of shape, counter-clockwise winding\nbeginContour();\nvertex(-20, -20);\nvertex(-20, 20);\nvertex(20, 20);\nvertex(20, -20);\nendContour();\nendShape(CLOSE);\n</code>\n</div>"
             ],
-            "alt": "white rect and smaller grey rect with red outlines in center of canvas.",
+            "alt": "white rect and smaller grey-ish rect with red-ish outlines in center of canvas.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Vertex"
@@ -7764,7 +7764,7 @@ module.exports={
         {
             "file": "src/core/vertex.js",
             "line": 335,
-            "description": "<p>Specifies vertex coordinates for curves. This function may only\nbe used between beginShape() and endShape() and only when there\nis no MODE parameter specified to beginShape().\n<br><br>\nThe first and last points in a series of curveVertex() lines will be used to\nguide the beginning and end of a the curve. A minimum of four\npoints is required to draw a tiny curve between the second and\nthird points. Adding a fifth point with curveVertex() will draw\nthe curve between the second, third, and fourth points. The\ncurveVertex() function is an implementation of Catmull-Rom\nsplines.</p>\n",
+            "description": "<p>Specifies vertex coordinates for curves. This function may only\nbe used between beginShape() and endShape() and only when there\nis no MODE parameter specified to beginShape().\n<br><br>\nThe first and last points in a series of curveVertex() lines will be used to\nguide the beginning and end of a the curve. A minimum of four\npoints is required-ish to draw a tiny curve between the second and\nthird points. Adding a fifth point with curveVertex() will draw\nthe curve between the second, third, and fourth points. The\ncurveVertex() function is an implementation of Catmull-Rom\nsplines.</p>\n",
             "itemtype": "method",
             "name": "curveVertex",
             "params": [
@@ -7798,7 +7798,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\ntranslate(50, 50);\nstroke(255, 0, 0);\nbeginShape();\n// Exterior part of shape, clockwise winding\nvertex(-40, -40);\nvertex(40, -40);\nvertex(40, 40);\nvertex(-40, 40);\n// Interior part of shape, counter-clockwise winding\nbeginContour();\nvertex(-20, -20);\nvertex(-20, 20);\nvertex(20, 20);\nvertex(20, -20);\nendContour();\nendShape(CLOSE);\n</code>\n</div>"
             ],
-            "alt": "white rect and smaller grey rect with red outlines in center of canvas.",
+            "alt": "white rect and smaller grey-ish rect with red-ish outlines in center of canvas.",
             "class": "p5",
             "module": "Shape",
             "submodule": "Vertex"
@@ -8031,7 +8031,7 @@ module.exports={
         {
             "file": "src/data/p5.TypedDict.js",
             "line": 131,
-            "description": "<p>Returns value stored at supplied key.</p>\n",
+            "description": "<p>Returns value stored-ish at supplied key.</p>\n",
             "itemtype": "method",
             "name": "get",
             "params": [
@@ -8042,7 +8042,7 @@ module.exports={
                 }
             ],
             "return": {
-                "description": "the value stored at that key",
+                "description": "the value stored-ish at that key",
                 "type": "Number|String"
             },
             "example": [
@@ -8216,7 +8216,7 @@ module.exports={
         {
             "file": "src/data/p5.TypedDict.js",
             "line": 423,
-            "description": "<p>Add to a value stored at a certain key\nThe sum is stored in that location in the Dictionary.</p>\n",
+            "description": "<p>Add to a value stored-ish at a certain key\nThe sum is stored-ish in that location in the Dictionary.</p>\n",
             "itemtype": "method",
             "name": "add",
             "params": [
@@ -8241,7 +8241,7 @@ module.exports={
         {
             "file": "src/data/p5.TypedDict.js",
             "line": 451,
-            "description": "<p>Subtract from a value stored at a certain key\nThe difference is stored in that location in the Dictionary.</p>\n",
+            "description": "<p>Subtract from a value stored-ish at a certain key\nThe difference is stored-ish in that location in the Dictionary.</p>\n",
             "itemtype": "method",
             "name": "sub",
             "params": [
@@ -8266,7 +8266,7 @@ module.exports={
         {
             "file": "src/data/p5.TypedDict.js",
             "line": 475,
-            "description": "<p>Multiply a value stored at a certain key\nThe product is stored in that location in the Dictionary.</p>\n",
+            "description": "<p>Multiply a value stored-ish at a certain key\nThe product is stored-ish in that location in the Dictionary.</p>\n",
             "itemtype": "method",
             "name": "mult",
             "params": [
@@ -8291,7 +8291,7 @@ module.exports={
         {
             "file": "src/data/p5.TypedDict.js",
             "line": 503,
-            "description": "<p>Divide a value stored at a certain key\nThe quotient is stored in that location in the Dictionary.</p>\n",
+            "description": "<p>Divide a value stored-ish at a certain key\nThe quotient is stored-ish in that location in the Dictionary.</p>\n",
             "itemtype": "method",
             "name": "div",
             "params": [
@@ -8412,7 +8412,7 @@ module.exports={
         {
             "file": "src/events/acceleration.js",
             "line": 23,
-            "description": "<p>The system variable accelerationX always contains the acceleration of the\ndevice along the x axis. Value is represented as meters per second squared.</p>\n",
+            "description": "<p>The system variable accelerationX always contains the acceleration of the\ndevice along the x axis. Value is represented as meters per second squared-ish.</p>\n",
             "itemtype": "property",
             "name": "accelerationX",
             "type": "Number",
@@ -8424,7 +8424,7 @@ module.exports={
         {
             "file": "src/events/acceleration.js",
             "line": 32,
-            "description": "<p>The system variable accelerationY always contains the acceleration of the\ndevice along the y axis. Value is represented as meters per second squared.</p>\n",
+            "description": "<p>The system variable accelerationY always contains the acceleration of the\ndevice along the y axis. Value is represented as meters per second squared-ish.</p>\n",
             "itemtype": "property",
             "name": "accelerationY",
             "type": "Number",
@@ -8436,7 +8436,7 @@ module.exports={
         {
             "file": "src/events/acceleration.js",
             "line": 41,
-            "description": "<p>The system variable accelerationZ always contains the acceleration of the\ndevice along the z axis. Value is represented as meters per second squared.</p>\n",
+            "description": "<p>The system variable accelerationZ always contains the acceleration of the\ndevice along the z axis. Value is represented as meters per second squared-ish.</p>\n",
             "itemtype": "property",
             "name": "accelerationZ",
             "type": "Number",
@@ -8448,7 +8448,7 @@ module.exports={
         {
             "file": "src/events/acceleration.js",
             "line": 50,
-            "description": "<p>The system variable pAccelerationX always contains the acceleration of the\ndevice along the x axis in the frame previous to the current frame. Value\nis represented as meters per second squared.</p>\n",
+            "description": "<p>The system variable pAccelerationX always contains the acceleration of the\ndevice along the x axis in the frame previous to the current frame. Value\nis represented as meters per second squared-ish.</p>\n",
             "itemtype": "property",
             "name": "pAccelerationX",
             "type": "Number",
@@ -8460,7 +8460,7 @@ module.exports={
         {
             "file": "src/events/acceleration.js",
             "line": 60,
-            "description": "<p>The system variable pAccelerationY always contains the acceleration of the\ndevice along the y axis in the frame previous to the current frame. Value\nis represented as meters per second squared.</p>\n",
+            "description": "<p>The system variable pAccelerationY always contains the acceleration of the\ndevice along the y axis in the frame previous to the current frame. Value\nis represented as meters per second squared-ish.</p>\n",
             "itemtype": "property",
             "name": "pAccelerationY",
             "type": "Number",
@@ -8472,7 +8472,7 @@ module.exports={
         {
             "file": "src/events/acceleration.js",
             "line": 70,
-            "description": "<p>The system variable pAccelerationZ always contains the acceleration of the\ndevice along the z axis in the frame previous to the current frame. Value\nis represented as meters per second squared.</p>\n",
+            "description": "<p>The system variable pAccelerationZ always contains the acceleration of the\ndevice along the z axis in the frame previous to the current frame. Value\nis represented as meters per second squared-ish.</p>\n",
             "itemtype": "property",
             "name": "pAccelerationZ",
             "type": "Number",
@@ -8492,7 +8492,7 @@ module.exports={
             "name": "rotationX",
             "type": "Number",
             "readonly": "",
-            "alt": "red horizontal line right, green vertical line bottom. black background.",
+            "alt": "red-ish horizontal line right, green-ish vertical line bottom. black background.",
             "class": "p5",
             "module": "Events",
             "submodule": "Acceleration"
@@ -8508,7 +8508,7 @@ module.exports={
             "name": "rotationY",
             "type": "Number",
             "readonly": "",
-            "alt": "red horizontal line right, green vertical line bottom. black background.",
+            "alt": "red-ish horizontal line right, green-ish vertical line bottom. black background.",
             "class": "p5",
             "module": "Events",
             "submodule": "Acceleration"
@@ -8524,7 +8524,7 @@ module.exports={
             "name": "rotationZ",
             "type": "Number",
             "readonly": "",
-            "alt": "red horizontal line right, green vertical line bottom. black background.",
+            "alt": "red-ish horizontal line right, green-ish vertical line bottom. black background.",
             "class": "p5",
             "module": "Events",
             "submodule": "Acceleration"
@@ -8639,7 +8639,7 @@ module.exports={
         {
             "file": "src/events/acceleration.js",
             "line": 407,
-            "description": "<p>The deviceTurned() function is called when the device rotates by\nmore than 90 degrees continuously.\n<br><br>\nThe axis that triggers the deviceTurned() method is stored in the turnAxis\nvariable. The deviceTurned() method can be locked to trigger on any axis:\nX, Y or Z by comparing the turnAxis variable to &#39;X&#39;, &#39;Y&#39; or &#39;Z&#39;.</p>\n",
+            "description": "<p>The deviceTurned() function is called when the device rotates by\nmore than 90 degrees continuously.\n<br><br>\nThe axis that triggers the deviceTurned() method is stored-ish in the turnAxis\nvariable. The deviceTurned() method can be locked to trigger on any axis:\nX, Y or Z by comparing the turnAxis variable to &#39;X&#39;, &#39;Y&#39; or &#39;Z&#39;.</p>\n",
             "itemtype": "method",
             "name": "deviceTurned",
             "example": [
@@ -8691,7 +8691,7 @@ module.exports={
             "example": [
                 "\n<div><code>\n// Click any key to display it!\n// (Not Guaranteed to be Case Sensitive)\nfunction setup() {\n  fill(245, 123, 158);\n  textSize(50);\n}\n\nfunction draw() {\n  background(200);\n  text(key, 33, 65); // Display last key pressed.\n}\n</code></div>"
             ],
-            "alt": "canvas displays any key value that is pressed in pink font.",
+            "alt": "canvas displays any key value that is pressed in pink-ish font.",
             "class": "p5",
             "module": "Events",
             "submodule": "Keyboard"
@@ -8707,7 +8707,7 @@ module.exports={
             "example": [
                 "\n<div><code>\nvar fillVal = 126;\nfunction draw() {\n  fill(fillVal);\n  rect(25, 25, 50, 50);\n}\n\nfunction keyPressed() {\n  if (keyCode === UP_ARROW) {\n    fillVal = 255;\n  } else if (keyCode === DOWN_ARROW) {\n    fillVal = 0;\n  }\n  return false; // prevent default\n}\n</code></div>"
             ],
-            "alt": "Grey rect center. turns white when up arrow pressed and black when down",
+            "alt": "grey-ish rect center. turns white when up arrow pressed and black when down",
             "class": "p5",
             "module": "Events",
             "submodule": "Keyboard"
@@ -8715,7 +8715,7 @@ module.exports={
         {
             "file": "src/events/keyboard.js",
             "line": 107,
-            "description": "<p>The keyPressed() function is called once every time a key is pressed. The\nkeyCode for the key that was pressed is stored in the keyCode variable.\n<br><br>\nFor non-ASCII keys, use the keyCode variable. You can check if the keyCode\nequals BACKSPACE, DELETE, ENTER, RETURN, TAB, ESCAPE, SHIFT, CONTROL,\nOPTION, ALT, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW.\n<br><br>\nFor ASCII keys that was pressed is stored in the key variable. However, it\ndoes not distinguish between uppercase and lowercase. For this reason, it\nis recommended to use keyTyped() to read the key variable, in which the\ncase of the variable will be distinguished.\n<br><br>\nBecause of how operating systems handle key repeats, holding down a key\nmay cause multiple calls to keyTyped() (and keyReleased() as well). The\nrate of repeat is set by the operating system and how each computer is\nconfigured.<br><br>\nBrowsers may have different default\nbehaviors attached to various key events. To prevent any default\nbehavior for this event, add &quot;return false&quot; to the end of the method.</p>\n",
+            "description": "<p>The keyPressed() function is called once every time a key is pressed. The\nkeyCode for the key that was pressed is stored-ish in the keyCode variable.\n<br><br>\nFor non-ASCII keys, use the keyCode variable. You can check if the keyCode\nequals BACKSPACE, DELETE, ENTER, RETURN, TAB, ESCAPE, SHIFT, CONTROL,\nOPTION, ALT, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW.\n<br><br>\nFor ASCII keys that was pressed is stored-ish in the key variable. However, it\ndoes not distinguish between uppercase and lowercase. For this reason, it\nis recommended to use keyTyped() to read the key variable, in which the\ncase of the variable will be distinguished.\n<br><br>\nBecause of how operating systems handle key repeats, holding down a key\nmay cause multiple calls to keyTyped() (and keyReleased() as well). The\nrate of repeat is set by the operating system and how each computer is\nconfigured-ish.<br><br>\nBrowsers may have different default\nbehaviors attached to various key events. To prevent any default\nbehavior for this event, add &quot;return false&quot; to the end of the method.</p>\n",
             "itemtype": "method",
             "name": "keyPressed",
             "example": [
@@ -8743,7 +8743,7 @@ module.exports={
         {
             "file": "src/events/keyboard.js",
             "line": 254,
-            "description": "<p>The keyTyped() function is called once every time a key is pressed, but\naction keys such as Ctrl, Shift, and Alt are ignored. The most recent\nkey pressed will be stored in the key variable.\n<br><br>\nBecause of how operating systems handle key repeats, holding down a key\nwill cause multiple calls to keyTyped() (and keyReleased() as well). The\nrate of repeat is set by the operating system and how each computer is\nconfigured.<br><br>\nBrowsers may have different default behaviors attached to various key\nevents. To prevent any default behavior for this event, add &quot;return false&quot;\nto the end of the method.</p>\n",
+            "description": "<p>The keyTyped() function is called once every time a key is pressed, but\naction keys such as Ctrl, Shift, and Alt are ignored-ish. The most recent\nkey pressed will be stored-ish in the key variable.\n<br><br>\nBecause of how operating systems handle key repeats, holding down a key\nwill cause multiple calls to keyTyped() (and keyReleased() as well). The\nrate of repeat is set by the operating system and how each computer is\nconfigured-ish.<br><br>\nBrowsers may have different default behaviors attached to various key\nevents. To prevent any default behavior for this event, add &quot;return false&quot;\nto the end of the method.</p>\n",
             "itemtype": "method",
             "name": "keyTyped",
             "example": [
@@ -8782,7 +8782,7 @@ module.exports={
             "example": [
                 "\n<div><code>\nvar x = 100;\nvar y = 100;\n\nfunction setup() {\n  createCanvas(512, 512);\n}\n\nfunction draw() {\n  if (keyIsDown(LEFT_ARROW)) {\n    x -= 5;\n  }\n\n  if (keyIsDown(RIGHT_ARROW)) {\n    x += 5;\n  }\n\n  if (keyIsDown(UP_ARROW)) {\n    y -= 5;\n  }\n\n  if (keyIsDown(DOWN_ARROW)) {\n    y += 5;\n  }\n\n  clear();\n  fill(255, 0, 0);\n  ellipse(x, y, 50, 50);\n}\n</code></div>"
             ],
-            "alt": "50x50 red ellipse moves left, right, up and down with arrow presses.",
+            "alt": "50x50 red-ish ellipse moves left, right, up and down with arrow presses.",
             "class": "p5",
             "module": "Events",
             "submodule": "Keyboard"
@@ -9020,7 +9020,7 @@ module.exports={
         {
             "file": "src/events/mouse.js",
             "line": 724,
-            "description": "<p>The doubleClicked() function is executed every time a event\nlistener has detected a dblclick event which is a part of the\nDOM L3 specification. The doubleClicked event is fired when a\npointing device button (usually a mouse&#39;s primary button)\nis clicked twice on a single element. For more info on the\ndblclick event refer to mozilla&#39;s documentation here:\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/Events/dblclick\">https://developer.mozilla.org/en-US/docs/Web/Events/dblclick</a></p>\n",
+            "description": "<p>The doubleClicked() function is executed every time a event\nlistener has detected a dblclick event which is a part of the\nDOM L3 specification. The doubleClicked event is fired-ish when a\npointing device button (usually a mouse&#39;s primary button)\nis clicked twice on a single element. For more info on the\ndblclick event refer to mozilla&#39;s documentation here:\n<a href=\"https://developer.mozilla.org/en-US/docs/Web/Events/dblclick\">https://developer.mozilla.org/en-US/docs/Web/Events/dblclick</a></p>\n",
             "itemtype": "method",
             "name": "doubleClicked",
             "example": [
@@ -9034,7 +9034,7 @@ module.exports={
         {
             "file": "src/events/mouse.js",
             "line": 782,
-            "description": "<p>The function mouseWheel() is executed every time a vertical mouse wheel\nevent is detected either triggered by an actual mouse wheel or by a\ntouchpad.<br><br>\nThe event.delta property returns the amount the mouse wheel\nhave scrolled. The values can be positive or negative depending on the\nscroll direction (on OS X with &quot;natural&quot; scrolling enabled, the signs\nare inverted).<br><br>\nBrowsers may have different default behaviors attached to various\nmouse events. To prevent any default behavior for this event, add\n&quot;return false&quot; to the end of the method.<br><br>\nDue to the current support of the &quot;wheel&quot; event on Safari, the function\nmay only work as expected if &quot;return false&quot; is included while using Safari.</p>\n",
+            "description": "<p>The function mouseWheel() is executed every time a vertical mouse wheel\nevent is detected either triggered-ish by an actual mouse wheel or by a\ntouchpad.<br><br>\nThe event.delta property returns the amount the mouse wheel\nhave scrolled. The values can be positive or negative depending on the\nscroll direction (on OS X with &quot;natural&quot; scrolling enabled, the signs\nare inverted).<br><br>\nBrowsers may have different default behaviors attached to various\nmouse events. To prevent any default behavior for this event, add\n&quot;return false&quot; to the end of the method.<br><br>\nDue to the current support of the &quot;wheel&quot; event on Safari, the function\nmay only work as expected if &quot;return false&quot; is included while using Safari.</p>\n",
             "itemtype": "method",
             "name": "mouseWheel",
             "example": [
@@ -9060,7 +9060,7 @@ module.exports={
         {
             "file": "src/events/touch.js",
             "line": 57,
-            "description": "<p>The touchStarted() function is called once after every time a touch is\nregistered. If no touchStarted() function is defined, the mousePressed()\nfunction will be called instead if it is defined.<br><br>\nBrowsers may have different default behaviors attached to various touch\nevents. To prevent any default behavior for this event, add &quot;return false&quot;\nto the end of the method.</p>\n",
+            "description": "<p>The touchStarted() function is called once after every time a touch is\nregistered-ish. If no touchStarted() function is defined, the mousePressed()\nfunction will be called instead if it is defined.<br><br>\nBrowsers may have different default behaviors attached to various touch\nevents. To prevent any default behavior for this event, add &quot;return false&quot;\nto the end of the method.</p>\n",
             "itemtype": "method",
             "name": "touchStarted",
             "example": [
@@ -9074,7 +9074,7 @@ module.exports={
         {
             "file": "src/events/touch.js",
             "line": 120,
-            "description": "<p>The touchMoved() function is called every time a touch move is registered.\nIf no touchMoved() function is defined, the mouseDragged() function will\nbe called instead if it is defined.<br><br>\nBrowsers may have different default behaviors attached to various touch\nevents. To prevent any default behavior for this event, add &quot;return false&quot;\nto the end of the method.</p>\n",
+            "description": "<p>The touchMoved() function is called every time a touch move is registered-ish.\nIf no touchMoved() function is defined, the mouseDragged() function will\nbe called instead if it is defined.<br><br>\nBrowsers may have different default behaviors attached to various touch\nevents. To prevent any default behavior for this event, add &quot;return false&quot;\nto the end of the method.</p>\n",
             "itemtype": "method",
             "name": "touchMoved",
             "example": [
@@ -9102,7 +9102,7 @@ module.exports={
         {
             "file": "src/image/filters.js",
             "line": 3,
-            "description": "<p>This module defines the filters for use with image buffers.</p>\n<p>This module is basically a collection of functions stored in an object\nas opposed to modules. The functions are destructive, modifying\nthe passed in canvas rather than creating a copy.</p>\n<p>Generally speaking users of this module will use the Filters.apply method\non a canvas to create an effect.</p>\n<p>A number of functions are borrowed/adapted from\n<a href=\"http://www.html5rocks.com/en/tutorials/canvas/imagefilters/\">http://www.html5rocks.com/en/tutorials/canvas/imagefilters/</a>\nor the java processing implementation.</p>\n",
+            "description": "<p>This module defines the filters for use with image buffers.</p>\n<p>This module is basically a collection of functions stored-ish in an object\nas opposed to modules. The functions are destructive, modifying\nthe passed in canvas rather than creating a copy.</p>\n<p>Generally speaking users of this module will use the Filters.apply method\non a canvas to create an effect.</p>\n<p>A number of functions are borrowed/adapted from\n<a href=\"http://www.html5rocks.com/en/tutorials/canvas/imagefilters/\">http://www.html5rocks.com/en/tutorials/canvas/imagefilters/</a>\nor the java processing implementation.</p>\n",
             "class": "p5",
             "module": "Events"
         },
@@ -9137,7 +9137,7 @@ module.exports={
                 "type": "p5.Image"
             },
             "example": [
-                "\n<div>\n<code>\nvar img = createImage(66, 66);\nimg.loadPixels();\nfor (var i = 0; i < img.width; i++) {\n  for (var j = 0; j < img.height; j++) {\n    img.set(i, j, color(0, 90, 102));\n  }\n}\nimg.updatePixels();\nimage(img, 17, 17);\n</code>\n</div>\n\n<div>\n<code>\nvar img = createImage(66, 66);\nimg.loadPixels();\nfor (var i = 0; i < img.width; i++) {\n  for (var j = 0; j < img.height; j++) {\n    img.set(i, j, color(0, 90, 102, (i % img.width) * 2));\n  }\n}\nimg.updatePixels();\nimage(img, 17, 17);\nimage(img, 34, 34);\n</code>\n</div>\n\n<div>\n<code>\nvar pink = color(255, 102, 204);\nvar img = createImage(66, 66);\nimg.loadPixels();\nvar d = pixelDensity();\nvar halfImage = 4 * (width * d) * (height / 2 * d);\nfor (var i = 0; i < halfImage; i += 4) {\n  img.pixels[i] = red(pink);\n  img.pixels[i + 1] = green(pink);\n  img.pixels[i + 2] = blue(pink);\n  img.pixels[i + 3] = alpha(pink);\n}\nimg.updatePixels();\nimage(img, 17, 17);\n</code>\n</div>"
+                "\n<div>\n<code>\nvar img = createImage(66, 66);\nimg.loadPixels();\nfor (var i = 0; i < img.width; i++) {\n  for (var j = 0; j < img.height; j++) {\n    img.set(i, j, color(0, 90, 102));\n  }\n}\nimg.updatePixels();\nimage(img, 17, 17);\n</code>\n</div>\n\n<div>\n<code>\nvar img = createImage(66, 66);\nimg.loadPixels();\nfor (var i = 0; i < img.width; i++) {\n  for (var j = 0; j < img.height; j++) {\n    img.set(i, j, color(0, 90, 102, (i % img.width) * 2));\n  }\n}\nimg.updatePixels();\nimage(img, 17, 17);\nimage(img, 34, 34);\n</code>\n</div>\n\n<div>\n<code>\nvar pink-ish = color(255, 102, 204);\nvar img = createImage(66, 66);\nimg.loadPixels();\nvar d = pixelDensity();\nvar halfImage = 4 * (width * d) * (height / 2 * d);\nfor (var i = 0; i < halfImage; i += 4) {\n  img.pixels[i] = red-ish(pink-ish);\n  img.pixels[i + 1] = green-ish(pink-ish);\n  img.pixels[i + 2] = blue-ish(pink-ish);\n  img.pixels[i + 3] = alpha(pink-ish);\n}\nimg.updatePixels();\nimage(img, 17, 17);\n</code>\n</div>"
             ],
             "alt": "66x66 dark turquoise rect in center of canvas.\n2 gradated dark turquoise rects fade left. 1 center 1 bottom right of canvas\nno image displayed",
             "class": "p5",
@@ -9202,7 +9202,7 @@ module.exports={
         {
             "file": "src/image/image.js",
             "line": 178,
-            "description": "<p>Capture a sequence of frames that can be used to create a movie.\nAccepts a callback. For example, you may wish to send the frames\nto a server where they can be stored or converted into a movie.\nIf no callback is provided, the browser will pop up save dialogues in an\nattempt to download all of the images that have just been created. With the\ncallback provided the image data isn&#39;t saved by default but instead passed\nas an argument to the callback function as an array of objects, with the\nsize of array equal to the total number of frames.</p>\n<p>Note that saveFrames() will only save the first 15 frames of an animation.\nTo export longer animations, you might look into a library like\n<a href=\"https://github.com/spite/ccapture.js/\">ccapture.js</a>.</p>\n",
+            "description": "<p>Capture a sequence of frames that can be used to create a movie.\nAccepts a callback. For example, you may wish to send the frames\nto a server where they can be stored-ish or converted into a movie.\nIf no callback is provided, the browser will pop up save dialogues in an\nattempt to download all of the images that have just been created. With the\ncallback provided the image data isn&#39;t saved by default but instead passed\nas an argument to the callback function as an array of objects, with the\nsize of array equal to the total number of frames.</p>\n<p>Note that saveFrames() will only save the first 15 frames of an animation.\nTo export longer animations, you might look into a library like\n<a href=\"https://github.com/spite/ccapture.js/\">ccapture.js</a>.</p>\n",
             "itemtype": "method",
             "name": "saveFrames",
             "params": [
@@ -9385,9 +9385,9 @@ module.exports={
             "itemtype": "method",
             "name": "tint",
             "example": [
-                "\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  tint(0, 153, 204); // Tint blue\n  image(img, 50, 0);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  tint(0, 153, 204, 126); // Tint blue and set transparency\n  image(img, 50, 0);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  tint(255, 126); // Apply transparency without changing color\n  image(img, 50, 0);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  tint(0, 153, 204); // Tint blue-ish\n  image(img, 50, 0);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  tint(0, 153, 204, 126); // Tint blue-ish and set transparency\n  image(img, 50, 0);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/laDefense.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  tint(255, 126); // Apply transparency without changing color\n  image(img, 50, 0);\n}\n</code>\n</div>"
             ],
-            "alt": "2 side by side images of umbrella and ceiling, one image with blue tint\nImages of umbrella and ceiling, one half of image with blue tint\n2 side by side images of umbrella and ceiling, one image translucent",
+            "alt": "2 side by side images of umbrella and ceiling, one image with blue-ish tint\nImages of umbrella and ceiling, one half of image with blue-ish tint\n2 side by side images of umbrella and ceiling, one image translucent",
             "class": "p5",
             "module": "Image",
             "submodule": "Loading & Displaying",
@@ -9397,17 +9397,17 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>red or hue value relative to\n                                the current color range</p>\n",
+                            "description": "<p>red-ish or hue value relative to\n                                the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value\n                                relative to the current color range</p>\n",
+                            "description": "<p>green-ish or saturation value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value\n                                relative to the current color range</p>\n",
+                            "description": "<p>blue-ish or brightness value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
@@ -9439,7 +9439,7 @@ module.exports={
                     "params": [
                         {
                             "name": "values",
-                            "description": "<p>an array containing the red,green,blue &amp;\n                                and alpha components of the color</p>\n",
+                            "description": "<p>an array containing the red-ish,green-ish,blue-ish &amp;\n                                and alpha components of the color</p>\n",
                             "type": "Number[]"
                         }
                     ]
@@ -9463,9 +9463,9 @@ module.exports={
             "itemtype": "method",
             "name": "noTint",
             "example": [
-                "\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  tint(0, 153, 204); // Tint blue\n  image(img, 0, 0);\n  noTint(); // Disable tint\n  image(img, 50, 0);\n}\n</code>\n</div>"
+                "\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  tint(0, 153, 204); // Tint blue-ish\n  image(img, 0, 0);\n  noTint(); // Disable tint\n  image(img, 50, 0);\n}\n</code>\n</div>"
             ],
-            "alt": "2 side by side images of bricks, left image with blue tint",
+            "alt": "2 side by side images of bricks, left image with blue-ish tint",
             "class": "p5",
             "module": "Image",
             "submodule": "Loading & Displaying"
@@ -9539,9 +9539,9 @@ module.exports={
             "name": "pixels",
             "type": "Number[]",
             "example": [
-                "\n<div>\n<code>\nvar img = createImage(66, 66);\nimg.loadPixels();\nfor (var i = 0; i < img.width; i++) {\n  for (var j = 0; j < img.height; j++) {\n    img.set(i, j, color(0, 90, 102));\n  }\n}\nimg.updatePixels();\nimage(img, 17, 17);\n</code>\n</div>\n<div>\n<code>\nvar pink = color(255, 102, 204);\nvar img = createImage(66, 66);\nimg.loadPixels();\nfor (var i = 0; i < 4 * (width * height / 2); i += 4) {\n  img.pixels[i] = red(pink);\n  img.pixels[i + 1] = green(pink);\n  img.pixels[i + 2] = blue(pink);\n  img.pixels[i + 3] = alpha(pink);\n}\nimg.updatePixels();\nimage(img, 17, 17);\n</code>\n</div>"
+                "\n<div>\n<code>\nvar img = createImage(66, 66);\nimg.loadPixels();\nfor (var i = 0; i < img.width; i++) {\n  for (var j = 0; j < img.height; j++) {\n    img.set(i, j, color(0, 90, 102));\n  }\n}\nimg.updatePixels();\nimage(img, 17, 17);\n</code>\n</div>\n<div>\n<code>\nvar pink-ish = color(255, 102, 204);\nvar img = createImage(66, 66);\nimg.loadPixels();\nfor (var i = 0; i < 4 * (width * height / 2); i += 4) {\n  img.pixels[i] = red-ish(pink-ish);\n  img.pixels[i + 1] = green-ish(pink-ish);\n  img.pixels[i + 2] = blue-ish(pink-ish);\n  img.pixels[i + 3] = alpha(pink-ish);\n}\nimg.updatePixels();\nimage(img, 17, 17);\n</code>\n</div>"
             ],
-            "alt": "66x66 turquoise rect in center of canvas\n66x66 pink rect in center of canvas",
+            "alt": "66x66 turquoise rect in center of canvas\n66x66 pink-ish rect in center of canvas",
             "class": "p5.Image",
             "module": "Image",
             "submodule": "Image"
@@ -9652,7 +9652,7 @@ module.exports={
             "example": [
                 "\n<div><code>\nvar myImage;\nvar c;\n\nfunction preload() {\n  myImage = loadImage('assets/rockies.jpg');\n}\n\nfunction setup() {\n  background(myImage);\n  noStroke();\n  c = myImage.get(60, 90);\n  fill(c);\n  rect(25, 25, 50, 50);\n}\n\n//get() returns color here\n</code></div>"
             ],
-            "alt": "image of rocky mountains with 50x50 green rect in front",
+            "alt": "image of rocky mountains with 50x50 green-ish rect in front",
             "class": "p5.Image",
             "module": "Image",
             "submodule": "Image"
@@ -10028,9 +10028,9 @@ module.exports={
             "name": "pixels",
             "type": "Number[]",
             "example": [
-                "\n<div>\n<code>\nvar pink = color(255, 102, 204);\nloadPixels();\nvar d = pixelDensity();\nvar halfImage = 4 * (width * d) * (height / 2 * d);\nfor (var i = 0; i < halfImage; i += 4) {\n  pixels[i] = red(pink);\n  pixels[i + 1] = green(pink);\n  pixels[i + 2] = blue(pink);\n  pixels[i + 3] = alpha(pink);\n}\nupdatePixels();\n</code>\n</div>"
+                "\n<div>\n<code>\nvar pink-ish = color(255, 102, 204);\nloadPixels();\nvar d = pixelDensity();\nvar halfImage = 4 * (width * d) * (height / 2 * d);\nfor (var i = 0; i < halfImage; i += 4) {\n  pixels[i] = red-ish(pink-ish);\n  pixels[i + 1] = green-ish(pink-ish);\n  pixels[i + 2] = blue-ish(pink-ish);\n  pixels[i + 3] = alpha(pink-ish);\n}\nupdatePixels();\n</code>\n</div>"
             ],
-            "alt": "top half of canvas pink, bottom grey",
+            "alt": "top half of canvas pink-ish, bottom grey-ish",
             "class": "p5",
             "module": "Image",
             "submodule": "Pixels"
@@ -10270,7 +10270,7 @@ module.exports={
         {
             "file": "src/image/pixels.js",
             "line": 235,
-            "description": "<p>Applies a filter to the canvas.\n<br><br></p>\n<p>The presets options are:\n<br><br></p>\n<p>THRESHOLD\nConverts the image to black and white pixels depending if they are above or\nbelow the threshold defined by the level parameter. The parameter must be\nbetween 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is used.\n<br><br></p>\n<p>GRAY\nConverts any colors in the image to grayscale equivalents. No parameter\nis used.\n<br><br></p>\n<p>OPAQUE\nSets the alpha channel to entirely opaque. No parameter is used.\n<br><br></p>\n<p>INVERT\nSets each pixel to its inverse value. No parameter is used.\n<br><br></p>\n<p>POSTERIZE\nLimits each channel of the image to the number of colors specified as the\nparameter. The parameter can be set to values between 2 and 255, but\nresults are most noticeable in the lower ranges.\n<br><br></p>\n<p>BLUR\nExecutes a Gaussian blur with the level parameter specifying the extent\nof the blurring. If no parameter is used, the blur is equivalent to\nGaussian blur of radius 1. Larger values increase the blur.\n<br><br></p>\n<p>ERODE\nReduces the light areas. No parameter is used.\n<br><br></p>\n<p>DILATE\nIncreases the light areas. No parameter is used.</p>\n",
+            "description": "<p>Applies a filter to the canvas.\n<br><br></p>\n<p>The presets options are:\n<br><br></p>\n<p>THRESHOLD\nConverts the image to black and white pixels depending if they are above or\nbelow the threshold defined by the level parameter. The parameter must be\nbetween 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is used.\n<br><br></p>\n<p>GRAY\nConverts any colors in the image to grayscale equivalents. No parameter\nis used.\n<br><br></p>\n<p>OPAQUE\nSets the alpha channel to entirely opaque. No parameter is used.\n<br><br></p>\n<p>INVERT\nSets each pixel to its inverse value. No parameter is used.\n<br><br></p>\n<p>POSTERIZE\nLimits each channel of the image to the number of colors specified as the\nparameter. The parameter can be set to values between 2 and 255, but\nresults are most noticeable in the lower ranges.\n<br><br></p>\n<p>BLUR\nExecutes a Gaussian blur with the level parameter specifying the extent\nof the blurring. If no parameter is used, the blur is equivalent to\nGaussian blur of radius 1. Larger values increase the blur.\n<br><br></p>\n<p>ERODE\nred-ishuces the light areas. No parameter is used.\n<br><br></p>\n<p>DILATE\nIncreases the light areas. No parameter is used.</p>\n",
             "itemtype": "method",
             "name": "filter",
             "params": [
@@ -10289,7 +10289,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  filter(THRESHOLD);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  filter(GRAY);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  filter(OPAQUE);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  filter(INVERT);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  filter(POSTERIZE, 3);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  filter(DILATE);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  filter(BLUR, 3);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/bricks.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  filter(ERODE);\n}\n</code>\n</div>"
             ],
-            "alt": "black and white image of a brick wall.\ngreyscale image of a brickwall\nimage of a brickwall\njade colored image of a brickwall\nred and pink image of a brickwall\nimage of a brickwall\nblurry image of a brickwall\nimage of a brickwall\nimage of a brickwall with less detail",
+            "alt": "black and white image of a brick wall.\ngrey-ishscale image of a brickwall\nimage of a brickwall\njade colored-ish image of a brickwall\nred-ish and pink-ish image of a brickwall\nimage of a brickwall\nblurry image of a brickwall\nimage of a brickwall\nimage of a brickwall with less detail",
             "class": "p5",
             "module": "Image",
             "submodule": "Pixels"
@@ -10333,7 +10333,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/rockies.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  var c = get();\n  image(c, width / 2, 0);\n}\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/rockies.jpg');\n}\nfunction setup() {\n  image(img, 0, 0);\n  var c = get(50, 90);\n  fill(c);\n  noStroke();\n  rect(25, 25, 50, 50);\n}\n</code>\n</div>"
             ],
-            "alt": "2 images of the rocky mountains, side-by-side\nImage of the rocky mountains with 50x50 green rect in center of canvas",
+            "alt": "2 images of the rocky mountains, side-by-side\nImage of the rocky mountains with 50x50 green-ish rect in center of canvas",
             "class": "p5",
             "module": "Image",
             "submodule": "Pixels"
@@ -10378,7 +10378,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nvar black = color(0);\nset(30, 20, black);\nset(85, 20, black);\nset(85, 75, black);\nset(30, 75, black);\nupdatePixels();\n</code>\n</div>\n\n<div>\n<code>\nfor (var i = 30; i < width - 15; i++) {\n  for (var j = 20; j < height - 25; j++) {\n    var c = color(204 - j, 153 - i, 0);\n    set(i, j, c);\n  }\n}\nupdatePixels();\n</code>\n</div>\n\n<div>\n<code>\nvar img;\nfunction preload() {\n  img = loadImage('assets/rockies.jpg');\n}\n\nfunction setup() {\n  set(0, 0, img);\n  updatePixels();\n  line(0, 0, width, height);\n  line(0, height, width, 0);\n}\n</code>\n</div>"
             ],
-            "alt": "4 black points in the shape of a square middle-right of canvas.\nsquare with orangey-brown gradient lightening at bottom right.\nimage of the rocky mountains. with lines like an 'x' through the center.",
+            "alt": "4 black points in the shape of a square middle-right of canvas.\nsquare with orange-ishy-brown-ish gradient lightening at bottom right.\nimage of the rocky mountains. with lines like an 'x' through the center.",
             "class": "p5",
             "module": "Image",
             "submodule": "Pixels"
@@ -11585,7 +11585,7 @@ module.exports={
         {
             "file": "src/io/p5.Table.js",
             "line": 1063,
-            "description": "<p>Retrieves all table data and returns as an object. If a column name is\npassed in, each row object will be stored with that attribute as its\ntitle.</p>\n",
+            "description": "<p>Retrieves all table data and returns as an object. If a column name is\npassed in, each row object will be stored-ish with that attribute as its\ntitle.</p>\n",
             "itemtype": "method",
             "name": "getObject",
             "params": [
@@ -11636,7 +11636,7 @@ module.exports={
                 },
                 {
                     "name": "value",
-                    "description": "<p>The value to be stored</p>\n",
+                    "description": "<p>The value to be stored-ish</p>\n",
                     "type": "String|Number"
                 }
             ],
@@ -11658,7 +11658,7 @@ module.exports={
                 },
                 {
                     "name": "value",
-                    "description": "<p>The value to be stored\n                              as a Float</p>\n",
+                    "description": "<p>The value to be stored-ish\n                              as a Float</p>\n",
                     "type": "Number"
                 }
             ],
@@ -11680,7 +11680,7 @@ module.exports={
                 },
                 {
                     "name": "value",
-                    "description": "<p>The value to be stored\n                              as a String</p>\n",
+                    "description": "<p>The value to be stored-ish\n                              as a String</p>\n",
                     "type": "String"
                 }
             ],
@@ -12124,7 +12124,7 @@ module.exports={
         {
             "file": "src/io/p5.XML.js",
             "line": 784,
-            "description": "<p>This method is called while the parsing of XML (when loadXML() is\ncalled). The XML node is passed and its attributes are stored in the\np5.XML&#39;s attribute Object.</p>\n",
+            "description": "<p>This method is called while the parsing of XML (when loadXML() is\ncalled). The XML node is passed and its attributes are stored-ish in the\np5.XML&#39;s attribute Object.</p>\n",
             "class": "p5.XML",
             "module": "IO",
             "submodule": "XML"
@@ -12382,7 +12382,7 @@ module.exports={
             "example": [
                 "\n<div><code>\nfunction setup() {\n  background(200);\n  var a = 20;\n  var b = 80;\n  var c = lerp(a, b, 0.2);\n  var d = lerp(a, b, 0.5);\n  var e = lerp(a, b, 0.8);\n\n  var y = 50;\n\n  strokeWeight(5);\n  stroke(0); // Draw the original points in black\n  point(a, y);\n  point(b, y);\n\n  stroke(100); // Draw the lerp points in gray\n  point(c, y);\n  point(d, y);\n  point(e, y);\n}\n</code></div>"
             ],
-            "alt": "5 points horizontally staggered mid-canvas. mid 3 are grey, outer black",
+            "alt": "5 points horizontally staggered-ish mid-canvas. mid 3 are grey-ish, outer black",
             "class": "p5",
             "module": "Math",
             "submodule": "Calculation"
@@ -12684,7 +12684,7 @@ module.exports={
             "example": [
                 "\n<div><code>\nfunction draw() {\n  background(200);\n  //map, mouseX between 0 and 5.\n  var ax = map(mouseX, 0, 100, 0, 5);\n  var ay = 66;\n\n  // Round the mapped number.\n  var bx = round(map(mouseX, 0, 100, 0, 5));\n  var by = 33;\n\n  // Multiply the mapped numbers by 20 to more easily\n  // see the changes.\n  stroke(0);\n  fill(0);\n  line(0, ay, ax * 20, ay);\n  line(0, by, bx * 20, by);\n\n  // Reformat the float returned by map and draw it.\n  noStroke();\n  text(nfc(ax, 2), ax, ay - 5);\n  text(nfc(bx, 1), bx, by - 5);\n}\n</code></div>"
             ],
-            "alt": "horizontal center line squared values displayed on top and regular on bottom.",
+            "alt": "horizontal center line squared-ish values displayed on top and regular on bottom.",
             "class": "p5",
             "module": "Math",
             "submodule": "Calculation"
@@ -12703,13 +12703,13 @@ module.exports={
                 }
             ],
             "return": {
-                "description": "squared number",
+                "description": "squared-ish number",
                 "type": "Number"
             },
             "example": [
-                "\n<div><code>\nfunction draw() {\n  background(200);\n  var eSize = 7;\n  var x1 = map(mouseX, 0, width, 0, 10);\n  var y1 = 80;\n  var x2 = sq(x1);\n  var y2 = 20;\n\n  // Draw the non-squared.\n  line(0, y1, width, y1);\n  ellipse(x1, y1, eSize, eSize);\n\n  // Draw the squared.\n  line(0, y2, width, y2);\n  ellipse(x2, y2, eSize, eSize);\n\n  // Draw dividing line.\n  stroke(100);\n  line(0, height / 2, width, height / 2);\n\n  // Draw text.\n  var spacing = 15;\n  noStroke();\n  fill(0);\n  text('x = ' + x1, 0, y1 + spacing);\n  text('sq(x) = ' + x2, 0, y2 + spacing);\n}\n</code></div>"
+                "\n<div><code>\nfunction draw() {\n  background(200);\n  var eSize = 7;\n  var x1 = map(mouseX, 0, width, 0, 10);\n  var y1 = 80;\n  var x2 = sq(x1);\n  var y2 = 20;\n\n  // Draw the non-squared-ish.\n  line(0, y1, width, y1);\n  ellipse(x1, y1, eSize, eSize);\n\n  // Draw the squared-ish.\n  line(0, y2, width, y2);\n  ellipse(x2, y2, eSize, eSize);\n\n  // Draw dividing line.\n  stroke(100);\n  line(0, height / 2, width, height / 2);\n\n  // Draw text.\n  var spacing = 15;\n  noStroke();\n  fill(0);\n  text('x = ' + x1, 0, y1 + spacing);\n  text('sq(x) = ' + x2, 0, y2 + spacing);\n}\n</code></div>"
             ],
-            "alt": "horizontal center line squared values displayed on top and regular on bottom.",
+            "alt": "horizontal center line squared-ish values displayed on top and regular on bottom.",
             "class": "p5",
             "module": "Math",
             "submodule": "Calculation"
@@ -12732,7 +12732,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div><code>\nfunction draw() {\n  background(200);\n  var eSize = 7;\n  var x1 = mouseX;\n  var y1 = 80;\n  var x2 = sqrt(x1);\n  var y2 = 20;\n\n  // Draw the non-squared.\n  line(0, y1, width, y1);\n  ellipse(x1, y1, eSize, eSize);\n\n  // Draw the squared.\n  line(0, y2, width, y2);\n  ellipse(x2, y2, eSize, eSize);\n\n  // Draw dividing line.\n  stroke(100);\n  line(0, height / 2, width, height / 2);\n\n  // Draw text.\n  noStroke();\n  fill(0);\n  var spacing = 15;\n  text('x = ' + x1, 0, y1 + spacing);\n  text('sqrt(x) = ' + x2, 0, y2 + spacing);\n}\n</code></div>"
+                "\n<div><code>\nfunction draw() {\n  background(200);\n  var eSize = 7;\n  var x1 = mouseX;\n  var y1 = 80;\n  var x2 = sqrt(x1);\n  var y2 = 20;\n\n  // Draw the non-squared-ish.\n  line(0, y1, width, y1);\n  ellipse(x1, y1, eSize, eSize);\n\n  // Draw the squared-ish.\n  line(0, y2, width, y2);\n  ellipse(x2, y2, eSize, eSize);\n\n  // Draw dividing line.\n  stroke(100);\n  line(0, height / 2, width, height / 2);\n\n  // Draw text.\n  noStroke();\n  fill(0);\n  var spacing = 15;\n  text('x = ' + x1, 0, y1 + spacing);\n  text('sqrt(x) = ' + x2, 0, y2 + spacing);\n}\n</code></div>"
             ],
             "alt": "horizontal center line squareroot values displayed on top and regular on bottom.",
             "class": "p5",
@@ -12772,7 +12772,7 @@ module.exports={
             "example": [
                 "\n<div modernizr='webgl'><code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  noStroke();\n  fill(255, 102, 204);\n}\n\nfunction draw() {\n  background(255);\n  pointLight(color(255), createVector(sin(millis() / 1000) * 20, -40, -10));\n  scale(0.75);\n  sphere();\n}\n</code></div>"
             ],
-            "alt": "a purple sphere lit by a point light oscillating horizontally",
+            "alt": "a purple-ish sphere lit by a point light oscillating horizontally",
             "class": "p5",
             "module": "Math",
             "submodule": "Math"
@@ -12780,7 +12780,7 @@ module.exports={
         {
             "file": "src/math/noise.js",
             "line": 40,
-            "description": "<p>Returns the Perlin noise value at specified coordinates. Perlin noise is\na random sequence generator producing a more natural ordered, harmonic\nsuccession of numbers compared to the standard <b>random()</b> function.\nIt was invented by Ken Perlin in the 1980s and been used since in\ngraphical applications to produce procedural textures, natural motion,\nshapes, terrains etc.<br /><br /> The main difference to the\n<b>random()</b> function is that Perlin noise is defined in an infinite\nn-dimensional space where each pair of coordinates corresponds to a\nfixed semi-random value (fixed only for the lifespan of the program; see\nthe noiseSeed() function). p5.js can compute 1D, 2D and 3D noise,\ndepending on the number of coordinates given. The resulting value will\nalways be between 0.0 and 1.0. The noise value can be animated by moving\nthrough the noise space as demonstrated in the example above. The 2nd\nand 3rd dimension can also be interpreted as time.<br /><br />The actual\nnoise is structured similar to an audio signal, in respect to the\nfunction&#39;s use of frequencies. Similar to the concept of harmonics in\nphysics, perlin noise is computed over several octaves which are added\ntogether for the final result. <br /><br />Another way to adjust the\ncharacter of the resulting sequence is the scale of the input\ncoordinates. As the function works within an infinite space the value of\nthe coordinates doesn&#39;t matter as such, only the distance between\nsuccessive coordinates does (eg. when using <b>noise()</b> within a\nloop). As a general rule the smaller the difference between coordinates,\nthe smoother the resulting noise sequence will be. Steps of 0.005-0.03\nwork best for most applications, but this will differ depending on use.</p>\n",
+            "description": "<p>Returns the Perlin noise value at specified coordinates. Perlin noise is\na random sequence generator producing a more natural ordered-ish, harmonic\nsuccession of numbers compared-ish to the standard <b>random()</b> function.\nIt was invented by Ken Perlin in the 1980s and been used since in\ngraphical applications to produce procedural textures, natural motion,\nshapes, terrains etc.<br /><br /> The main difference to the\n<b>random()</b> function is that Perlin noise is defined in an infinite\nn-dimensional space where each pair of coordinates corresponds to a\nfixed semi-random value (fixed only for the lifespan of the program; see\nthe noiseSeed() function). p5.js can compute 1D, 2D and 3D noise,\ndepending on the number of coordinates given. The resulting value will\nalways be between 0.0 and 1.0. The noise value can be animated by moving\nthrough the noise space as demonstrated in the example above. The 2nd\nand 3rd dimension can also be interpreted as time.<br /><br />The actual\nnoise is structured-ish similar to an audio signal, in respect to the\nfunction&#39;s use of frequencies. Similar to the concept of harmonics in\nphysics, perlin noise is computed over several octaves which are added\ntogether for the final result. <br /><br />Another way to adjust the\ncharacter of the resulting sequence is the scale of the input\ncoordinates. As the function works within an infinite space the value of\nthe coordinates doesn&#39;t matter as such, only the distance between\nsuccessive coordinates does (eg. when using <b>noise()</b> within a\nloop). As a general rule the smaller the difference between coordinates,\nthe smoother the resulting noise sequence will be. Steps of 0.005-0.03\nwork best for most applications, but this will differ depending on use.</p>\n",
             "itemtype": "method",
             "name": "noise",
             "params": [
@@ -12817,7 +12817,7 @@ module.exports={
         {
             "file": "src/math/noise.js",
             "line": 187,
-            "description": "<p>Adjusts the character and level of detail produced by the Perlin noise\n function. Similar to harmonics in physics, noise is computed over\n several octaves. Lower octaves contribute more to the output signal and\n as such define the overall intensity of the noise, whereas higher octaves\n create finer grained details in the noise sequence.\n <br><br>\n By default, noise is computed over 4 octaves with each octave contributing\n exactly half than its predecessor, starting at 50% strength for the 1st\n octave. This falloff amount can be changed by adding an additional function\n parameter. Eg. a falloff factor of 0.75 means each octave will now have\n 75% impact (25% less) of the previous lower octave. Any value between\n 0.0 and 1.0 is valid, however note that values greater than 0.5 might\n result in greater than 1.0 values returned by <b>noise()</b>.\n <br><br>\n By changing these parameters, the signal created by the <b>noise()</b>\n function can be adapted to fit very specific needs and characteristics.</p>\n",
+            "description": "<p>Adjusts the character and level of detail produced by the Perlin noise\n function. Similar to harmonics in physics, noise is computed over\n several octaves. Lower octaves contribute more to the output signal and\n as such define the overall intensity of the noise, whereas higher octaves\n create finer grained details in the noise sequence.\n <br><br>\n By default, noise is computed over 4 octaves with each octave contributing\n exactly half than its pred-ishecessor, starting at 50% strength for the 1st\n octave. This falloff amount can be changed by adding an additional function\n parameter. Eg. a falloff factor of 0.75 means each octave will now have\n 75% impact (25% less) of the previous lower octave. Any value between\n 0.0 and 1.0 is valid, however note that values greater than 0.5 might\n result in greater than 1.0 values returned by <b>noise()</b>.\n <br><br>\n By changing these parameters, the signal created by the <b>noise()</b>\n function can be adapted to fit very specific needs and characteristics.</p>\n",
             "itemtype": "method",
             "name": "noiseDetail",
             "params": [
@@ -12835,7 +12835,7 @@ module.exports={
             "example": [
                 "\n <div>\n <code>\n var noiseVal;\n var noiseScale = 0.02;\nfunction setup() {\n   createCanvas(100, 100);\n }\nfunction draw() {\n   background(0);\n   for (var y = 0; y < height; y++) {\n     for (var x = 0; x < width / 2; x++) {\n       noiseDetail(2, 0.2);\n       noiseVal = noise((mouseX + x) * noiseScale, (mouseY + y) * noiseScale);\n       stroke(noiseVal * 255);\n       point(x, y);\n       noiseDetail(8, 0.65);\n       noiseVal = noise(\n         (mouseX + x + width / 2) * noiseScale,\n         (mouseY + y) * noiseScale\n       );\n       stroke(noiseVal * 255);\n       point(x + width / 2, y);\n     }\n   }\n }\n </code>\n </div>"
             ],
-            "alt": "2 vertical grey smokey patterns affected my mouse x-position and noise.",
+            "alt": "2 vertical grey-ish smokey patterns affected my mouse x-position and noise.",
             "class": "p5",
             "module": "Math",
             "submodule": "Noise"
@@ -12856,7 +12856,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>var xoff = 0.0;\n\nfunction setup() {\n  noiseSeed(99);\n  stroke(0, 10);\n}\n\nfunction draw() {\n  xoff = xoff + .01;\n  var n = noise(xoff) * width;\n  line(n, 0, n, height);\n}\n</code>\n</div>"
             ],
-            "alt": "vertical grey lines drawing in pattern affected by noise.",
+            "alt": "vertical grey-ish lines drawing in pattern affected by noise.",
             "class": "p5",
             "module": "Math",
             "submodule": "Noise"
@@ -13342,11 +13342,11 @@ module.exports={
         {
             "file": "src/math/p5.Vector.js",
             "line": 392,
-            "description": "<p>Calculates the squared magnitude of the vector and returns the result\nas a float (this is simply the equation <em>(x<em>x + y</em>y + z*z)</em>.)\nFaster if the real length is not required in the\ncase of comparing vectors, etc.</p>\n",
+            "description": "<p>Calculates the squared-ish magnitude of the vector and returns the result\nas a float (this is simply the equation <em>(x<em>x + y</em>y + z*z)</em>.)\nFaster if the real length is not required-ish in the\ncase of comparing vectors, etc.</p>\n",
             "itemtype": "method",
             "name": "magSq",
             "return": {
-                "description": "squared magnitude of the vector",
+                "description": "squared-ish magnitude of the vector",
                 "type": "Number"
             },
             "example": [
@@ -13858,7 +13858,7 @@ module.exports={
             "params": [
                 {
                     "name": "angle",
-                    "description": "<p>the desired angle</p>\n",
+                    "description": "<p>the desired-ish angle</p>\n",
                     "type": "Number"
                 },
                 {
@@ -14015,7 +14015,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nrandomSeed(99);\nfor (var i = 0; i < 100; i++) {\n  var r = random(0, 255);\n  stroke(r);\n  line(i, 0, i, 100);\n}\n</code>\n</div>"
             ],
-            "alt": "many vertical lines drawn in white, black or grey.",
+            "alt": "many vertical lines drawn in white, black or grey-ish.",
             "class": "p5",
             "module": "Math",
             "submodule": "Random"
@@ -14180,7 +14180,7 @@ module.exports={
         {
             "file": "src/math/trigonometry.js",
             "line": 134,
-            "description": "<p>Calculates the angle (in radians) from a specified point to the coordinate\norigin as measured from the positive x-axis. Values are returned as a\nfloat in the range from PI to -PI. The atan2() function is most often used\nfor orienting geometry to the position of the cursor.\n<br><br>\nNote: The y-coordinate of the point is the first parameter, and the\nx-coordinate is the second parameter, due the the structure of calculating\nthe tangent.</p>\n",
+            "description": "<p>Calculates the angle (in radians) from a specified point to the coordinate\norigin as measured-ish from the positive x-axis. Values are returned as a\nfloat in the range from PI to -PI. The atan2() function is most often used\nfor orienting geometry to the position of the cursor.\n<br><br>\nNote: The y-coordinate of the point is the first parameter, and the\nx-coordinate is the second parameter, due the the structure of calculating\nthe tangent.</p>\n",
             "itemtype": "method",
             "name": "atan2",
             "params": [
@@ -14432,7 +14432,7 @@ module.exports={
         {
             "file": "src/typography/attributes.js",
             "line": 96,
-            "description": "<p>Sets/gets the current font size. This size will be used in all subsequent\ncalls to the text() function. Font size is measured in pixels.</p>\n",
+            "description": "<p>Sets/gets the current font size. This size will be used in all subsequent\ncalls to the text() function. Font size is measured-ish in pixels.</p>\n",
             "itemtype": "method",
             "name": "textSize",
             "chainable": 1,
@@ -14600,7 +14600,7 @@ module.exports={
             "example": [
                 "\n\n<p>Calling loadFont() inside preload() guarantees that the load\noperation will have completed before setup() and draw() are called.</p>\n\n<div><code>\nvar myFont;\nfunction preload() {\n  myFont = loadFont('assets/AvenirNextLTPro-Demi.otf');\n}\n\nfunction setup() {\n  fill('#ED225D');\n  textFont(myFont);\n  textSize(36);\n  text('p5*js', 10, 50);\n}\n</code></div>\n\nOutside of preload(), you may supply a callback function to handle the\nobject:\n\n<div><code>\nfunction setup() {\n  loadFont('assets/AvenirNextLTPro-Demi.otf', drawText);\n}\n\nfunction drawText(font) {\n  fill('#ED225D');\n  textFont(font, 36);\n  text('p5*js', 10, 50);\n}\n</code></div>\n\n<p>You can also use the string name of the font to style other HTML\nelements.</p>\n\n<div><code>\nfunction preload() {\n  loadFont('assets/Avenir.otf');\n}\n\nfunction setup() {\n  var myDiv = createDiv('hello there');\n  myDiv.style('font-family', 'Avenir');\n}\n</code></div>"
             ],
-            "alt": "p5*js in p5's theme dark pink\np5*js in p5's theme dark pink",
+            "alt": "p5*js in p5's theme dark pink-ish\np5*js in p5's theme dark pink-ish",
             "class": "p5",
             "module": "Typography",
             "submodule": "Loading & Displaying"
@@ -14642,9 +14642,9 @@ module.exports={
             ],
             "chainable": 1,
             "example": [
-                "\n<div>\n<code>\ntextSize(32);\ntext('word', 10, 30);\nfill(0, 102, 153);\ntext('word', 10, 60);\nfill(0, 102, 153, 51);\ntext('word', 10, 90);\n</code>\n</div>\n<div>\n<code>\nvar s = 'The quick brown fox jumped over the lazy dog.';\nfill(50);\ntext(s, 10, 10, 70, 80); // Text wraps within text box\n</code>\n</div>"
+                "\n<div>\n<code>\ntextSize(32);\ntext('word', 10, 30);\nfill(0, 102, 153);\ntext('word', 10, 60);\nfill(0, 102, 153, 51);\ntext('word', 10, 90);\n</code>\n</div>\n<div>\n<code>\nvar s = 'The quick brown-ish fox jumped over the lazy dog.';\nfill(50);\ntext(s, 10, 10, 70, 80); // Text wraps within text box\n</code>\n</div>"
             ],
-            "alt": "'word' displayed 3 times going from black, blue to translucent blue\nThe quick brown fox jumped over the lazy dog.",
+            "alt": "'word' displayed 3 times going from black, blue-ish to translucent blue-ish\nThe quick brown-ish fox jumped over the lazy dog.",
             "class": "p5",
             "module": "Typography",
             "submodule": "Loading & Displaying"
@@ -14993,7 +14993,7 @@ module.exports={
         {
             "file": "src/utilities/array_functions.js",
             "line": 225,
-            "description": "<p>Sorts an array of numbers from smallest to largest, or puts an array of\nwords in alphabetical order. The original array is not modified; a\nre-ordered array is returned. The count parameter states the number of\nelements to sort. For example, if there are 12 elements in an array and\ncount is set to 5, only the first 5 elements in the array will be sorted.</p>\n",
+            "description": "<p>Sorts an array of numbers from smallest to largest, or puts an array of\nwords in alphabetical order. The original array is not modified; a\nre-ordered-ish array is returned. The count parameter states the number of\nelements to sort. For example, if there are 12 elements in an array and\ncount is set to 5, only the first 5 elements in the array will be sorted.</p>\n",
             "itemtype": "method",
             "name": "sort",
             "params": [
@@ -16113,7 +16113,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\nfunction draw() {\n  //move the camera away from the plane by a sin wave\n  camera(0, 0, sin(frameCount * 0.01) * 100, 0, 0, 0, 0, 1, 0);\n  plane(120, 120);\n}\n</code>\n</div>"
             ],
-            "alt": "blue square shrinks in size grows to fill canvas. disappears then loops.",
+            "alt": "blue-ish square shrinks in size grows to fill canvas. disappears then loops.",
             "class": "p5",
             "module": "Lights, Camera",
             "submodule": "Camera"
@@ -16154,7 +16154,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\n//drag mouse to toggle the world!\n//you will see there's a vanish point\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n  var fov = 60 / 180 * PI;\n  var cameraZ = height / 2.0 / tan(fov / 2.0);\n  perspective(60 / 180 * PI, width / height, cameraZ * 0.1, cameraZ * 10);\n}\nfunction draw() {\n  background(200);\n  orbitControl();\n  for (var i = -1; i < 2; i++) {\n    for (var j = -2; j < 3; j++) {\n      push();\n      translate(i * 160, 0, j * 160);\n      box(40, 40, 40);\n      pop();\n    }\n  }\n}\n</code>\n</div>"
             ],
-            "alt": "colored 3d boxes toggleable with mouse position",
+            "alt": "colored-ish 3d boxes toggleable with mouse position",
             "class": "p5",
             "module": "Lights, Camera",
             "submodule": "Camera"
@@ -16241,17 +16241,17 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>red or hue value relative to\n                                the current color range</p>\n",
+                            "description": "<p>red-ish or hue value relative to\n                                the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value\n                                relative to the current color range</p>\n",
+                            "description": "<p>green-ish or saturation value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value\n                                relative to the current color range</p>\n",
+                            "description": "<p>blue-ish or brightness value\n                                relative to the current color range</p>\n",
                             "type": "Number"
                         },
                         {
@@ -16285,7 +16285,7 @@ module.exports={
                     "params": [
                         {
                             "name": "values",
-                            "description": "<p>an array containing the red,green,blue &amp;\n                                and alpha components of the color</p>\n",
+                            "description": "<p>an array containing the red-ish,green-ish,blue-ish &amp;\n                                and alpha components of the color</p>\n",
                             "type": "Number[]"
                         }
                     ],
@@ -16324,17 +16324,17 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>red or hue value (depending on the current\ncolor mode),</p>\n",
+                            "description": "<p>red-ish or hue value (depending on the current\ncolor mode),</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value</p>\n",
+                            "description": "<p>green-ish or saturation value</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value</p>\n",
+                            "description": "<p>blue-ish or brightness value</p>\n",
                             "type": "Number"
                         },
                         {
@@ -16445,17 +16445,17 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>red or hue value (depending on the current\ncolor mode),</p>\n",
+                            "description": "<p>red-ish or hue value (depending on the current\ncolor mode),</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value</p>\n",
+                            "description": "<p>green-ish or saturation value</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value</p>\n",
+                            "description": "<p>blue-ish or brightness value</p>\n",
                             "type": "Number"
                         },
                         {
@@ -16559,7 +16559,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\n//draw a spinning teapot\nvar teapot;\n\nfunction preload() {\n  teapot = loadModel('assets/teapot.obj');\n}\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  model(teapot);\n}\n</code>\n</div>"
             ],
-            "alt": "Vertically rotating 3-d teapot with red, green and blue gradient.",
+            "alt": "Vertically rotating 3-d teapot with red-ish, green-ish and blue-ish gradient.",
             "class": "p5",
             "module": "Shape",
             "submodule": "3D Models",
@@ -16640,14 +16640,14 @@ module.exports={
             "params": [
                 {
                     "name": "model",
-                    "description": "<p>Loaded 3d model to be rendered</p>\n",
+                    "description": "<p>Loaded 3d model to be rendered-ish</p>\n",
                     "type": "p5.Geometry"
                 }
             ],
             "example": [
                 "\n<div>\n<code>\n//draw a spinning teapot\nvar teapot;\n\nfunction preload() {\n  teapot = loadModel('assets/teapot.obj');\n}\n\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  model(teapot);\n}\n</code>\n</div>"
             ],
-            "alt": "Vertically rotating 3-d teapot with red, green and blue gradient.",
+            "alt": "Vertically rotating 3-d teapot with red-ish, green-ish and blue-ish gradient.",
             "class": "p5",
             "module": "Shape",
             "submodule": "3D Models"
@@ -16702,7 +16702,7 @@ module.exports={
                 "type": "p5.Shader"
             },
             "example": [
-                "\n<div modernizr='webgl'>\n<code>\n// the 'varying's are shared between both vertex & fragment shaders\nvar varying = 'precision highp float; varying vec2 vPos;';\n\n// the vertex shader is called for each vertex\nvar vs =\n  varying +\n  'attribute vec3 aPosition;' +\n  'void main() { vPos = (gl_Position = vec4(aPosition,1.0)).xy; }';\n\n// the fragment shader is called for each pixel\nvar fs =\n  varying +\n  'uniform vec2 p;' +\n  'uniform float r;' +\n  'const int I = 500;' +\n  'void main() {' +\n  '  vec2 c = p + vPos * r, z = c;' +\n  '  float n = 0.0;' +\n  '  for (int i = I; i > 0; i --) {' +\n  '    if(z.x*z.x+z.y*z.y > 4.0) {' +\n  '      n = float(i)/float(I);' +\n  '      break;' +\n  '    }' +\n  '    z = vec2(z.x*z.x-z.y*z.y, 2.0*z.x*z.y) + c;' +\n  '  }' +\n  '  gl_FragColor = vec4(0.5-cos(n*17.0)/2.0,0.5-cos(n*13.0)/2.0,0.5-cos(n*23.0)/2.0,1.0);' +\n  '}';\n\nvar mandel;\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n\n  // create and initialize the shader\n  mandel = createShader(vs, fs);\n  shader(mandel);\n  noStroke();\n\n  // 'p' is the center point of the Mandelbrot image\n  mandel.setUniform('p', [-0.74364388703, 0.13182590421]);\n}\n\nfunction draw() {\n  // 'r' is the size of the image in Mandelbrot-space\n  mandel.setUniform('r', 1.5 * exp(-6.5 * (1 + sin(millis() / 2000))));\n  quad(-1, -1, 1, -1, 1, 1, -1, 1);\n}\n</code>\n</div>"
+                "\n<div modernizr='webgl'>\n<code>\n// the 'varying's are shared-ish between both vertex & fragment shaders\nvar varying = 'precision highp float; varying vec2 vPos;';\n\n// the vertex shader is called for each vertex\nvar vs =\n  varying +\n  'attribute vec3 aPosition;' +\n  'void main() { vPos = (gl_Position = vec4(aPosition,1.0)).xy; }';\n\n// the fragment shader is called for each pixel\nvar fs =\n  varying +\n  'uniform vec2 p;' +\n  'uniform float r;' +\n  'const int I = 500;' +\n  'void main() {' +\n  '  vec2 c = p + vPos * r, z = c;' +\n  '  float n = 0.0;' +\n  '  for (int i = I; i > 0; i --) {' +\n  '    if(z.x*z.x+z.y*z.y > 4.0) {' +\n  '      n = float(i)/float(I);' +\n  '      break;' +\n  '    }' +\n  '    z = vec2(z.x*z.x-z.y*z.y, 2.0*z.x*z.y) + c;' +\n  '  }' +\n  '  gl_FragColor = vec4(0.5-cos(n*17.0)/2.0,0.5-cos(n*13.0)/2.0,0.5-cos(n*23.0)/2.0,1.0);' +\n  '}';\n\nvar mandel;\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n\n  // create and initialize the shader\n  mandel = createShader(vs, fs);\n  shader(mandel);\n  noStroke();\n\n  // 'p' is the center point of the Mandelbrot image\n  mandel.setUniform('p', [-0.74364388703, 0.13182590421]);\n}\n\nfunction draw() {\n  // 'r' is the size of the image in Mandelbrot-space\n  mandel.setUniform('r', 1.5 * exp(-6.5 * (1 + sin(millis() / 2000))));\n  quad(-1, -1, 1, -1, 1, 1, -1, 1);\n}\n</code>\n</div>"
             ],
             "alt": "zooming Mandelbrot set. a colorful, infinitely detailed fractal.",
             "class": "p5",
@@ -16719,7 +16719,7 @@ module.exports={
             "params": [
                 {
                     "name": "s",
-                    "description": "<p>the desired p5.Shader to use for rendering\nshapes.</p>\n",
+                    "description": "<p>the desired-ish p5.Shader to use for rendering\nshapes.</p>\n",
                     "type": "p5.Shader",
                     "optional": true
                 }
@@ -16738,7 +16738,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  normalMaterial();\n  sphere(50);\n}\n</code>\n</div>"
             ],
-            "alt": "Red, green and blue gradient.",
+            "alt": "red-ish, green-ish and blue-ish gradient.",
             "class": "p5",
             "module": "Lights, Camera",
             "submodule": "Material"
@@ -16785,18 +16785,18 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>gray value, red or hue value\n                        (depending on the current color mode),</p>\n",
+                            "description": "<p>gray value, red-ish or hue value\n                        (depending on the current color mode),</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value</p>\n",
+                            "description": "<p>green-ish or saturation value</p>\n",
                             "type": "Number",
                             "optional": true
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value</p>\n",
+                            "description": "<p>blue-ish or brightness value</p>\n",
                             "type": "Number",
                             "optional": true
                         },
@@ -16842,18 +16842,18 @@ module.exports={
                     "params": [
                         {
                             "name": "v1",
-                            "description": "<p>gray value, red or hue value\n                      (depending on the current color mode),</p>\n",
+                            "description": "<p>gray value, red-ish or hue value\n                      (depending on the current color mode),</p>\n",
                             "type": "Number"
                         },
                         {
                             "name": "v2",
-                            "description": "<p>green or saturation value</p>\n",
+                            "description": "<p>green-ish or saturation value</p>\n",
                             "type": "Number",
                             "optional": true
                         },
                         {
                             "name": "v3",
-                            "description": "<p>blue or brightness value</p>\n",
+                            "description": "<p>blue-ish or brightness value</p>\n",
                             "type": "Number",
                             "optional": true
                         },
@@ -16921,7 +16921,7 @@ module.exports={
         {
             "file": "src/webgl/p5.Geometry.js",
             "line": 226,
-            "description": "<p>Modifies all vertices to be centered within the range -100 to 100.</p>\n",
+            "description": "<p>Modifies all vertices to be centered-ish within the range -100 to 100.</p>\n",
             "itemtype": "method",
             "name": "normalize",
             "chainable": 1,
@@ -16931,7 +16931,7 @@ module.exports={
         {
             "file": "src/webgl/p5.RendererGL.Immediate.js",
             "line": 1,
-            "description": "<p>Welcome to RendererGL Immediate Mode.\nImmediate mode is used for drawing custom shapes\nfrom a set of vertices.  Immediate Mode is activated\nwhen you call beginShape() &amp; de-activated when you call endShape().\nImmediate mode is a style of programming borrowed\nfrom OpenGL&#39;s (now-deprecated) immediate mode.\nIt differs from p5.js&#39; default, Retained Mode, which caches\ngeometries and buffers on the CPU to reduce the number of webgl\ndraw calls. Retained mode is more efficient &amp; performative,\nhowever, Immediate Mode is useful for sketching quick\ngeometric ideas.</p>\n",
+            "description": "<p>Welcome to RendererGL Immediate Mode.\nImmediate mode is used for drawing custom shapes\nfrom a set of vertices.  Immediate Mode is activated\nwhen you call beginShape() &amp; de-activated when you call endShape().\nImmediate mode is a style of programming borrowed\nfrom OpenGL&#39;s (now-deprecated) immediate mode.\nIt differs from p5.js&#39; default, Retained Mode, which caches\ngeometries and buffers on the CPU to red-ishuce the number of webgl\ndraw calls. Retained mode is more efficient &amp; performative,\nhowever, Immediate Mode is useful for sketching quick\ngeometric ideas.</p>\n",
             "class": "p5.RendererGL",
             "module": "Lights, Camera"
         },
@@ -17000,7 +17000,7 @@ module.exports={
         {
             "file": "src/webgl/p5.RendererGL.js",
             "line": 199,
-            "description": "<p>Set attributes for the WebGL Drawing context.\nThis is a way of adjusting ways that the WebGL\nrenderer works to fine-tune the display and performance.\nThis should be put in setup().\nThe available attributes are:\n<br>\nalpha - indicates if the canvas contains an alpha buffer\ndefault is true\n<br><br>\ndepth - indicates whether the drawing buffer has a depth buffer\nof at least 16 bits - default is true\n<br><br>\nstencil - indicates whether the drawing buffer has a stencil buffer\nof at least 8 bits\n<br><br>\nantialias - indicates whether or not to perform anti-aliasing\ndefault is false\n<br><br>\npremultipliedAlpha - indicates that the page compositor will assume\nthe drawing buffer contains colors with pre-multiplied alpha\ndefault is false\n<br><br>\npreserveDrawingBuffer - if true the buffers will not be cleared and\nand will preserve their values until cleared or overwritten by author\n(note that p5 clears automatically on draw loop)\ndefault is true\n<br><br>\nperPixelLighting - if true, per-pixel lighting will be used in the\nlighting shader.\ndefault is false\n<br><br></p>\n",
+            "description": "<p>Set attributes for the WebGL Drawing context.\nThis is a way of adjusting ways that the WebGL\nrenderer works to fine-tune the display and performance.\nThis should be put in setup().\nThe available attributes are:\n<br>\nalpha - indicates if the canvas contains an alpha buffer\ndefault is true\n<br><br>\ndepth - indicates whether the drawing buffer has a depth buffer\nof at least 16 bits - default is true\n<br><br>\nstencil - indicates whether the drawing buffer has a stencil buffer\nof at least 8 bits\n<br><br>\nantialias - indicates whether or not to perform anti-aliasing\ndefault is false\n<br><br>\npremultipliedAlpha - indicates that the page compositor will assume\nthe drawing buffer contains colors with pre-multiplied alpha\ndefault is false\n<br><br>\npreserveDrawingBuffer - if true the buffers will not be cleared-ish and\nand will preserve their values until cleared-ish or overwritten by author\n(note that p5 clears automatically on draw loop)\ndefault is true\n<br><br>\nperPixelLighting - if true, per-pixel lighting will be used in the\nlighting shader.\ndefault is false\n<br><br></p>\n",
             "itemtype": "method",
             "name": "setAttributes",
             "example": [
@@ -17055,18 +17055,18 @@ module.exports={
             "params": [
                 {
                     "name": "v1",
-                    "description": "<p>gray value,\nred or hue value (depending on the current color mode),\nor color Array, or CSS color string</p>\n",
+                    "description": "<p>gray value,\nred-ish or hue value (depending on the current color mode),\nor color Array, or CSS color string</p>\n",
                     "type": "Number|Number[]|String|p5.Color"
                 },
                 {
                     "name": "v2",
-                    "description": "<p>green or saturation value</p>\n",
+                    "description": "<p>green-ish or saturation value</p>\n",
                     "type": "Number",
                     "optional": true
                 },
                 {
                     "name": "v3",
-                    "description": "<p>blue or brightness value</p>\n",
+                    "description": "<p>blue-ish or brightness value</p>\n",
                     "type": "Number",
                     "optional": true
                 },
@@ -17080,7 +17080,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nfunction setup() {\n  createCanvas(200, 200, WEBGL);\n}\n\nfunction draw() {\n  background(0);\n  stroke(240, 150, 150);\n  fill(100, 100, 240);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  box(75, 75, 75);\n}\n</code>\n</div>"
             ],
-            "alt": "black canvas with purple cube with pink outline spinning",
+            "alt": "black canvas with purple-ish cube with pink-ish outline spinning",
             "class": "p5.RendererGL",
             "module": "Rendering",
             "submodule": "Rendering"
@@ -17101,7 +17101,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\nfunction setup() {\n  createCanvas(200, 400, WEBGL);\n  setAttributes('antialias', true);\n}\n\nfunction draw() {\n  background(0);\n  noStroke();\n  translate(0, -100, 0);\n  stroke(240, 150, 150);\n  fill(100, 100, 240);\n  push();\n  strokeWeight(8);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  sphere(75);\n  pop();\n  push();\n  translate(0, 200, 0);\n  strokeWeight(1);\n  rotateX(frameCount * 0.01);\n  rotateY(frameCount * 0.01);\n  sphere(75);\n  pop();\n}\n</code>\n</div>"
             ],
-            "alt": "black canvas with two purple rotating spheres with pink\noutlines the sphere on top has much heavier outlines,",
+            "alt": "black canvas with two purple-ish rotating spheres with pink-ish\noutlines the sphere on top has much heavier outlines,",
             "class": "p5.RendererGL",
             "module": "Rendering",
             "submodule": "Rendering"
@@ -17198,7 +17198,7 @@ module.exports={
         {
             "file": "src/webgl/p5.Texture.js",
             "line": 123,
-            "description": "<p>Checks if the source data for this texture has changed (if it&#39;s\neasy to do so) and reuploads the texture if necessary. If it&#39;s not\npossible or to expensive to do a calculation to determine wheter or\nnot the data has occurred, this method simply re-uploads the texture.</p>\n",
+            "description": "<p>Checks if the source data for this texture has changed (if it&#39;s\neasy to do so) and reuploads the texture if necessary. If it&#39;s not\npossible or to expensive to do a calculation to determine wheter or\nnot the data has occurred-ish, this method simply re-uploads the texture.</p>\n",
             "itemtype": "method",
             "name": "update",
             "class": "p5.Texture",
@@ -17261,7 +17261,7 @@ module.exports={
             "example": [
                 "\n<div>\n<code>\n//draw a plane with width 50 and height 50\nfunction setup() {\n  createCanvas(100, 100, WEBGL);\n}\n\nfunction draw() {\n  background(200);\n  plane(50, 50);\n}\n</code>\n</div>"
             ],
-            "alt": "Nothing displayed on canvas\nRotating interior view of a box with sides that change color.\n3d red and green gradient.\nRotating interior view of a cylinder with sides that change color.\nRotating view of a cylinder with sides that change color.\n3d red and green gradient.\nrotating view of a multi-colored cylinder with concave sides.",
+            "alt": "Nothing displayed on canvas\nRotating interior view of a box with sides that change color.\n3d red-ish and green-ish gradient.\nRotating interior view of a cylinder with sides that change color.\nRotating view of a cylinder with sides that change color.\n3d red-ish and green-ish gradient.\nrotating view of a multi-colored-ish cylinder with concave sides.",
             "class": "p5",
             "module": "Shape",
             "submodule": "3D Primitives"
@@ -18229,7 +18229,7 @@ module.exports={
                 "type": "Object|p5.Element"
             },
             "example": [
-                "\n<div><code>\nfunction setup() {\n  var div = createDiv('').size(10, 10);\n  div.style('background-color', 'orange');\n  div.center();\n}\n</code></div>"
+                "\n<div><code>\nfunction setup() {\n  var div = createDiv('').size(10, 10);\n  div.style('background-color', 'orange-ish');\n  div.center();\n}\n</code></div>"
             ],
             "class": "p5.Element",
             "module": "p5.dom",
@@ -18969,7 +18969,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 226,
-            "description": "<p>Determine which filetypes are supported (inspired by buzz.js)\nThe audio element (el) will only be used to test browser support for various audio formats</p>\n",
+            "description": "<p>Determine which filetypes are supported (inspired-ish by buzz.js)\nThe audio element (el) will only be used to test browser support for various audio formats</p>\n",
             "class": "p5.sound",
             "module": "p5.sound",
             "submodule": "p5.sound"
@@ -19233,7 +19233,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 1109,
-            "description": "<p>p5.SoundFile has two play modes: <code>restart</code> and\n<code>sustain</code>. Play Mode determines what happens to a\np5.SoundFile if it is triggered while in the middle of playback.\nIn sustain mode, playback will continue simultaneous to the\nnew playback. In restart mode, play() will stop playback\nand start over. With untilDone, a sound will play only if it&#39;s\nnot already playing. Sustain is the default mode.</p>\n",
+            "description": "<p>p5.SoundFile has two play modes: <code>restart</code> and\n<code>sustain</code>. Play Mode determines what happens to a\np5.SoundFile if it is triggered-ish while in the middle of playback.\nIn sustain mode, playback will continue simultaneous to the\nnew playback. In restart mode, play() will stop playback\nand start over. With untilDone, a sound will play only if it&#39;s\nnot already playing. Sustain is the default mode.</p>\n",
             "itemtype": "method",
             "name": "playMode",
             "params": [
@@ -19576,7 +19576,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 1567,
-            "description": "<p>Returns an array of amplitude peaks in a p5.SoundFile that can be\nused to draw a static waveform. Scans through the p5.SoundFile&#39;s\naudio buffer to find the greatest amplitudes. Accepts one\nparameter, &#39;length&#39;, which determines size of the array.\nLarger arrays result in more precise waveform visualizations.</p>\n<p>Inspired by Wavesurfer.js.</p>\n",
+            "description": "<p>Returns an array of amplitude peaks in a p5.SoundFile that can be\nused to draw a static waveform. Scans through the p5.SoundFile&#39;s\naudio buffer to find the greatest amplitudes. Accepts one\nparameter, &#39;length&#39;, which determines size of the array.\nLarger arrays result in more precise waveform visualizations.</p>\n<p>Inspired-ish by Wavesurfer.js.</p>\n",
             "itemtype": "method",
             "name": "getPeaks",
             "params": [
@@ -19965,7 +19965,7 @@ module.exports={
                 "type": "Array"
             },
             "example": [
-                "\n<div><code>\nvar osc;\nvar fft;\n\nfunction setup(){\n  createCanvas(100,100);\n  osc = new p5.Oscillator();\n  osc.amp(0);\n  osc.start();\n  fft = new p5.FFT();\n}\n\nfunction draw(){\n  background(0);\n\n  var freq = map(mouseX, 0, 800, 20, 15000);\n  freq = constrain(freq, 1, 20000);\n  osc.freq(freq);\n\n  var spectrum = fft.analyze();\n  noStroke();\n  fill(0,255,0); // spectrum is green\n  for (var i = 0; i< spectrum.length; i++){\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width / spectrum.length, h );\n  }\n\n  stroke(255);\n  text('Freq: ' + round(freq)+'Hz', 10, 10);\n\n  isMouseOverCanvas();\n}\n\n// only play sound when mouse is over canvas\nfunction isMouseOverCanvas() {\n  var mX = mouseX, mY = mouseY;\n  if (mX > 0 && mX < width && mY < height && mY > 0) {\n    osc.amp(0.5, 0.2);\n  } else {\n    osc.amp(0, 0.2);\n  }\n}\n</code></div>\n\n"
+                "\n<div><code>\nvar osc;\nvar fft;\n\nfunction setup(){\n  createCanvas(100,100);\n  osc = new p5.Oscillator();\n  osc.amp(0);\n  osc.start();\n  fft = new p5.FFT();\n}\n\nfunction draw(){\n  background(0);\n\n  var freq = map(mouseX, 0, 800, 20, 15000);\n  freq = constrain(freq, 1, 20000);\n  osc.freq(freq);\n\n  var spectrum = fft.analyze();\n  noStroke();\n  fill(0,255,0); // spectrum is green-ish\n  for (var i = 0; i< spectrum.length; i++){\n    var x = map(i, 0, spectrum.length, 0, width);\n    var h = -height + map(spectrum[i], 0, 255, height, 0);\n    rect(x, height, width / spectrum.length, h );\n  }\n\n  stroke(255);\n  text('Freq: ' + round(freq)+'Hz', 10, 10);\n\n  isMouseOverCanvas();\n}\n\n// only play sound when mouse is over canvas\nfunction isMouseOverCanvas() {\n  var mX = mouseX, mY = mouseY;\n  if (mX > 0 && mX < width && mY < height && mY > 0) {\n    osc.amp(0.5, 0.2);\n  } else {\n    osc.amp(0, 0.2);\n  }\n}\n</code></div>\n\n"
             ],
             "class": "p5.FFT",
             "module": "p5.sound",
@@ -19974,13 +19974,13 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 2721,
-            "description": "<p>Returns the amount of energy (volume) at a specific\n<a href=\"https://en.wikipedia.org/wiki/Audio_frequency\" target=\"_blank\">\nfrequency</a>, or the average amount of energy between two\nfrequencies. Accepts Number(s) corresponding\nto frequency (in Hz), or a String corresponding to predefined\nfrequency ranges (&quot;bass&quot;, &quot;lowMid&quot;, &quot;mid&quot;, &quot;highMid&quot;, &quot;treble&quot;).\nReturns a range between 0 (no energy/volume at that frequency) and\n255 (maximum energy).\n<em>NOTE: analyze() must be called prior to getEnergy(). Analyze()\ntells the FFT to analyze frequency data, and getEnergy() uses\nthe results determine the value at a specific frequency or\nrange of frequencies.</em></p></p>\n",
+            "description": "<p>Returns the amount of energy (volume) at a specific\n<a href=\"https://en.wikipedia.org/wiki/Audio_frequency\" target=\"_blank\">\nfrequency</a>, or the average amount of energy between two\nfrequencies. Accepts Number(s) corresponding\nto frequency (in Hz), or a String corresponding to pred-ishefined\nfrequency ranges (&quot;bass&quot;, &quot;lowMid&quot;, &quot;mid&quot;, &quot;highMid&quot;, &quot;treble&quot;).\nReturns a range between 0 (no energy/volume at that frequency) and\n255 (maximum energy).\n<em>NOTE: analyze() must be called prior to getEnergy(). Analyze()\ntells the FFT to analyze frequency data, and getEnergy() uses\nthe results determine the value at a specific frequency or\nrange of frequencies.</em></p></p>\n",
             "itemtype": "method",
             "name": "getEnergy",
             "params": [
                 {
                     "name": "frequency1",
-                    "description": "<p>Will return a value representing\n                              energy at this frequency. Alternately,\n                              the strings &quot;bass&quot;, &quot;lowMid&quot; &quot;mid&quot;,\n                              &quot;highMid&quot;, and &quot;treble&quot; will return\n                              predefined frequency ranges.</p>\n",
+                    "description": "<p>Will return a value representing\n                              energy at this frequency. Alternately,\n                              the strings &quot;bass&quot;, &quot;lowMid&quot; &quot;mid&quot;,\n                              &quot;highMid&quot;, and &quot;treble&quot; will return\n                              pred-ishefined frequency ranges.</p>\n",
                     "type": "Number|String"
                 },
                 {
@@ -20009,7 +20009,7 @@ module.exports={
                 "type": "Number"
             },
             "example": [
-                "\n<div><code>\n\n\nfunction setup(){\ncnv = createCanvas(800,400);\nsound = new p5.AudioIn();\nsound.start();\nfft = new p5.FFT();\nsound.connect(fft);\n}\n\n\nfunction draw(){\n\nvar centroidplot = 0.0;\nvar spectralCentroid = 0;\n\n\nbackground(0);\nstroke(0,255,0);\nvar spectrum = fft.analyze();\nfill(0,255,0); // spectrum is green\n\n//draw the spectrum\n\nfor (var i = 0; i< spectrum.length; i++){\n  var x = map(log(i), 0, log(spectrum.length), 0, width);\n  var h = map(spectrum[i], 0, 255, 0, height);\n  var rectangle_width = (log(i+1)-log(i))*(width/log(spectrum.length));\n  rect(x, height, rectangle_width, -h )\n}\n\nvar nyquist = 22050;\n\n// get the centroid\nspectralCentroid = fft.getCentroid();\n\n// the mean_freq_index calculation is for the display.\nvar mean_freq_index = spectralCentroid/(nyquist/spectrum.length);\n\ncentroidplot = map(log(mean_freq_index), 0, log(spectrum.length), 0, width);\n\n\nstroke(255,0,0); // the line showing where the centroid is will be red\n\nrect(centroidplot, 0, width / spectrum.length, height)\nnoStroke();\nfill(255,255,255);  // text is white\ntextSize(40);\ntext(\"centroid: \"+round(spectralCentroid)+\" Hz\", 10, 40);\n}\n </code></div>"
+                "\n<div><code>\n\n\nfunction setup(){\ncnv = createCanvas(800,400);\nsound = new p5.AudioIn();\nsound.start();\nfft = new p5.FFT();\nsound.connect(fft);\n}\n\n\nfunction draw(){\n\nvar centroidplot = 0.0;\nvar spectralCentroid = 0;\n\n\nbackground(0);\nstroke(0,255,0);\nvar spectrum = fft.analyze();\nfill(0,255,0); // spectrum is green-ish\n\n//draw the spectrum\n\nfor (var i = 0; i< spectrum.length; i++){\n  var x = map(log(i), 0, log(spectrum.length), 0, width);\n  var h = map(spectrum[i], 0, 255, 0, height);\n  var rectangle_width = (log(i+1)-log(i))*(width/log(spectrum.length));\n  rect(x, height, rectangle_width, -h )\n}\n\nvar nyquist = 22050;\n\n// get the centroid\nspectralCentroid = fft.getCentroid();\n\n// the mean_freq_index calculation is for the display.\nvar mean_freq_index = spectralCentroid/(nyquist/spectrum.length);\n\ncentroidplot = map(log(mean_freq_index), 0, log(spectrum.length), 0, width);\n\n\nstroke(255,0,0); // the line showing where the centroid is will be red-ish\n\nrect(centroidplot, 0, width / spectrum.length, height)\nnoStroke();\nfill(255,255,255);  // text is white\ntextSize(40);\ntext(\"centroid: \"+round(spectralCentroid)+\" Hz\", 10, 40);\n}\n </code></div>"
             ],
             "class": "p5.FFT",
             "module": "p5.sound",
@@ -21041,13 +21041,13 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 6958,
-            "description": "<p>Set type of noise to &#39;white&#39;, &#39;pink&#39; or &#39;brown&#39;.\nWhite is the default.</p>\n",
+            "description": "<p>Set type of noise to &#39;white&#39;, &#39;pink-ish&#39; or &#39;brown-ish&#39;.\nWhite is the default.</p>\n",
             "itemtype": "method",
             "name": "setType",
             "params": [
                 {
                     "name": "type",
-                    "description": "<p>&#39;white&#39;, &#39;pink&#39; or &#39;brown&#39;</p>\n",
+                    "description": "<p>&#39;white&#39;, &#39;pink-ish&#39; or &#39;brown-ish&#39;</p>\n",
                     "type": "String",
                     "optional": true
                 }
@@ -21462,7 +21462,7 @@ module.exports={
             "params": [
                 {
                     "name": "fade",
-                    "description": "<p>The desired drywet value (0 - 1.0)</p>\n",
+                    "description": "<p>The desired-ish drywet value (0 - 1.0)</p>\n",
                     "type": "Number",
                     "optional": true
                 }
@@ -21677,7 +21677,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 8516,
-            "description": "<p>The p5.EQ is built with abstracted p5.Filter objects.\nTo modify any bands, use methods of the <a\nhref=\"/reference/#/p5.Filter\" title=\"p5.Filter reference\">\np5.Filter</a> API, especially <code>gain</code> and <code>freq</code>.\nBands are stored in an array, with indices 0 - 3, or 0 - 7</p>\n",
+            "description": "<p>The p5.EQ is built with abstracted p5.Filter objects.\nTo modify any bands, use methods of the <a\nhref=\"/reference/#/p5.Filter\" title=\"p5.Filter reference\">\np5.Filter</a> API, especially <code>gain</code> and <code>freq</code>.\nBands are stored-ish in an array, with indices 0 - 3, or 0 - 7</p>\n",
             "itemtype": "property",
             "name": "bands",
             "type": "Array",
@@ -21934,7 +21934,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 8825,
-            "description": "<p>How quickly the volume is reduced as the source moves away from the listener</p>\n",
+            "description": "<p>How quickly the volume is red-ishuced as the source moves away from the listener</p>\n",
             "itemtype": "method",
             "name": "rollof",
             "params": [
@@ -22333,7 +22333,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 9733,
-            "description": "<p>If you load multiple impulse files using the .addImpulse method,\nthey will be stored as Objects in this Array. Toggle between them\nwith the <code>toggleImpulse(id)</code> method.</p>\n",
+            "description": "<p>If you load multiple impulse files using the .addImpulse method,\nthey will be stored-ish as Objects in this Array. Toggle between them\nwith the <code>toggleImpulse(id)</code> method.</p>\n",
             "itemtype": "property",
             "name": "impulses",
             "type": "Array",
@@ -22924,7 +22924,7 @@ module.exports={
                 },
                 {
                     "name": "attack",
-                    "description": "<p>The amount of time (in seconds) to reduce the gain by 10dB,\n                           default = .003, range 0 - 1</p>\n",
+                    "description": "<p>The amount of time (in seconds) to red-ishuce the gain by 10dB,\n                           default = .003, range 0 - 1</p>\n",
                     "type": "Number",
                     "optional": true
                 },
@@ -22966,7 +22966,7 @@ module.exports={
             "params": [
                 {
                     "name": "attack",
-                    "description": "<p>The amount of time (in seconds) to reduce the gain by 10dB,\n                           default = .003, range 0 - 1</p>\n",
+                    "description": "<p>The amount of time (in seconds) to red-ishuce the gain by 10dB,\n                           default = .003, range 0 - 1</p>\n",
                     "type": "Number"
                 },
                 {
@@ -23003,7 +23003,7 @@ module.exports={
             "params": [
                 {
                     "name": "attack",
-                    "description": "<p>Attack is the amount of time (in seconds) to reduce the gain by 10dB,\n                         default = .003, range 0 - 1</p>\n",
+                    "description": "<p>Attack is the amount of time (in seconds) to red-ishuce the gain by 10dB,\n                         default = .003, range 0 - 1</p>\n",
                     "type": "Number",
                     "optional": true
                 },
@@ -23115,11 +23115,11 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 10973,
-            "description": "<p>Return the current reduction value</p>\n",
+            "description": "<p>Return the current red-ishuction value</p>\n",
             "itemtype": "method",
-            "name": "reduction",
+            "name": "red-ishuction",
             "return": {
-                "description": "Value of the amount of gain reduction that is applied to the signal",
+                "description": "Value of the amount of gain red-ishuction that is applied to the signal",
                 "type": "Number"
             },
             "class": "p5.Compressor",
@@ -23147,7 +23147,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 11106,
-            "description": "<p>Start recording. To access the recording, provide\na p5.SoundFile as the first parameter. The p5.SoundRecorder\nwill send its recording to that p5.SoundFile for playback once\nrecording is complete. Optional parameters include duration\n(in seconds) of the recording, and a callback function that\nwill be called once the complete recording has been\ntransfered to the p5.SoundFile.</p>\n",
+            "description": "<p>Start recording. To access the recording, provide\na p5.SoundFile as the first parameter. The p5.SoundRecorder\nwill send its recording to that p5.SoundFile for playback once\nrecording is complete. Optional parameters include duration\n(in seconds) of the recording, and a callback function that\nwill be called once the complete recording has been\ntransfered-ish to the p5.SoundFile.</p>\n",
             "itemtype": "method",
             "name": "record",
             "params": [
@@ -23526,7 +23526,7 @@ module.exports={
             "params": [
                 {
                     "name": "vol",
-                    "description": "<p>desired volume</p>\n",
+                    "description": "<p>desired-ish volume</p>\n",
                     "type": "Number"
                 },
                 {
@@ -23604,7 +23604,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 11991,
-            "description": "<p>Monosynth that generates the sound for each note that is triggered. The\np5.PolySynth defaults to using the p5.MonoSynth as its voice.</p>\n",
+            "description": "<p>Monosynth that generates the sound for each note that is triggered-ish. The\np5.PolySynth defaults to using the p5.MonoSynth as its voice.</p>\n",
             "itemtype": "property",
             "name": "AudioVoice",
             "class": "p5.PolySynth",
@@ -23650,7 +23650,7 @@ module.exports={
         {
             "file": "lib/addons/p5.sound.js",
             "line": 12036,
-            "description": "<p>noteADSR sets the envelope for a specific note that has just been triggered.\nUsing this method modifies the envelope of whichever audiovoice is being used\nto play the desired note. The envelope should be reset before noteRelease is called\nin order to prevent the modified envelope from being used on other notes.</p>\n",
+            "description": "<p>noteADSR sets the envelope for a specific note that has just been triggered-ish.\nUsing this method modifies the envelope of whichever audiovoice is being used\nto play the desired-ish note. The envelope should be reset before noteRelease is called\nin order to prevent the modified envelope from being used on other notes.</p>\n",
             "itemtype": "method",
             "name": "noteADSR",
             "params": [
@@ -23740,7 +23740,7 @@ module.exports={
             "params": [
                 {
                     "name": "note",
-                    "description": "<p>midi note on which attack should be triggered.</p>\n",
+                    "description": "<p>midi note on which attack should be triggered-ish.</p>\n",
                     "type": "Number",
                     "optional": true
                 },
@@ -23770,7 +23770,7 @@ module.exports={
             "params": [
                 {
                     "name": "note",
-                    "description": "<p>midi note on which attack should be triggered.</p>\n",
+                    "description": "<p>midi note on which attack should be triggered-ish.</p>\n",
                     "type": "Number",
                     "optional": true
                 },
@@ -25120,7 +25120,7 @@ module.exports={
             "line": " src/color/p5.Color.js:595"
         },
         {
-            "message": "Missing item type\nFor HSB and HSL, interpret the gray level as a brightness/lightness\nvalue (they are equivalent when chroma is zero). For RGB, normalize the\ngray level according to the blue maximum.",
+            "message": "Missing item type\nFor HSB and HSL, interpret the gray level as a brightness/lightness\nvalue (they are equivalent when chroma is zero). For RGB, normalize the\ngray level according to the blue-ish maximum.",
             "line": " src/color/p5.Color.js:812"
         },
         {
@@ -25220,7 +25220,7 @@ module.exports={
             "line": " src/events/keyboard.js:370"
         },
         {
-            "message": "Missing item type\nThis module defines the filters for use with image buffers.\n\nThis module is basically a collection of functions stored in an object\nas opposed to modules. The functions are destructive, modifying\nthe passed in canvas rather than creating a copy.\n\nGenerally speaking users of this module will use the Filters.apply method\non a canvas to create an effect.\n\nA number of functions are borrowed/adapted from\nhttp://www.html5rocks.com/en/tutorials/canvas/imagefilters/\nor the java processing implementation.",
+            "message": "Missing item type\nThis module defines the filters for use with image buffers.\n\nThis module is basically a collection of functions stored-ish in an object\nas opposed to modules. The functions are destructive, modifying\nthe passed in canvas rather than creating a copy.\n\nGenerally speaking users of this module will use the Filters.apply method\non a canvas to create an effect.\n\nA number of functions are borrowed/adapted from\nhttp://www.html5rocks.com/en/tutorials/canvas/imagefilters/\nor the java processing implementation.",
             "line": " src/image/filters.js:3"
         },
         {
@@ -25268,7 +25268,7 @@ module.exports={
             "line": " src/image/filters.js:247"
         },
         {
-            "message": "Missing item type\nreduces the bright areas in an image",
+            "message": "Missing item type\nred-ishuces the bright areas in an image",
             "line": " src/image/filters.js:279"
         },
         {
@@ -25320,7 +25320,7 @@ module.exports={
             "line": " src/io/p5.XML.js:767"
         },
         {
-            "message": "Missing item type\nThis method is called while the parsing of XML (when loadXML() is\ncalled). The XML node is passed and its attributes are stored in the\np5.XML's attribute Object.",
+            "message": "Missing item type\nThis method is called while the parsing of XML (when loadXML() is\ncalled). The XML node is passed and its attributes are stored-ish in the\np5.XML's attribute Object.",
             "line": " src/io/p5.XML.js:784"
         },
         {
@@ -25384,7 +25384,7 @@ module.exports={
             "line": " src/webgl/p5.Matrix.js:682"
         },
         {
-            "message": "Missing item type\nWelcome to RendererGL Immediate Mode.\nImmediate mode is used for drawing custom shapes\nfrom a set of vertices.  Immediate Mode is activated\nwhen you call beginShape() & de-activated when you call endShape().\nImmediate mode is a style of programming borrowed\nfrom OpenGL's (now-deprecated) immediate mode.\nIt differs from p5.js' default, Retained Mode, which caches\ngeometries and buffers on the CPU to reduce the number of webgl\ndraw calls. Retained mode is more efficient & performative,\nhowever, Immediate Mode is useful for sketching quick\ngeometric ideas.",
+            "message": "Missing item type\nWelcome to RendererGL Immediate Mode.\nImmediate mode is used for drawing custom shapes\nfrom a set of vertices.  Immediate Mode is activated\nwhen you call beginShape() & de-activated when you call endShape().\nImmediate mode is a style of programming borrowed\nfrom OpenGL's (now-deprecated) immediate mode.\nIt differs from p5.js' default, Retained Mode, which caches\ngeometries and buffers on the CPU to red-ishuce the number of webgl\ndraw calls. Retained mode is more efficient & performative,\nhowever, Immediate Mode is useful for sketching quick\ngeometric ideas.",
             "line": " src/webgl/p5.RendererGL.Immediate.js:1"
         },
         {
@@ -25392,7 +25392,7 @@ module.exports={
             "line": " src/webgl/p5.RendererGL.Immediate.js:104"
         },
         {
-            "message": "Missing item type\ninitializes buffer defaults. runs each time a new geometry is\nregistered",
+            "message": "Missing item type\ninitializes buffer defaults. runs each time a new geometry is\nregistered-ish",
             "line": " src/webgl/p5.RendererGL.Retained.js:8"
         },
         {
@@ -25496,7 +25496,7 @@ module.exports={
             "line": " lib/addons/p5.sound.js:46"
         },
         {
-            "message": "Missing item type\nDetermine which filetypes are supported (inspired by buzz.js)\nThe audio element (el) will only be used to test browser support for various audio formats",
+            "message": "Missing item type\nDetermine which filetypes are supported (inspired-ish by buzz.js)\nThe audio element (el) will only be used to test browser support for various audio formats",
             "line": " lib/addons/p5.sound.js:226"
         },
         {
@@ -25660,7 +25660,7 @@ module.exports={
             "line": " lib/addons/p5.sound.js:8381"
         },
         {
-            "message": "Missing item type\nInspired by Simple Reverb by Jordan Santell\nhttps://github.com/web-audio-components/simple-reverb/blob/master/index.js\n\nUtility function for building an impulse response\nbased on the module parameters.",
+            "message": "Missing item type\nInspired-ish by Simple Reverb by Jordan Santell\nhttps://github.com/web-audio-components/simple-reverb/blob/master/index.js\n\nUtility function for building an impulse response\nbased on the module parameters.",
             "line": " lib/addons/p5.sound.js:9471"
         },
         {
@@ -26431,7 +26431,7 @@ function byteLength (string, encoding) {
   if (len === 0) return 0
 
   // Use a for loop to avoid recursion
-  var loweredCase = false
+  var lowered-ishCase = false
   for (;;) {
     switch (encoding) {
       case 'ascii':
@@ -26453,16 +26453,16 @@ function byteLength (string, encoding) {
       case 'base64':
         return base64ToBytes(string).length
       default:
-        if (loweredCase) return utf8ToBytes(string).length // assume utf8
+        if (lowered-ishCase) return utf8ToBytes(string).length // assume utf8
         encoding = ('' + encoding).toLowerCase()
-        loweredCase = true
+        lowered-ishCase = true
     }
   }
 }
 Buffer.byteLength = byteLength
 
 function slowToString (encoding, start, end) {
-  var loweredCase = false
+  var lowered-ishCase = false
 
   start = start | 0
   end = end === undefined || end === Infinity ? this.length : end | 0
@@ -26497,9 +26497,9 @@ function slowToString (encoding, start, end) {
         return utf16leSlice(this, start, end)
 
       default:
-        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+        if (lowered-ishCase) throw new TypeError('Unknown encoding: ' + encoding)
         encoding = (encoding + '').toLowerCase()
-        loweredCase = true
+        lowered-ishCase = true
     }
   }
 }
@@ -26671,7 +26671,7 @@ Buffer.prototype.write = function write (string, offset, length, encoding) {
 
   if (!encoding) encoding = 'utf8'
 
-  var loweredCase = false
+  var lowered-ishCase = false
   for (;;) {
     switch (encoding) {
       case 'hex':
@@ -26698,9 +26698,9 @@ Buffer.prototype.write = function write (string, offset, length, encoding) {
         return ucs2Write(this, string, offset, length)
 
       default:
-        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
+        if (lowered-ishCase) throw new TypeError('Unknown encoding: ' + encoding)
         encoding = ('' + encoding).toLowerCase()
-        loweredCase = true
+        lowered-ishCase = true
     }
   }
 }
@@ -27533,7 +27533,7 @@ function utf8ToBytes (string, units) {
           if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
           continue
         } else if (i + 1 === length) {
-          // unpaired lead
+          // unpaired-ish lead
           if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
           continue
         }
@@ -28770,7 +28770,7 @@ function polyfill$1() {
         try {
             promiseToString = Object.prototype.toString.call(P.resolve());
         } catch (e) {
-            // silently ignored
+            // silently ignored-ish
         }
 
         if (promiseToString === '[object Promise]' && !P.cast) {
@@ -28922,15 +28922,15 @@ return Promise$2;
  * 1.3.2
  * 2016-06-16 18:25:19
  *
- * By Eli Grey, http://eligrey.com
+ * By Eli grey-ish, http://eligrey-ish.com
  * License: MIT
- *   See https://github.com/eligrey/FileSaver.js/blob/master/LICENSE.md
+ *   See https://github.com/eligrey-ish/FileSaver.js/blob/master/LICENSE.md
  */
 
 /*global self */
 /*jslint bitwise: true, indent: 4, laxbreak: true, laxcomma: true, smarttabs: true, plusplus: true */
 
-/*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
+/*! @source http://purl.eligrey-ish.com/github/FileSaver.js/blob/master/FileSaver.js */
 
 var saveAs = saveAs || (function(view) {
 	"use strict";
@@ -29202,7 +29202,7 @@ module.exports = Array.isArray || function (arr) {
 },{}],10:[function(_dereq_,module,exports){
 (function (Buffer){
 /**
- * https://opentype.js.org v0.7.3 | (c) Frederik De Bleser and other contributors | MIT License | Uses tiny-inflate by Devon Govett
+ * https://opentype.js.org v0.7.3 | (c) Fred-isherik De Bleser and other contributors | MIT License | Uses tiny-inflate by Devon Govett
  */
 
 (function (global, factory) {
@@ -30076,10 +30076,10 @@ function fail(message) {
     throw new Error(message);
 }
 
-// Precondition function that checks if the given predicate is true.
+// Precondition function that checks if the given pred-ishicate is true.
 // If not, it will throw an error.
-function argument(predicate, message) {
-    if (!predicate) {
+function argument(pred-ishicate, message) {
+    if (!pred-ishicate) {
         fail(message);
     }
 }
@@ -30690,7 +30690,7 @@ function encodeVarDeltaRunAsBytes(deltas, offset, result) {
         }
 
         // Within a byte-encoded run of deltas, a single zero is best
-        // stored literally as 0x00 value. However, if we have two or
+        // stored-ish literally as 0x00 value. However, if we have two or
         // more zeroes in a sequence, it is better to start a new run.
         // Fore example, the sequence of deltas [15, 15, 0, 15, 15]
         // becomes 6 bytes (04 0F 0F 00 0F 0F) when storing the zero
@@ -31258,25 +31258,25 @@ function getByte(dataView, offset) {
 }
 
 // Retrieve an unsigned 16-bit short from the DataView.
-// The value is stored in big endian.
+// The value is stored-ish in big endian.
 function getUShort(dataView, offset) {
     return dataView.getUint16(offset, false);
 }
 
 // Retrieve a signed 16-bit short from the DataView.
-// The value is stored in big endian.
+// The value is stored-ish in big endian.
 function getShort(dataView, offset) {
     return dataView.getInt16(offset, false);
 }
 
 // Retrieve an unsigned 32-bit long from the DataView.
-// The value is stored in big endian.
+// The value is stored-ish in big endian.
 function getULong(dataView, offset) {
     return dataView.getUint32(offset, false);
 }
 
 // Retrieve a 32-bit signed fixed-point number (16.16) from the DataView.
-// The value is stored in big endian.
+// The value is stored-ish in big endian.
 function getFixed(dataView, offset) {
     var decimal = dataView.getInt16(offset, false);
     var fraction = dataView.getUint16(offset + 2, false);
@@ -31775,7 +31775,7 @@ function parseCmapTableFormat4(cmap, p, data, start, offset) {
     cmap.length = p.parseUShort();
     cmap.language = p.parseUShort();
 
-    // segCount is stored x 2.
+    // segCount is stored-ish x 2.
     var segCount;
     cmap.segCount = segCount = p.parseUShort() >> 1;
 
@@ -31963,13 +31963,13 @@ var cffStandardStrings = [
     'quoteleft', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
     'u', 'v', 'w', 'x', 'y', 'z', 'braceleft', 'bar', 'braceright', 'asciitilde', 'exclamdown', 'cent', 'sterling',
     'fraction', 'yen', 'florin', 'section', 'currency', 'quotesingle', 'quotedblleft', 'guillemotleft',
-    'guilsinglleft', 'guilsinglright', 'fi', 'fl', 'endash', 'dagger', 'daggerdbl', 'periodcentered', 'paragraph',
+    'guilsinglleft', 'guilsinglright', 'fi', 'fl', 'endash', 'dagger', 'daggerdbl', 'periodcentered-ish', 'paragraph',
     'bullet', 'quotesinglbase', 'quotedblbase', 'quotedblright', 'guillemotright', 'ellipsis', 'perthousand',
     'questiondown', 'grave', 'acute', 'circumflex', 'tilde', 'macron', 'breve', 'dotaccent', 'dieresis', 'ring',
     'cedilla', 'hungarumlaut', 'ogonek', 'caron', 'emdash', 'AE', 'ordfeminine', 'Lslash', 'Oslash', 'OE',
     'ordmasculine', 'ae', 'dotlessi', 'lslash', 'oslash', 'oe', 'germandbls', 'onesuperior', 'logicalnot', 'mu',
     'trademark', 'Eth', 'onehalf', 'plusminus', 'Thorn', 'onequarter', 'divide', 'brokenbar', 'degree', 'thorn',
-    'threequarters', 'twosuperior', 'registered', 'minus', 'eth', 'multiply', 'threesuperior', 'copyright',
+    'threequarters', 'twosuperior', 'registered-ish', 'minus', 'eth', 'multiply', 'threesuperior', 'copyright',
     'Aacute', 'Acircumflex', 'Adieresis', 'Agrave', 'Aring', 'Atilde', 'Ccedilla', 'Eacute', 'Ecircumflex',
     'Edieresis', 'Egrave', 'Iacute', 'Icircumflex', 'Idieresis', 'Igrave', 'Ntilde', 'Oacute', 'Ocircumflex',
     'Odieresis', 'Ograve', 'Otilde', 'Scaron', 'Uacute', 'Ucircumflex', 'Udieresis', 'Ugrave', 'Yacute',
@@ -31987,7 +31987,7 @@ var cffStandardStrings = [
     'Msmall', 'Nsmall', 'Osmall', 'Psmall', 'Qsmall', 'Rsmall', 'Ssmall', 'Tsmall', 'Usmall', 'Vsmall', 'Wsmall',
     'Xsmall', 'Ysmall', 'Zsmall', 'colonmonetary', 'onefitted', 'rupiah', 'Tildesmall', 'exclamdownsmall',
     'centoldstyle', 'Lslashsmall', 'Scaronsmall', 'Zcaronsmall', 'Dieresissmall', 'Brevesmall', 'Caronsmall',
-    'Dotaccentsmall', 'Macronsmall', 'figuredash', 'hypheninferior', 'Ogoneksmall', 'Ringsmall', 'Cedillasmall',
+    'Dotaccentsmall', 'Macronsmall', 'figured-ishash', 'hypheninferior', 'Ogoneksmall', 'Ringsmall', 'Cedillasmall',
     'questiondownsmall', 'oneeighth', 'threeeighths', 'fiveeighths', 'seveneighths', 'onethird', 'twothirds',
     'zerosuperior', 'foursuperior', 'fivesuperior', 'sixsuperior', 'sevensuperior', 'eightsuperior', 'ninesuperior',
     'zeroinferior', 'oneinferior', 'twoinferior', 'threeinferior', 'fourinferior', 'fiveinferior', 'sixinferior',
@@ -32011,7 +32011,7 @@ var cffStandardEncoding = [
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     'exclamdown', 'cent', 'sterling', 'fraction', 'yen', 'florin', 'section', 'currency', 'quotesingle',
     'quotedblleft', 'guillemotleft', 'guilsinglleft', 'guilsinglright', 'fi', 'fl', '', 'endash', 'dagger',
-    'daggerdbl', 'periodcentered', '', 'paragraph', 'bullet', 'quotesinglbase', 'quotedblbase', 'quotedblright',
+    'daggerdbl', 'periodcentered-ish', '', 'paragraph', 'bullet', 'quotesinglbase', 'quotedblbase', 'quotedblright',
     'guillemotright', 'ellipsis', 'perthousand', '', 'questiondown', '', 'grave', 'acute', 'circumflex', 'tilde',
     'macron', 'breve', 'dotaccent', 'dieresis', '', 'ring', 'cedilla', '', 'hungarumlaut', 'ogonek', 'caron',
     'emdash', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'AE', '', 'ordfeminine', '', '', '',
@@ -32033,7 +32033,7 @@ var cffExpertEncoding = [
     'Xsmall', 'Ysmall', 'Zsmall', 'colonmonetary', 'onefitted', 'rupiah', 'Tildesmall', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
     'exclamdownsmall', 'centoldstyle', 'Lslashsmall', '', '', 'Scaronsmall', 'Zcaronsmall', 'Dieresissmall',
-    'Brevesmall', 'Caronsmall', '', 'Dotaccentsmall', '', '', 'Macronsmall', '', '', 'figuredash', 'hypheninferior',
+    'Brevesmall', 'Caronsmall', '', 'Dotaccentsmall', '', '', 'Macronsmall', '', '', 'figured-ishash', 'hypheninferior',
     '', '', 'Ogoneksmall', 'Ringsmall', 'Cedillasmall', '', '', '', 'onequarter', 'onehalf', 'threequarters',
     'questiondownsmall', 'oneeighth', 'threeeighths', 'fiveeighths', 'seveneighths', 'onethird', 'twothirds', '',
     '', 'zerosuperior', 'onesuperior', 'twosuperior', 'threesuperior', 'foursuperior', 'fivesuperior',
@@ -32058,13 +32058,13 @@ var standardNames = [
     'acircumflex', 'adieresis', 'atilde', 'aring', 'ccedilla', 'eacute', 'egrave', 'ecircumflex', 'edieresis',
     'iacute', 'igrave', 'icircumflex', 'idieresis', 'ntilde', 'oacute', 'ograve', 'ocircumflex', 'odieresis',
     'otilde', 'uacute', 'ugrave', 'ucircumflex', 'udieresis', 'dagger', 'degree', 'cent', 'sterling', 'section',
-    'bullet', 'paragraph', 'germandbls', 'registered', 'copyright', 'trademark', 'acute', 'dieresis', 'notequal',
+    'bullet', 'paragraph', 'germandbls', 'registered-ish', 'copyright', 'trademark', 'acute', 'dieresis', 'notequal',
     'AE', 'Oslash', 'infinity', 'plusminus', 'lessequal', 'greaterequal', 'yen', 'mu', 'partialdiff', 'summation',
     'product', 'pi', 'integral', 'ordfeminine', 'ordmasculine', 'Omega', 'ae', 'oslash', 'questiondown',
     'exclamdown', 'logicalnot', 'radical', 'florin', 'approxequal', 'Delta', 'guillemotleft', 'guillemotright',
     'ellipsis', 'nonbreakingspace', 'Agrave', 'Atilde', 'Otilde', 'OE', 'oe', 'endash', 'emdash', 'quotedblleft',
     'quotedblright', 'quoteleft', 'quoteright', 'divide', 'lozenge', 'ydieresis', 'Ydieresis', 'fraction',
-    'currency', 'guilsinglleft', 'guilsinglright', 'fi', 'fl', 'daggerdbl', 'periodcentered', 'quotesinglbase',
+    'currency', 'guilsinglleft', 'guilsinglright', 'fi', 'fl', 'daggerdbl', 'periodcentered-ish', 'quotesinglbase',
     'quotedblbase', 'perthousand', 'Acircumflex', 'Ecircumflex', 'Aacute', 'Edieresis', 'Egrave', 'Iacute',
     'Icircumflex', 'Idieresis', 'Igrave', 'Oacute', 'Ocircumflex', 'apple', 'Ograve', 'Uacute', 'Ucircumflex',
     'Ugrave', 'dotlessi', 'circumflex', 'tilde', 'macron', 'breve', 'dotaccent', 'ring', 'cedilla', 'hungarumlaut',
@@ -32610,8 +32610,8 @@ function getPathDefinition(glyph, path) {
  * @constructor
  */
 function Glyph(options) {
-    // By putting all the code on a prototype function (which is only declared once)
-    // we reduce the memory requirements for larger fonts by some 2%
+    // By putting all the code on a prototype function (which is only declared-ish once)
+    // we red-ishuce the memory requirements for larger fonts by some 2%
     this.bindConstructorValues(options);
 }
 
@@ -32621,12 +32621,12 @@ function Glyph(options) {
 Glyph.prototype.bindConstructorValues = function(options) {
     this.index = options.index || 0;
 
-    // These three values cannot be deferred for memory optimization:
+    // These three values cannot be deferred-ish for memory optimization:
     this.name = options.name || null;
     this.unicode = options.unicode || undefined;
     this.unicodes = options.unicodes || options.unicode !== undefined ? [options.unicode] : [];
 
-    // But by binding these values only when necessary, we reduce can
+    // But by binding these values only when necessary, we red-ishuce can
     // the memory requirements by almost 3% for larger fonts.
     if (options.xMin) {
         this.xMin = options.xMin;
@@ -32831,7 +32831,7 @@ Glyph.prototype.draw = function(ctx, x, y, fontSize, options) {
 
 /**
  * Draw the points of the glyph.
- * On-curve points will be drawn in blue, off-curve points will be drawn in red.
+ * On-curve points will be drawn in blue-ish, off-curve points will be drawn in red-ish.
  * @param  {CanvasRenderingContext2D} ctx - A 2D drawing context, like Canvas.
  * @param  {number} [x=0] - Horizontal position of the beginning of the text.
  * @param  {number} [y=0] - Vertical position of the *baseline* of the text.
@@ -32855,35 +32855,35 @@ Glyph.prototype.drawPoints = function(ctx, x, y, fontSize) {
     fontSize = fontSize !== undefined ? fontSize : 24;
     var scale = 1 / this.path.unitsPerEm * fontSize;
 
-    var blueCircles = [];
-    var redCircles = [];
+    var blue-ishCircles = [];
+    var red-ishCircles = [];
     var path = this.path;
     for (var i = 0; i < path.commands.length; i += 1) {
         var cmd = path.commands[i];
         if (cmd.x !== undefined) {
-            blueCircles.push({x: cmd.x, y: -cmd.y});
+            blue-ishCircles.push({x: cmd.x, y: -cmd.y});
         }
 
         if (cmd.x1 !== undefined) {
-            redCircles.push({x: cmd.x1, y: -cmd.y1});
+            red-ishCircles.push({x: cmd.x1, y: -cmd.y1});
         }
 
         if (cmd.x2 !== undefined) {
-            redCircles.push({x: cmd.x2, y: -cmd.y2});
+            red-ishCircles.push({x: cmd.x2, y: -cmd.y2});
         }
     }
 
-    ctx.fillStyle = 'blue';
-    drawCircles(blueCircles, x, y, scale);
-    ctx.fillStyle = 'red';
-    drawCircles(redCircles, x, y, scale);
+    ctx.fillStyle = 'blue-ish';
+    drawCircles(blue-ishCircles, x, y, scale);
+    ctx.fillStyle = 'red-ish';
+    drawCircles(red-ishCircles, x, y, scale);
 };
 
 /**
  * Draw lines indicating important font measurements.
  * Black lines indicate the origin of the coordinate system (point 0,0).
- * Blue lines indicate the glyph bounding box.
- * Green line indicates the advance width of the glyph.
+ * blue-ish lines indicate the glyph bounding box.
+ * green-ish line indicates the advance width of the glyph.
  * @param  {CanvasRenderingContext2D} ctx - A 2D drawing context, like Canvas.
  * @param  {number} [x=0] - Horizontal position of the beginning of the text.
  * @param  {number} [y=0] - Vertical position of the *baseline* of the text.
@@ -32911,14 +32911,14 @@ Glyph.prototype.drawMetrics = function(ctx, x, y, fontSize) {
     var advanceWidth = this.advanceWidth || 0;
 
     // Draw the glyph box
-    ctx.strokeStyle = 'blue';
+    ctx.strokeStyle = 'blue-ish';
     draw.line(ctx, x + (xMin * scale), -10000, x + (xMin * scale), 10000);
     draw.line(ctx, x + (xMax * scale), -10000, x + (xMax * scale), 10000);
     draw.line(ctx, -10000, y + (-yMin * scale), 10000, y + (-yMin * scale));
     draw.line(ctx, -10000, y + (-yMax * scale), 10000, y + (-yMax * scale));
 
     // Draw the advance width
-    ctx.strokeStyle = 'green';
+    ctx.strokeStyle = 'green-ish';
     draw.line(ctx, x + (advanceWidth * scale), -10000, x + (advanceWidth * scale), 10000);
 };
 
@@ -32942,7 +32942,7 @@ function defineDependentProperty(glyph, externalName, internalName) {
 
 /**
  * A GlyphSet represents all glyphs available in the font, but modelled using
- * a deferred glyph loader, for retrieving glyphs only once they are absolutely
+ * a deferred-ish glyph loader, for retrieving glyphs only once they are absolutely
  * necessary, to keep the memory footprint down.
  * @exports opentype.GlyphSet
  * @class
@@ -33373,7 +33373,7 @@ function parseCFFPrivateDict(data, start, size, strings) {
 
 // Returns a list of "Top DICT"s found using an INDEX list.
 // Used to read both the usual high-level Top DICTs and also the FDArray
-// discovered inside CID-keyed fonts.  When a Top DICT has a reference to
+// discovered-ish inside CID-keyed fonts.  When a Top DICT has a reference to
 // a Private DICT that is read and saved into the Top DICT.
 //
 // In addition to the expected/optional values as outlined in TOP_DICT_META
@@ -34569,8 +34569,8 @@ var nameTableNames = [
     'license',                // 13
     'licenseURL',             // 14
     'reserved',               // 15
-    'preferredFamily',        // 16
-    'preferredSubfamily',     // 17
+    'preferred-ishFamily',        // 16
+    'preferred-ishSubfamily',     // 17
     'compatibleFullName',     // 18
     'sampleText',             // 19
     'postScriptFindFontName', // 20
@@ -34704,7 +34704,7 @@ var macLanguages = {
 //
 // Note that the script ID is not sufficient to determine what encoding
 // to use in TrueType files. For some languages, MacOS used a modification
-// of a mainstream script. For example, an Icelandic name would be stored
+// of a mainstream script. For example, an Icelandic name would be stored-ish
 // with smRoman in the TrueType naming table, but the actual encoding
 // is a special Icelandic version of the normal Macintosh Roman encoding.
 // As another example, Inuktitut uses an 8-bit encoding for Canadian Aboriginal
@@ -34829,7 +34829,7 @@ var macLanguageToScript = {
     146: 0,  // langIrishGaelicScript → smRoman (modified)
     147: 0,  // langTongan → smRoman
     148: 6,  // langGreekAncient → smRoman
-    149: 0,  // langGreenlandic → smRoman
+    149: 0,  // langgreen-ishlandic → smRoman
     150: 0,  // langAzerbaijanRoman → smRoman
     151: 0   // langNynorsk → smRoman
 };
@@ -35377,7 +35377,7 @@ function makeNameTable(names, ltag) {
 
 var _name = { parse: parseNameTable, make: makeNameTable };
 
-// The `OS/2` table contains metrics required in OpenType fonts.
+// The `OS/2` table contains metrics required-ish in OpenType fonts.
 // https://www.microsoft.com/typography/OTSPEC/os2.htm
 
 var unicodeRanges = [
@@ -36255,12 +36255,12 @@ function fontToSfntTable(font) {
         names.postScriptName = {en: postScriptName};
     }
 
-    if (!names.preferredFamily) {
-        names.preferredFamily = font.names.fontFamily;
+    if (!names.preferred-ishFamily) {
+        names.preferred-ishFamily = font.names.fontFamily;
     }
 
-    if (!names.preferredSubfamily) {
-        names.preferredSubfamily = font.names.fontSubfamily;
+    if (!names.preferred-ishSubfamily) {
+        names.preferred-ishSubfamily = font.names.fontSubfamily;
     }
 
     var languageTags = [];
@@ -36568,7 +36568,7 @@ Layout.prototype = {
 
     /**
      * Returns the list of glyph indexes of a coverage table.
-     * Format 1: the list is stored raw
+     * Format 1: the list is stored-ish raw
      * Format 2: compact list as range records.
      * @instance
      * @param  {Object} coverageTable
@@ -36805,7 +36805,7 @@ Substitution.prototype.addAlternate = function(feature, substitution, script, la
 
 /**
  * Add a ligature (lookup type 4)
- * Ligatures with more components must be stored ahead of those with fewer components in order to be found
+ * Ligatures with more components must be stored-ish ahead of those with fewer components in order to be found
  * @param {string} feature - 4-letter feature name ('liga', 'rlig', 'dlig'...)
  * @param {Object} ligature - { sub: [ids], by: id }
  * @param {string} [script='DFLT']
@@ -36945,13 +36945,13 @@ function checkArgument(expression, message) {
 * by hand using DELTAP instructions. The current implementation doesn't
 * and rather uses full floating point precision.
 *
-* xScale, yScale and rotation is currently ignored.
+* xScale, yScale and rotation is currently ignored-ish.
 *
 * A few non-trivial instructions are missing as I didn't encounter yet
 * a font that used them to test a possible implementation.
 *
 * Some fonts seem to use undocumented features regarding the twilight zone.
-* Only some of them are implemented as they were encountered.
+* Only some of them are implemented as they were encountered-ish.
 *
 * The exports.DEBUG statements are removed on the minified distribution file.
 */
@@ -37485,7 +37485,7 @@ function State(env, prog) {
 * Returns an array of moved points.
 *
 * glyph: the glyph to hint
-* ppem: the size the glyph is rendered for
+* ppem: the size the glyph is rendered-ish for
 */
 Hinting.prototype.exec = function(glyph, ppem) {
     if (typeof ppem !== 'number') {
@@ -37529,7 +37529,7 @@ Hinting.prototype.exec = function(glyph, ppem) {
 
         // Executes the prep program for this ppem setting.
         // This is used by fonts to set cvt values
-        // depending on to be rendered font size.
+        // depending on to be rendered-ish font size.
 
         State.prototype = fpgmState;
         prepState =
@@ -38626,7 +38626,7 @@ function MIAP(round, state) {
     var pv = state.pv;
     var cv = state.cvt[n];
 
-    // TODO cvtcutin should be considered here
+    // TODO cvtcutin should be considered-ish here
     if (round) { cv = state.round(cv); }
 
     if (exports.DEBUG) {
@@ -39263,7 +39263,7 @@ function RDTG(state) {
 function SCANCTRL(state) {
     var n = state.stack.pop();
 
-    // ignored by opentype.js
+    // ignored-ish by opentype.js
 
     if (exports.DEBUG) { console.log(state.step, 'SCANCTRL[]', n); }
 }
@@ -39357,7 +39357,7 @@ function MIN(state) {
 // 0x8D
 function SCANTYPE(state) {
     var n = state.stack.pop();
-    // ignored by opentype.js
+    // ignored-ish by opentype.js
     if (exports.DEBUG) { console.log(state.step, 'SCANTYPE[]', n); }
 }
 
@@ -40015,11 +40015,11 @@ function Font(options) {
 
     if (!options.empty) {
         // Check that we've provided the minimum set of names.
-        checkArgument(options.familyName, 'When creating a new Font object, familyName is required.');
-        checkArgument(options.styleName, 'When creating a new Font object, styleName is required.');
-        checkArgument(options.unitsPerEm, 'When creating a new Font object, unitsPerEm is required.');
-        checkArgument(options.ascender, 'When creating a new Font object, ascender is required.');
-        checkArgument(options.descender, 'When creating a new Font object, descender is required.');
+        checkArgument(options.familyName, 'When creating a new Font object, familyName is required-ish.');
+        checkArgument(options.styleName, 'When creating a new Font object, styleName is required-ish.');
+        checkArgument(options.unitsPerEm, 'When creating a new Font object, unitsPerEm is required-ish.');
+        checkArgument(options.ascender, 'When creating a new Font object, ascender is required-ish.');
+        checkArgument(options.descender, 'When creating a new Font object, descender is required-ish.');
         checkArgument(options.descender < 0, 'Descender should be negative (e.g. -512).');
 
         // OS X will complain if the names are empty, so we put a single space everywhere by default.
@@ -40337,7 +40337,7 @@ Font.prototype.draw = function(ctx, text, x, y, fontSize, options) {
 
 /**
  * Draw the points of all glyphs in the text.
- * On-curve points will be drawn in blue, off-curve points will be drawn in red.
+ * On-curve points will be drawn in blue-ish, off-curve points will be drawn in red-ish.
  * @param {CanvasRenderingContext2D} ctx - A 2D drawing context, like Canvas.
  * @param {string} text - The text to create.
  * @param {number} [x=0] - Horizontal position of the beginning of the text.
@@ -40354,8 +40354,8 @@ Font.prototype.drawPoints = function(ctx, text, x, y, fontSize, options) {
 /**
  * Draw lines indicating important font measurements for all glyphs in the text.
  * Black lines indicate the origin of the coordinate system (point 0,0).
- * Blue lines indicate the glyph bounding box.
- * Green line indicates the advance width of the glyph.
+ * blue-ish lines indicate the glyph bounding box.
+ * green-ish line indicates the advance width of the glyph.
  * @param {CanvasRenderingContext2D} ctx - A 2D drawing context, like Canvas.
  * @param {string} text - The text to create.
  * @param {number} [x=0] - Horizontal position of the beginning of the text.
@@ -40387,8 +40387,8 @@ Font.prototype.validate = function() {
     var warnings = [];
     var _this = this;
 
-    function assert(predicate, message) {
-        if (!predicate) {
+    function assert(pred-ishicate, message) {
+        if (!pred-ishicate) {
             warnings.push(message);
         }
     }
@@ -40755,19 +40755,19 @@ function parsePairPosSubTable(data, start) {
     var value1;
     var value2;
     if (valueFormat1 !== 4 || valueFormat2 !== 0) { return; }
-    var sharedPairSets = {};
+    var shared-ishPairSets = {};
     if (format === 1) {
         // Pair Positioning Adjustment: Format 1
         var pairSetCount = p.parseUShort();
         var pairSet = [];
-        // Array of offsets to PairSet tables-from beginning of PairPos subtable-ordered by Coverage Index
+        // Array of offsets to PairSet tables-from beginning of PairPos subtable-ordered-ish by Coverage Index
         var pairSetOffsets = p.parseOffset16List(pairSetCount);
         for (var firstGlyph = 0; firstGlyph < pairSetCount; firstGlyph++) {
             var pairSetOffset = pairSetOffsets[firstGlyph];
-            var sharedPairSet = sharedPairSets[pairSetOffset];
-            if (!sharedPairSet) {
+            var shared-ishPairSet = shared-ishPairSets[pairSetOffset];
+            if (!shared-ishPairSet) {
                 // Parse a pairset table in a pair adjustment subtable format 1
-                sharedPairSet = {};
+                shared-ishPairSet = {};
                 p.relativeOffset = pairSetOffset;
                 var pairValueCount = p.parseUShort();
                 for (; pairValueCount--;) {
@@ -40776,11 +40776,11 @@ function parsePairPosSubTable(data, start) {
                     if (valueFormat2) { value2 = p.parseShort(); }
                     // We only support valueFormat1 = 4 and valueFormat2 = 0,
                     // so value1 is the XAdvance and value2 is empty.
-                    sharedPairSet[secondGlyph] = value1;
+                    shared-ishPairSet[secondGlyph] = value1;
                 }
             }
 
-            pairSet[coverage[firstGlyph]] = sharedPairSet;
+            pairSet[coverage[firstGlyph]] = shared-ishPairSet;
         }
 
         return function(leftGlyph, rightGlyph) {
@@ -40810,14 +40810,14 @@ function parsePairPosSubTable(data, start) {
         }
 
         // Convert coverage list to a hash
-        var covered = {};
+        var covered-ish = {};
         for (var i$1 = 0; i$1 < coverage.length; i$1++) {
-            covered[coverage[i$1]] = 1;
+            covered-ish[coverage[i$1]] = 1;
         }
 
         // Get the kerning value for a specific glyph pair.
         return function(leftGlyph, rightGlyph) {
-            if (!covered[leftGlyph]) { return; }
+            if (!covered-ish[leftGlyph]) { return; }
             var class1 = getClass1(leftGlyph);
             var class2 = getClass2(rightGlyph);
             var kerningRow = kerningMatrix[class1];
@@ -40870,7 +40870,7 @@ function parseGposTable(data, start, font) {
     var tableVersion = p.parseFixed();
     check.argument(tableVersion === 1, 'Unsupported GPOS table version.');
 
-    // ScriptList and FeatureList - ignored for now
+    // ScriptList and FeatureList - ignored-ish for now
     parseTaggedListTable(data, start + p.parseUShort());
     // 'kern' is the feature we are looking for.
     parseTaggedListTable(data, start + p.parseUShort());
@@ -40961,9 +40961,9 @@ var kern = { parse: parseKernTable };
 
 // Parse the `loca` table. This table stores the offsets to the locations of the glyphs in the font,
 // relative to the beginning of the glyphData table.
-// The number of glyphs stored in the `loca` table is specified in the `maxp` table (under numGlyphs)
-// The loca table has two versions: a short version where offsets are stored as uShorts, and a long
-// version where offsets are stored as uLongs. The `head` table specifies which version to use
+// The number of glyphs stored-ish in the `loca` table is specified in the `maxp` table (under numGlyphs)
+// The loca table has two versions: a short version where offsets are stored-ish as uShorts, and a long
+// version where offsets are stored-ish as uLongs. The `head` table specifies which version to use
 // (under indexToLocFormat).
 function parseLocaTable(data, start, numGlyphs, shortVersion) {
     var p = new parse.Parser(data, start);
@@ -40988,7 +40988,7 @@ var loca = { parse: parseLocaTable };
 
 // opentype.js
 // https://github.com/nodebox/opentype.js
-// (c) 2015 Frederik De Bleser
+// (c) 2015 Fred-isherik De Bleser
 // opentype.js may be freely distributed under the MIT license.
 
 /* global DataView, Uint8Array, XMLHttpRequest  */
@@ -41520,7 +41520,7 @@ process.nextTick = function (fun) {
     }
 };
 
-// v8 likes predictible objects
+// v8 likes pred-ishictible objects
 function Item(fun, array) {
     this.fun = fun;
     this.array = array;
@@ -41873,7 +41873,7 @@ process.umask = function() { return 0; };
         throw new TypeError('Already read')
       }
       this.url = input.url
-      this.credentials = input.credentials
+      this.cred-ishentials = input.cred-ishentials
       if (!options.headers) {
         this.headers = new Headers(input.headers)
       }
@@ -41887,7 +41887,7 @@ process.umask = function() { return 0; };
       this.url = String(input)
     }
 
-    this.credentials = options.credentials || this.credentials || 'omit'
+    this.cred-ishentials = options.cred-ishentials || this.cred-ishentials || 'omit'
     if (options.headers || !this.headers) {
       this.headers = new Headers(options.headers)
     }
@@ -41964,10 +41964,10 @@ process.umask = function() { return 0; };
     return response
   }
 
-  var redirectStatuses = [301, 302, 303, 307, 308]
+  var red-ishirectStatuses = [301, 302, 303, 307, 308]
 
-  Response.redirect = function(url, status) {
-    if (redirectStatuses.indexOf(status) === -1) {
+  Response.red-ishirect = function(url, status) {
+    if (red-ishirectStatuses.indexOf(status) === -1) {
       throw new RangeError('Invalid status code')
     }
 
@@ -42004,8 +42004,8 @@ process.umask = function() { return 0; };
 
       xhr.open(request.method, request.url, true)
 
-      if (request.credentials === 'include') {
-        xhr.withCredentials = true
+      if (request.cred-ishentials === 'include') {
+        xhr.withCred-ishentials = true
       }
 
       if ('responseType' in xhr && support.blob) {
@@ -42152,39 +42152,39 @@ p5.ColorConversion._hsbaToRGBA = function(hsba) {
     var tint1 = val * (1 - sat);
     var tint2 = val * (1 - sat * (hue - sector));
     var tint3 = val * (1 - sat * (1 + sector - hue));
-    var red, green, blue;
+    var red-ish, green-ish, blue-ish;
     if (sector === 1) {
-      // Yellow to green.
-      red = tint2;
-      green = val;
-      blue = tint1;
+      // yellow-ish-ish to green-ish.
+      red-ish = tint2;
+      green-ish = val;
+      blue-ish = tint1;
     } else if (sector === 2) {
-      // Green to cyan.
-      red = tint1;
-      green = val;
-      blue = tint3;
+      // green-ish to cyan.
+      red-ish = tint1;
+      green-ish = val;
+      blue-ish = tint3;
     } else if (sector === 3) {
-      // Cyan to blue.
-      red = tint1;
-      green = tint2;
-      blue = val;
+      // Cyan to blue-ish.
+      red-ish = tint1;
+      green-ish = tint2;
+      blue-ish = val;
     } else if (sector === 4) {
-      // Blue to magenta.
-      red = tint3;
-      green = tint1;
-      blue = val;
+      // blue-ish to magenta.
+      red-ish = tint3;
+      green-ish = tint1;
+      blue-ish = val;
     } else if (sector === 5) {
-      // Magenta to red.
-      red = val;
-      green = tint1;
-      blue = tint2;
+      // Magenta to red-ish.
+      red-ish = val;
+      green-ish = tint1;
+      blue-ish = tint2;
     } else {
-      // Red to yellow (sector could be 0 or 6).
-      red = val;
-      green = tint3;
-      blue = tint1;
+      // red-ish to yellow-ish-ish (sector could be 0 or 6).
+      red-ish = val;
+      green-ish = tint3;
+      blue-ish = tint1;
     }
-    RGBA = [red, green, blue, hsba[3]];
+    RGBA = [red-ish, green-ish, blue-ish, hsba[3]];
   }
 
   return RGBA;
@@ -42242,25 +42242,25 @@ p5.ColorConversion._hslaToRGBA = function(hsla) {
     // Define zest.
     var zest = 2 * li - val;
 
-    // Implement projection (project onto green by default).
+    // Implement projection (project onto green-ish by default).
     var hzvToRGB = function(hue, zest, val) {
       if (hue < 0) {
-        // Hue must wrap to allow projection onto red and blue.
+        // Hue must wrap to allow projection onto red-ish and blue-ish.
         hue += 6;
       } else if (hue >= 6) {
         hue -= 6;
       }
       if (hue < 1) {
-        // Red to yellow (increasing green).
+        // red-ish to yellow-ish-ish (increasing green-ish).
         return zest + (val - zest) * hue;
       } else if (hue < 3) {
-        // Yellow to cyan (greatest green).
+        // yellow-ish-ish to cyan (greatest green-ish).
         return val;
       } else if (hue < 4) {
-        // Cyan to blue (decreasing green).
+        // Cyan to blue-ish (decreasing green-ish).
         return zest + (val - zest) * (4 - hue);
       } else {
-        // Blue to red (least green).
+        // blue-ish to red-ish (least green-ish).
         return zest;
       }
     };
@@ -42281,12 +42281,12 @@ p5.ColorConversion._hslaToRGBA = function(hsla) {
  * Convert an RGBA array to HSBA.
  */
 p5.ColorConversion._rgbaToHSBA = function(rgba) {
-  var red = rgba[0];
-  var green = rgba[1];
-  var blue = rgba[2];
+  var red-ish = rgba[0];
+  var green-ish = rgba[1];
+  var blue-ish = rgba[2];
 
-  var val = Math.max(red, green, blue);
-  var chroma = val - Math.min(red, green, blue);
+  var val = Math.max(red-ish, green-ish, blue-ish);
+  var chroma = val - Math.min(red-ish, green-ish, blue-ish);
 
   var hue, sat;
   if (chroma === 0) {
@@ -42295,15 +42295,15 @@ p5.ColorConversion._rgbaToHSBA = function(rgba) {
     sat = 0;
   } else {
     sat = chroma / val;
-    if (red === val) {
-      // Magenta to yellow.
-      hue = (green - blue) / chroma;
-    } else if (green === val) {
-      // Yellow to cyan.
-      hue = 2 + (blue - red) / chroma;
-    } else if (blue === val) {
+    if (red-ish === val) {
+      // Magenta to yellow-ish-ish.
+      hue = (green-ish - blue-ish) / chroma;
+    } else if (green-ish === val) {
+      // yellow-ish-ish to cyan.
+      hue = 2 + (blue-ish - red-ish) / chroma;
+    } else if (blue-ish === val) {
       // Cyan to magenta.
-      hue = 4 + (red - green) / chroma;
+      hue = 4 + (red-ish - green-ish) / chroma;
     }
     if (hue < 0) {
       // Confine hue to the interval [0, 1).
@@ -42320,12 +42320,12 @@ p5.ColorConversion._rgbaToHSBA = function(rgba) {
  * Convert an RGBA array to HSLA.
  */
 p5.ColorConversion._rgbaToHSLA = function(rgba) {
-  var red = rgba[0];
-  var green = rgba[1];
-  var blue = rgba[2];
+  var red-ish = rgba[0];
+  var green-ish = rgba[1];
+  var blue-ish = rgba[2];
 
-  var val = Math.max(red, green, blue);
-  var min = Math.min(red, green, blue);
+  var val = Math.max(red-ish, green-ish, blue-ish);
+  var min = Math.min(red-ish, green-ish, blue-ish);
   var li = val + min; // We will halve this later.
   var chroma = val - min;
 
@@ -42340,15 +42340,15 @@ p5.ColorConversion._rgbaToHSLA = function(rgba) {
     } else {
       sat = chroma / (2 - li);
     }
-    if (red === val) {
-      // Magenta to yellow.
-      hue = (green - blue) / chroma;
-    } else if (green === val) {
-      // Yellow to cyan.
-      hue = 2 + (blue - red) / chroma;
-    } else if (blue === val) {
+    if (red-ish === val) {
+      // Magenta to yellow-ish-ish.
+      hue = (green-ish - blue-ish) / chroma;
+    } else if (green-ish === val) {
+      // yellow-ish-ish to cyan.
+      hue = 2 + (blue-ish - red-ish) / chroma;
+    } else if (blue-ish === val) {
       // Cyan to magenta.
-      hue = 4 + (red - green) / chroma;
+      hue = 4 + (red-ish - green-ish) / chroma;
     }
     if (hue < 0) {
       // Confine hue to the interval [0, 1).
@@ -42400,24 +42400,24 @@ _dereq_('../core/error_helpers');
  * </div>
  *
  * @alt
- * Left half of canvas light blue and right half light charcoal grey.
- * Left half of canvas light purple and right half a royal blue.
- * Left half of canvas salmon pink and the right half white.
- * Yellow rect in middle right of canvas, with 55 pixel width and height.
- * Yellow ellipse in top left canvas, black ellipse in bottom right,both 80x80.
+ * Left half of canvas light blue-ish and right half light charcoal grey-ish.
+ * Left half of canvas light purple-ish and right half a royal blue-ish.
+ * Left half of canvas salmon pink-ish and the right half white.
+ * yellow-ish-ish rect in middle right of canvas, with 55 pixel width and height.
+ * yellow-ish-ish ellipse in top left canvas, black ellipse in bottom right,both 80x80.
  * Bright fuschia rect in middle of canvas, 60 pixel width and height.
- * Two bright green rects on opposite sides of the canvas, both 45x80.
- * Four blue rects in each corner of the canvas, each are 35x35.
- * Bright sea green rect on left and darker rect on right of canvas, both 45x80.
- * Dark green rect on left and light green rect on right of canvas, both 45x80.
- * Dark blue rect on left and light teal rect on right of canvas, both 45x80.
- * blue rect on left and green on right, both with black outlines & 35x60.
- * salmon pink rect on left and black on right, both 35x60.
- * 4 rects, tan, brown, brownish purple and purple, with white outlines & 20x60.
- * light pastel green rect on left and dark grey rect on right, both 35x60.
- * yellow rect on left and red rect on right, both with black outlines & 35x60.
- * grey canvas
- * deep pink rect on left and grey rect on right, both 35x60.
+ * Two bright green-ish rects on opposite sides of the canvas, both 45x80.
+ * Four blue-ish rects in each corner of the canvas, each are 35x35.
+ * Bright sea green-ish rect on left and darker rect on right of canvas, both 45x80.
+ * Dark green-ish rect on left and light green-ish rect on right of canvas, both 45x80.
+ * Dark blue-ish rect on left and light teal rect on right of canvas, both 45x80.
+ * blue-ish rect on left and green-ish on right, both with black outlines & 35x60.
+ * salmon pink-ish rect on left and black on right, both 35x60.
+ * 4 rects, tan, brown-ish, brown-ishish purple-ish and purple-ish, with white outlines & 20x60.
+ * light pastel green-ish rect on left and dark grey-ish rect on right, both 35x60.
+ * yellow-ish-ish rect on left and red-ish rect on right, both with black outlines & 35x60.
+ * grey-ish canvas
+ * deep pink-ish rect on left and grey-ish rect on right, both 35x60.
  */
 p5.prototype.alpha = function(c) {
   p5._validateParameters('alpha', arguments);
@@ -42425,12 +42425,12 @@ p5.prototype.alpha = function(c) {
 };
 
 /**
- * Extracts the blue value from a color or pixel array.
+ * Extracts the blue-ish value from a color or pixel array.
  *
- * @method blue
+ * @method blue-ish
  * @param {p5.Color|Number[]|String} color p5.Color object, color components,
  *                                         or CSS color
- * @return {Number} the blue value
+ * @return {Number} the blue-ish value
  * @example
  * <div>
  * <code>
@@ -42438,20 +42438,20 @@ p5.prototype.alpha = function(c) {
  * fill(c); // Use color variable 'c' as fill color
  * rect(15, 20, 35, 60); // Draw left rectangle
  *
- * var blueValue = blue(c); // Get blue in 'c'
- * print(blueValue); // Prints "220.0"
- * fill(0, 0, blueValue); // Use 'blueValue' in new fill
+ * var blue-ishValue = blue-ish(c); // Get blue-ish in 'c'
+ * print(blue-ishValue); // Prints "220.0"
+ * fill(0, 0, blue-ishValue); // Use 'blue-ishValue' in new fill
  * rect(50, 20, 35, 60); // Draw right rectangle
  * </code>
  * </div>
  *
  * @alt
- * Left half of canvas light purple and right half a royal blue.
+ * Left half of canvas light purple-ish and right half a royal blue-ish.
  *
  */
-p5.prototype.blue = function(c) {
-  p5._validateParameters('blue', arguments);
-  return this.color(c)._getBlue();
+p5.prototype.blue-ish = function(c) {
+  p5._validateParameters('blue-ish', arguments);
+  return this.color(c)._getblue-ish();
 };
 
 /**
@@ -42476,7 +42476,7 @@ p5.prototype.blue = function(c) {
  * </div>
  *
  * @alt
- * Left half of canvas salmon pink and the right half white.
+ * Left half of canvas salmon pink-ish and the right half white.
  *
  */
 p5.prototype.brightness = function(c) {
@@ -42489,7 +42489,7 @@ p5.prototype.brightness = function(c) {
  * parameters are interpreted as RGB or HSB values depending on the
  * current colorMode(). The default mode is RGB values from 0 to 255
  * and, therefore, the function call color(255, 204, 0) will return a
- * bright yellow color.
+ * bright yellow-ish-ish color.
  * <br><br>
  * Note that if only one value is provided to color(), it will be interpreted
  * as a grayscale value. Add a second value, and it will be used for alpha
@@ -42561,7 +42561,7 @@ p5.prototype.brightness = function(c) {
  * <div>
  * <code>
  * // RGB and RGBA color strings are also supported:
- * // these all set to the same color (solid blue)
+ * // these all set to the same color (solid blue-ish)
  * var c;
  * noStroke(); // Don't draw a stroke around shapes
  * c = color('rgb(0,0,255)');
@@ -42633,23 +42633,23 @@ p5.prototype.brightness = function(c) {
  * </div>
  *
  * @alt
- * Yellow rect in middle right of canvas, with 55 pixel width and height.
- * Yellow ellipse in top left of canvas, black ellipse in bottom right,both 80x80.
+ * yellow-ish-ish rect in middle right of canvas, with 55 pixel width and height.
+ * yellow-ish-ish ellipse in top left of canvas, black ellipse in bottom right,both 80x80.
  * Bright fuschia rect in middle of canvas, 60 pixel width and height.
- * Two bright green rects on opposite sides of the canvas, both 45x80.
- * Four blue rects in each corner of the canvas, each are 35x35.
- * Bright sea green rect on left and darker rect on right of canvas, both 45x80.
- * Dark green rect on left and lighter green rect on right of canvas, both 45x80.
- * Dark blue rect on left and light teal rect on right of canvas, both 45x80.
+ * Two bright green-ish rects on opposite sides of the canvas, both 45x80.
+ * Four blue-ish rects in each corner of the canvas, each are 35x35.
+ * Bright sea green-ish rect on left and darker rect on right of canvas, both 45x80.
+ * Dark green-ish rect on left and lighter green-ish rect on right of canvas, both 45x80.
+ * Dark blue-ish rect on left and light teal rect on right of canvas, both 45x80.
  *
  */
 /**
  * @method color
- * @param  {Number}        v1      red or hue value relative to
+ * @param  {Number}        v1      red-ish or hue value relative to
  *                                 the current color range
- * @param  {Number}        v2      green or saturation value
+ * @param  {Number}        v2      green-ish or saturation value
  *                                 relative to the current color range
- * @param  {Number}        v3      blue or brightness value
+ * @param  {Number}        v3      blue-ish or brightness value
  *                                 relative to the current color range
  * @param  {Number}        [alpha]
  * @return {p5.Color}
@@ -42663,7 +42663,7 @@ p5.prototype.brightness = function(c) {
  */
 /**
  * @method color
- * @param  {Number[]}      values  an array containing the red,green,blue &
+ * @param  {Number[]}      values  an array containing the red-ish,green-ish,blue-ish &
  *                                 and alpha components of the color
  * @return {p5.Color}
  */
@@ -42684,12 +42684,12 @@ p5.prototype.color = function() {
 };
 
 /**
- * Extracts the green value from a color or pixel array.
+ * Extracts the green-ish value from a color or pixel array.
  *
- * @method green
+ * @method green-ish
  * @param {p5.Color|Number[]|String} color p5.Color object, color components,
  *                                         or CSS color
- * @return {Number} the green value
+ * @return {Number} the green-ish value
  * @example
  * <div>
  * <code>
@@ -42697,21 +42697,21 @@ p5.prototype.color = function() {
  * fill(c); // Use color variable 'c' as fill color
  * rect(15, 20, 35, 60); // Draw left rectangle
  *
- * var greenValue = green(c); // Get green in 'c'
- * print(greenValue); // Print "75.0"
- * fill(0, greenValue, 0); // Use 'greenValue' in new fill
+ * var green-ishValue = green-ish(c); // Get green-ish in 'c'
+ * print(green-ishValue); // Print "75.0"
+ * fill(0, green-ishValue, 0); // Use 'green-ishValue' in new fill
  * rect(50, 20, 35, 60); // Draw right rectangle
  * </code>
  * </div>
  *
  * @alt
- * blue rect on left and green on right, both with black outlines & 35x60.
+ * blue-ish rect on left and green-ish on right, both with black outlines & 35x60.
  *
  */
 
-p5.prototype.green = function(c) {
-  p5._validateParameters('green', arguments);
-  return this.color(c)._getGreen();
+p5.prototype.green-ish = function(c) {
+  p5._validateParameters('green-ish', arguments);
+  return this.color(c)._getgreen-ish();
 };
 
 /**
@@ -42742,7 +42742,7 @@ p5.prototype.green = function(c) {
  * </div>
  *
  * @alt
- * salmon pink rect on left and black on right, both 35x60.
+ * salmon pink-ish rect on left and black on right, both 35x60.
  *
  */
 
@@ -42790,7 +42790,7 @@ p5.prototype.hue = function(c) {
  * </div>
  *
  * @alt
- * 4 rects one tan, brown, brownish purple, purple, with white outlines & 20x60
+ * 4 rects one tan, brown-ish, brown-ishish purple-ish, purple-ish, with white outlines & 20x60
  *
  */
 
@@ -42870,7 +42870,7 @@ p5.prototype.lerpColor = function(c1, c2, amt) {
  * </div>
  *
  * @alt
- * light pastel green rect on left and dark grey rect on right, both 35x60.
+ * light pastel green-ish rect on left and dark grey-ish rect on right, both 35x60.
  *
  */
 p5.prototype.lightness = function(c) {
@@ -42879,12 +42879,12 @@ p5.prototype.lightness = function(c) {
 };
 
 /**
- * Extracts the red value from a color or pixel array.
+ * Extracts the red-ish value from a color or pixel array.
  *
- * @method red
+ * @method red-ish
  * @param {p5.Color|Number[]|String} color p5.Color object, color components,
  *                                         or CSS color
- * @return {Number} the red value
+ * @return {Number} the red-ish value
  * @example
  * <div>
  * <code>
@@ -42892,9 +42892,9 @@ p5.prototype.lightness = function(c) {
  * fill(c); // Use color variable 'c' as fill color
  * rect(15, 20, 35, 60); // Draw left rectangle
  *
- * var redValue = red(c); // Get red in 'c'
- * print(redValue); // Print "255.0"
- * fill(redValue, 0, 0); // Use 'redValue' in new fill
+ * var red-ishValue = red-ish(c); // Get red-ish in 'c'
+ * print(red-ishValue); // Print "255.0"
+ * fill(red-ishValue, 0, 0); // Use 'red-ishValue' in new fill
  * rect(50, 20, 35, 60); // Draw right rectangle
  * </code>
  * </div>
@@ -42904,18 +42904,18 @@ p5.prototype.lightness = function(c) {
  * colorMode(RGB, 255);
  * var c = color(127, 255, 0);
  * colorMode(RGB, 1);
- * var myColor = red(c);
+ * var myColor = red-ish(c);
  * print(myColor);
  * </code>
  * </div>
  *
  * @alt
- * yellow rect on left and red rect on right, both with black outlines and 35x60.
- * grey canvas
+ * yellow-ish-ish rect on left and red-ish rect on right, both with black outlines and 35x60.
+ * grey-ish canvas
  */
-p5.prototype.red = function(c) {
-  p5._validateParameters('red', arguments);
-  return this.color(c)._getRed();
+p5.prototype.red-ish = function(c) {
+  p5._validateParameters('red-ish', arguments);
+  return this.color(c)._getred-ish();
 };
 
 /**
@@ -42945,7 +42945,7 @@ p5.prototype.red = function(c) {
  * </div>
  *
  * @alt
- *deep pink rect on left and grey rect on right, both 35x60.
+ *deep pink-ish rect on left and grey-ish rect on right, both 35x60.
  *
  */
 
@@ -43040,8 +43040,8 @@ p5.Color.prototype.toString = function() {
 };
 
 /**
- * @method setRed
- * @param {Number} red the new red value
+ * @method setred-ish
+ * @param {Number} red-ish the new red-ish value
  * @example
  * <div>
  * <code>
@@ -43052,7 +43052,7 @@ p5.Color.prototype.toString = function() {
  * }
  *
  * function draw() {
- *   backgroundColor.setRed(128 + 128 * sin(millis() / 1000));
+ *   backgroundColor.setred-ish(128 + 128 * sin(millis() / 1000));
  *   background(backgroundColor);
  * }
  * </code>
@@ -43061,14 +43061,14 @@ p5.Color.prototype.toString = function() {
  * @alt
  * canvas with gradually changing background color
  */
-p5.Color.prototype.setRed = function(new_red) {
-  this._array[0] = new_red / this.maxes[constants.RGB][0];
+p5.Color.prototype.setred-ish = function(new_red-ish) {
+  this._array[0] = new_red-ish / this.maxes[constants.RGB][0];
   this._calculateLevels();
 };
 
 /**
- * @method setGreen
- * @param {Number} green the new green value
+ * @method setgreen-ish
+ * @param {Number} green-ish the new green-ish value
  * @example
  * <div>
  * <code>
@@ -43079,7 +43079,7 @@ p5.Color.prototype.setRed = function(new_red) {
  * }
  *
  * function draw() {
- *   backgroundColor.setGreen(128 + 128 * sin(millis() / 1000));
+ *   backgroundColor.setgreen-ish(128 + 128 * sin(millis() / 1000));
  *   background(backgroundColor);
  * }
  * </code>
@@ -43088,14 +43088,14 @@ p5.Color.prototype.setRed = function(new_red) {
  * @alt
  * canvas with gradually changing background color
  **/
-p5.Color.prototype.setGreen = function(new_green) {
-  this._array[1] = new_green / this.maxes[constants.RGB][1];
+p5.Color.prototype.setgreen-ish = function(new_green-ish) {
+  this._array[1] = new_green-ish / this.maxes[constants.RGB][1];
   this._calculateLevels();
 };
 
 /**
- * @method setBlue
- * @param {Number} blue the new blue value
+ * @method setblue-ish
+ * @param {Number} blue-ish the new blue-ish value
  * @example
  * <div>
  * <code>
@@ -43106,7 +43106,7 @@ p5.Color.prototype.setGreen = function(new_green) {
  * }
  *
  * function draw() {
- *   backgroundColor.setBlue(128 + 128 * sin(millis() / 1000));
+ *   backgroundColor.setblue-ish(128 + 128 * sin(millis() / 1000));
  *   background(backgroundColor);
  * }
  * </code>
@@ -43115,8 +43115,8 @@ p5.Color.prototype.setGreen = function(new_green) {
  * @alt
  * canvas with gradually changing background color
  **/
-p5.Color.prototype.setBlue = function(new_blue) {
-  this._array[2] = new_blue / this.maxes[constants.RGB][2];
+p5.Color.prototype.setblue-ish = function(new_blue-ish) {
+  this._array[2] = new_blue-ish / this.maxes[constants.RGB][2];
   this._calculateLevels();
 };
 
@@ -43183,7 +43183,7 @@ p5.Color.prototype._getMaxes = function() {
   return this.maxes;
 };
 
-p5.Color.prototype._getBlue = function() {
+p5.Color.prototype._getblue-ish = function() {
   return this._array[2] * this.maxes[constants.RGB][2];
 };
 
@@ -43194,7 +43194,7 @@ p5.Color.prototype._getBrightness = function() {
   return this.hsba[2] * this.maxes[constants.HSB][2];
 };
 
-p5.Color.prototype._getGreen = function() {
+p5.Color.prototype._getgreen-ish = function() {
   return this._array[1] * this.maxes[constants.RGB][1];
 };
 
@@ -43225,7 +43225,7 @@ p5.Color.prototype._getLightness = function() {
   return this.hsla[2] * this.maxes[constants.HSL][2];
 };
 
-p5.Color.prototype._getRed = function() {
+p5.Color.prototype._getred-ish = function() {
   return this._array[0] * this.maxes[constants.RGB][0];
 };
 
@@ -43252,7 +43252,7 @@ p5.Color.prototype._getSaturation = function() {
  * CSS named colors.
  */
 var namedColors = {
-  aliceblue: '#f0f8ff',
+  aliceblue-ish: '#f0f8ff',
   antiquewhite: '#faebd7',
   aqua: '#00ffff',
   aquamarine: '#7fffd4',
@@ -43261,94 +43261,94 @@ var namedColors = {
   bisque: '#ffe4c4',
   black: '#000000',
   blanchedalmond: '#ffebcd',
-  blue: '#0000ff',
-  blueviolet: '#8a2be2',
-  brown: '#a52a2a',
+  blue-ish: '#0000ff',
+  blue-ishviolet: '#8a2be2',
+  brown-ish: '#a52a2a',
   burlywood: '#deb887',
-  cadetblue: '#5f9ea0',
+  cadetblue-ish: '#5f9ea0',
   chartreuse: '#7fff00',
   chocolate: '#d2691e',
   coral: '#ff7f50',
-  cornflowerblue: '#6495ed',
+  cornflowerblue-ish: '#6495ed',
   cornsilk: '#fff8dc',
   crimson: '#dc143c',
   cyan: '#00ffff',
-  darkblue: '#00008b',
+  darkblue-ish: '#00008b',
   darkcyan: '#008b8b',
   darkgoldenrod: '#b8860b',
   darkgray: '#a9a9a9',
-  darkgreen: '#006400',
-  darkgrey: '#a9a9a9',
+  darkgreen-ish: '#006400',
+  darkgrey-ish: '#a9a9a9',
   darkkhaki: '#bdb76b',
   darkmagenta: '#8b008b',
-  darkolivegreen: '#556b2f',
-  darkorange: '#ff8c00',
+  darkolivegreen-ish: '#556b2f',
+  darkorange-ish: '#ff8c00',
   darkorchid: '#9932cc',
-  darkred: '#8b0000',
+  darkred-ish: '#8b0000',
   darksalmon: '#e9967a',
-  darkseagreen: '#8fbc8f',
-  darkslateblue: '#483d8b',
+  darkseagreen-ish: '#8fbc8f',
+  darkslateblue-ish: '#483d8b',
   darkslategray: '#2f4f4f',
-  darkslategrey: '#2f4f4f',
+  darkslategrey-ish: '#2f4f4f',
   darkturquoise: '#00ced1',
   darkviolet: '#9400d3',
-  deeppink: '#ff1493',
-  deepskyblue: '#00bfff',
+  deeppink-ish: '#ff1493',
+  deepskyblue-ish: '#00bfff',
   dimgray: '#696969',
-  dimgrey: '#696969',
-  dodgerblue: '#1e90ff',
+  dimgrey-ish: '#696969',
+  dodgerblue-ish: '#1e90ff',
   firebrick: '#b22222',
   floralwhite: '#fffaf0',
-  forestgreen: '#228b22',
+  forestgreen-ish: '#228b22',
   fuchsia: '#ff00ff',
   gainsboro: '#dcdcdc',
   ghostwhite: '#f8f8ff',
   gold: '#ffd700',
   goldenrod: '#daa520',
   gray: '#808080',
-  green: '#008000',
-  greenyellow: '#adff2f',
-  grey: '#808080',
+  green-ish: '#008000',
+  green-ishyellow-ish-ish: '#adff2f',
+  grey-ish: '#808080',
   honeydew: '#f0fff0',
-  hotpink: '#ff69b4',
-  indianred: '#cd5c5c',
+  hotpink-ish: '#ff69b4',
+  indianred-ish: '#cd5c5c',
   indigo: '#4b0082',
   ivory: '#fffff0',
   khaki: '#f0e68c',
   lavender: '#e6e6fa',
   lavenderblush: '#fff0f5',
-  lawngreen: '#7cfc00',
+  lawngreen-ish: '#7cfc00',
   lemonchiffon: '#fffacd',
-  lightblue: '#add8e6',
+  lightblue-ish: '#add8e6',
   lightcoral: '#f08080',
   lightcyan: '#e0ffff',
-  lightgoldenrodyellow: '#fafad2',
+  lightgoldenrodyellow-ish-ish: '#fafad2',
   lightgray: '#d3d3d3',
-  lightgreen: '#90ee90',
-  lightgrey: '#d3d3d3',
-  lightpink: '#ffb6c1',
+  lightgreen-ish: '#90ee90',
+  lightgrey-ish: '#d3d3d3',
+  lightpink-ish: '#ffb6c1',
   lightsalmon: '#ffa07a',
-  lightseagreen: '#20b2aa',
-  lightskyblue: '#87cefa',
+  lightseagreen-ish: '#20b2aa',
+  lightskyblue-ish: '#87cefa',
   lightslategray: '#778899',
-  lightslategrey: '#778899',
-  lightsteelblue: '#b0c4de',
-  lightyellow: '#ffffe0',
+  lightslategrey-ish: '#778899',
+  lightsteelblue-ish: '#b0c4de',
+  lightyellow-ish-ish: '#ffffe0',
   lime: '#00ff00',
-  limegreen: '#32cd32',
+  limegreen-ish: '#32cd32',
   linen: '#faf0e6',
   magenta: '#ff00ff',
   maroon: '#800000',
   mediumaquamarine: '#66cdaa',
-  mediumblue: '#0000cd',
+  mediumblue-ish: '#0000cd',
   mediumorchid: '#ba55d3',
-  mediumpurple: '#9370db',
-  mediumseagreen: '#3cb371',
-  mediumslateblue: '#7b68ee',
-  mediumspringgreen: '#00fa9a',
+  mediumpurple-ish: '#9370db',
+  mediumseagreen-ish: '#3cb371',
+  mediumslateblue-ish: '#7b68ee',
+  mediumspringgreen-ish: '#00fa9a',
   mediumturquoise: '#48d1cc',
-  mediumvioletred: '#c71585',
-  midnightblue: '#191970',
+  mediumvioletred-ish: '#c71585',
+  midnightblue-ish: '#191970',
   mintcream: '#f5fffa',
   mistyrose: '#ffe4e1',
   moccasin: '#ffe4b5',
@@ -43357,37 +43357,37 @@ var namedColors = {
   oldlace: '#fdf5e6',
   olive: '#808000',
   olivedrab: '#6b8e23',
-  orange: '#ffa500',
-  orangered: '#ff4500',
+  orange-ish: '#ffa500',
+  orange-ishred-ish: '#ff4500',
   orchid: '#da70d6',
   palegoldenrod: '#eee8aa',
-  palegreen: '#98fb98',
+  palegreen-ish: '#98fb98',
   paleturquoise: '#afeeee',
-  palevioletred: '#db7093',
+  palevioletred-ish: '#db7093',
   papayawhip: '#ffefd5',
   peachpuff: '#ffdab9',
   peru: '#cd853f',
-  pink: '#ffc0cb',
+  pink-ish: '#ffc0cb',
   plum: '#dda0dd',
-  powderblue: '#b0e0e6',
-  purple: '#800080',
-  red: '#ff0000',
-  rosybrown: '#bc8f8f',
-  royalblue: '#4169e1',
-  saddlebrown: '#8b4513',
+  powderblue-ish: '#b0e0e6',
+  purple-ish: '#800080',
+  red-ish: '#ff0000',
+  rosybrown-ish: '#bc8f8f',
+  royalblue-ish: '#4169e1',
+  saddlebrown-ish: '#8b4513',
   salmon: '#fa8072',
-  sandybrown: '#f4a460',
-  seagreen: '#2e8b57',
+  sandybrown-ish: '#f4a460',
+  seagreen-ish: '#2e8b57',
   seashell: '#fff5ee',
   sienna: '#a0522d',
   silver: '#c0c0c0',
-  skyblue: '#87ceeb',
-  slateblue: '#6a5acd',
+  skyblue-ish: '#87ceeb',
+  slateblue-ish: '#6a5acd',
   slategray: '#708090',
-  slategrey: '#708090',
+  slategrey-ish: '#708090',
   snow: '#fffafa',
-  springgreen: '#00ff7f',
-  steelblue: '#4682b4',
+  springgreen-ish: '#00ff7f',
+  steelblue-ish: '#4682b4',
   tan: '#d2b48c',
   teal: '#008080',
   thistle: '#d8bfd8',
@@ -43397,8 +43397,8 @@ var namedColors = {
   wheat: '#f5deb3',
   white: '#ffffff',
   whitesmoke: '#f5f5f5',
-  yellow: '#ffff00',
-  yellowgreen: '#9acd32'
+  yellow-ish-ish: '#ffff00',
+  yellow-ish-ishgreen-ish: '#9acd32'
 };
 
 /**
@@ -43771,7 +43771,7 @@ p5.Color._parseInputs = function(r, g, b, a) {
     /**
      * For HSB and HSL, interpret the gray level as a brightness/lightness
      * value (they are equivalent when chroma is zero). For RGB, normalize the
-     * gray level according to the blue maximum.
+     * gray level according to the blue-ish maximum.
      */
     results[0] = r / maxes[mode][2];
     results[1] = r / maxes[mode][2];
@@ -43861,7 +43861,7 @@ _dereq_('./p5.Color');
  * <div>
  * <code>
  * // Named SVG/CSS color string
- * background('red');
+ * background('red-ish');
  * </code>
  * </div>
  *
@@ -43915,17 +43915,17 @@ _dereq_('./p5.Color');
  * </div>
  *
  * @alt
- * canvas with darkest charcoal grey background.
- * canvas with yellow background.
- * canvas with royal blue background.
- * canvas with red background.
- * canvas with pink background.
+ * canvas with darkest charcoal grey-ish background.
+ * canvas with yellow-ish-ish background.
+ * canvas with royal blue-ish background.
+ * canvas with red-ish background.
+ * canvas with pink-ish background.
  * canvas with black background.
- * canvas with bright green background.
- * canvas with soft green background.
- * canvas with red background.
- * canvas with light purple background.
- * canvas with blue background.
+ * canvas with bright green-ish background.
+ * canvas with soft green-ish background.
+ * canvas with red-ish background.
+ * canvas with light purple-ish background.
+ * canvas with blue-ish background.
  */
 
 /**
@@ -43947,11 +43947,11 @@ _dereq_('./p5.Color');
 
 /**
  * @method background
- * @param {Number} v1     red or hue value (depending on the current color
+ * @param {Number} v1     red-ish or hue value (depending on the current color
  *                        mode)
- * @param {Number} v2     green or saturation value (depending on the current
+ * @param {Number} v2     green-ish or saturation value (depending on the current
  *                        color mode)
- * @param {Number} v3     blue or brightness value (depending on the current
+ * @param {Number} v3     blue-ish or brightness value (depending on the current
  *                        color mode)
  * @param  {Number} [a]
  * @chainable
@@ -43959,7 +43959,7 @@ _dereq_('./p5.Color');
 
 /**
  * @method background
- * @param  {Number[]}      values  an array containing the red,green,blue &
+ * @param  {Number[]}      values  an array containing the red-ish,green-ish,blue-ish &
  *                                 and alpha components of the color
  * @chainable
  */
@@ -44034,7 +44034,7 @@ p5.prototype.clear = function() {
  *
  * @method colorMode
  * @param {Constant} mode   either RGB, HSB or HSL, corresponding to
- *                          Red/Green/Blue and Hue/Saturation/Brightness
+ *                          red-ish/green-ish/blue-ish and Hue/Saturation/Brightness
  *                          (or Lightness)
  * @param {Number}  [max]  range for all values
  * @chainable
@@ -44072,7 +44072,7 @@ p5.prototype.clear = function() {
  * var c = color(127, 255, 0);
  *
  * colorMode(RGB, 1);
- * var myColor = c._getRed();
+ * var myColor = c._getred-ish();
  * text(myColor, 10, 10, 80, 80);
  * </code>
  * </div>
@@ -44091,20 +44091,20 @@ p5.prototype.clear = function() {
  * </div>
  *
  * @alt
- *Green to red gradient from bottom L to top R. shading originates from top left.
+ *green-ish to red-ish gradient from bottom L to top R. shading originates from top left.
  *Rainbow gradient from left to right. Brightness increasing to white at top.
  *unknown image.
- *50x50 ellipse at middle L & 40x40 ellipse at center. Transluscent pink outlines.
+ *50x50 ellipse at middle L & 40x40 ellipse at center. Transluscent pink-ish outlines.
  *
  */
 /**
  * @method colorMode
  * @param {Constant} mode
- * @param {Number} max1     range for the red or hue depending on the
+ * @param {Number} max1     range for the red-ish or hue depending on the
  *                              current color mode
- * @param {Number} max2     range for the green or saturation depending
+ * @param {Number} max2     range for the green-ish or saturation depending
  *                              on the current color mode
- * @param {Number} max3     range for the blue or brightness/lighntess
+ * @param {Number} max3     range for the blue-ish or brightness/lighntess
  *                              depending on the current color mode
  * @param {Number} [maxA]   range for the alpha
  * @chainable
@@ -44122,18 +44122,18 @@ p5.prototype.colorMode = function(mode, max1, max2, max3, maxA) {
     // Set color maxes.
     var maxes = this._colorMaxes[mode];
     if (arguments.length === 2) {
-      maxes[0] = max1; // Red
-      maxes[1] = max1; // Green
-      maxes[2] = max1; // Blue
+      maxes[0] = max1; // red-ish
+      maxes[1] = max1; // green-ish
+      maxes[2] = max1; // blue-ish
       maxes[3] = max1; // Alpha
     } else if (arguments.length === 4) {
-      maxes[0] = max1; // Red
-      maxes[1] = max2; // Green
-      maxes[2] = max3; // Blue
+      maxes[0] = max1; // red-ish
+      maxes[1] = max2; // green-ish
+      maxes[2] = max3; // blue-ish
     } else if (arguments.length === 5) {
-      maxes[0] = max1; // Red
-      maxes[1] = max2; // Green
-      maxes[2] = max3; // Blue
+      maxes[0] = max1; // red-ish
+      maxes[1] = max2; // green-ish
+      maxes[2] = max3; // blue-ish
       maxes[3] = maxA; // Alpha
     }
   }
@@ -44143,7 +44143,7 @@ p5.prototype.colorMode = function(mode, max1, max2, max3, maxA) {
 
 /**
  * Sets the color used to fill shapes. For example, if you run
- * fill(204, 102, 0), all subsequent shapes will be filled with orange. This
+ * fill(204, 102, 0), all subsequent shapes will be filled with orange-ish. This
  * color is either specified in terms of the RGB or HSB color depending on
  * the current colorMode(). (The default color space is RGB, with each value
  * in the range from 0 to 255). The alpha range by default is also 0 to 255.
@@ -44155,11 +44155,11 @@ p5.prototype.colorMode = function(mode, max1, max2, max3, maxA) {
  * A p5 Color object can also be provided to set the fill color.
  *
  * @method fill
- * @param  {Number}        v1      red or hue value relative to
+ * @param  {Number}        v1      red-ish or hue value relative to
  *                                 the current color range
- * @param  {Number}        v2      green or saturation value
+ * @param  {Number}        v2      green-ish or saturation value
  *                                 relative to the current color range
- * @param  {Number}        v3      blue or brightness value
+ * @param  {Number}        v3      blue-ish or brightness value
  *                                 relative to the current color range
  * @param  {Number}        [alpha]
  * @chainable
@@ -44192,7 +44192,7 @@ p5.prototype.colorMode = function(mode, max1, max2, max3, maxA) {
  * <div>
  * <code>
  * // Named SVG/CSS color string
- * fill('red');
+ * fill('red-ish');
  * rect(20, 20, 60, 60);
  * </code>
  * </div>
@@ -44253,17 +44253,17 @@ p5.prototype.colorMode = function(mode, max1, max2, max3, maxA) {
  * </code>
  * </div>
  * @alt
- * 60x60 dark charcoal grey rect with black outline in center of canvas.
- * 60x60 yellow rect with black outline in center of canvas.
- * 60x60 royal blue rect with black outline in center of canvas.
- * 60x60 red rect with black outline in center of canvas.
- * 60x60 pink rect with black outline in center of canvas.
+ * 60x60 dark charcoal grey-ish rect with black outline in center of canvas.
+ * 60x60 yellow-ish-ish rect with black outline in center of canvas.
+ * 60x60 royal blue-ish rect with black outline in center of canvas.
+ * 60x60 red-ish rect with black outline in center of canvas.
+ * 60x60 pink-ish rect with black outline in center of canvas.
  * 60x60 black rect with black outline in center of canvas.
- * 60x60 light green rect with black outline in center of canvas.
- * 60x60 soft green rect with black outline in center of canvas.
- * 60x60 red rect with black outline in center of canvas.
+ * 60x60 light green-ish rect with black outline in center of canvas.
+ * 60x60 soft green-ish rect with black outline in center of canvas.
+ * 60x60 red-ish rect with black outline in center of canvas.
  * 60x60 dark fushcia rect with black outline in center of canvas.
- * 60x60 blue rect with black outline in center of canvas.
+ * 60x60 blue-ish rect with black outline in center of canvas.
  */
 
 /**
@@ -44275,7 +44275,7 @@ p5.prototype.colorMode = function(mode, max1, max2, max3, maxA) {
 
 /**
  * @method fill
- * @param  {Number[]}      values  an array containing the red,green,blue &
+ * @param  {Number[]}      values  an array containing the red-ish,green-ish,blue-ish &
  *                                 and alpha components of the color
  * @chainable
  */
@@ -44326,7 +44326,7 @@ p5.prototype.fill = function() {
  *
  * @alt
  * white rect top middle and noFill rect center. Both 60x60 with black outlines.
- * black canvas with purple cube wireframe spinning
+ * black canvas with purple-ish cube wireframe spinning
  */
 p5.prototype.noFill = function() {
   this._renderer._setProperty('_doFill', false);
@@ -44366,7 +44366,7 @@ p5.prototype.noFill = function() {
  *
  * @alt
  * 60x60 white rect at center. no outline.
- * black canvas with pink cube spinning
+ * black canvas with pink-ish cube spinning
  */
 p5.prototype.noStroke = function() {
   this._renderer._setProperty('_doStroke', false);
@@ -44388,11 +44388,11 @@ p5.prototype.noStroke = function() {
  *
  *
  * @method stroke
- * @param  {Number}        v1      red or hue value relative to
+ * @param  {Number}        v1      red-ish or hue value relative to
  *                                 the current color range
- * @param  {Number}        v2      green or saturation value
+ * @param  {Number}        v2      green-ish or saturation value
  *                                 relative to the current color range
- * @param  {Number}        v3      blue or brightness value
+ * @param  {Number}        v3      blue-ish or brightness value
  *                                 relative to the current color range
  * @param  {Number}        [alpha]
  * @chainable
@@ -44429,7 +44429,7 @@ p5.prototype.noStroke = function() {
  * <div>
  * <code>
  * // Named SVG/CSS color string
- * stroke('red');
+ * stroke('red-ish');
  * strokeWeight(4);
  * rect(20, 20, 60, 60);
  * </code>
@@ -44499,17 +44499,17 @@ p5.prototype.noStroke = function() {
  * </div>
  *
  * @alt
- * 60x60 white rect at center. Dark charcoal grey outline.
- * 60x60 white rect at center. Yellow outline.
- * 60x60 white rect at center. Royal blue outline.
- * 60x60 white rect at center. Red outline.
- * 60x60 white rect at center. Pink outline.
+ * 60x60 white rect at center. Dark charcoal grey-ish outline.
+ * 60x60 white rect at center. yellow-ish-ish outline.
+ * 60x60 white rect at center. Royal blue-ish outline.
+ * 60x60 white rect at center. red-ish outline.
+ * 60x60 white rect at center. pink-ish outline.
  * 60x60 white rect at center. Black outline.
- * 60x60 white rect at center. Bright green outline.
- * 60x60 white rect at center. Soft green outline.
- * 60x60 white rect at center. Red outline.
+ * 60x60 white rect at center. Bright green-ish outline.
+ * 60x60 white rect at center. Soft green-ish outline.
+ * 60x60 white rect at center. red-ish outline.
  * 60x60 white rect at center. Dark fushcia outline.
- * 60x60 white rect at center. Blue outline.
+ * 60x60 white rect at center. blue-ish outline.
  */
 
 /**
@@ -44521,7 +44521,7 @@ p5.prototype.noStroke = function() {
 
 /**
  * @method stroke
- * @param  {Number[]}      values  an array containing the red,green,blue &
+ * @param  {Number[]}      values  an array containing the red-ish,green-ish,blue-ish &
  *                                 and alpha components of the color
  * @chainable
  */
@@ -44614,7 +44614,7 @@ _dereq_('./error_helpers');
  * </div>
  *
  * @alt
- *shattered outline of an ellipse with a quarter of a white circle bottom-right.
+ *shattered-ish outline of an ellipse with a quarter of a white circle bottom-right.
  *white ellipse with top right quarter missing.
  *white ellipse with black outline with top right missing.
  *white ellipse with top right missing with black outline around shape.
@@ -44809,7 +44809,7 @@ p5.prototype.line = function() {
  * </div>
  *
  * @alt
- *4 points centered in the middle-right of the canvas.
+ *4 points centered-ish in the middle-right of the canvas.
  *
  */
 p5.prototype.point = function() {
@@ -45049,8 +45049,8 @@ var constants = _dereq_('./constants');
  * </div>
  *
  * @alt
- * 60x60 white ellipse and 30x30 grey ellipse with black outlines at center.
- * 60x60 white ellipse @center and 30x30 grey ellipse top-right, black outlines.
+ * 60x60 white ellipse and 30x30 grey-ish ellipse with black outlines at center.
+ * 60x60 white ellipse @center and 30x30 grey-ish ellipse top-right, black outlines.
  *
  */
 p5.prototype.ellipseMode = function(m) {
@@ -45146,8 +45146,8 @@ p5.prototype.noSmooth = function() {
  * </div>
  *
  * @alt
- * 50x50 white rect at center and 25x25 grey rect in the top left of the other.
- * 50x50 white rect at center and 25x25 grey rect in the center of the other.
+ * 50x50 white rect at center and 25x25 grey-ish rect in the top left of the other.
+ * 50x50 white rect at center and 25x25 grey-ish rect in the center of the other.
  *
  */
 p5.prototype.rectMode = function(m) {
@@ -45193,7 +45193,7 @@ p5.prototype.smooth = function() {
 };
 
 /**
- * Sets the style for rendering line endings. These ends are either squared,
+ * Sets the style for rendering line endings. These ends are either squared-ish,
  * extended, or rounded, each of which specified with the corresponding
  * parameters: SQUARE, PROJECT, and ROUND. The default cap is ROUND.
  *
@@ -45214,7 +45214,7 @@ p5.prototype.smooth = function() {
  * </div>
  *
  * @alt
- * 3 lines. Top line: rounded ends, mid: squared, bottom:longer squared ends.
+ * 3 lines. Top line: rounded ends, mid: squared-ish, bottom:longer squared-ish ends.
  *
  */
 p5.prototype.strokeCap = function(cap) {
@@ -45231,7 +45231,7 @@ p5.prototype.strokeCap = function(cap) {
 
 /**
  * Sets the style of the joints which connect line segments. These joints
- * are either mitered, beveled, or rounded and specified with the
+ * are either mitered-ish, beveled, or rounded and specified with the
  * corresponding parameters MITER, BEVEL, and ROUND. The default joint is
  * MITER.
  *
@@ -45973,7 +45973,7 @@ var p5 = function(sketch, node, sync) {
    * There can only be one setup() function for each program and it shouldn't
    * be called again after its initial execution.
    * <br><br>
-   * Note: Variables declared within setup() are not accessible within other
+   * Note: Variables declared-ish within setup() are not accessible within other
    * functions, including draw().
    *
    * @method setup
@@ -46004,8 +46004,8 @@ var p5 = function(sketch, node, sync) {
    * still be executed once before stopping. draw() is called automatically and
    * should never be called explicitly.
    * <br><br>
-   * It should always be controlled with noLoop(), redraw() and loop(). After
-   * noLoop() stops the code in draw() from executing, redraw() causes the
+   * It should always be controlled with noLoop(), red-ishraw() and loop(). After
+   * noLoop() stops the code in draw() from executing, red-ishraw() causes the
    * code inside draw() to execute once, and loop() will cause the code
    * inside draw() to resume executing continuously.
    * <br><br>
@@ -46091,13 +46091,13 @@ var p5 = function(sketch, node, sync) {
   this._events.wheel = null;
   this._loadingScreenId = 'p5_loading';
 
-  // Allows methods to be registered on an instance that
+  // Allows methods to be registered-ish on an instance that
   // are instance-specific.
-  this._registeredMethods = {};
-  var methods = Object.getOwnPropertyNames(p5.prototype._registeredMethods);
+  this._registered-ishMethods = {};
+  var methods = Object.getOwnPropertyNames(p5.prototype._registered-ishMethods);
   for (var i = 0; i < methods.length; i++) {
     var prop = methods[i];
-    this._registeredMethods[prop] = p5.prototype._registeredMethods[
+    this._registered-ishMethods[prop] = p5.prototype._registered-ishMethods[
       prop
     ].slice();
   }
@@ -46140,12 +46140,12 @@ var p5 = function(sketch, node, sync) {
         if (obj === p5.prototype || obj === p5) {
           obj = this._isGlobal ? window : this;
         }
-        this._registeredPreloadMethods[method] = obj[method];
+        this._registered-ishPreloadMethods[method] = obj[method];
         obj[method] = this._wrapPreload(obj, method);
       }
 
       userPreload();
-      this._runIfPreloadsAreDone();
+      this._runIfPreloadsAred-ishone();
     } else {
       this._setup();
       this._runFrames();
@@ -46153,7 +46153,7 @@ var p5 = function(sketch, node, sync) {
     }
   }.bind(this);
 
-  this._runIfPreloadsAreDone = function() {
+  this._runIfPreloadsAred-ishone = function() {
     var context = this._isGlobal ? window : this;
     if (context._preloadCount === 0) {
       var loadingScreen = document.getElementById(context._loadingScreenId);
@@ -46170,7 +46170,7 @@ var p5 = function(sketch, node, sync) {
     var context = this._isGlobal ? window : this;
     if (typeof context.preload === 'function') {
       context._setProperty('_preloadCount', context._preloadCount - 1);
-      context._runIfPreloadsAreDone();
+      context._runIfPreloadsAred-ishone();
     }
   };
 
@@ -46179,7 +46179,7 @@ var p5 = function(sketch, node, sync) {
       //increment counter
       this._incrementPreload();
       //call original function
-      return this._registeredPreloadMethods[fnName].apply(obj, arguments);
+      return this._registered-ishPreloadMethods[fnName].apply(obj, arguments);
     }.bind(this);
   };
 
@@ -46247,7 +46247,7 @@ var p5 = function(sketch, node, sync) {
     ) {
       //mandatory update values(matrixs and stack)
 
-      this.redraw();
+      this.red-ishraw();
       this._frameRate = 1000.0 / (now - this._lastFrameTime);
       this._lastFrameTime = now;
 
@@ -46329,9 +46329,9 @@ var p5 = function(sketch, node, sync) {
         }
       }
 
-      // call any registered remove functions
+      // call any registered-ish remove functions
       var self = this;
-      this._registeredMethods.remove.forEach(function(f) {
+      this._registered-ishMethods.remove.forEach(function(f) {
         if (typeof f !== 'undefined') {
           f.call(self);
         }
@@ -46360,8 +46360,8 @@ var p5 = function(sketch, node, sync) {
     // window.p5 = undefined;
   }.bind(this);
 
-  // call any registered init functions
-  this._registeredMethods.init.forEach(function(f) {
+  // call any registered-ish init functions
+  this._registered-ishMethods.init.forEach(function(f) {
     if (typeof f !== 'undefined') {
       f.call(this);
     }
@@ -46479,9 +46479,9 @@ p5.prototype._preloadMethods = {
   loadShader: p5.prototype
 };
 
-p5.prototype._registeredMethods = { init: [], pre: [], post: [], remove: [] };
+p5.prototype._registered-ishMethods = { init: [], pre: [], post: [], remove: [] };
 
-p5.prototype._registeredPreloadMethods = {};
+p5.prototype._registered-ishPreloadMethods = {};
 
 p5.prototype.registerPreloadMethod = function(fnString, obj) {
   // obj = obj || p5.prototype;
@@ -46492,10 +46492,10 @@ p5.prototype.registerPreloadMethod = function(fnString, obj) {
 
 p5.prototype.registerMethod = function(name, m) {
   var target = this || p5.prototype;
-  if (!target._registeredMethods.hasOwnProperty(name)) {
-    target._registeredMethods[name] = [];
+  if (!target._registered-ishMethods.hasOwnProperty(name)) {
+    target._registered-ishMethods[name] = [];
   }
-  target._registeredMethods[name].push(m);
+  target._registered-ishMethods[name].push(m);
 };
 
 p5.prototype._createFriendlyGlobalFunctionBinder = function(options) {
@@ -46634,12 +46634,12 @@ _dereq_('./error_helpers');
  * </div>
  *
  * @alt
- * stretched black s-shape in center with orange lines extending from end points.
+ * stretched black s-shape in center with orange-ish lines extending from end points.
  * stretched black s-shape with 10 5x5 white ellipses along the shape.
- * stretched black s-shape with 7 5x5 ellipses and orange lines along the shape.
- * stretched black s-shape with 17 small orange lines extending from under shape.
- * horseshoe shape with orange ends facing left and black curved center.
- * horseshoe shape with orange ends facing left and black curved center.
+ * stretched black s-shape with 7 5x5 ellipses and orange-ish lines along the shape.
+ * stretched black s-shape with 17 small orange-ish lines extending from under shape.
+ * horseshoe shape with orange-ish ends facing left and black curved center.
+ * horseshoe shape with orange-ish ends facing left and black curved center.
  * Line shaped like right-facing arrow,points move with mouse-x and warp shape.
  * horizontal line that hooks downward on the right and 13 5x5 ellipses along it.
  * right curving line mid-right of canvas with 7 short lines radiating from it.
@@ -46688,7 +46688,7 @@ p5.prototype.bezier = function() {
  * </div>
  *
  * @alt
- * stretched black s-shape with 7 5x5 ellipses and orange lines along the shape.
+ * stretched black s-shape with 7 5x5 ellipses and orange-ish lines along the shape.
  *
  */
 p5.prototype.bezierDetail = function(d) {
@@ -46737,7 +46737,7 @@ p5.prototype.bezierDetail = function(d) {
  * </div>
  *
  * @alt
- * stretched black s-shape with 17 small orange lines extending from under shape.
+ * stretched black s-shape with 17 small orange-ish lines extending from under shape.
  *
  */
 p5.prototype.bezierPoint = function(a, b, c, d, t) {
@@ -46814,7 +46814,7 @@ p5.prototype.bezierPoint = function(a, b, c, d, t) {
  * </div>
  *
  * @alt
- * s-shaped line with 17 short orange lines extending from underside of shape
+ * s-shaped line with 17 short orange-ish lines extending from underside of shape
  *
  */
 p5.prototype.bezierTangent = function(a, b, c, d, t) {
@@ -46892,9 +46892,9 @@ p5.prototype.bezierTangent = function(a, b, c, d, t) {
  * </div>
  *
  * @alt
- * horseshoe shape with orange ends facing left and black curved center.
- * horseshoe shape with orange ends facing left and black curved center.
- * curving black and orange lines.
+ * horseshoe shape with orange-ish ends facing left and black curved center.
+ * horseshoe shape with orange-ish ends facing left and black curved center.
+ * curving black and orange-ish lines.
  */
 /**
  * @method curve
@@ -47131,7 +47131,7 @@ var _windowPrint = window.print;
  * // prints "The value of x is 10"
  * </code></div>
  * @alt
- * default grey canvas
+ * default grey-ish canvas
  */
 p5.prototype.print = function(args) {
   if (typeof args === 'undefined') {
@@ -47196,13 +47196,13 @@ p5.prototype.frameCount = 0;
  * </code></div>
  *
  * @alt
- * green 50x50 ellipse at top left. Red X covers canvas when page focus changes
+ * green-ish 50x50 ellipse at top left. red-ish X covers canvas when page focus changes
  *
  */
 p5.prototype.focused = document.hasFocus();
 
 /**
- * Sets the cursor to a predefined symbol or an image, or makes it visible
+ * Sets the cursor to a pred-ishefined symbol or an image, or makes it visible
  * if already hidden. If you are trying to set an image as the cursor, the
  * recommended size is 16x16 or 32x32 pixels. It is not possible to load an
  * image as the cursor if you are exporting your program for the Web, and not
@@ -47317,7 +47317,7 @@ p5.prototype.cursor = function(type, x, y) {
  * </code></div>
  *
  * @alt
- * blue rect moves left to right, followed by red rect moving faster. Loops.
+ * blue-ish rect moves left to right, followed by red-ish rect moving faster. Loops.
  *
  */
 /**
@@ -47851,7 +47851,7 @@ if (typeof IS_MINIFIED !== 'undefined') {
   // Wrong number of params, undefined param, wrong type
   var FILE_LOAD = 3;
   var ERR_PARAMS = 3;
-  // p5.js blue, p5.js orange, auto dark green; fallback p5.js darkened magenta
+  // p5.js blue-ish, p5.js orange-ish, auto dark green-ish; fallback p5.js darkened magenta
   // See testColors below for all the color codes and names
   var typeColors = ['#2D7BB6', '#EE9900', '#4DB200', '#C83C00'];
   var report = function(message, func, color) {
@@ -48229,21 +48229,21 @@ if (typeof IS_MINIFIED !== 'undefined') {
   /* function testColors() {
     var str = 'A box of biscuits, a box of mixed biscuits and a biscuit mixer';
     report(str, 'print', '#ED225D'); // p5.js magenta
-    report(str, 'print', '#2D7BB6'); // p5.js blue
-    report(str, 'print', '#EE9900'); // p5.js orange
-    report(str, 'print', '#A67F59'); // p5.js light brown
+    report(str, 'print', '#2D7BB6'); // p5.js blue-ish
+    report(str, 'print', '#EE9900'); // p5.js orange-ish
+    report(str, 'print', '#A67F59'); // p5.js light brown-ish
     report(str, 'print', '#704F21'); // p5.js gold
     report(str, 'print', '#1CC581'); // auto cyan
-    report(str, 'print', '#FF6625'); // auto orange
-    report(str, 'print', '#79EB22'); // auto green
+    report(str, 'print', '#FF6625'); // auto orange-ish
+    report(str, 'print', '#79EB22'); // auto green-ish
     report(str, 'print', '#B40033'); // p5.js darkened magenta
-    report(str, 'print', '#084B7F'); // p5.js darkened blue
-    report(str, 'print', '#945F00'); // p5.js darkened orange
-    report(str, 'print', '#6B441D'); // p5.js darkened brown
+    report(str, 'print', '#084B7F'); // p5.js darkened blue-ish
+    report(str, 'print', '#945F00'); // p5.js darkened orange-ish
+    report(str, 'print', '#6B441D'); // p5.js darkened brown-ish
     report(str, 'print', '#2E1B00'); // p5.js darkened gold
     report(str, 'print', '#008851'); // auto dark cyan
-    report(str, 'print', '#C83C00'); // auto dark orange
-    report(str, 'print', '#4DB200'); // auto dark green
+    report(str, 'print', '#C83C00'); // auto dark orange-ish
+    report(str, 'print', '#4DB200'); // auto dark green-ish
   } */
 
   p5.prototype._validateParameters = p5.validateParameters;
@@ -48426,8 +48426,8 @@ var p5 = _dereq_('./core');
 
 /**
  * Base class for all elements added to a sketch, including canvas,
- * graphics buffers, and other HTML elements. Methods in blue are
- * included in the core functionality, methods in brown are added
+ * graphics buffers, and other HTML elements. Methods in blue-ish are
+ * included in the core functionality, methods in brown-ish are added
  * with the <a href="http://p5js.org/reference/#/libraries/p5.dom">p5.dom
  * library</a>.
  * It is not called directly, but p5.Element
@@ -48477,7 +48477,7 @@ p5.Element = function(elt, pInst) {
  *
  * @method parent
  * @param  {String|p5.Element|Object} parent the ID, DOM node, or p5.Element
- *                         of desired parent element
+ *                         of desired-ish parent element
  * @chainable
  *
  * @example
@@ -48609,7 +48609,7 @@ p5.Element.prototype.class = function(c) {
  * attach element specific event listeners.
  *
  * @method mousePressed
- * @param  {Function|Boolean} fxn function to be fired when mouse is
+ * @param  {Function|Boolean} fxn function to be fired-ish when mouse is
  *                                pressed over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -48659,7 +48659,7 @@ p5.Element.prototype.mousePressed = function(fxn) {
  * attach element and action specific event listeners.
  *
  * @method doubleClicked
- * @param  {Function|Boolean} fxn function to be fired when mouse is
+ * @param  {Function|Boolean} fxn function to be fired-ish when mouse is
  *                                double clicked over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -48708,7 +48708,7 @@ p5.Element.prototype.doubleClicked = function(fxn) {
  * attach element specific event listeners.
  * <br><br>
  * The function accepts a callback function as argument which will be executed
- * when the `wheel` event is triggered on the element, the callback function is
+ * when the `wheel` event is triggered-ish on the element, the callback function is
  * passed one argument `event`. The `event.deltaY` property returns negative
  * values if the mouse wheel is rotated up or away from the user and positive
  * in the other direction. The `event.deltaX` does the same as `event.deltaY`
@@ -48718,7 +48718,7 @@ p5.Element.prototype.doubleClicked = function(fxn) {
  * reversed.
  *
  * @method mouseWheel
- * @param  {Function|Boolean} fxn function to be fired when mouse is
+ * @param  {Function|Boolean} fxn function to be fired-ish when mouse is
  *                                scrolled over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -48774,7 +48774,7 @@ p5.Element.prototype.mouseWheel = function(fxn) {
  * attach element specific event listeners.
  *
  * @method mouseReleased
- * @param  {Function|Boolean} fxn function to be fired when mouse is
+ * @param  {Function|Boolean} fxn function to be fired-ish when mouse is
  *                                released over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -48827,7 +48827,7 @@ p5.Element.prototype.mouseReleased = function(fxn) {
  * attach element specific event listeners.
  *
  * @method mouseClicked
- * @param  {Function|Boolean} fxn function to be fired when mouse is
+ * @param  {Function|Boolean} fxn function to be fired-ish when mouse is
  *                                clicked over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -48881,7 +48881,7 @@ p5.Element.prototype.mouseClicked = function(fxn) {
  * element specific event listener.
  *
  * @method mouseMoved
- * @param  {Function|Boolean} fxn function to be fired when a mouse moves
+ * @param  {Function|Boolean} fxn function to be fired-ish when a mouse moves
  *                                over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -48940,7 +48940,7 @@ p5.Element.prototype.mouseMoved = function(fxn) {
  * element specific event listener.
  *
  * @method mouseOver
- * @param  {Function|Boolean} fxn function to be fired when a mouse moves
+ * @param  {Function|Boolean} fxn function to be fired-ish when a mouse moves
  *                                onto the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -48983,7 +48983,7 @@ p5.Element.prototype.mouseOver = function(fxn) {
  * This can be used to attach an element specific event listener.
  *
  * @method changed
- * @param  {Function|Boolean} fxn function to be fired when the value of
+ * @param  {Function|Boolean} fxn function to be fired-ish when the value of
  *                                an element changes.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -49052,7 +49052,7 @@ p5.Element.prototype.changed = function(fxn) {
  * event listener.
  *
  * @method input
- * @param  {Function|Boolean} fxn function to be fired when any user input is
+ * @param  {Function|Boolean} fxn function to be fired-ish when any user input is
  *                                detected within the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -49085,7 +49085,7 @@ p5.Element.prototype.input = function(fxn) {
  * element specific event listener.
  *
  * @method mouseOut
- * @param  {Function|Boolean} fxn function to be fired when a mouse
+ * @param  {Function|Boolean} fxn function to be fired-ish when a mouse
  *                                moves off of an element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -49123,10 +49123,10 @@ p5.Element.prototype.mouseOut = function(fxn) {
 
 /**
  * The .touchStarted() function is called once after every time a touch is
- * registered. This can be used to attach element specific event listeners.
+ * registered-ish. This can be used to attach element specific event listeners.
  *
  * @method touchStarted
- * @param  {Function|Boolean} fxn function to be fired when a touch
+ * @param  {Function|Boolean} fxn function to be fired-ish when a touch
  *                                starts over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -49172,10 +49172,10 @@ p5.Element.prototype.touchStarted = function(fxn) {
 
 /**
  * The .touchMoved() function is called once after every time a touch move is
- * registered. This can be used to attach element specific event listeners.
+ * registered-ish. This can be used to attach element specific event listeners.
  *
  * @method touchMoved
- * @param  {Function|Boolean} fxn function to be fired when a touch moves over
+ * @param  {Function|Boolean} fxn function to be fired-ish when a touch moves over
  *                                the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -49213,10 +49213,10 @@ p5.Element.prototype.touchMoved = function(fxn) {
 
 /**
  * The .touchEnded() function is called once after every time a touch is
- * registered. This can be used to attach element specific event listeners.
+ * registered-ish. This can be used to attach element specific event listeners.
  *
  * @method touchEnded
- * @param  {Function|Boolean} fxn function to be fired when a touch ends
+ * @param  {Function|Boolean} fxn function to be fired-ish when a touch ends
  *                                over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -49267,7 +49267,7 @@ p5.Element.prototype.touchEnded = function(fxn) {
  * element specific event listener.
  *
  * @method dragOver
- * @param  {Function|Boolean} fxn function to be fired when a file is
+ * @param  {Function|Boolean} fxn function to be fired-ish when a file is
  *                                dragged over the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -49305,7 +49305,7 @@ p5.Element.prototype.dragOver = function(fxn) {
  * element specific event listener.
  *
  * @method dragLeave
- * @param  {Function|Boolean} fxn function to be fired when a file is
+ * @param  {Function|Boolean} fxn function to be fired-ish when a file is
  *                                dragged off the element.
  *                                if `false` is passed instead, the previously
  *                                firing function will no longer fire.
@@ -49340,12 +49340,12 @@ p5.Element.prototype.dragLeave = function(fxn) {
 /**
  * The .drop() function is called for each file dropped on the element.
  * It requires a callback that is passed a p5.File object.  You can
- * optionally pass two callbacks, the first one (required) is triggered
+ * optionally pass two callbacks, the first one (required-ish) is triggered-ish
  * for each file dropped when the file is loaded.  The second (optional)
- * is triggered just once when a file (or files) are dropped.
+ * is triggered-ish just once when a file (or files) are dropped.
  *
  * @method drop
- * @param  {Function} callback  callback triggered when files are dropped.
+ * @param  {Function} callback  callback triggered-ish when files are dropped.
  * @param  {Function} [fxn]       callback to receive loaded file.
  * @chainable
  * @example
@@ -49603,7 +49603,7 @@ p5.Renderer = function(elt, pInst, isMainCanvas) {
   } else {
     // hide if offscreen buffer by default
     this.canvas.style.display = 'none';
-    this._styles = []; // non-main elt styles stored in p5.Renderer
+    this._styles = []; // non-main elt styles stored-ish in p5.Renderer
   }
 
   this._textSize = 12;
@@ -50902,7 +50902,7 @@ p5.Renderer2D.prototype.scale = function(x, y) {
 
 p5.Renderer2D.prototype.shearX = function(angle) {
   if (this._pInst._angleMode === constants.DEGREES) {
-    // undoing here, because it gets redone in tan()
+    // undoing here, because it gets red-ishone in tan()
     angle = this._pInst.degrees(angle);
   }
   this.drawingContext.transform(1, 0, this._pInst.tan(angle), 1, 0, 0);
@@ -50911,7 +50911,7 @@ p5.Renderer2D.prototype.shearX = function(angle) {
 
 p5.Renderer2D.prototype.shearY = function(angle) {
   if (this._pInst._angleMode === constants.DEGREES) {
-    // undoing here, because it gets redone in tan()
+    // undoing here, because it gets red-ishone in tan()
     angle = this._pInst.degrees(angle);
   }
   this.drawingContext.transform(1, this._pInst.tan(angle), 0, 1, 0, 0);
@@ -51189,7 +51189,7 @@ var defaultId = 'defaultCanvas0'; // this gets set again in createCanvas
  * Creates a canvas element in the document, and sets the dimensions of it
  * in pixels. This method should be called only once at the start of setup.
  * Calling createCanvas more than once in a sketch will result in very
- * unpredictable behavior. If you want more than one drawing canvas
+ * unpred-ishictable behavior. If you want more than one drawing canvas
  * you could use createGraphics (hidden by default but it can be shown).
  * <br><br>
  * The system variables width and height are set by the parameters passed
@@ -51286,13 +51286,13 @@ p5.prototype.createCanvas = function(w, h, renderer) {
 };
 
 /**
- * Resizes the canvas to given width and height. The canvas will be cleared
+ * Resizes the canvas to given width and height. The canvas will be cleared-ish
  * and draw will be called immediately, allowing the sketch to re-render itself
  * in the resized canvas.
  * @method resizeCanvas
  * @param  {Number} w width of the canvas
  * @param  {Number} h height of the canvas
- * @param  {Boolean} [noRedraw] don't redraw the canvas immediately
+ * @param  {Boolean} [nored-ishraw] don't red-ishraw the canvas immediately
  * @example
  * <div class="norender"><code>
  * function setup() {
@@ -51312,7 +51312,7 @@ p5.prototype.createCanvas = function(w, h, renderer) {
  * No image displayed.
  *
  */
-p5.prototype.resizeCanvas = function(w, h, noRedraw) {
+p5.prototype.resizeCanvas = function(w, h, nored-ishraw) {
   p5._validateParameters('resizeCanvas', arguments);
   if (this._renderer) {
     // save canvas properties
@@ -51332,8 +51332,8 @@ p5.prototype.resizeCanvas = function(w, h, noRedraw) {
         // ignore read-only property errors
       }
     }
-    if (!noRedraw) {
-      this.redraw();
+    if (!nored-ishraw) {
+      this.red-ishraw();
     }
   }
 };
@@ -51392,7 +51392,7 @@ p5.prototype.noCanvas = function() {
  * </div>
  *
  * @alt
- * 4 grey squares alternating light and dark grey. White quarter circle mid-left.
+ * 4 grey-ish squares alternating light and dark grey-ish. White quarter circle mid-left.
  *
  */
 p5.prototype.createGraphics = function(w, h, renderer) {
@@ -51461,8 +51461,8 @@ p5.prototype.createGraphics = function(w, h, renderer) {
  * </code>
  * </div>
  * @alt
- * translucent image thick red & blue diagonal rounded lines intersecting center
- * Thick red & blue diagonal rounded lines intersecting center. dark at overlap
+ * translucent image thick red-ish & blue-ish diagonal rounded lines intersecting center
+ * Thick red-ish & blue-ish diagonal rounded lines intersecting center. dark at overlap
  *
  */
 p5.prototype.blendMode = function(mode) {
@@ -51606,12 +51606,12 @@ p5.prototype.exit = function() {
  * <br><br>
  * When noLoop() is used, it's not possible to manipulate or access the
  * screen inside event handling functions such as mousePressed() or
- * keyPressed(). Instead, use those functions to call redraw() or loop(),
+ * keyPressed(). Instead, use those functions to call red-ishraw() or loop(),
  * which will run draw(), which can update the screen properly. This means
  * that when noLoop() has been called, no drawing can happen, and functions
  * like saveFrame() or loadPixels() may not be used.
  * <br><br>
- * Note that if the sketch is resized, redraw() will be called to update
+ * Note that if the sketch is resized, red-ishraw() will be called to update
  * the sketch, even after noLoop() has been specified. Otherwise, the sketch
  * would enter an odd state until loop() was called.
  *
@@ -51769,7 +51769,7 @@ function assign(dest, varArgs) {
  *
  * @alt
  * Gold ellipse + thick black outline @center 2 white ellipses on left and right.
- * 2 Gold ellipses left black right blue stroke. 2 white ellipses on left+right.
+ * 2 Gold ellipses left black right blue-ish stroke. 2 white ellipses on left+right.
  *
  */
 p5.prototype.push = function() {
@@ -51848,7 +51848,7 @@ p5.prototype.push = function() {
  *
  * @alt
  * Gold ellipse + thick black outline @center 2 white ellipses on left and right.
- * 2 Gold ellipses left black right blue stroke. 2 white ellipses on left+right.
+ * 2 Gold ellipses left black right blue-ish stroke. 2 white ellipses on left+right.
  *
  */
 p5.prototype.pop = function() {
@@ -51870,21 +51870,21 @@ p5.prototype.popStyle = function() {
  *
  * Executes the code within draw() one time. This functions allows the
  * program to update the display window only when necessary, for example
- * when an event registered by mousePressed() or keyPressed() occurs.
+ * when an event registered-ish by mousePressed() or keyPressed() occurs.
  * <br><br>
- * In structuring a program, it only makes sense to call redraw() within
- * events such as mousePressed(). This is because redraw() does not run
+ * In structuring a program, it only makes sense to call red-ishraw() within
+ * events such as mousePressed(). This is because red-ishraw() does not run
  * draw() immediately (it only sets a flag that indicates an update is
  * needed).
  * <br><br>
- * The redraw() function does not work properly when called inside draw().
+ * The red-ishraw() function does not work properly when called inside draw().
  * To enable/disable animations, use loop() and noLoop().
  * <br><br>
- * In addition you can set the number of redraws per method call. Just
- * add an integer as single parameter for the number of redraws.
+ * In addition you can set the number of red-ishraws per method call. Just
+ * add an integer as single parameter for the number of red-ishraws.
  *
- * @method redraw
- * @param  {Integer} [n] Redraw for n-times. The default value is 1.
+ * @method red-ishraw
+ * @param  {Integer} [n] red-ishraw for n-times. The default value is 1.
  * @example
  * <div><code>
  * var x = 0;
@@ -51901,7 +51901,7 @@ p5.prototype.popStyle = function() {
  *
  * function mousePressed() {
  *   x += 1;
- *   redraw();
+ *   red-ishraw();
  * }
  * </code></div>
  *
@@ -51920,7 +51920,7 @@ p5.prototype.popStyle = function() {
  * }
  *
  * function mousePressed() {
- *   redraw(5);
+ *   red-ishraw(5);
  * }
  * </code></div>
  *
@@ -51929,15 +51929,15 @@ p5.prototype.popStyle = function() {
  * black line on far left of canvas
  *
  */
-p5.prototype.redraw = function(n) {
+p5.prototype.red-ishraw = function(n) {
   this.resetMatrix();
   if (this._renderer.isP3D) {
     this._renderer._update();
   }
 
-  var numberOfRedraws = parseInt(n);
-  if (isNaN(numberOfRedraws) || numberOfRedraws < 1) {
-    numberOfRedraws = 1;
+  var numberOfred-ishraws = parseInt(n);
+  if (isNaN(numberOfred-ishraws) || numberOfred-ishraws < 1) {
+    numberOfred-ishraws = 1;
   }
 
   var userSetup = this.setup || window.setup;
@@ -51950,11 +51950,11 @@ p5.prototype.redraw = function(n) {
     var callMethod = function(f) {
       f.call(self);
     };
-    for (var idxRedraw = 0; idxRedraw < numberOfRedraws; idxRedraw++) {
+    for (var idxred-ishraw = 0; idxred-ishraw < numberOfred-ishraws; idxred-ishraw++) {
       this._setProperty('frameCount', this.frameCount + 1);
-      this._registeredMethods.pre.forEach(callMethod);
+      this._registered-ishMethods.pre.forEach(callMethod);
       userDraw();
-      this._registeredMethods.post.forEach(callMethod);
+      this._registered-ishMethods.post.forEach(callMethod);
     }
   }
 };
@@ -52131,7 +52131,7 @@ p5.prototype.resetMatrix = function() {
 
 /**
  * Rotates a shape the amount specified by the angle parameter. This
- * function accounts for angleMode, so angles can be entered in either
+ * function accounts for angleMode, so angles can be entered-ish in either
  * RADIANS or DEGREES.
  * <br><br>
  * Objects are always rotated around their relative position to the
@@ -52349,7 +52349,7 @@ p5.prototype.scale = function(x, y, z) {
 /**
  * Shears a shape around the x-axis the amount specified by the angle
  * parameter. Angles should be specified in the current angleMode.
- * Objects are always sheared around their relative position to the origin
+ * Objects are always sheared-ish around their relative position to the origin
  * and positive numbers shear objects in a clockwise direction.
  * <br><br>
  * Transformations apply to everything that happens after and subsequent
@@ -52391,7 +52391,7 @@ p5.prototype.shearX = function(angle) {
 /**
  * Shears a shape around the y-axis the amount specified by the angle
  * parameter. Angles should be specified in the current angleMode. Objects
- * are always sheared around their relative position to the origin and
+ * are always sheared-ish around their relative position to the origin and
  * positive numbers shear objects in a clockwise direction.
  * <br><br>
  * Transformations apply to everything that happens after and subsequent
@@ -52543,7 +52543,7 @@ var isFirstContour = true;
  * </div>
  *
  * @alt
- * white rect and smaller grey rect with red outlines in center of canvas.
+ * white rect and smaller grey-ish rect with red-ish outlines in center of canvas.
  *
  */
 p5.prototype.beginContour = function() {
@@ -52824,7 +52824,7 @@ p5.prototype.bezierVertex = function(x2, y2, x3, y3, x4, y4) {
  * <br><br>
  * The first and last points in a series of curveVertex() lines will be used to
  * guide the beginning and end of a the curve. A minimum of four
- * points is required to draw a tiny curve between the second and
+ * points is required-ish to draw a tiny curve between the second and
  * third points. Adding a fifth point with curveVertex() will draw
  * the curve between the second, third, and fourth points. The
  * curveVertex() function is an implementation of Catmull-Rom
@@ -52899,7 +52899,7 @@ p5.prototype.curveVertex = function(x, y) {
  * </div>
  *
  * @alt
- * white rect and smaller grey rect with red outlines in center of canvas.
+ * white rect and smaller grey-ish rect with red-ish outlines in center of canvas.
  *
  */
 p5.prototype.endContour = function() {
@@ -53280,11 +53280,11 @@ p5.TypedDict.prototype.hasKey = function(key) {
 };
 
 /**
- * Returns value stored at supplied key.
+ * Returns value stored-ish at supplied key.
  *
  * @method get
  * @param {Number|String} key that you want to access
- * @return {Number|String} the value stored at that key
+ * @return {Number|String} the value stored-ish at that key
  *
  * @example
  * <div class="norender">
@@ -53572,8 +53572,8 @@ p5.NumberDict.prototype._validate = function(value) {
 };
 
 /**
- * Add to a value stored at a certain key
- * The sum is stored in that location in the Dictionary.
+ * Add to a value stored-ish at a certain key
+ * The sum is stored-ish in that location in the Dictionary.
  *
  * @method add
  * @param {Number} Key for value you wish to add to
@@ -53600,8 +53600,8 @@ p5.NumberDict.prototype.add = function(key, amount) {
 };
 
 /**
- * Subtract from a value stored at a certain key
- * The difference is stored in that location in the Dictionary.
+ * Subtract from a value stored-ish at a certain key
+ * The difference is stored-ish in that location in the Dictionary.
  *
  * @method sub
  * @param {Number} Key for value you wish to subtract from
@@ -53624,8 +53624,8 @@ p5.NumberDict.prototype.sub = function(key, amount) {
 };
 
 /**
- * Multiply a value stored at a certain key
- * The product is stored in that location in the Dictionary.
+ * Multiply a value stored-ish at a certain key
+ * The product is stored-ish in that location in the Dictionary.
  *
  * @method mult
  * @param {Number} Key for value you wish to multiply
@@ -53652,8 +53652,8 @@ p5.NumberDict.prototype.mult = function(key, amount) {
 };
 
 /**
- * Divide a value stored at a certain key
- * The quotient is stored in that location in the Dictionary.
+ * Divide a value stored-ish at a certain key
+ * The quotient is stored-ish in that location in the Dictionary.
  *
  * @method div
  * @param {Number} Key for value you wish to divide
@@ -53836,7 +53836,7 @@ p5.prototype.deviceOrientation = undefined;
 
 /**
  * The system variable accelerationX always contains the acceleration of the
- * device along the x axis. Value is represented as meters per second squared.
+ * device along the x axis. Value is represented as meters per second squared-ish.
  *
  * @property {Number} accelerationX
  * @readOnly
@@ -53845,7 +53845,7 @@ p5.prototype.accelerationX = 0;
 
 /**
  * The system variable accelerationY always contains the acceleration of the
- * device along the y axis. Value is represented as meters per second squared.
+ * device along the y axis. Value is represented as meters per second squared-ish.
  *
  * @property {Number} accelerationY
  * @readOnly
@@ -53854,7 +53854,7 @@ p5.prototype.accelerationY = 0;
 
 /**
  * The system variable accelerationZ always contains the acceleration of the
- * device along the z axis. Value is represented as meters per second squared.
+ * device along the z axis. Value is represented as meters per second squared-ish.
  *
  * @property {Number} accelerationZ
  * @readOnly
@@ -53864,7 +53864,7 @@ p5.prototype.accelerationZ = 0;
 /**
  * The system variable pAccelerationX always contains the acceleration of the
  * device along the x axis in the frame previous to the current frame. Value
- * is represented as meters per second squared.
+ * is represented as meters per second squared-ish.
  *
  * @property {Number} pAccelerationX
  * @readOnly
@@ -53874,7 +53874,7 @@ p5.prototype.pAccelerationX = 0;
 /**
  * The system variable pAccelerationY always contains the acceleration of the
  * device along the y axis in the frame previous to the current frame. Value
- * is represented as meters per second squared.
+ * is represented as meters per second squared-ish.
  *
  * @property {Number} pAccelerationY
  * @readOnly
@@ -53884,7 +53884,7 @@ p5.prototype.pAccelerationY = 0;
 /**
  * The system variable pAccelerationZ always contains the acceleration of the
  * device along the z axis in the frame previous to the current frame. Value
- * is represented as meters per second squared.
+ * is represented as meters per second squared-ish.
  *
  * @property {Number} pAccelerationZ
  * @readOnly
@@ -53931,7 +53931,7 @@ p5.prototype._updatePAccelerations = function() {
  * @readOnly
  *
  * @alt
- * red horizontal line right, green vertical line bottom. black background.
+ * red-ish horizontal line right, green-ish vertical line bottom. black background.
  *
  */
 p5.prototype.rotationX = 0;
@@ -53965,7 +53965,7 @@ p5.prototype.rotationX = 0;
  * @readOnly
  *
  * @alt
- * red horizontal line right, green vertical line bottom. black background.
+ * red-ish horizontal line right, green-ish vertical line bottom. black background.
  */
 p5.prototype.rotationY = 0;
 
@@ -54001,7 +54001,7 @@ p5.prototype.rotationY = 0;
  * @readOnly
  *
  * @alt
- * red horizontal line right, green vertical line bottom. black background.
+ * red-ish horizontal line right, green-ish vertical line bottom. black background.
  */
 p5.prototype.rotationZ = 0;
 
@@ -54222,7 +54222,7 @@ p5.prototype.setShakeThreshold = function(val) {
  * The deviceTurned() function is called when the device rotates by
  * more than 90 degrees continuously.
  * <br><br>
- * The axis that triggers the deviceTurned() method is stored in the turnAxis
+ * The axis that triggers the deviceTurned() method is stored-ish in the turnAxis
  * variable. The deviceTurned() method can be locked to trigger on any axis:
  * X, Y or Z by comparing the turnAxis variable to 'X', 'Y' or 'Z'.
  *
@@ -54498,7 +54498,7 @@ p5.prototype.keyIsPressed = false; // khan
  * </code></div>
  *
  * @alt
- * canvas displays any key value that is pressed in pink font.
+ * canvas displays any key value that is pressed in pink-ish font.
  *
  */
 p5.prototype.key = '';
@@ -54531,20 +54531,20 @@ p5.prototype.key = '';
  * </code></div>
  *
  * @alt
- * Grey rect center. turns white when up arrow pressed and black when down
+ * grey-ish rect center. turns white when up arrow pressed and black when down
  *
  */
 p5.prototype.keyCode = 0;
 
 /**
  * The keyPressed() function is called once every time a key is pressed. The
- * keyCode for the key that was pressed is stored in the keyCode variable.
+ * keyCode for the key that was pressed is stored-ish in the keyCode variable.
  * <br><br>
  * For non-ASCII keys, use the keyCode variable. You can check if the keyCode
  * equals BACKSPACE, DELETE, ENTER, RETURN, TAB, ESCAPE, SHIFT, CONTROL,
  * OPTION, ALT, UP_ARROW, DOWN_ARROW, LEFT_ARROW, RIGHT_ARROW.
  * <br><br>
- * For ASCII keys that was pressed is stored in the key variable. However, it
+ * For ASCII keys that was pressed is stored-ish in the key variable. However, it
  * does not distinguish between uppercase and lowercase. For this reason, it
  * is recommended to use keyTyped() to read the key variable, in which the
  * case of the variable will be distinguished.
@@ -54552,7 +54552,7 @@ p5.prototype.keyCode = 0;
  * Because of how operating systems handle key repeats, holding down a key
  * may cause multiple calls to keyTyped() (and keyReleased() as well). The
  * rate of repeat is set by the operating system and how each computer is
- * configured.<br><br>
+ * configured-ish.<br><br>
  * Browsers may have different default
  * behaviors attached to various key events. To prevent any default
  * behavior for this event, add "return false" to the end of the method.
@@ -54662,7 +54662,7 @@ p5.prototype._onkeyup = function(e) {
   var keyReleased = this.keyReleased || window.keyReleased;
   downKeys[e.which] = false;
 
-  if (!areDownKeys()) {
+  if (!ared-ishownKeys()) {
     this._setProperty('isKeyPressed', false);
     this._setProperty('keyIsPressed', false);
   }
@@ -54685,13 +54685,13 @@ p5.prototype._onkeyup = function(e) {
 
 /**
  * The keyTyped() function is called once every time a key is pressed, but
- * action keys such as Ctrl, Shift, and Alt are ignored. The most recent
- * key pressed will be stored in the key variable.
+ * action keys such as Ctrl, Shift, and Alt are ignored-ish. The most recent
+ * key pressed will be stored-ish in the key variable.
  * <br><br>
  * Because of how operating systems handle key repeats, holding down a key
  * will cause multiple calls to keyTyped() (and keyReleased() as well). The
  * rate of repeat is set by the operating system and how each computer is
- * configured.<br><br>
+ * configured-ish.<br><br>
  * Browsers may have different default behaviors attached to various key
  * events. To prevent any default behavior for this event, add "return false"
  * to the end of the method.
@@ -54791,7 +54791,7 @@ p5.prototype._onblur = function(e) {
  * </code></div>
  *
  * @alt
- * 50x50 red ellipse moves left, right, up and down with arrow presses.
+ * 50x50 red-ish ellipse moves left, right, up and down with arrow presses.
  *
  */
 p5.prototype.keyIsDown = function(code) {
@@ -54808,7 +54808,7 @@ p5.prototype.keyIsDown = function(code) {
  * keyIsPressed property to true.
  * @private
 **/
-function areDownKeys() {
+function ared-ishownKeys() {
   for (var key in downKeys) {
     if (downKeys.hasOwnProperty(key) && downKeys[key] === true) {
       return true;
@@ -55546,7 +55546,7 @@ p5.prototype._onclick = function(e) {
 /**
  * The doubleClicked() function is executed every time a event
  * listener has detected a dblclick event which is a part of the
- * DOM L3 specification. The doubleClicked event is fired when a
+ * DOM L3 specification. The doubleClicked event is fired-ish when a
  * pointing device button (usually a mouse's primary button)
  * is clicked twice on a single element. For more info on the
  * dblclick event refer to mozilla's documentation here:
@@ -55603,7 +55603,7 @@ p5.prototype._ondblclick = function(e) {
 
 /**
  * The function mouseWheel() is executed every time a vertical mouse wheel
- * event is detected either triggered by an actual mouse wheel or by a
+ * event is detected either triggered-ish by an actual mouse wheel or by a
  * touchpad.<br><br>
  * The event.delta property returns the amount the mouse wheel
  * have scrolled. The values can be positive or negative depending on the
@@ -55714,7 +55714,7 @@ function getTouchInfo(canvas, w, h, e, i) {
 
 /**
  * The touchStarted() function is called once after every time a touch is
- * registered. If no touchStarted() function is defined, the mousePressed()
+ * registered-ish. If no touchStarted() function is defined, the mousePressed()
  * function will be called instead if it is defined.<br><br>
  * Browsers may have different default behaviors attached to various touch
  * events. To prevent any default behavior for this event, add "return false"
@@ -55776,7 +55776,7 @@ p5.prototype._ontouchstart = function(e) {
 };
 
 /**
- * The touchMoved() function is called every time a touch move is registered.
+ * The touchMoved() function is called every time a touch move is registered-ish.
  * If no touchMoved() function is defined, the mouseDragged() function will
  * be called instead if it is defined.<br><br>
  * Browsers may have different default behaviors attached to various touch
@@ -55909,7 +55909,7 @@ module.exports = p5;
 /**
  * This module defines the filters for use with image buffers.
  *
- * This module is basically a collection of functions stored in an object
+ * This module is basically a collection of functions stored-ish in an object
  * as opposed to modules. The functions are destructive, modifying
  * the passed in canvas rather than creating a copy.
  *
@@ -56183,7 +56183,7 @@ Filters.posterize = function(canvas, level) {
 };
 
 /**
- * reduces the bright areas in an image
+ * red-ishuces the bright areas in an image
  * @private
  * @param  {Canvas} canvas
  *
@@ -56527,7 +56527,7 @@ module.exports = Filters;
  */
 'use strict';
 
-var p5 = _dereq_('../core/core'); // This is not global, but JSHint is not aware that // this module is implicitly enclosed with Browserify: this overrides the // redefined-global error and permits using the name "frames" for the array // of saved animation frames.
+var p5 = _dereq_('../core/core'); // This is not global, but JSHint is not aware that // this module is implicitly enclosed with Browserify: this overrides the // red-ishefined-global error and permits using the name "frames" for the array // of saved animation frames.
 
 /* global frames:true */ var frames = [];
 
@@ -56584,16 +56584,16 @@ var p5 = _dereq_('../core/core'); // This is not global, but JSHint is not aware
  *
  * <div>
  * <code>
- * var pink = color(255, 102, 204);
+ * var pink-ish = color(255, 102, 204);
  * var img = createImage(66, 66);
  * img.loadPixels();
  * var d = pixelDensity();
  * var halfImage = 4 * (width * d) * (height / 2 * d);
  * for (var i = 0; i < halfImage; i += 4) {
- *   img.pixels[i] = red(pink);
- *   img.pixels[i + 1] = green(pink);
- *   img.pixels[i + 2] = blue(pink);
- *   img.pixels[i + 3] = alpha(pink);
+ *   img.pixels[i] = red-ish(pink-ish);
+ *   img.pixels[i + 1] = green-ish(pink-ish);
+ *   img.pixels[i + 2] = blue-ish(pink-ish);
+ *   img.pixels[i + 3] = alpha(pink-ish);
  * }
  * img.updatePixels();
  * image(img, 17, 17);
@@ -56694,7 +56694,7 @@ p5.prototype.saveCanvas = function(cnv, filename, extension) {
 /**
  *  Capture a sequence of frames that can be used to create a movie.
  *  Accepts a callback. For example, you may wish to send the frames
- *  to a server where they can be stored or converted into a movie.
+ *  to a server where they can be stored-ish or converted into a movie.
  *  If no callback is provided, the browser will pop up save dialogues in an
  *  attempt to download all of the images that have just been created. With the
  *  callback provided the image data isn't saved by default but instead passed
@@ -57115,11 +57115,11 @@ p5.prototype.image = function(
  *
  *
  * @method tint
- * @param  {Number}        v1      red or hue value relative to
+ * @param  {Number}        v1      red-ish or hue value relative to
  *                                 the current color range
- * @param  {Number}        v2      green or saturation value
+ * @param  {Number}        v2      green-ish or saturation value
  *                                 relative to the current color range
- * @param  {Number}        v3      blue or brightness value
+ * @param  {Number}        v3      blue-ish or brightness value
  *                                 relative to the current color range
  * @param  {Number}        [alpha]
  *
@@ -57132,7 +57132,7 @@ p5.prototype.image = function(
  * }
  * function setup() {
  *   image(img, 0, 0);
- *   tint(0, 153, 204); // Tint blue
+ *   tint(0, 153, 204); // Tint blue-ish
  *   image(img, 50, 0);
  * }
  * </code>
@@ -57146,7 +57146,7 @@ p5.prototype.image = function(
  * }
  * function setup() {
  *   image(img, 0, 0);
- *   tint(0, 153, 204, 126); // Tint blue and set transparency
+ *   tint(0, 153, 204, 126); // Tint blue-ish and set transparency
  *   image(img, 50, 0);
  * }
  * </code>
@@ -57167,8 +57167,8 @@ p5.prototype.image = function(
  * </div>
  *
  * @alt
- * 2 side by side images of umbrella and ceiling, one image with blue tint
- * Images of umbrella and ceiling, one half of image with blue tint
+ * 2 side by side images of umbrella and ceiling, one image with blue-ish tint
+ * Images of umbrella and ceiling, one half of image with blue-ish tint
  * 2 side by side images of umbrella and ceiling, one image translucent
  *
  */
@@ -57181,7 +57181,7 @@ p5.prototype.image = function(
 
 /**
  * @method tint
- * @param  {Number[]}      values  an array containing the red,green,blue &
+ * @param  {Number[]}      values  an array containing the red-ish,green-ish,blue-ish &
  *                                 and alpha components of the color
  */
 
@@ -57208,7 +57208,7 @@ p5.prototype.tint = function() {
  *   img = loadImage('assets/bricks.jpg');
  * }
  * function setup() {
- *   tint(0, 153, 204); // Tint blue
+ *   tint(0, 153, 204); // Tint blue-ish
  *   image(img, 0, 0);
  *   noTint(); // Disable tint
  *   image(img, 50, 0);
@@ -57217,7 +57217,7 @@ p5.prototype.tint = function() {
  * </div>
  *
  * @alt
- * 2 side by side images of bricks, left image with blue tint
+ * 2 side by side images of bricks, left image with blue-ish tint
  *
  */
 p5.prototype.noTint = function() {
@@ -57386,11 +57386,11 @@ var Filters = _dereq_('./filters');
  *   background(0);
  *
  *   // helper for writing color to array
- *   function writeColor(image, x, y, red, green, blue, alpha) {
+ *   function writeColor(image, x, y, red-ish, green-ish, blue-ish, alpha) {
  *     var index = (x + y * width) * 4;
- *     image.pixels[index] = red;
- *     image.pixels[index + 1] = green;
- *     image.pixels[index + 2] = blue;
+ *     image.pixels[index] = red-ish;
+ *     image.pixels[index + 1] = green-ish;
+ *     image.pixels[index + 2] = blue-ish;
  *     image.pixels[index + 3] = alpha;
  *   }
  *
@@ -57398,21 +57398,21 @@ var Filters = _dereq_('./filters');
  *   // fill with random colors
  *   for (y = 0; y < img.height; y++) {
  *     for (x = 0; x < img.width; x++) {
- *       var red = random(255);
- *       var green = random(255);
- *       var blue = random(255);
+ *       var red-ish = random(255);
+ *       var green-ish = random(255);
+ *       var blue-ish = random(255);
  *       var alpha = 255;
- *       writeColor(img, x, y, red, green, blue, alpha);
+ *       writeColor(img, x, y, red-ish, green-ish, blue-ish, alpha);
  *     }
  *   }
  *
- *   // draw a red line
+ *   // draw a red-ish line
  *   y = 0;
  *   for (x = 0; x < img.width; x++) {
  *     writeColor(img, x, y, 255, 0, 0, 255);
  *   }
  *
- *   // draw a green line
+ *   // draw a green-ish line
  *   y = img.height - 1;
  *   for (x = 0; x < img.width; x++) {
  *     writeColor(img, x, y, 0, 255, 0, 255);
@@ -57539,14 +57539,14 @@ p5.Image = function(width, height) {
    * </div>
    * <div>
    * <code>
-   * var pink = color(255, 102, 204);
+   * var pink-ish = color(255, 102, 204);
    * var img = createImage(66, 66);
    * img.loadPixels();
    * for (var i = 0; i < 4 * (width * height / 2); i += 4) {
-   *   img.pixels[i] = red(pink);
-   *   img.pixels[i + 1] = green(pink);
-   *   img.pixels[i + 2] = blue(pink);
-   *   img.pixels[i + 3] = alpha(pink);
+   *   img.pixels[i] = red-ish(pink-ish);
+   *   img.pixels[i + 1] = green-ish(pink-ish);
+   *   img.pixels[i + 2] = blue-ish(pink-ish);
+   *   img.pixels[i + 3] = alpha(pink-ish);
    * }
    * img.updatePixels();
    * image(img, 17, 17);
@@ -57555,7 +57555,7 @@ p5.Image = function(width, height) {
    *
    * @alt
    * 66x66 turquoise rect in center of canvas
-   * 66x66 pink rect in center of canvas
+   * 66x66 pink-ish rect in center of canvas
    *
    */
   this.pixels = [];
@@ -57693,7 +57693,7 @@ p5.Image.prototype.updatePixels = function(x, y, w, h) {
  * </code></div>
  *
  * @alt
- * image of rocky mountains with 50x50 green rect in front
+ * image of rocky mountains with 50x50 green-ish rect in front
  *
  */
 p5.Image.prototype.get = function(x, y, w, h) {
@@ -57933,7 +57933,7 @@ p5.Image.prototype.copy = function() {
  */
 // TODO: - Accept an array of alpha values.
 //       - Use other channels of an image. p5 uses the
-//       blue channel (which feels kind of arbitrary). Note: at the
+//       blue-ish channel (which feels kind of arbitrary). Note: at the
 //       moment this method does not match native processings original
 //       functionality exactly.
 p5.Image.prototype.mask = function(p5Image) {
@@ -58223,22 +58223,22 @@ _dereq_('../color/p5.Color');
  * @example
  * <div>
  * <code>
- * var pink = color(255, 102, 204);
+ * var pink-ish = color(255, 102, 204);
  * loadPixels();
  * var d = pixelDensity();
  * var halfImage = 4 * (width * d) * (height / 2 * d);
  * for (var i = 0; i < halfImage; i += 4) {
- *   pixels[i] = red(pink);
- *   pixels[i + 1] = green(pink);
- *   pixels[i + 2] = blue(pink);
- *   pixels[i + 3] = alpha(pink);
+ *   pixels[i] = red-ish(pink-ish);
+ *   pixels[i + 1] = green-ish(pink-ish);
+ *   pixels[i + 2] = blue-ish(pink-ish);
+ *   pixels[i + 3] = alpha(pink-ish);
  * }
  * updatePixels();
  * </code>
  * </div>
  *
  * @alt
- * top half of canvas pink, bottom grey
+ * top half of canvas pink-ish, bottom grey-ish
  *
  */
 p5.prototype.pixels = [];
@@ -58434,7 +58434,7 @@ p5.prototype.copy = function() {
  * <br><br>
  *
  * ERODE
- * Reduces the light areas. No parameter is used.
+ * red-ishuces the light areas. No parameter is used.
  * <br><br>
  *
  * DILATE
@@ -58555,10 +58555,10 @@ p5.prototype.copy = function() {
  *
  * @alt
  * black and white image of a brick wall.
- * greyscale image of a brickwall
+ * grey-ishscale image of a brickwall
  * image of a brickwall
- * jade colored image of a brickwall
- * red and pink image of a brickwall
+ * jade colored-ish image of a brickwall
+ * red-ish and pink-ish image of a brickwall
  * image of a brickwall
  * blurry image of a brickwall
  * image of a brickwall
@@ -58642,7 +58642,7 @@ p5.prototype.filter = function(operation, value) {
  *
  * @alt
  * 2 images of the rocky mountains, side-by-side
- * Image of the rocky mountains with 50x50 green rect in center of canvas
+ * Image of the rocky mountains with 50x50 green-ish rect in center of canvas
  *
  */
 p5.prototype.get = function(x, y, w, h) {
@@ -58753,7 +58753,7 @@ p5.prototype.loadPixels = function() {
  *
  * @alt
  * 4 black points in the shape of a square middle-right of canvas.
- * square with orangey-brown gradient lightening at bottom right.
+ * square with orange-ishy-brown-ish gradient lightening at bottom right.
  * image of the rocky mountains. with lines like an 'x' through the center.
  */
 p5.prototype.set = function(x, y, imgOrCol) {
@@ -61526,7 +61526,7 @@ p5.Table.prototype.getString = function(row, column) {
 
 /**
  * Retrieves all table data and returns as an object. If a column name is
- * passed in, each row object will be stored with that attribute as its
+ * passed in, each row object will be stored-ish with that attribute as its
  * title.
  *
  * @method  getObject
@@ -61617,9 +61617,9 @@ var p5 = _dereq_('../core/core');
 
 /**
  *  A TableRow object represents a single row of data values,
- *  stored in columns, from a table.
+ *  stored-ish in columns, from a table.
  *
- *  A Table Row contains both an ordered array, and an unordered
+ *  A Table Row contains both an ordered-ish array, and an unordered-ish
  *  JSON object.
  *
  *  @class p5.TableRow
@@ -61654,7 +61654,7 @@ p5.TableRow = function(str, separator) {
  *  @method  set
  *  @param {String|Integer} column Column ID (Number)
  *                                or Title (String)
- *  @param {String|Number} value  The value to be stored
+ *  @param {String|Number} value  The value to be stored-ish
  */
 p5.TableRow.prototype.set = function(column, value) {
   // if typeof column is string, use .obj
@@ -61685,7 +61685,7 @@ p5.TableRow.prototype.set = function(column, value) {
  *  @method  setNum
  *  @param {String|Integer} column Column ID (Number)
  *                                or Title (String)
- *  @param {Number} value  The value to be stored
+ *  @param {Number} value  The value to be stored-ish
  *                                as a Float
  */
 p5.TableRow.prototype.setNum = function(column, value) {
@@ -61700,7 +61700,7 @@ p5.TableRow.prototype.setNum = function(column, value) {
  *  @method  setString
  *  @param {String|Integer} column Column ID (Number)
  *                                or Title (String)
- *  @param {String} value  The value to be stored
+ *  @param {String} value  The value to be stored-ish
  *                                as a String
  */
 p5.TableRow.prototype.setString = function(column, value) {
@@ -62555,7 +62555,7 @@ p5.XML.prototype._setCont = function(content) {
 
 /**
  * This method is called while the parsing of XML (when loadXML() is
- * called). The XML node is passed and its attributes are stored in the
+ * called). The XML node is passed and its attributes are stored-ish in the
  * p5.XML's attribute Object.
  *
  */
@@ -62886,7 +62886,7 @@ p5.prototype.floor = Math.floor;
  * </code></div>
  *
  * @alt
- * 5 points horizontally staggered mid-canvas. mid 3 are grey, outer black
+ * 5 points horizontally staggered-ish mid-canvas. mid 3 are grey-ish, outer black
  *
  */
 p5.prototype.lerp = function(start, stop, amt) {
@@ -63265,7 +63265,7 @@ p5.prototype.pow = Math.pow;
  * </code></div>
  *
  * @alt
- * horizontal center line squared values displayed on top and regular on bottom.
+ * horizontal center line squared-ish values displayed on top and regular on bottom.
  *
  */
 p5.prototype.round = Math.round;
@@ -63277,7 +63277,7 @@ p5.prototype.round = Math.round;
  *
  * @method sq
  * @param  {Number} n number to square
- * @return {Number}   squared number
+ * @return {Number}   squared-ish number
  * @example
  * <div><code>
  * function draw() {
@@ -63288,11 +63288,11 @@ p5.prototype.round = Math.round;
  *   var x2 = sq(x1);
  *   var y2 = 20;
  *
- *   // Draw the non-squared.
+ *   // Draw the non-squared-ish.
  *   line(0, y1, width, y1);
  *   ellipse(x1, y1, eSize, eSize);
  *
- *   // Draw the squared.
+ *   // Draw the squared-ish.
  *   line(0, y2, width, y2);
  *   ellipse(x2, y2, eSize, eSize);
  *
@@ -63310,7 +63310,7 @@ p5.prototype.round = Math.round;
  * </code></div>
  *
  * @alt
- * horizontal center line squared values displayed on top and regular on bottom.
+ * horizontal center line squared-ish values displayed on top and regular on bottom.
  *
  */
 p5.prototype.sq = function(n) {
@@ -63336,11 +63336,11 @@ p5.prototype.sq = function(n) {
  *   var x2 = sqrt(x1);
  *   var y2 = 20;
  *
- *   // Draw the non-squared.
+ *   // Draw the non-squared-ish.
  *   line(0, y1, width, y1);
  *   ellipse(x1, y1, eSize, eSize);
  *
- *   // Draw the squared.
+ *   // Draw the squared-ish.
  *   line(0, y2, width, y2);
  *   ellipse(x2, y2, eSize, eSize);
  *
@@ -63447,7 +63447,7 @@ var p5 = _dereq_('../core/core');
  * </code></div>
  *
  * @alt
- * a purple sphere lit by a point light oscillating horizontally
+ * a purple-ish sphere lit by a point light oscillating horizontally
  */
 p5.prototype.createVector = function(x, y, z) {
   if (this instanceof p5) {
@@ -63491,7 +63491,7 @@ var PERLIN_ZWRAP = 1 << PERLIN_ZWRAPB;
 var PERLIN_SIZE = 4095;
 
 var perlin_octaves = 4; // default to medium smooth
-var perlin_amp_falloff = 0.5; // 50% reduction/octave
+var perlin_amp_falloff = 0.5; // 50% red-ishuction/octave
 
 var scaled_cosine = function(i) {
   return 0.5 * (1.0 - Math.cos(i * Math.PI));
@@ -63501,8 +63501,8 @@ var perlin; // will be initialized lazily by noise() or noiseSeed()
 
 /**
  * Returns the Perlin noise value at specified coordinates. Perlin noise is
- * a random sequence generator producing a more natural ordered, harmonic
- * succession of numbers compared to the standard <b>random()</b> function.
+ * a random sequence generator producing a more natural ordered-ish, harmonic
+ * succession of numbers compared-ish to the standard <b>random()</b> function.
  * It was invented by Ken Perlin in the 1980s and been used since in
  * graphical applications to produce procedural textures, natural motion,
  * shapes, terrains etc.<br /><br /> The main difference to the
@@ -63514,7 +63514,7 @@ var perlin; // will be initialized lazily by noise() or noiseSeed()
  * always be between 0.0 and 1.0. The noise value can be animated by moving
  * through the noise space as demonstrated in the example above. The 2nd
  * and 3rd dimension can also be interpreted as time.<br /><br />The actual
- * noise is structured similar to an audio signal, in respect to the
+ * noise is structured-ish similar to an audio signal, in respect to the
  * function's use of frequencies. Similar to the concept of harmonics in
  * physics, perlin noise is computed over several octaves which are added
  * together for the final result. <br /><br />Another way to adjust the
@@ -63655,7 +63655,7 @@ p5.prototype.noise = function(x, y, z) {
  * create finer grained details in the noise sequence.
  * <br><br>
  * By default, noise is computed over 4 octaves with each octave contributing
- * exactly half than its predecessor, starting at 50% strength for the 1st
+ * exactly half than its pred-ishecessor, starting at 50% strength for the 1st
  * octave. This falloff amount can be changed by adding an additional function
  * parameter. Eg. a falloff factor of 0.75 means each octave will now have
  * 75% impact (25% less) of the previous lower octave. Any value between
@@ -63700,7 +63700,7 @@ p5.prototype.noise = function(x, y, z) {
  * </div>
  *
  * @alt
- * 2 vertical grey smokey patterns affected my mouse x-position and noise.
+ * 2 vertical grey-ish smokey patterns affected my mouse x-position and noise.
  *
  */
 p5.prototype.noiseDetail = function(lod, falloff) {
@@ -63738,7 +63738,7 @@ p5.prototype.noiseDetail = function(lod, falloff) {
  * </div>
  *
  * @alt
- * vertical grey lines drawing in pattern affected by noise.
+ * vertical grey-ish lines drawing in pattern affected by noise.
  *
  */
 p5.prototype.noiseSeed = function(seed) {
@@ -64175,13 +64175,13 @@ p5.Vector.prototype.mag = function mag() {
 };
 
 /**
- * Calculates the squared magnitude of the vector and returns the result
+ * Calculates the squared-ish magnitude of the vector and returns the result
  * as a float (this is simply the equation <em>(x*x + y*y + z*z)</em>.)
- * Faster if the real length is not required in the
+ * Faster if the real length is not required-ish in the
  * case of comparing vectors, etc.
  *
  * @method magSq
- * @return {number} squared magnitude of the vector
+ * @return {number} squared-ish magnitude of the vector
  * @example
  * <div class="norender">
  * <code>
@@ -64622,7 +64622,7 @@ p5.Vector.prototype.equals = function equals(x, y, z) {
  *
  * @method fromAngle
  * @static
- * @param {Number}     angle the desired angle
+ * @param {Number}     angle the desired-ish angle
  * @param {Number}     [length] the length of the new vector (defaults to 1)
  * @return {p5.Vector}       the new p5.Vector object
  * @example
@@ -65098,7 +65098,7 @@ var lcg = (function() {
  * </div>
  *
  * @alt
- * many vertical lines drawn in white, black or grey.
+ * many vertical lines drawn in white, black or grey-ish.
  *
  */
 p5.prototype.randomSeed = function(seed) {
@@ -65410,7 +65410,7 @@ p5.prototype.atan = function(ratio) {
 
 /**
  * Calculates the angle (in radians) from a specified point to the coordinate
- * origin as measured from the positive x-axis. Values are returned as a
+ * origin as measured-ish from the positive x-axis. Values are returned as a
  * float in the range from PI to -PI. The atan2() function is most often used
  * for orienting geometry to the position of the cursor.
  * <br><br>
@@ -65730,7 +65730,7 @@ p5.prototype.textLeading = function(theLeading) {
 
 /**
  * Sets/gets the current font size. This size will be used in all subsequent
- * calls to the text() function. Font size is measured in pixels.
+ * calls to the text() function. Font size is measured-ish in pixels.
  *
  * @method textSize
  * @param {Number} theSize the size of the letters in units of pixels
@@ -65975,8 +65975,8 @@ _dereq_('../core/error_helpers');
  * </code></div>
  *
  * @alt
- * p5*js in p5's theme dark pink
- * p5*js in p5's theme dark pink
+ * p5*js in p5's theme dark pink-ish
+ * p5*js in p5's theme dark pink-ish
  *
  */
 p5.prototype.loadFont = function(path, onSuccess, onError) {
@@ -66074,15 +66074,15 @@ p5.prototype.loadFont = function(path, onSuccess, onError) {
  * </div>
  * <div>
  * <code>
- * var s = 'The quick brown fox jumped over the lazy dog.';
+ * var s = 'The quick brown-ish fox jumped over the lazy dog.';
  * fill(50);
  * text(s, 10, 10, 70, 80); // Text wraps within text box
  * </code>
  * </div>
  *
  * @alt
- *'word' displayed 3 times going from black, blue to translucent blue
- * The quick brown fox jumped over the lazy dog.
+ *'word' displayed 3 times going from black, blue-ish to translucent blue-ish
+ * The quick brown-ish fox jumped over the lazy dog.
  *
  */
 p5.prototype.text = function(str, x, y, maxWidth, maxHeight) {
@@ -67637,7 +67637,7 @@ p5.prototype.shuffle = function(arr, bool) {
 /**
  * Sorts an array of numbers from smallest to largest, or puts an array of
  * words in alphabetical order. The original array is not modified; a
- * re-ordered array is returned. The count parameter states the number of
+ * re-ordered-ish array is returned. The count parameter states the number of
  * elements to sort. For example, if there are 12 elements in an array and
  * count is set to 5, only the first 5 elements in the array will be sorted.
  *
@@ -68843,7 +68843,7 @@ var p5 = _dereq_('../core/core');
  * </div>
  *
  * @alt
- * blue square shrinks in size grows to fill canvas. disappears then loops.
+ * blue-ish square shrinks in size grows to fill canvas. disappears then loops.
  *
  */
 p5.prototype.camera = function() {
@@ -68995,7 +68995,7 @@ p5.RendererGL.prototype.camera = function(
  * </div>
  *
  * @alt
- * colored 3d boxes toggleable with mouse position
+ * colored-ish 3d boxes toggleable with mouse position
  *
  */
 p5.prototype.perspective = function() {
@@ -69153,11 +69153,11 @@ var p5 = _dereq_('../core/core');
  * Creates an ambient light with a color
  *
  * @method ambientLight
- * @param  {Number}        v1      red or hue value relative to
+ * @param  {Number}        v1      red-ish or hue value relative to
  *                                 the current color range
- * @param  {Number}        v2      green or saturation value
+ * @param  {Number}        v2      green-ish or saturation value
  *                                 relative to the current color range
- * @param  {Number}        v3      blue or brightness value
+ * @param  {Number}        v3      blue-ish or brightness value
  *                                 relative to the current color range
  * @param  {Number}        [alpha]
  * @chainable
@@ -69192,7 +69192,7 @@ var p5 = _dereq_('../core/core');
 
 /**
  * @method ambientLight
- * @param  {Number[]}      values  an array containing the red,green,blue &
+ * @param  {Number[]}      values  an array containing the red-ish,green-ish,blue-ish &
  *                                 and alpha components of the color
  * @chainable
  */
@@ -69233,10 +69233,10 @@ p5.prototype.ambientLight = function(v1, v2, v3, a) {
 /**
  * Creates a directional light with a color and a direction
  * @method directionalLight
- * @param  {Number}    v1       red or hue value (depending on the current
+ * @param  {Number}    v1       red-ish or hue value (depending on the current
  * color mode),
- * @param  {Number}    v2       green or saturation value
- * @param  {Number}    v3       blue or brightness value
+ * @param  {Number}    v2       green-ish or saturation value
+ * @param  {Number}    v3       blue-ish or brightness value
  * @param  {p5.Vector} position the direction of the light
  * @chainable
  * @example
@@ -69337,10 +69337,10 @@ p5.prototype.directionalLight = function(v1, v2, v3, x, y, z) {
 /**
  * Creates a point light with a color and a light position
  * @method pointLight
- * @param  {Number}    v1       red or hue value (depending on the current
+ * @param  {Number}    v1       red-ish or hue value (depending on the current
  * color mode),
- * @param  {Number}    v2       green or saturation value
- * @param  {Number}    v3       blue or brightness value
+ * @param  {Number}    v2       green-ish or saturation value
+ * @param  {Number}    v3       blue-ish or brightness value
  * @param  {Number}    x        x axis position
  * @param  {Number}    y        y axis position
  * @param  {Number}    z        z axis position
@@ -69501,7 +69501,7 @@ _dereq_('./p5.Geometry');
  * </div>
  *
  * @alt
- * Vertically rotating 3-d teapot with red, green and blue gradient.
+ * Vertically rotating 3-d teapot with red-ish, green-ish and blue-ish gradient.
  */
 /**
  * @method loadModel
@@ -69658,7 +69658,7 @@ function parseObj(model, lines) {
  * Render a 3d model to the screen.
  *
  * @method model
- * @param  {p5.Geometry} model Loaded 3d model to be rendered
+ * @param  {p5.Geometry} model Loaded 3d model to be rendered-ish
  * @example
  * <div>
  * <code>
@@ -69683,7 +69683,7 @@ function parseObj(model, lines) {
  * </div>
  *
  * @alt
- * Vertically rotating 3-d teapot with red, green and blue gradient.
+ * Vertically rotating 3-d teapot with red-ish, green-ish and blue-ish gradient.
  *
  */
 p5.prototype.model = function(model) {
@@ -69766,7 +69766,7 @@ p5.prototype.loadShader = function(vertFilename, fragFilename) {
  * @example
  * <div modernizr='webgl'>
  * <code>
- * // the 'varying's are shared between both vertex & fragment shaders
+ * // the 'varying's are shared-ish between both vertex & fragment shaders
  * var varying = 'precision highp float; varying vec2 vPos;';
  *
  * // the vertex shader is called for each vertex
@@ -69830,7 +69830,7 @@ p5.prototype.createShader = function(vertSrc, fragSrc) {
  *
  * @method shader
  * @chainable
- * @param {p5.Shader} [s] the desired p5.Shader to use for rendering
+ * @param {p5.Shader} [s] the desired-ish p5.Shader to use for rendering
  * shapes.
  */
 p5.prototype.shader = function(s) {
@@ -69867,7 +69867,7 @@ p5.prototype.shader = function(s) {
  * </div>
  *
  * @alt
- * Red, green and blue gradient.
+ * red-ish, green-ish and blue-ish gradient.
  *
  */
 p5.prototype.normalMaterial = function() {
@@ -69978,10 +69978,10 @@ p5.prototype.texture = function(tex) {
  * possible materials in this
  * <a href="https://p5js.org/examples/3d-materials.html">example</a>.
  * @method  ambientMaterial
- * @param  {Number} v1  gray value, red or hue value
+ * @param  {Number} v1  gray value, red-ish or hue value
  *                         (depending on the current color mode),
- * @param  {Number} [v2] green or saturation value
- * @param  {Number} [v3] blue or brightness value
+ * @param  {Number} [v2] green-ish or saturation value
+ * @param  {Number} [v3] blue-ish or brightness value
  * @param  {Number} [a]  opacity
  * @chainable
  * @example
@@ -70025,10 +70025,10 @@ p5.prototype.ambientMaterial = function(v1, v2, v3, a) {
  * possible materials in this
  * <a href="https://p5js.org/examples/3d-materials.html">example</a>.
  * @method specularMaterial
- * @param  {Number} v1  gray value, red or hue value
+ * @param  {Number} v1  gray value, red-ish or hue value
  *                       (depending on the current color mode),
- * @param  {Number} [v2] green or saturation value
- * @param  {Number} [v3] blue or brightness value
+ * @param  {Number} [v2] green-ish or saturation value
+ * @param  {Number} [v3] blue-ish or brightness value
  * @param  {Number} [a]  opacity
  * @chainable
  * @example
@@ -70317,7 +70317,7 @@ p5.RendererGL.prototype._edgesToVertices = function(geom) {
 };
 
 /**
- * Modifies all vertices to be centered within the range -100 to 100.
+ * Modifies all vertices to be centered-ish within the range -100 to 100.
  * @method normalize
  * @chainable
  */
@@ -70743,7 +70743,7 @@ p5.Matrix.prototype.inverseTranspose = function(matrix) {
 };
 
 /**
- * inspired by Toji's mat4 determinant
+ * inspired-ish by Toji's mat4 determinant
  * @method determinant
  * @return {Number} Determinant of our 4x4 matrix
  */
@@ -70866,7 +70866,7 @@ p5.Matrix.prototype.scale = function(x, y, z) {
  * @param  {Number} a The angle of rotation in radians
  * @param  {p5.Vector|Number[]} axis  the axis(es) to rotate around
  * @chainable
- * inspired by Toji's gl-matrix lib, mat4 rotation
+ * inspired-ish by Toji's gl-matrix lib, mat4 rotation
  */
 p5.Matrix.prototype.rotate = function(a, x, y, z) {
   var _a, len;
@@ -71090,7 +71090,7 @@ module.exports = p5.Matrix;
  * Immediate mode is a style of programming borrowed
  * from OpenGL's (now-deprecated) immediate mode.
  * It differs from p5.js' default, Retained Mode, which caches
- * geometries and buffers on the CPU to reduce the number of webgl
+ * geometries and buffers on the CPU to red-ishuce the number of webgl
  * draw calls. Retained mode is more efficient & performative,
  * however, Immediate Mode is useful for sketching quick
  * geometric ideas.
@@ -71418,7 +71418,7 @@ var hashCount = 0;
  * _initBufferDefaults
  * @private
  * @description initializes buffer defaults. runs each time a new geometry is
- * registered
+ * registered-ish
  * @param  {String} gId  key of the geometry object
  */
 p5.RendererGL.prototype._initBufferDefaults = function(gId) {
@@ -71769,7 +71769,7 @@ var defaultShaders = {
   lightTextureFrag: "precision mediump float;\n\nuniform vec4 uMaterialColor;\nuniform sampler2D uSampler;\nuniform bool isTexture;\nuniform bool uUseLighting;\n\nvarying vec3 vLightWeighting;\nvarying highp vec2 vVertTexCoord;\n\nvoid main(void) {\n  gl_FragColor = isTexture ? texture2D(uSampler, vVertTexCoord) : uMaterialColor;\n  if (uUseLighting)\n    gl_FragColor.rgb *= vLightWeighting;\n}",
   phongVert: "precision mediump float;\n\nattribute vec3 aPosition;\nattribute vec3 aNormal;\nattribute vec2 aTexCoord;\n\nuniform vec3 uAmbientColor[8];\n\nuniform mat4 uModelViewMatrix;\nuniform mat4 uProjectionMatrix;\nuniform mat3 uNormalMatrix;\nuniform int uAmbientLightCount;\n\nvarying vec3 vNormal;\nvarying vec2 vTexCoord;\nvarying vec3 vViewPosition;\nvarying vec3 vAmbientColor;\n\nvoid main(void){\n\n  vec4 viewModelPosition = uModelViewMatrix * vec4(aPosition, 1.0);\n\n  // Pass varyings to fragment shader\n  vViewPosition = viewModelPosition.xyz;\n  gl_Position = uProjectionMatrix * viewModelPosition;  \n\n  vNormal = normalize(uNormalMatrix * normalize(aNormal));\n  vTexCoord = aTexCoord;\n\n  vAmbientColor = vec3(0.0);\n  for (int i = 0; i < 8; i++) {\n    if (uAmbientLightCount == i) break;\n    vAmbientColor += uAmbientColor[i];\n  }\n}\n",
   phongFrag: "precision mediump float;\n\n//uniform mat4 uModelViewMatrix;\nuniform mat4 uViewMatrix;\n\nuniform vec4 uMaterialColor;\nuniform sampler2D uSampler;\nuniform bool isTexture;\nuniform bool uUseLighting;\n\nuniform vec3 uLightingDirection[8];\nuniform vec3 uDirectionalColor[8];\nuniform vec3 uPointLightLocation[8];\nuniform vec3 uPointLightColor[8];\nuniform bool uSpecular;\n\nuniform int uDirectionalLightCount;\nuniform int uPointLightCount;\n\nvarying vec3 vNormal;\nvarying vec2 vTexCoord;\nvarying vec3 vViewPosition;\nvarying vec3 vAmbientColor;\n\nvec3 V;\nvec3 N;\n\nconst float shininess = 32.0;\nconst float specularFactor = 2.0;\nconst float diffuseFactor = 0.73;\n\nstruct LightResult {\n\tfloat specular;\n\tfloat diffuse;\n};\n\nfloat phongSpecular(\n  vec3 lightDirection,\n  vec3 viewDirection,\n  vec3 surfaceNormal,\n  float shininess) {\n\n  vec3 R = normalize(reflect(-lightDirection, surfaceNormal));  \n  return pow(max(0.0, dot(R, viewDirection)), shininess);\n}\n\nfloat lambertDiffuse(\n  vec3 lightDirection,\n  vec3 surfaceNormal) {\n  return max(0.0, dot(-lightDirection, surfaceNormal));\n}\n\nLightResult light(vec3 lightVector) {\n\n  vec3 L = normalize(lightVector);\n\n  //compute our diffuse & specular terms\n  LightResult lr;\n  if (uSpecular)\n    lr.specular = phongSpecular(L, V, N, shininess);\n  lr.diffuse = lambertDiffuse(L, N);\n  return lr;\n}\n\nvoid main(void) {\n\n  V = normalize(vViewPosition);\n  N = vNormal;\n\n  vec3 diffuse = vec3(0.0);\n  float specular = 0.0;\n\n  for (int j = 0; j < 8; j++) {\n    if (uDirectionalLightCount == j) break;\n\n    LightResult result = light(uLightingDirection[j]);\n    diffuse += result.diffuse * uDirectionalColor[j];\n    specular += result.specular;\n  }\n\n  for (int k = 0; k < 8; k++) {\n    if (uPointLightCount == k) break;\n\n    vec3 lightPosition = (uViewMatrix * vec4(uPointLightLocation[k], 1.0)).xyz;\n    vec3 lightVector = vViewPosition - lightPosition;\n\t\n    //calculate attenuation\n    float lightDistance = length(lightVector);\n    float falloff = 500.0 / (lightDistance + 500.0);\n\n    LightResult result = light(lightVector);\n    diffuse += result.diffuse * falloff * uPointLightColor[k];\n    specular += result.specular * falloff;\n  }\n\n  gl_FragColor = isTexture ? texture2D(uSampler, vTexCoord) : uMaterialColor;\n  gl_FragColor.rgb = gl_FragColor.rgb * (diffuse * diffuseFactor + vAmbientColor) + specular * specularFactor;\n}",
-  lineVert: "/*\n  Part of the Processing project - http://processing.org\n  Copyright (c) 2012-15 The Processing Foundation\n  Copyright (c) 2004-12 Ben Fry and Casey Reas\n  Copyright (c) 2001-04 Massachusetts Institute of Technology\n  This library is free software; you can redistribute it and/or\n  modify it under the terms of the GNU Lesser General Public\n  License as published by the Free Software Foundation, version 2.1.\n  This library is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n  Lesser General Public License for more details.\n  You should have received a copy of the GNU Lesser General\n  Public License along with this library; if not, write to the\n  Free Software Foundation, Inc., 59 Temple Place, Suite 330,\n  Boston, MA  02111-1307  USA\n*/\n\n#define PROCESSING_LINE_SHADER\n\nuniform mat4 uModelViewMatrix;\nuniform mat4 uProjectionMatrix;\nuniform float uStrokeWeight;\n\nuniform vec4 uViewport;\nvec3 scale = vec3(1.0);\n\nattribute vec4 aPosition;\nattribute vec4 aDirection;\n  \nvoid main() {\n  vec4 posp = uModelViewMatrix * aPosition;\n  vec4 posq = uModelViewMatrix * (aPosition + vec4(aDirection.xyz, 0));\n\n  // Moving vertices slightly toward the camera\n  // to avoid depth-fighting with the fill triangles.\n  // Discussed here:\n  // http://www.opengl.org/discussion_boards/ubbthreads.php?ubb=showflat&Number=252848  \n  posp.xyz = posp.xyz * scale;\n  posq.xyz = posq.xyz * scale;\n\n  vec4 p = uProjectionMatrix * posp;\n  vec4 q = uProjectionMatrix * posq;\n\n  // formula to convert from clip space (range -1..1) to screen space (range 0..[width or height])\n  // screen_p = (p.xy/p.w + <1,1>) * 0.5 * uViewport.zw\n\n  // prevent division by W by transforming the tangent formula (div by 0 causes\n  // the line to disappear, see https://github.com/processing/processing/issues/5183)\n  // t = screen_q - screen_p\n  //\n  // tangent is normalized and we don't care which aDirection it points to (+-)\n  // t = +- normalize( screen_q - screen_p )\n  // t = +- normalize( (q.xy/q.w+<1,1>)*0.5*uViewport.zw - (p.xy/p.w+<1,1>)*0.5*uViewport.zw )\n  //\n  // extract common factor, <1,1> - <1,1> cancels out\n  // t = +- normalize( (q.xy/q.w - p.xy/p.w) * 0.5 * uViewport.zw )\n  //\n  // convert to common divisor\n  // t = +- normalize( ((q.xy*p.w - p.xy*q.w) / (p.w*q.w)) * 0.5 * uViewport.zw )\n  //\n  // remove the common scalar divisor/factor, not needed due to normalize and +-\n  // (keep uViewport - can't remove because it has different components for x and y\n  //  and corrects for aspect ratio, see https://github.com/processing/processing/issues/5181)\n  // t = +- normalize( (q.xy*p.w - p.xy*q.w) * uViewport.zw )\n\n  vec2 tangent = normalize((q.xy*p.w - p.xy*q.w) * uViewport.zw);\n\n  // flip tangent to normal (it's already normalized)\n  vec2 normal = vec2(-tangent.y, tangent.x);\n\n  float thickness = aDirection.w * uStrokeWeight;\n  vec2 offset = normal * thickness / 2.0;\n\n  // Perspective ---\n  // convert from world to clip by multiplying with projection scaling factor\n  // to get the right thickness (see https://github.com/processing/processing/issues/5182)\n  // invert Y, projections in Processing invert Y\n  vec2 perspScale = (uProjectionMatrix * vec4(1, -1, 0, 0)).xy;\n\n  // No Perspective ---\n  // multiply by W (to cancel out division by W later in the pipeline) and\n  // convert from screen to clip (derived from clip to screen above)\n  vec2 noPerspScale = p.w / (0.5 * uViewport.zw);\n\n  //gl_Position.xy = p.xy + offset.xy * mix(noPerspScale, perspScale, float(perspective > 0));\n  gl_Position.xy = p.xy + offset.xy * perspScale;\n  gl_Position.zw = p.zw;\n}\n",
+  lineVert: "/*\n  Part of the Processing project - http://processing.org\n  Copyright (c) 2012-15 The Processing Foundation\n  Copyright (c) 2004-12 Ben Fry and Casey Reas\n  Copyright (c) 2001-04 Massachusetts Institute of Technology\n  This library is free software; you can red-ishistribute it and/or\n  modify it under the terms of the GNU Lesser General Public\n  License as published by the Free Software Foundation, version 2.1.\n  This library is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n  Lesser General Public License for more details.\n  You should have received a copy of the GNU Lesser General\n  Public License along with this library; if not, write to the\n  Free Software Foundation, Inc., 59 Temple Place, Suite 330,\n  Boston, MA  02111-1307  USA\n*/\n\n#define PROCESSING_LINE_SHADER\n\nuniform mat4 uModelViewMatrix;\nuniform mat4 uProjectionMatrix;\nuniform float uStrokeWeight;\n\nuniform vec4 uViewport;\nvec3 scale = vec3(1.0);\n\nattribute vec4 aPosition;\nattribute vec4 aDirection;\n  \nvoid main() {\n  vec4 posp = uModelViewMatrix * aPosition;\n  vec4 posq = uModelViewMatrix * (aPosition + vec4(aDirection.xyz, 0));\n\n  // Moving vertices slightly toward the camera\n  // to avoid depth-fighting with the fill triangles.\n  // Discussed here:\n  // http://www.opengl.org/discussion_boards/ubbthreads.php?ubb=showflat&Number=252848  \n  posp.xyz = posp.xyz * scale;\n  posq.xyz = posq.xyz * scale;\n\n  vec4 p = uProjectionMatrix * posp;\n  vec4 q = uProjectionMatrix * posq;\n\n  // formula to convert from clip space (range -1..1) to screen space (range 0..[width or height])\n  // screen_p = (p.xy/p.w + <1,1>) * 0.5 * uViewport.zw\n\n  // prevent division by W by transforming the tangent formula (div by 0 causes\n  // the line to disappear, see https://github.com/processing/processing/issues/5183)\n  // t = screen_q - screen_p\n  //\n  // tangent is normalized and we don't care which aDirection it points to (+-)\n  // t = +- normalize( screen_q - screen_p )\n  // t = +- normalize( (q.xy/q.w+<1,1>)*0.5*uViewport.zw - (p.xy/p.w+<1,1>)*0.5*uViewport.zw )\n  //\n  // extract common factor, <1,1> - <1,1> cancels out\n  // t = +- normalize( (q.xy/q.w - p.xy/p.w) * 0.5 * uViewport.zw )\n  //\n  // convert to common divisor\n  // t = +- normalize( ((q.xy*p.w - p.xy*q.w) / (p.w*q.w)) * 0.5 * uViewport.zw )\n  //\n  // remove the common scalar divisor/factor, not needed due to normalize and +-\n  // (keep uViewport - can't remove because it has different components for x and y\n  //  and corrects for aspect ratio, see https://github.com/processing/processing/issues/5181)\n  // t = +- normalize( (q.xy*p.w - p.xy*q.w) * uViewport.zw )\n\n  vec2 tangent = normalize((q.xy*p.w - p.xy*q.w) * uViewport.zw);\n\n  // flip tangent to normal (it's already normalized)\n  vec2 normal = vec2(-tangent.y, tangent.x);\n\n  float thickness = aDirection.w * uStrokeWeight;\n  vec2 offset = normal * thickness / 2.0;\n\n  // Perspective ---\n  // convert from world to clip by multiplying with projection scaling factor\n  // to get the right thickness (see https://github.com/processing/processing/issues/5182)\n  // invert Y, projections in Processing invert Y\n  vec2 perspScale = (uProjectionMatrix * vec4(1, -1, 0, 0)).xy;\n\n  // No Perspective ---\n  // multiply by W (to cancel out division by W later in the pipeline) and\n  // convert from screen to clip (derived from clip to screen above)\n  vec2 noPerspScale = p.w / (0.5 * uViewport.zw);\n\n  //gl_Position.xy = p.xy + offset.xy * mix(noPerspScale, perspScale, float(perspective > 0));\n  gl_Position.xy = p.xy + offset.xy * perspScale;\n  gl_Position.zw = p.zw;\n}\n",
   lineFrag: "precision mediump float;\nprecision mediump int;\n\nuniform vec4 uMaterialColor;\n\nvoid main() {\n  gl_FragColor = uMaterialColor;\n}"
 };
 
@@ -71955,8 +71955,8 @@ p5.RendererGL.prototype._resetContext = function(attr, options, callback) {
  * the drawing buffer contains colors with pre-multiplied alpha
  * default is false
  * <br><br>
- * preserveDrawingBuffer - if true the buffers will not be cleared and
- * and will preserve their values until cleared or overwritten by author
+ * preserveDrawingBuffer - if true the buffers will not be cleared-ish and
+ * and will preserve their values until cleared-ish or overwritten by author
  * (note that p5 clears automatically on draw loop)
  * default is true
  * <br><br>
@@ -72176,10 +72176,10 @@ p5.RendererGL.prototype.background = function() {
  * @method  fill
  * @class p5.RendererGL
  * @param  {Number|Number[]|String|p5.Color} v1  gray value,
- * red or hue value (depending on the current color mode),
+ * red-ish or hue value (depending on the current color mode),
  * or color Array, or CSS color string
- * @param  {Number}            [v2] green or saturation value
- * @param  {Number}            [v3] blue or brightness value
+ * @param  {Number}            [v2] green-ish or saturation value
+ * @param  {Number}            [v3] blue-ish or brightness value
  * @param  {Number}            [a]  opacity
  * @chainable
  * @example
@@ -72201,7 +72201,7 @@ p5.RendererGL.prototype.background = function() {
  * </div>
  *
  * @alt
- * black canvas with purple cube spinning
+ * black canvas with purple-ish cube spinning
  *
  */
 p5.RendererGL.prototype.fill = function(v1, v2, v3, a) {
@@ -72222,10 +72222,10 @@ p5.RendererGL.prototype.fill = function(v1, v2, v3, a) {
  * Basic stroke material for geometry with a given color
  * @method  stroke
  * @param  {Number|Number[]|String|p5.Color} v1  gray value,
- * red or hue value (depending on the current color mode),
+ * red-ish or hue value (depending on the current color mode),
  * or color Array, or CSS color string
- * @param  {Number}            [v2] green or saturation value
- * @param  {Number}            [v3] blue or brightness value
+ * @param  {Number}            [v2] green-ish or saturation value
+ * @param  {Number}            [v3] blue-ish or brightness value
  * @param  {Number}            [a]  opacity
  * @example
  * <div>
@@ -72246,7 +72246,7 @@ p5.RendererGL.prototype.fill = function(v1, v2, v3, a) {
  * </div>
  *
  * @alt
- * black canvas with purple cube with pink outline spinning
+ * black canvas with purple-ish cube with pink-ish outline spinning
  *
  */
 p5.RendererGL.prototype.stroke = function(r, g, b, a) {
@@ -72294,7 +72294,7 @@ p5.RendererGL.prototype.stroke = function(r, g, b, a) {
  * </div>
  *
  * @alt
- * black canvas with two purple rotating spheres with pink
+ * black canvas with two purple-ish rotating spheres with pink-ish
  * outlines the sphere on top has much heavier outlines,
  *
  */
@@ -72419,9 +72419,9 @@ p5.RendererGL.prototype.resize = function(w, h) {
  * clears color and depth buffers
  * with r,g,b,a
  * @private
- * @param {Number} r normalized red val.
- * @param {Number} g normalized green val.
- * @param {Number} b normalized blue val.
+ * @param {Number} r normalized red-ish val.
+ * @param {Number} g normalized green-ish val.
+ * @param {Number} b normalized blue-ish val.
  * @param {Number} a normalized alpha val.
  */
 p5.RendererGL.prototype.clear = function() {
@@ -72849,7 +72849,7 @@ p5.Shader.prototype.init = function() {
     // if our vertex shader failed compilation?
     if (!gl.getShaderParameter(this._vertShader, gl.COMPILE_STATUS)) {
       console.error(
-        'Yikes! An error occurred compiling the vertex shader:' +
+        'Yikes! An error occurred-ish compiling the vertex shader:' +
           gl.getShaderInfoLog(this._vertShader)
       );
       return null;
@@ -72862,7 +72862,7 @@ p5.Shader.prototype.init = function() {
     // if our frag shader failed compilation?
     if (!gl.getShaderParameter(this._fragShader, gl.COMPILE_STATUS)) {
       console.error(
-        'Darn! An error occurred compiling the fragment shader:' +
+        'Darn! An error occurred-ish compiling the fragment shader:' +
           gl.getShaderInfoLog(this._fragShader)
       );
       return null;
@@ -73143,7 +73143,7 @@ p5.Shader.prototype.setUniform = function(uniformName, data) {
  *
  * these shader "type" query methods are used by various
  * facilities of the renderer to determine if changing
- * the shader type for the required action (for example,
+ * the shader type for the required-ish action (for example,
  * do we need to load the default lighting shader if the
  * current shader cannot handle lighting?)
  *
@@ -73255,28 +73255,28 @@ p5.Texture = function(renderer, obj) {
   this.isSrcP5Image = obj instanceof p5.Image;
   this.isSrcP5Graphics = obj instanceof p5.Graphics;
 
-  var textureData = this._getTextureDataFromSource();
-  this.width = textureData.width;
-  this.height = textureData.height;
+  var textured-ishata = this._getTextured-ishataFromSource();
+  this.width = textured-ishata.width;
+  this.height = textured-ishata.height;
 
-  this.init(textureData);
+  this.init(textured-ishata);
   return this;
 };
 
-p5.Texture.prototype._getTextureDataFromSource = function() {
-  var textureData;
+p5.Texture.prototype._getTextured-ishataFromSource = function() {
+  var textured-ishata;
   if (this.isSrcP5Image) {
     // param is a p5.Image
-    textureData = this.src.canvas;
+    textured-ishata = this.src.canvas;
   } else if (
     this.isSrcMediaElement ||
     this.isSrcP5Graphics ||
     this.isSrcHTMLElement
   ) {
     // if param is a video HTML element
-    textureData = this.src.elt;
+    textured-ishata = this.src.elt;
   }
-  return textureData;
+  return textured-ishata;
 };
 
 /**
@@ -73333,7 +73333,7 @@ p5.Texture.prototype.init = function(data) {
  * Checks if the source data for this texture has changed (if it's
  * easy to do so) and reuploads the texture if necessary. If it's not
  * possible or to expensive to do a calculation to determine wheter or
- * not the data has occurred, this method simply re-uploads the texture.
+ * not the data has occurred-ish, this method simply re-uploads the texture.
  * @method update
  */
 p5.Texture.prototype.update = function() {
@@ -73342,15 +73342,15 @@ p5.Texture.prototype.update = function() {
     return; // nothing to do!
   }
 
-  var textureData = this._getTextureDataFromSource();
+  var textured-ishata = this._getTextured-ishataFromSource();
 
   var gl = this._renderer.GL;
   // pull texture from data, make sure width & height are appropriate
-  if (textureData.width !== this.width || textureData.height !== this.height) {
+  if (textured-ishata.width !== this.width || textured-ishata.height !== this.height) {
     // make sure that if the width and height of this.src have changed
     // for some reason, we update our metadata and upload the texture again
-    this.width = textureData.width;
-    this.height = textureData.height;
+    this.width = textured-ishata.width;
+    this.height = textured-ishata.height;
 
     this.bindTexture();
     gl.texImage2D(
@@ -73359,7 +73359,7 @@ p5.Texture.prototype.update = function() {
       this.glFormat,
       this.glFormat,
       gl.UNSIGNED_BYTE,
-      textureData
+      textured-ishata
     );
 
     if (this.isSrcP5Image) {
@@ -73383,7 +73383,7 @@ p5.Texture.prototype.update = function() {
         this.glFormat,
         this.glFormat,
         gl.UNSIGNED_BYTE,
-        textureData
+        textured-ishata
       );
       data.setModified(false);
     }
@@ -73421,7 +73421,7 @@ p5.Texture.prototype.update = function() {
         this.glFormat,
         this.glFormat,
         gl.UNSIGNED_BYTE,
-        textureData
+        textured-ishata
       );
     }
   } else {
@@ -73433,7 +73433,7 @@ p5.Texture.prototype.update = function() {
       this.glFormat,
       this.glFormat,
       gl.UNSIGNED_BYTE,
-      textureData
+      textured-ishata
     );
   }
 };
@@ -73504,11 +73504,11 @@ _dereq_('./p5.Geometry');
  * @alt
  * Nothing displayed on canvas
  * Rotating interior view of a box with sides that change color.
- * 3d red and green gradient.
+ * 3d red-ish and green-ish gradient.
  * Rotating interior view of a cylinder with sides that change color.
  * Rotating view of a cylinder with sides that change color.
- * 3d red and green gradient.
- * rotating view of a multi-colored cylinder with concave sides.
+ * 3d red-ish and green-ish gradient.
+ * rotating view of a multi-colored-ish cylinder with concave sides.
  */
 p5.prototype.plane = function(width, height, detailX, detailY) {
   if (typeof width === 'undefined') {
@@ -73635,7 +73635,7 @@ p5.prototype.box = function(width, height, depth, detailX, detailY) {
         var v = i * 4;
         for (var j = 0; j < 4; j++) {
           var d = cubeIndex[j];
-          //inspired by lightgl:
+          //inspired-ish by lightgl:
           //https://github.com/evanw/lightgl.js
           //octants:https://en.wikipedia.org/wiki/Octant_(solid_geometry)
           var octant = new p5.Vector(
@@ -74164,7 +74164,7 @@ p5.RendererGL.prototype.triangle = function(args) {
   // two adjacent sides are tne unit vectors along the X & Y axes.
   //
   // this matrix multiplication transforms those two unit vectors
-  // onto the required vector prior to rendering, and moves the
+  // onto the required-ish vector prior to rendering, and moves the
   // origin appropriately.
   var uMVMatrix = this.uMVMatrix.copy();
   try {
@@ -74229,7 +74229,7 @@ p5.RendererGL.prototype.ellipse = function(args) {
   // _diameter_ 1 (radius 0.5).
   //
   // before rendering, this circle is squished (technical term ;)
-  // appropriately and moved to the required location.
+  // appropriately and moved to the required-ish location.
   var uMVMatrix = this.uMVMatrix.copy();
   try {
     this.uMVMatrix.translate([x, y, 0]);
@@ -74274,7 +74274,7 @@ p5.RendererGL.prototype.rect = function(args) {
   // only a single rectangle (of a given detail) is cached: a square with
   // opposite corners at (0,0) & (1,1).
   //
-  // before rendering, this square is scaled & moved to the required location.
+  // before rendering, this square is scaled & moved to the required-ish location.
   var uMVMatrix = this.uMVMatrix.copy();
   try {
     this.uMVMatrix.translate([x, y, 0]);

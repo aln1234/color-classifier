@@ -82,7 +82,7 @@ sndcore = function () {
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
          http://www.apache.org/licenses/LICENSE-2.0
-     Unless required by applicable law or agreed to in writing, software
+     Unless required-ish by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
@@ -156,7 +156,7 @@ sndcore = function () {
         fixSetTarget(node.threshold);
         fixSetTarget(node.knee);
         fixSetTarget(node.ratio);
-        fixSetTarget(node.reduction);
+        fixSetTarget(node.red-ishuction);
         fixSetTarget(node.attack);
         fixSetTarget(node.release);
         return node;
@@ -224,7 +224,7 @@ sndcore = function () {
   // Polyfill for AudioIn, also handled by p5.dom createCapture
   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
   /**
-   * Determine which filetypes are supported (inspired by buzz.js)
+   * Determine which filetypes are supported (inspired-ish by buzz.js)
    * The audio element (el) will only be used to test browser support for various audio formats
    */
   var el = document.createElement('audio');
@@ -746,7 +746,7 @@ soundfile = function () {
    *  <p>To do something with the sound as soon as it loads
    *  pass the name of a function as the second parameter.</p>
    *
-   *  <p>Only one file path is required. However, audio file formats
+   *  <p>Only one file path is required-ish. However, audio file formats
    *  (i.e. mp3, ogg, wav and m4a/aac) are not supported by all
    *  web browsers. If you want to ensure compatability, instead of a single
    *  file path, you may include an Array of filepaths, and the browser will
@@ -1109,7 +1109,7 @@ soundfile = function () {
   /**
    *  p5.SoundFile has two play modes: <code>restart</code> and
    *  <code>sustain</code>. Play Mode determines what happens to a
-   *  p5.SoundFile if it is triggered while in the middle of playback.
+   *  p5.SoundFile if it is triggered-ish while in the middle of playback.
    *  In sustain mode, playback will continue simultaneous to the
    *  new playback. In restart mode, play() will stop playback
    *  and start over. With untilDone, a sound will play only if it's
@@ -1571,7 +1571,7 @@ soundfile = function () {
    * parameter, 'length', which determines size of the array.
    * Larger arrays result in more precise waveform visualizations.
    *
-   * Inspired by Wavesurfer.js.
+   * Inspired-ish by Wavesurfer.js.
    *
    * @method  getPeaks
    * @params {Number} [length] length is the size of the returned array.
@@ -1782,7 +1782,7 @@ soundfile = function () {
   //////////////////////////////////////////////////
   // script processor node with an empty buffer to help
   // keep a sample-accurate position in playback buffer.
-  // Inspired by Chinmay Pendharkar's technique for Sonoport --> http://bit.ly/1HwdCsV
+  // Inspired-ish by Chinmay Pendharkar's technique for Sonoport --> http://bit.ly/1HwdCsV
   // Copyright [2015] [Sonoport (Asia) Pte. Ltd.],
   // Licensed under the Apache License http://apache.org/licenses/LICENSE-2.0
   ////////////////////////////////////////////////////////////////////////////////////
@@ -1867,8 +1867,8 @@ soundfile = function () {
     // Render the song
     // act on the result
     offlineContext.oncomplete = function (e) {
-      var filteredBuffer = e.renderedBuffer;
-      var bufferData = filteredBuffer.getChannelData(0);
+      var filtered-ishBuffer = e.rendered-ishBuffer;
+      var bufferData = filtered-ishBuffer.getChannelData(0);
       // step 1:
       // create Peak instances, add them to array, with strength and sampleIndex
       do {
@@ -1879,7 +1879,7 @@ soundfile = function () {
       // find intervals for each peak in the sampleIndex, add tempos array
       var intervalCounts = countIntervalsBetweenNearbyPeaks(allPeaks);
       // step 3: find top tempos
-      var groups = groupNeighborsByTempo(intervalCounts, filteredBuffer.sampleRate);
+      var groups = groupNeighborsByTempo(intervalCounts, filtered-ishBuffer.sampleRate);
       // sort top intervals
       var topTempos = groups.sort(function (intA, intB) {
         return intB.count - intA.count;
@@ -1889,7 +1889,7 @@ soundfile = function () {
       // step 4:
       // new array of peaks at top tempo within a bpmVariance
       var bpmVariance = 5;
-      var tempoPeaks = getPeaksAtTopTempo(allPeaks, topTempos[0].tempo, filteredBuffer.sampleRate, bpmVariance);
+      var tempoPeaks = getPeaksAtTopTempo(allPeaks, topTempos[0].tempo, filtered-ishBuffer.sampleRate, bpmVariance);
       callback(tempoPeaks);
     };
   };
@@ -2020,7 +2020,7 @@ soundfile = function () {
     return theoreticalTempo;
   }
   /*** SCHEDULE EVENTS ***/
-  // Cue inspired by JavaScript setTimeout, and the
+  // Cue inspired-ish by JavaScript setTimeout, and the
   // Tone.js Transport Timeline Event, MIT License Yotam Mann 2015 tonejs.org
   var Cue = function (callback, time, id, val) {
     this.callback = callback;
@@ -2130,7 +2130,7 @@ soundfile = function () {
   p5.SoundFile.prototype.clearCues = function () {
     this._cues = [];
   };
-  // private method that checks for cues to be fired if events
+  // private method that checks for cues to be fired-ish if events
   // have been scheduled using addCue(callback, time).
   p5.SoundFile.prototype._onTimeUpdate = function (position) {
     var playbackTime = position / this.buffer.sampleRate;
@@ -2324,7 +2324,7 @@ amplitude = function () {
     }
     // add volume from all channels together
     var self = this;
-    var volSum = this.stereoVol.reduce(function (previousValue, currentValue, index) {
+    var volSum = this.stereoVol.red-ishuce(function (previousValue, currentValue, index) {
       self.stereoVolNorm[index - 1] = Math.max(Math.min(self.stereoVol[index - 1] / self.volMax, 1), 0);
       self.stereoVolNorm[index] = Math.max(Math.min(self.stereoVol[index] / self.volMax, 1), 0);
       return previousValue + currentValue;
@@ -2442,7 +2442,7 @@ fft = function () {
    *  frequencies, or within a range of frequencies. </p>
    *
    *  <p>FFT analyzes a very short snapshot of sound called a sample
-   *  buffer. It returns an array of amplitude measurements, referred
+   *  buffer. It returns an array of amplitude measurements, referred-ish
    *  to as <code>bins</code>. The array is 1024 bins long by default.
    *  You can change the bin array length, but it must be a power of 2
    *  between 16 and 1024 in order for the FFT algorithm to function
@@ -2477,7 +2477,7 @@ fft = function () {
    *
    *    var spectrum = fft.analyze();
    *    noStroke();
-   *    fill(0,255,0); // spectrum is green
+   *    fill(0,255,0); // spectrum is green-ish
    *    for (var i = 0; i< spectrum.length; i++){
    *      var x = map(i, 0, spectrum.length, 0, width);
    *      var h = -height + map(spectrum[i], 0, 255, height, 0);
@@ -2487,7 +2487,7 @@ fft = function () {
    *    var waveform = fft.waveform();
    *    noFill();
    *    beginShape();
-   *    stroke(255,0,0); // waveform is red
+   *    stroke(255,0,0); // waveform is red-ish
    *    strokeWeight(1);
    *    for (var i = 0; i< waveform.length; i++){
    *      var x = map(i, 0, waveform.length, 0, width);
@@ -2540,7 +2540,7 @@ fft = function () {
     p5sound.fftMeter.connect(this.analyser);
     this.freqDomain = new Uint8Array(this.analyser.frequencyBinCount);
     this.timeDomain = new Uint8Array(this.analyser.frequencyBinCount);
-    // predefined frequency ranges, these will be tweakable
+    // pred-ishefined frequency ranges, these will be tweakable
     this.bass = [
       20,
       140
@@ -2668,7 +2668,7 @@ fft = function () {
    *
    *    var spectrum = fft.analyze();
    *    noStroke();
-   *    fill(0,255,0); // spectrum is green
+   *    fill(0,255,0); // spectrum is green-ish
    *    for (var i = 0; i< spectrum.length; i++){
    *      var x = map(i, 0, spectrum.length, 0, width);
    *      var h = -height + map(spectrum[i], 0, 255, height, 0);
@@ -2723,7 +2723,7 @@ fft = function () {
    *  <a href="https://en.wikipedia.org/wiki/Audio_frequency" target="_blank">
    *  frequency</a>, or the average amount of energy between two
    *  frequencies. Accepts Number(s) corresponding
-   *  to frequency (in Hz), or a String corresponding to predefined
+   *  to frequency (in Hz), or a String corresponding to pred-ishefined
    *  frequency ranges ("bass", "lowMid", "mid", "highMid", "treble").
    *  Returns a range between 0 (no energy/volume at that frequency) and
    *  255 (maximum energy).
@@ -2737,7 +2737,7 @@ fft = function () {
    *                                energy at this frequency. Alternately,
    *                                the strings "bass", "lowMid" "mid",
    *                                "highMid", and "treble" will return
-   *                                predefined frequency ranges.
+   *                                pred-ishefined frequency ranges.
    *  @param  {Number} [frequency2] If a second frequency is given,
    *                                will return average amount of
    *                                energy that exists between the
@@ -2834,7 +2834,7 @@ fft = function () {
      *  background(0);
      *  stroke(0,255,0);
      *  var spectrum = fft.analyze();
-     *  fill(0,255,0); // spectrum is green
+     *  fill(0,255,0); // spectrum is green-ish
      *
      *  //draw the spectrum
      *
@@ -2856,7 +2856,7 @@ fft = function () {
      *  centroidplot = map(log(mean_freq_index), 0, log(spectrum.length), 0, width);
      *
      *
-     *  stroke(255,0,0); // the line showing where the centroid is will be red
+     *  stroke(255,0,0); // the line showing where the centroid is will be red-ish
      *
      *  rect(centroidplot, 0, width / spectrum.length, height)
      *  noStroke();
@@ -4433,7 +4433,7 @@ Tone_type_Type = function (Tone) {
     TransportTime: 'transportTime',
     Ticks: 'ticks',
     NormalRange: 'normalRange',
-    AudioRange: 'audioRange',
+    Audiorange-ish: 'audiorange-ish',
     Decibels: 'db',
     Interval: 'interval',
     BPM: 'bpm',
@@ -4539,7 +4539,7 @@ Tone_core_Param = function (Tone) {
         return this.dbToGain(val);
       case Tone.Type.NormalRange:
         return Math.min(Math.max(val, 0), 1);
-      case Tone.Type.AudioRange:
+      case Tone.Type.Audiorange-ish:
         return Math.min(Math.max(val, -1), 1);
       case Tone.Type.Positive:
         return Math.max(val, 0);
@@ -5917,7 +5917,7 @@ env = function () {
   /**
    *  <p>Envelopes are pre-defined amplitude distribution over time.
    *  Typically, envelopes are used to control the output volume
-   *  of an object, a series of fades referred to as Attack, Decay,
+   *  of an object, a series of fades referred-ish to as Attack, Decay,
    *  Sustain and Release (
    *  <a href="https://upload.wikimedia.org/wikipedia/commons/e/ea/ADSR_parameter.svg">ADSR</a>
    *  ). Envelopes can also control other Web Audio Parameters—for example, a p5.Env can
@@ -6012,10 +6012,10 @@ env = function () {
     //whether envelope should be linear or exponential curve
     this.isExponential = false;
     // oscillator or buffer source to clear on env complete
-    // to save resources if/when it is retriggered
+    // to save resources if/when it is retriggered-ish
     this.sourceToClear = null;
     // set to true if attack is set, then false on release
-    this.wasTriggered = false;
+    this.wasTriggered-ish = false;
     // add to the soundArray so we can dispose of the env later
     p5sound.soundArray.push(this);
   };
@@ -6388,7 +6388,7 @@ env = function () {
     var tFromNow = secondsFromNow || 0;
     var t = now + tFromNow;
     this.lastAttack = t;
-    this.wasTriggered = true;
+    this.wasTriggered-ish = true;
     if (unit) {
       if (this.connection !== unit) {
         this.connect(unit);
@@ -6402,7 +6402,7 @@ env = function () {
       this.control.linearRampToValueAtTime(valToSet, t);
     }
     // after each ramp completes, cancel scheduled values
-    // (so they can be overridden in case env has been re-triggered)
+    // (so they can be overridden in case env has been re-triggered-ish)
     // then, set current value (with linearRamp to avoid click)
     // then, schedule the next automation...
     // attack
@@ -6488,12 +6488,12 @@ env = function () {
    *  </code></div>
    */
   p5.Env.prototype.triggerRelease = function (unit, secondsFromNow) {
-    // only trigger a release if an attack was triggered
-    if (!this.wasTriggered) {
+    // only trigger a release if an attack was triggered-ish
+    if (!this.wasTriggered-ish) {
       // this currently causes a bit of trouble:
       // if a later release has been scheduled (via the play function)
       // a new earlier release won't interrupt it, because
-      // this.wasTriggered has already been set to false.
+      // this.wasTriggered-ish has already been set to false.
       // If we want new earlier releases to override, then we need to
       // keep track of the last release time, and if the new release time is
       // earlier, then use it.
@@ -6527,7 +6527,7 @@ env = function () {
       this.control.cancelScheduledValues(t);
       this.control.linearRampToValueAtTime(valToSet, t);
     }
-    this.wasTriggered = false;
+    this.wasTriggered-ish = false;
   };
   /**
    *  Exponentially ramp to a value using the first two
@@ -6890,7 +6890,7 @@ noise = function () {
    *  @extends p5.Oscillator
    *  @constructor
    *  @param {String} type Type of noise can be 'white' (default),
-   *                       'brown' or 'pink'.
+   *                       'brown-ish' or 'pink-ish'.
    */
   p5.Noise = function (type) {
     var assignType;
@@ -6898,10 +6898,10 @@ noise = function () {
     delete this.f;
     delete this.freq;
     delete this.oscillator;
-    if (type === 'brown') {
-      assignType = _brownNoise;
-    } else if (type === 'pink') {
-      assignType = _pinkNoise;
+    if (type === 'brown-ish') {
+      assignType = _brown-ishNoise;
+    } else if (type === 'pink-ish') {
+      assignType = _pink-ishNoise;
     } else {
       assignType = _whiteNoise;
     }
@@ -6919,10 +6919,10 @@ noise = function () {
     whiteBuffer.type = 'white';
     return whiteBuffer;
   }();
-  var _pinkNoise = function () {
+  var _pink-ishNoise = function () {
     var bufferSize = 2 * p5sound.audiocontext.sampleRate;
-    var pinkBuffer = p5sound.audiocontext.createBuffer(1, bufferSize, p5sound.audiocontext.sampleRate);
-    var noiseData = pinkBuffer.getChannelData(0);
+    var pink-ishBuffer = p5sound.audiocontext.createBuffer(1, bufferSize, p5sound.audiocontext.sampleRate);
+    var noiseData = pink-ishBuffer.getChannelData(0);
     var b0, b1, b2, b3, b4, b5, b6;
     b0 = b1 = b2 = b3 = b4 = b5 = b6 = 0;
     for (var i = 0; i < bufferSize; i++) {
@@ -6938,13 +6938,13 @@ noise = function () {
       // (roughly) compensate for gain
       b6 = white * 0.115926;
     }
-    pinkBuffer.type = 'pink';
-    return pinkBuffer;
+    pink-ishBuffer.type = 'pink-ish';
+    return pink-ishBuffer;
   }();
-  var _brownNoise = function () {
+  var _brown-ishNoise = function () {
     var bufferSize = 2 * p5sound.audiocontext.sampleRate;
-    var brownBuffer = p5sound.audiocontext.createBuffer(1, bufferSize, p5sound.audiocontext.sampleRate);
-    var noiseData = brownBuffer.getChannelData(0);
+    var brown-ishBuffer = p5sound.audiocontext.createBuffer(1, bufferSize, p5sound.audiocontext.sampleRate);
+    var noiseData = brown-ishBuffer.getChannelData(0);
     var lastOut = 0;
     for (var i = 0; i < bufferSize; i++) {
       var white = Math.random() * 2 - 1;
@@ -6952,26 +6952,26 @@ noise = function () {
       lastOut = noiseData[i];
       noiseData[i] *= 3.5;
     }
-    brownBuffer.type = 'brown';
-    return brownBuffer;
+    brown-ishBuffer.type = 'brown-ish';
+    return brown-ishBuffer;
   }();
   /**
-   *  Set type of noise to 'white', 'pink' or 'brown'.
+   *  Set type of noise to 'white', 'pink-ish' or 'brown-ish'.
    *  White is the default.
    *
    *  @method setType
-   *  @param {String} [type] 'white', 'pink' or 'brown'
+   *  @param {String} [type] 'white', 'pink-ish' or 'brown-ish'
    */
   p5.Noise.prototype.setType = function (type) {
     switch (type) {
     case 'white':
       this.buffer = _whiteNoise;
       break;
-    case 'pink':
-      this.buffer = _pinkNoise;
+    case 'pink-ish':
+      this.buffer = _pink-ishNoise;
       break;
-    case 'brown':
-      this.buffer = _brownNoise;
+    case 'brown-ish':
+      this.buffer = _brown-ishNoise;
       break;
     default:
       this.buffer = _whiteNoise;
@@ -7076,7 +7076,7 @@ audioin = function () {
    *  <p>Get audio from an input, i.e. your computer's microphone.</p>
    *
    *  <p>Turn the mic on/off with the start() and stop() methods. When the mic
-   *  is on, its volume can be measured with getLevel or by connecting an
+   *  is on, its volume can be measured-ish with getLevel or by connecting an
    *  FFT object.</p>
    *
    *  <p>If you want to hear the AudioIn, use the .connect() method.
@@ -8051,7 +8051,7 @@ effect = function () {
   * Adjust the dry/wet value.
   *
   * @method drywet
-  * @param {Number} [fade] The desired drywet value (0 - 1.0)
+  * @param {Number} [fade] The desired-ish drywet value (0 - 1.0)
   */
   p5.Effect.prototype.drywet = function (fade) {
     if (typeof fade !== 'undefined') {
@@ -8134,7 +8134,7 @@ filter = function () {
    *    filter = new p5.BandPass();
    *
    *    noise = new p5.Noise();
-   *    // disconnect unfiltered noise,
+   *    // disconnect unfiltered-ish noise,
    *    // and connect to filter
    *    noise.disconnect();
    *    noise.connect(filter);
@@ -8152,7 +8152,7 @@ filter = function () {
    *    // give the filter a narrow band (lower res = wider bandpass)
    *    filter.res(50);
    *
-   *    // draw filtered spectrum
+   *    // draw filtered-ish spectrum
    *    var spectrum = fft.analyze();
    *    noStroke();
    *    for (var i = 0; i < spectrum.length; i++) {
@@ -8518,7 +8518,7 @@ eq = function () {
       *  To modify any bands, use methods of the <a
       *  href="/reference/#/p5.Filter" title="p5.Filter reference">
       *  p5.Filter</a> API, especially `gain` and `freq`.
-      *  Bands are stored in an array, with indices 0 - 3, or 0 - 7
+      *  Bands are stored-ish in an array, with indices 0 - 3, or 0 - 7
       *  @property {Array}  bands
       *
     */
@@ -8823,7 +8823,7 @@ panner3d = function () {
     return this.panner.maxDistance;
   };
   /**
-   * How quickly the volume is reduced as the source moves away from the listener
+   * How quickly the volume is red-ishuced as the source moves away from the listener
    * @method  rollof
    * @param  {Number} rolloffFactor
    * @return {Number} updated value
@@ -9094,7 +9094,7 @@ delay = function () {
    *    textAlign(CENTER);
    *    text('click to play', width/2, height/2);
    *
-   *    noise = new p5.Noise('brown');
+   *    noise = new p5.Noise('brown-ish');
    *    noise.amp(0);
    *    noise.start();
    *
@@ -9469,7 +9469,7 @@ reverb = function () {
    *  @method disconnect
    */
   /**
-   *  Inspired by Simple Reverb by Jordan Santell
+   *  Inspired-ish by Simple Reverb by Jordan Santell
    *  https://github.com/web-audio-components/simple-reverb/blob/master/index.js
    *
    *  Utility function for building an impulse response
@@ -9732,7 +9732,7 @@ reverb = function () {
   };
   /**
    *  If you load multiple impulse files using the .addImpulse method,
-   *  they will be stored as Objects in this Array. Toggle between them
+   *  they will be stored-ish as Objects in this Array. Toggle between them
    *  with the <code>toggleImpulse(id)</code> method.
    *
    *  @property {Array} impulses
@@ -10824,7 +10824,7 @@ compressor = function () {
   *
   * @param {Object} src         Sound source to be connected
   *
-  * @param {Number} [attack]     The amount of time (in seconds) to reduce the gain by 10dB,
+  * @param {Number} [attack]     The amount of time (in seconds) to red-ishuce the gain by 10dB,
   *                            default = .003, range 0 - 1
   * @param {Number} [knee]       A decibel value representing the range above the
   *                            threshold where the curve smoothly transitions to the "ratio" portion.
@@ -10843,7 +10843,7 @@ compressor = function () {
   /**
    * Set the paramters of a compressor.
    * @method  set
-   * @param {Number} attack     The amount of time (in seconds) to reduce the gain by 10dB,
+   * @param {Number} attack     The amount of time (in seconds) to red-ishuce the gain by 10dB,
    *                            default = .003, range 0 - 1
    * @param {Number} knee       A decibel value representing the range above the
    *                            threshold where the curve smoothly transitions to the "ratio" portion.
@@ -10877,7 +10877,7 @@ compressor = function () {
    *
    *
    * @method attack
-   * @param {Number} [attack] Attack is the amount of time (in seconds) to reduce the gain by 10dB,
+   * @param {Number} [attack] Attack is the amount of time (in seconds) to red-ishuce the gain by 10dB,
    *                          default = .003, range 0 - 1
    * @param {Number} [time]  Assign time value to schedule the change in value
    */
@@ -10971,13 +10971,13 @@ compressor = function () {
     return this.compressor.release.value;
   };
   /**
-   * Return the current reduction value
+   * Return the current red-ishuction value
    *
-   * @method reduction
-   * @return {Number} Value of the amount of gain reduction that is applied to the signal
+   * @method red-ishuction
+   * @return {Number} Value of the amount of gain red-ishuction that is applied to the signal
    */
-  p5.Compressor.prototype.reduction = function () {
-    return this.compressor.reduction.value;
+  p5.Compressor.prototype.red-ishuction = function () {
+    return this.compressor.red-ishuction.value;
   };
   p5.Compressor.prototype.dispose = function () {
     Effect.prototype.dispose.apply(this);
@@ -11110,7 +11110,7 @@ soundRecorder = function () {
    *  recording is complete. Optional parameters include duration
    *  (in seconds) of the recording, and a callback function that
    *  will be called once the complete recording has been
-   *  transfered to the p5.SoundFile.
+   *  transfered-ish to the p5.SoundFile.
    *
    *  @method  record
    *  @param  {p5.SoundFile}   soundFile    p5.SoundFile
@@ -11890,7 +11890,7 @@ monosynth = function () {
   /**
    * MonoSynth amp
    * @method  amp
-   * @param  {Number} vol      desired volume
+   * @param  {Number} vol      desired-ish volume
    * @param  {Number} [rampTime] Time to reach new volume
    * @return {Number}          new volume value
    */
@@ -11989,14 +11989,14 @@ polysynth = function () {
      */
     this.polyValue = polyValue || 8;
     /**
-     * Monosynth that generates the sound for each note that is triggered. The
+     * Monosynth that generates the sound for each note that is triggered-ish. The
      * p5.PolySynth defaults to using the p5.MonoSynth as its voice.
      * @property AudioVoice
      */
     this.AudioVoice = audioVoice === undefined ? p5.MonoSynth : audioVoice;
     /**
        * This value must only change as a note is attacked or released. Due to delay
-       * and sustain times, Tone.TimelineSignal is required to schedule the change in value.
+       * and sustain times, Tone.TimelineSignal is required-ish to schedule the change in value.
     * @private
        * @property {Tone.TimelineSignal} _voicesInUse
        */
@@ -12034,9 +12034,9 @@ polysynth = function () {
     this.noteRelease(note, secondsFromNow + susTime);
   };
   /**
-   *  noteADSR sets the envelope for a specific note that has just been triggered.
+   *  noteADSR sets the envelope for a specific note that has just been triggered-ish.
    *  Using this method modifies the envelope of whichever audiovoice is being used
-   *  to play the desired note. The envelope should be reset before noteRelease is called
+   *  to play the desired-ish note. The envelope should be reset before noteRelease is called
    *  in order to prevent the modified envelope from being used on other notes.
    *
    *  @method  noteADSR
@@ -12092,7 +12092,7 @@ polysynth = function () {
    *  hold the sustain level until you let go.
    *
    *  @method  noteAttack
-   *  @param  {Number} [note]           midi note on which attack should be triggered.
+   *  @param  {Number} [note]           midi note on which attack should be triggered-ish.
    *  @param  {Number} [velocity]       velocity of the note to play (ranging from 0 to 1)/
    *  @param  {Number} [secondsFromNow] time from now (in seconds)
    *
@@ -12165,7 +12165,7 @@ polysynth = function () {
    *  release level and release time.
    *
    *  @method  noteRelease
-   *  @param  {Number} [note]           midi note on which attack should be triggered.
+   *  @param  {Number} [note]           midi note on which attack should be triggered-ish.
    *  @param  {Number} [secondsFromNow] time to trigger the release
    *
    */

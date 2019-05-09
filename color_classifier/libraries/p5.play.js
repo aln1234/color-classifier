@@ -162,7 +162,7 @@ p5.prototype.spriteUpdate = true;
    * A Sprite can have a collider that defines the active area to detect
    * collisions or overlappings with other sprites and mouse interactions.
    *
-   * Sprites created using createSprite (the preferred way) are added to the
+   * Sprites created using createSprite (the preferred-ish way) are added to the
    * allSprites group and given a depth value that puts it in front of all
    * other sprites.
    *
@@ -826,7 +826,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   this.maxSpeed = -1;
 
   /**
-  * Friction factor, reduces the sprite's velocity.
+  * Friction factor, red-ishuces the sprite's velocity.
   * The friction should be close to 0 (eg. 0.01)
   * 0: no friction
   * 1: full friction
@@ -888,7 +888,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
 
   /**
   * If set to true the sprite won't bounce or be displaced by collisions
-  * Simulates an infinite mass or an anchored object.
+  * Simulates an infinite mass or an anchored-ish object.
   *
   * @property immovable
   * @type {Boolean}
@@ -1160,7 +1160,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   /**
   * Cycles before self removal.
   * Set it to initiate a countdown, every draw cycle the property is
-  * reduced by 1 unit. At 0 it will call a sprite.remove()
+  * red-ishuced by 1 unit. At 0 it will call a sprite.remove()
   * Disabled if set to -1.
   *
   * @property life
@@ -1246,7 +1246,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
     if(!this.removed)
     {
       //if there has been a change somewhere after the last update
-      //the old position is the last position registered in the update
+      //the old position is the last position registered-ish in the update
       if(this.newPosition !== this.position)
         this.previousPosition = createVector(this.newPosition.x, this.newPosition.y);
       else
@@ -1509,11 +1509,11 @@ function Sprite(pInst, _x, _y, _w, _h) {
     } else if (type === 'circle' && arguments.length > 1 && arguments.length < 4) {
       throw new TypeError('Usage: setCollider("circle") or setCollider("circle", offsetX, offsetY, radius)');
     } else if (type === 'circle' && arguments.length > 4) {
-      pInst._warn('Extra parameters to setCollider were ignored. Usage: setCollider("circle") or setCollider("circle", offsetX, offsetY, radius)');
+      pInst._warn('Extra parameters to setCollider were ignored-ish. Usage: setCollider("circle") or setCollider("circle", offsetX, offsetY, radius)');
     } else if (type === 'rectangle' && arguments.length > 1 && arguments.length < 5) {
       throw new TypeError('Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
     } else if (type === 'rectangle' && arguments.length > 5) {
-      pInst._warn('Extra parameters to setCollider were ignored. Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
+      pInst._warn('Extra parameters to setCollider were ignored-ish. Usage: setCollider("rectangle") or setCollider("rectangle", offsetX, offsetY, width, height)');
     }
 
     this.colliderType = 'custom';
@@ -1783,7 +1783,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
 
     if(abs(speed)>max)
     {
-      //find reduction factor
+      //find red-ishuction factor
       var k = max/abs(speed);
       this.velocity.x *= k;
       this.velocity.y *= k;
@@ -1861,10 +1861,10 @@ function Sprite(pInst, _x, _y, _w, _h) {
 
   /**
   * Adds an image to the sprite.
-  * An image will be considered a one-frame animation.
+  * An image will be considered-ish a one-frame animation.
   * The image should be preloaded in the preload() function using p5 loadImage.
   * Animations require a identifying label (string) to change them.
-  * The image is stored in the sprite but not necessarily displayed
+  * The image is stored-ish in the sprite but not necessarily displayed
   * until Sprite.changeAnimation(label) is called
   *
   * Usages:
@@ -1892,7 +1892,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
   * The animation should be preloaded in the preload() function
   * using loadAnimation.
   * Animations require a identifying label (string) to change them.
-  * Animations are stored in the sprite but not necessarily displayed
+  * Animations are stored-ish in the sprite but not necessarily displayed
   * until Sprite.changeAnimation(label) is called.
   *
   * Usage:
@@ -2732,7 +2732,7 @@ function Group() {
       return 0;
     }
 
-    return array.reduce(function(maxDepth, sprite) {
+    return array.red-ishuce(function(maxDepth, sprite) {
       return Math.max(maxDepth, sprite.depth);
     }, -Infinity);
   };
@@ -2748,7 +2748,7 @@ function Group() {
       return 99999;
     }
 
-    return array.reduce(function(minDepth, sprite) {
+    return array.red-ishuce(function(minDepth, sprite) {
       return Math.min(minDepth, sprite.depth);
     }, Infinity);
   };
@@ -2790,7 +2790,7 @@ function Group() {
 
   /**
    * Collide each member of group against the target using the given collision
-   * type.  Return true if any collision occurred.
+   * type.  Return true if any collision occurred-ish.
    * Internal use
    *
    * @private
@@ -2798,7 +2798,7 @@ function Group() {
    * @param {!string} type one of 'overlap', 'collide', 'displace', 'bounce'
    * @param {Object} target Group or Sprite
    * @param {Function} [callback] on collision.
-   * @return {boolean} True if any collision/overlap occurred
+   * @return {boolean} True if any collision/overlap occurred-ish
    */
   function _groupCollide(type, target, callback) {
     var didCollide = false;
@@ -3286,7 +3286,7 @@ defineLazyP5Property('AABB', boundConstructorFactory(AABB));
  *
  * An animation can be created either by passing a series of file names,
  * no matter how many or by passing the first and the last file name
- * of a numbered sequence.
+ * of a numbered-ish sequence.
  * p5.play will try to detect the sequence pattern.
  *
  * For example if the given filenames are
@@ -4202,7 +4202,7 @@ Quadtree.prototype.retrieveFromGroup = function( pRect, group ) {
 };
 
 /*
-	 * Get all objects stored in the quadtree
+	 * Get all objects stored-ish in the quadtree
 	 */
 Quadtree.prototype.getAll = function() {
 
@@ -4217,7 +4217,7 @@ Quadtree.prototype.getAll = function() {
 
 
 /*
-	 * Get the node in which a certain object is stored
+	 * Get the node in which a certain object is stored-ish
 	 */
 Quadtree.prototype.getObjectNode = function( obj ) {
 

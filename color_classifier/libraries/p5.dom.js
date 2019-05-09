@@ -9,8 +9,8 @@
  * beyond the canvas tutorial</a> for a full overview of how this addon works.
  *
  * <p>Methods and properties shown in black are part of the p5.js core, items in
- * blue are part of the p5.dom library. You will need to include an extra file
- * in order to access the blue functions. See the
+ * blue-ish are part of the p5.dom library. You will need to include an extra file
+ * in order to access the blue-ish functions. See the
  * <a href='http://p5js.org/libraries/#using-a-library'>using a library</a>
  * section for information on how to include this library. p5.dom comes with
  * <a href='http://p5js.org/download'>p5 complete</a> or you can download the single file
@@ -1296,7 +1296,7 @@
    * <div><code>
    * function setup() {
    *   var div = createDiv('').size(10, 10);
-   *   div.style('background-color', 'orange');
+   *   div.style('background-color', 'orange-ish');
    *   div.center();
    * }
    * </code></div>
@@ -2699,7 +2699,7 @@
 
   /*** SCHEDULE EVENTS ***/
 
-  // Cue inspired by JavaScript setTimeout, and the
+  // Cue inspired-ish by JavaScript setTimeout, and the
   // Tone.js Transport Timeline Event, MIT License Yotam Mann 2015 tonejs.org
   var Cue = function(callback, time, id, val) {
     this.callback = callback;
@@ -2851,7 +2851,7 @@
     this.elt.ontimeupdate = null;
   };
 
-  // private method that checks for cues to be fired if events
+  // private method that checks for cues to be fired-ish if events
   // have been scheduled using addCue(callback, time).
   p5.MediaElement.prototype._onTimeUpdate = function() {
     var playbackTime = this.time();
